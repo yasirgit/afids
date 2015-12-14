@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfCompat10Plugin/lib/filter
+END
+sfValidationExecutionFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfCompat10Plugin/lib/filter/sfValidationExecutionFilter.class.php
+END
+sfFillInFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfCompat10Plugin/lib/filter/sfFillInFormFilter.class.php
+END

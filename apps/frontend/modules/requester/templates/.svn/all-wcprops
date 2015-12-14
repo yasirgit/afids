@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/afids/!svn/ver/1151/browse/trunk/apps/frontend/modules/requester/templates
+END
+autoCompleteLastNonSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/afids/!svn/ver/564/browse/trunk/apps/frontend/modules/requester/templates/autoCompleteLastNonSuccess.php
+END
+findSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/afids/!svn/ver/1151/browse/trunk/apps/frontend/modules/requester/templates/findSuccess.php
+END
+autoCompleteSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/afids/!svn/ver/210/browse/trunk/apps/frontend/modules/requester/templates/autoCompleteSuccess.php
+END
+autoComplete1Success.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/afids/!svn/ver/346/browse/trunk/apps/frontend/modules/requester/templates/autoComplete1Success.php
+END
+updateSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/afids/!svn/ver/1151/browse/trunk/apps/frontend/modules/requester/templates/updateSuccess.php
+END
+autoCompleteFirstNonSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/afids/!svn/ver/564/browse/trunk/apps/frontend/modules/requester/templates/autoCompleteFirstNonSuccess.php
+END
+autoCompleteLastSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/afids/!svn/ver/1132/browse/trunk/apps/frontend/modules/requester/templates/autoCompleteLastSuccess.php
+END
+updateAjaxSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/afids/!svn/ver/856/browse/trunk/apps/frontend/modules/requester/templates/updateAjaxSuccess.php
+END
+indexSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/afids/!svn/ver/1151/browse/trunk/apps/frontend/modules/requester/templates/indexSuccess.php
+END
+autoCompleteFirstSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/afids/!svn/ver/504/browse/trunk/apps/frontend/modules/requester/templates/autoCompleteFirstSuccess.php
+END
+_requester_for.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/afids/!svn/ver/888/browse/trunk/apps/frontend/modules/requester/templates/_requester_for.php
+END
+_updateAjax.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/afids/!svn/ver/914/browse/trunk/apps/frontend/modules/requester/templates/_updateAjax.php
+END

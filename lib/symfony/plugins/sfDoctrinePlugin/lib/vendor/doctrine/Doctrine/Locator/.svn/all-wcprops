@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/lib/vendor/doctrine/Doctrine/Locator
+END
+Exception.php
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/lib/vendor/doctrine/Doctrine/Locator/Exception.php
+END
+Injectable.php
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/lib/vendor/doctrine/Doctrine/Locator/Injectable.php
+END

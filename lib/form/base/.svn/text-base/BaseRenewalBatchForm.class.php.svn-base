@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * RenewalBatch form base class.
+ *
+ * @package    angelflight
+ * @subpackage form
+ * @author     Your name here
+ * @version    SVN: $Id: sfPropelFormGeneratedTemplate.php 16976 2009-04-04 12:47:44Z fabien $
+ */
+class BaseRenewalBatchForm extends BaseFormPropel
+{
+  public function setup()
+  {
+    $this->setWidgets(array(
+      'id'                      => new sfWidgetFormInputHidden(),
+      'renewal_batch_date'      => new sfWidgetFormDateTime(),
+      'first_renewal_id'        => new sfWidgetFormPropelChoice(array('model' => 'Renewal', 'add_empty' => true)),
+      'second_renewal_id'       => new sfWidgetFormPropelChoice(array('model' => 'Renewal', 'add_empty' => true)),
+      'third_renewal_id'        => new sfWidgetFormPropelChoice(array('model' => 'Renewal', 'add_empty' => true)),
+      'fourth_renewal_id'       => new sfWidgetFormPropelChoice(array('model' => 'Renewal', 'add_empty' => true)),
+      'missing_form_renewal_id' => new sfWidgetFormPropelChoice(array('model' => 'Renewal', 'add_empty' => true)),
+    ));
+
+    $this->setValidators(array(
+      'id'                      => new sfValidatorPropelChoice(array('model' => 'RenewalBatch', 'column' => 'id', 'required' => false)),
+      'renewal_batch_date'      => new sfValidatorDateTime(array('required' => false)),
+      'first_renewal_id'        => new sfValidatorPropelChoice(array('model' => 'Renewal', 'column' => 'id', 'required' => false)),
+      'second_renewal_id'       => new sfValidatorPropelChoice(array('model' => 'Renewal', 'column' => 'id', 'required' => false)),
+      'third_renewal_id'        => new sfValidatorPropelChoice(array('model' => 'Renewal', 'column' => 'id', 'required' => false)),
+      'fourth_renewal_id'       => new sfValidatorPropelChoice(array('model' => 'Renewal', 'column' => 'id', 'required' => false)),
+      'missing_form_renewal_id' => new sfValidatorPropelChoice(array('model' => 'Renewal', 'column' => 'id', 'required' => false)),
+    ));
+
+    $this->widgetSchema->setNameFormat('renewal_batch[%s]');
+
+    $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+
+    parent::setup();
+  }
+
+  public function getModelName()
+  {
+    return 'RenewalBatch';
+  }
+
+
+}

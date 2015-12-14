@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/afids/!svn/ver/1112/browse/trunk/apps/frontend/modules/eventReservation/templates
+END
+thankyouSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/afids/!svn/ver/1077/browse/trunk/apps/frontend/modules/eventReservation/templates/thankyouSuccess.php
+END
+editSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/afids/!svn/ver/1046/browse/trunk/apps/frontend/modules/eventReservation/templates/editSuccess.php
+END
+eventSignupSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/afids/!svn/ver/1112/browse/trunk/apps/frontend/modules/eventReservation/templates/eventSignupSuccess.php
+END
+indexSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/afids/!svn/ver/1046/browse/trunk/apps/frontend/modules/eventReservation/templates/indexSuccess.php
+END
+_form.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/afids/!svn/ver/1046/browse/trunk/apps/frontend/modules/eventReservation/templates/_form.php
+END
+newSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/afids/!svn/ver/1046/browse/trunk/apps/frontend/modules/eventReservation/templates/newSuccess.php
+END

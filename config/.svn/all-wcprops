@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/afids/!svn/ver/1201/browse/trunk/config
+END
+propel.ini
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/afids/!svn/ver/2/browse/trunk/config/propel.ini
+END
+schema.yml
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/afids/!svn/ver/1201/browse/trunk/config/schema.yml
+END
+vhost.sample
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/afids/!svn/ver/2/browse/trunk/config/vhost.sample
+END
+rsync_exclude.txt
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/afids/!svn/ver/2/browse/trunk/config/rsync_exclude.txt
+END
+databases.yml
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/afids/!svn/ver/947/browse/trunk/config/databases.yml
+END
+ProjectConfiguration.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/afids/!svn/ver/825/browse/trunk/config/ProjectConfiguration.class.php
+END
+properties.ini
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/afids/!svn/ver/2/browse/trunk/config/properties.ini
+END

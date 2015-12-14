@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/lib/vendor/phing/util/regexp
+END
+Regexp.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/lib/vendor/phing/util/regexp/Regexp.php
+END
+RegexpEngine.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/lib/vendor/phing/util/regexp/RegexpEngine.php
+END
+PregEngine.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/lib/vendor/phing/util/regexp/PregEngine.php
+END

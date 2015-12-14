@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/afids/!svn/ver/2/browse/trunk/plugins/sfFormExtraPlugin/test/validator
+END
+sfValidatorReCaptchaTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/afids/!svn/ver/2/browse/trunk/plugins/sfFormExtraPlugin/test/validator/sfValidatorReCaptchaTest.php
+END
+sfValidatorSchemaTimeIntervalTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/afids/!svn/ver/2/browse/trunk/plugins/sfFormExtraPlugin/test/validator/sfValidatorSchemaTimeIntervalTest.php
+END
+sfValidatorBlacklistTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/afids/!svn/ver/2/browse/trunk/plugins/sfFormExtraPlugin/test/validator/sfValidatorBlacklistTest.php
+END

@@ -1,0 +1,179 @@
+<?php
+
+class AirportPeer extends BaseAirportPeer
+{
+  public static function getForSelectParent()
+  {
+    $c = new Criteria();
+
+    $c->addAscendingOrderByColumn(self::ID);
+
+    $airports = self::doSelect($c);
+    $arr = array();
+    $arr[0] = '-- select --';
+
+    foreach ($airports as $airport) {
+      $arr[$airport->getId()] = $airport->getIdent();
+    }
+    return $arr;
+  }
+
+  public static function getNames()
+  {
+    $c = new Criteria();
+
+    $c->addAscendingOrderByColumn(self::ID);
+
+    $airports = self::doSelect($c);
+    $arr = array();
+
+    foreach ($airports as $airport)
+    {
+      $arr[$airport->getId()] = $airport->getName();
+    }
+    return $arr;
+  }
+
+  public static function getIdents()
+  {
+    $c = new Criteria();
+
+    $c->addAscendingOrderByColumn(self::ID);
+
+    $airports = self::doSelect($c);
+    $arr = array();
+
+    foreach ($airports as $airport)
+    {
+      $arr[$airport->getId()] = $airport->getIdent();
+    }
+    return $arr;
+  }
+  public static function getPager(
+  $max = 10,
+  $page = 1,
+  $ident = null,
+  $name = null,
+  $city = null,
+  $state = null,
+  $wing_name = null,
+  $closed = null
+  )
+  {
+    $c = new Criteria();
+
+    $c->addJoin(self::WING_ID,WingPeer::ID,Criteria::LEFT_JOIN);
+
+    if ($ident) $c->add(self::IDENT , $ident.'%', Criteria::LIKE);
+    if ($name) $c->add(self::NAME, $name.'%', Criteria::LIKE);
+    if ($city) $c->add(self::CITY, $city.'%', Criteria::LIKE);
+    if ($state) $c->add(self::STATE, $state.'%', Criteria::LIKE);
+    if ($wing_name) $c->add(WingPeer::NAME, $wing_name.'%', Criteria::LIKE);
+    if ($closed) $c->add(self::CLOSED, $closed.'%', Criteria::LIKE);
+
+    self::addSelectColumns($c);
+    $c->addAsColumn("fbos", "(Select COUNT(a.id) from fbo as f, airport as a where f.airport_id = a.id and a.id = ".self::ID." group by a.id)");
+    $c->addAscendingOrderByColumn(self::IDENT);
+
+    $pager = new sfPropelPager('Airport', $max);
+    $pager->setCriteria($c);
+    $pager->setPage($page);
+    $pager->init();
+    return $pager;
+  }
+
+  public static function getByIdent($ident){
+    $c = new Criteria();
+
+    $c->add(self::IDENT, $ident);
+    $c->addAscendingOrderByColumn(self::IDENT );
+
+    return self::doSelectOne($c);
+  }
+
+  /**
+   * Return airports which latitude and longitude specified
+   * @return array
+   */
+  public static function getMappable()
+  {
+    $ar = array("CA", "AZ", "WA", "OR", "UT", "ID", "HI", "AK", "MT", "WY", "NV", "CO", "NM");
+    $c = new Criteria();
+    $c->add(self::LATITUDE, 0, Criteria::NOT_EQUAL);
+    $c->add(self::LONGITUDE, 0, Criteria::NOT_EQUAL);
+    $c->add(self::IS_PRIVATE, 1);
+    $c->add(self::STATE, $ar, Criteria::IN);
+    //$c->setLimit(10);
+
+    /*
+    $c->addJoin(MissionLegPeer::FROM_AIRPORT_ID, self::ID);
+    $c->addAscendingOrderByColumn(MissionLegPeer::LEG_NUMBER);
+    */
+    //$c->setLimit(100);
+    
+    return self::doSelect($c);
+  }
+
+  public static function getByFirstLetter($ident)
+  {
+    $c = new Criteria();
+
+    $c->add(self::IDENT, $ident.'%', Criteria::LIKE);
+
+    $c->setLimit(10);
+
+    return self::doSelect($c);
+  }
+
+  public static function getByAirportName($airportName)
+  {
+    $c = new Criteria();
+
+    $c->add(self::NAME, $airportName.'%', Criteria::LIKE);
+
+    $c->setLimit(10);
+
+    return self::doSelect($c);
+  }
+  public static function getBySpecificAirportName($airportName)
+  {
+    $c = new Criteria();
+
+    $c->add(self::NAME, $airportName);
+
+    return self::doSelectOne($c);
+  }
+
+  public static function getByWingId($wing_id)
+  {
+    $c = new Criteria();
+    $c->add(self::WING_ID, $wing_id);
+    $c->addAscendingOrderByColumn(self::IDENT);
+    return self::doSelect($c);
+  }
+
+  public static function getIdsByState($state) {
+    $c =  new Criteria();
+    $c->add(self::STATE, $state);
+    $airports = self::doSelect($c);
+    $ids = array();
+    foreach($airports as $airport) {
+      $ids[] = $airport->getId();
+    }
+    return $ids;
+  }
+
+  public static function getAirportByStateAndZipcode($state, $zip){
+    $c = new Criteria();
+    $c->add(self::STATE, $state);
+    $c->add(self::ZIPCODE, $zip);
+    return self::doSelectOne($c);
+  }
+  public static function getAutoIdents($ident){
+       $c = new Criteria();
+       $c->add(self::IDENT, $ident.'%', Criteria::LIKE);
+       $c->addAscendingOrderByColumn(self::IDENT);
+       $c->setLimit(20);
+       return self::doSelect($c);
+  }
+}

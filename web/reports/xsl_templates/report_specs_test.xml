@@ -1,0 +1,1838 @@
+<reportWriter>
+	<globalInfo>
+		<systemName>AFIDS</systemName>
+		<connectionString></connectionString>
+	</globalInfo>
+	<selcategories>
+		<selcategory pageOrder="1" desc="Statistics"/>
+		<selcategory pageOrder="7" desc="Other"/>
+		<selcategory pageOrder="2" desc="Missions"/>
+		<selcategory pageOrder="2" desc="Members"/>
+		<selcategory pageOrder="8" desc="Auditing"/>
+		<selcategory pageOrder="4" desc="Coordinators"/>
+		<selcategory pageOrder="5" desc="Mission Reports"/>
+		<selcategory pageOrder="6" desc="People"/>
+	</selcategories>
+	<reports>
+		<report>
+			<reportName>member_photos_list</reportName>
+			<title>Member Photos List</title>
+			<category>Other</category>
+			<category_2></category_2>
+			<category_3></category_3>
+			<active>true</active>
+			<descriptionText></descriptionText>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='SELECT * FROM rp_member_photos' commandType='adCmdText' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='pilotName' fieldName='pilotName' fieldDesc='Pilot Name' operator='eq' required='yes' useroption='yes' bottomoption='yes' default='' datatype='string' fieldType='text' fieldSize='20'/>
+					<inputParameter paramName='passName' fieldName='passName' fieldDesc='Passenger Name' operator='eq' required='yes' useroption='yes' bottomoption='yes' default='' datatype='string' fieldType='text' fieldSize='20'/>
+					<inputParameter paramName='wing' fieldName='wing_id' fieldDesc='Wing' operator='eq' required='no' useroption='yes' bottomoption='yes' default='' datatype='int' fieldType='select' fieldSize='1' refSourceTable='wing' refSourceIDField='id' refSourceDescField='name' />
+				</inputParameters>
+			</dataset>
+			<pageSize>0</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Display' primary='yes' stylesheet='memberPhotos.xsl' newwindow='no' templateOption='afidFrame'/>
+				<outputformat type='print' description='Print' primary='no' stylesheet='afwPrintReport.xsl' newwindow='no' templateOption='printFrame'/>
+				<outputformat type='download' description='Download' primary='no' stylesheet='' newwindow='no' templateOption='printFrame'/>
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='memberPhotos.xsl'/>				
+			</outputformats>
+		</report>
+		<report>
+			<reportName>mission_counts_YTD</reportName>
+			<title>Mission Counts Year to Date</title>
+			<category>Statistics</category>
+			<category_2></category_2>
+			<category_3></category_3>
+			<active>true</active>
+			<descriptionText></descriptionText>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='rp_mission_counts_ytd' commandType='adCmdStoredProc' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='yearNo' fieldName='yearNo' fieldDesc='Year' operator='eq' required='yes' useroption='yes' bottomoption='yes' default='currentYear' datatype='int' fieldType='select' fieldSize='1' populateSelect="years_1998"/>
+					<inputParameter paramName='inc' fieldName='inc' fieldDesc='Include' operator='eq' required='yes' useroption='yes' bottomoption='yes' default='currentyear' datatype='string' fieldType='select' fieldSize='1'>
+					   <selectOption description='All' value='all' default='no' />
+					   <selectOption description='Org Only' value='org' default='no' />
+					   <selectOption description='Linking Only' value='linking' default='no' />
+					</inputParameter>
+				</inputParameters>
+			</dataset>
+			<pageSize>0</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Display' primary='yes' stylesheet='missionCountsYTD.xsl' newwindow='no' templateOption='afidFrame'>
+				</outputformat>
+				<outputformat type='print' description='Print' primary='no' stylesheet='afwPrintReport.xsl' newwindow='no' templateOption='printFrame'>
+				</outputformat>
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='missionCountsYTD.xsl'/>
+			</outputformats>
+		</report>
+		<report>
+			<reportName>acn_mission_counts_YTD</reportName>
+			<title>ACN Mission Counts Year to Date (deprecate)</title>
+			<category>Statistics</category>
+			<category_2></category_2>
+			<category_3></category_3>
+			<active>false</active>
+			<descriptionText></descriptionText>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='SELECT * FROM monthly_mission_report' commandType='adCmdText' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='startDate' fieldName='mission_date' fieldDesc='Start Date' operator='ge' required='yes' useroption='yes' bottomoption='yes' default='monthstart' datatype='date' fieldType='text'  fieldSize='10' />
+					<inputParameter paramName='endDate' fieldName='mission_date' fieldDesc='End Date' operator='le' required='yes' useroption='yes' bottomoption='yes' default='monthend' datatype='date' fieldType='text'  fieldSize='10' />
+				</inputParameters>
+				<orderByFields>
+					<orderByField type='ASC'>mission_date</orderByField>
+				</orderByFields>
+			</dataset>
+			<pageSize>0</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Display' primary='yes' stylesheet='defaultReport_table.xsl' newwindow='no' templateOption='afidFrame'>
+				</outputformat>
+				<outputformat type='print' description='Print' primary='no' stylesheet='afwPrintReport.xsl' newwindow='no' templateOption='printFrame'>
+				</outputformat>
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='defaultReport_table.xsl'/>				
+			</outputformats>
+		</report>
+		<report>
+			<reportName>cancelled_mission_detail</reportName>
+			<title>Cancelled Mission Detail</title>
+			<category>Statistics</category>
+			<category_2></category_2>
+			<category_3></category_3>
+			<active>true</active>
+			<descriptionText>Number of cancelled mission legs by month and the cancellation reason. The percentages are percent of all cancelled missions. You can choose to include linking legs (with other organizations), and only missions that were coordinated (pilot added) prior to the cancellation.</descriptionText>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText="SELECT year(m.mission_date) as missionYear, month(m.mission_date) as monthNo, cancelled, count(ml.id) as legCount, ml.pilot_id, afa.id as afa_leg_id FROM mission m JOIN mission_leg ml ON (m.id = ml.mission_id) LEFT JOIN afa_leg afa ON (ml.id = afa.id)" commandType='adCmdText' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='year' fieldName='year(m.mission_date)' fieldDesc='Year' operator='eq' required='yes' useroption='yes' bottomoption='yes' default='currentyear' datatype='int' fieldType='text' fieldSize='10' />
+					<inputParameter paramName='coordinated' fieldName='pilot_id' fieldDesc='Coordinated' operator='eq' required='no' useroption='yes' bottomoption='yes' default='' datatype='string' fieldType='select' fieldSize='1'>
+					   <selectOption description='All' value='all' default='yes' />
+					   <selectOption description='Coordinated Only' value='Is Not Null' default='no' />
+					</inputParameter>
+					<inputParameter paramName='linking' fieldName='afa.id' fieldDesc='Linking' operator='eq' required='no' useroption='yes' bottomoption='yes' default='' datatype='string' fieldType='select' fieldSize='1'>
+					   <selectOption description='All' value='all' default='yes' />
+					   <selectOption description='Not Linking Only' value='Is Null' default='no' />
+					   <selectOption description='Linking Only' value='Is Not Null' default='no' />
+					</inputParameter>
+				</inputParameters>
+				<groupByFields>
+					<groupByField>cancelled</groupByField>
+					<groupByField>month(m.mission_date)</groupByField>
+				</groupByFields>
+			</dataset>
+			<pageSize>0</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Display' primary='yes' stylesheet='cancelledMissions.xsl' newwindow='no' templateOption='afidFrame'/>
+				<outputformat type='chart' description='Display' primary='no' format='graph' visualization='intensitymap' newwindow='no' templateOption='afidFrame'>
+					<column field="month" label="Month" width="20%" dataType="int" align="left" class=""/>
+					<column field="cancelled" label="Cancelled" width="30%" dataType="int" align="left" class=""/>
+					<column field="mission_leg" label="Legs" width="30%" dataType="int" align="left" class=""/>
+					<column field="coordinated" label="Coordinated" width="30%" dataType="int" align="left" class=""/>
+				</outputformat>
+				<outputformat type='print' description='Print' primary='no' stylesheet='afwPrintReport.xsl' newwindow='no' templateOption='printFrame'>
+				</outputformat>
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='cancelledMissions.xsl'/>
+			</outputformats>
+		</report>
+		<report>
+			<reportName>cancelled_mission_detail_wing</reportName>
+			<title>Cancelled Mission Detail by Wing</title>
+			<category>Statistics</category>
+			<category_2></category_2>
+			<category_3></category_3>
+			<active>false</active>
+			<descriptionText>Number of cancelled mission legs by month and wing. The percentages by wing are the percent of all scheduled mission legs, the percentages by month are a percent for that month of all cancelled missions. The wing of the mission leg is determined by the pilot assigned to the mission at the time of cancellation, therefore, these counts are for coordinated missions only. Linking legs with other organizations are not included.</descriptionText>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText="SELECT year(m.mission_date) as missionYear, month(m.mission_date) as monthNo, wing.id as wingID, wing.name, count(ml.id) as legCount, count(cancelled) as cancelledCount FROM mission m JOIN mission_leg ml ON (m.id = ml.mission_id) JOIN member mb ON (ml.pilot_id = mb.id) JOIN wing ON (mb.wing_id = wing.id)" commandType='adCmdText' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='year' fieldName='year(m.mission_date)' fieldDesc='Year' operator='eq' required='yes' useroption='yes' bottomoption='yes' default='currentyear' datatype='int' fieldType='text'  fieldSize='10' />
+				</inputParameters>
+				<groupByFields>
+					<groupByField>wing.name</groupByField>
+					<groupByField>month(m.mission_date)</groupByField>
+				</groupByFields>
+			</dataset>
+			<pageSize>0</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Display' primary='yes' stylesheet='cancelledMissions_wing.xsl' newwindow='no' templateOption='afidFrame'/>
+				<outputformat type='chart' description='Display' primary='no' format='graph' visualization='intensitymap' newwindow='no' templateOption='afidFrame'>
+					<column field="month" label="Month" width="20%" dataType="int" align="left" class=""/>
+					<column field="cancelled" label="Cancelled" width="30%" dataType="int" align="left" class=""/>
+					<column field="mission_leg" label="Legs" width="30%" dataType="int" align="left" class=""/>
+					<column field="coordinated" label="Coordinated" width="30%" dataType="int" align="left" class=""/>
+				</outputformat>
+				<outputformat type='print' description='Print' primary='no' stylesheet='afwPrintReport.xsl' newwindow='no' templateOption='printFrame'>
+				</outputformat>
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='cancelledMissions_wing.xsl'/>
+			</outputformats>
+		</report>
+		<report>
+			<reportName>statistical_summary</reportName>
+			<title>Statistical Summary</title>
+			<category>Statistics</category>
+			<category_2></category_2>
+			<category_3></category_3>
+			<active>true</active>
+			<descriptionText></descriptionText>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='rp_monthly_report' commandType='adCmdStoredProc' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='startDate' fieldName='startDate' fieldDesc='Start Date' operator='ge' required='yes' useroption='yes' bottomoption='yes' default='monthstart' datatype='date' fieldType='text'  fieldSize='10' />
+					<inputParameter paramName='endDate' fieldName='endDate' fieldDesc='End Date' operator='le' required='yes' useroption='yes' bottomoption='yes' default='monthend' datatype='date' fieldType='text'  fieldSize='10' />
+				</inputParameters>
+			</dataset>
+			<pageSize>0</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Display' primary='yes' stylesheet='statisticalSummary.xsl' newwindow='no' templateOption='afidFrame'>
+				</outputformat>
+				<outputformat type='print' description='Print' primary='no' stylesheet='afwPrintReport.xsl' newwindow='no' templateOption='printFrame'>
+				</outputformat>
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='statisticalSummary.xsl'/>				
+			</outputformats>
+		</report>
+		<report>
+			<reportName>member_roster</reportName>
+			<title>Member Roster</title>
+			<category>Members</category>
+			<category_2></category_2>
+			<category_3></category_3>
+			<active>true</active>
+			<descriptionText></descriptionText>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='SELECT * FROM rp_member_directory' commandType='adCmdText' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='flightStatus' fieldName='flight_status' fieldDesc='Flight Status' operator='ge' required='no' useroption='yes' bottomoption='yes' default='' datatype='text' fieldType='select' fieldSize='10'>
+					   <selectOption description='All' value='all' default='yes' />
+					   <selectOption description='Command Pilot' value='Command pilot' default='no' />
+					   <selectOption description='Non-pilot' value='Non-pilot' default='no' />
+					   <selectOption description='Verify Orientation' value='Verify Orientation' default='no' />
+					   <selectOption description='Ground Angel' value='Ground Angel' default='no' />
+					   <selectOption description='Mission Assistant' value='Mission Assistant' default='no' />
+					</inputParameter>
+					<inputParameter fieldDesc='Pilot Qualifications' operator='eq' required='no' useroption='yes' bottomoption='no' default='0' datatype='bit' fieldType='checkbox'  fieldSize='0'>
+						<checkboxOption description='IFR' fieldName='ifr' fieldValue='1' checked='no' />
+						<checkboxOption description='Multi-engine' fieldName='multi' fieldValue='1' checked='no' />
+						<checkboxOption description='CFI/CFII' fieldName='cfi' fieldValue='1' checked='no' />
+					</inputParameter>
+					<inputParameter paramName='wing' fieldName='wing_id' fieldDesc='Wing' operator='eq' required='no' useroption='yes' bottomoption='yes' default='' datatype='int' fieldType='select' fieldSize='1' refSourceTable='wing' refSourceIDField='id' refSourceDescField='name' />
+					<inputParameter paramName='memberStatus' fieldName='active' fieldDesc='Member Status' operator='eq' required='no' useroption='yes' bottomoption='no' default='' datatype='int' fieldType='select' fieldSize='1'>
+					   <selectOption description='All' value='all' default='yes' />
+					   <selectOption description='Active' value='1' default='no' />
+					   <selectOption description='Inactive' value='0' default='no' />
+					</inputParameter>
+					<inputParameter paramName='renewalDateStart' fieldName='renewal_date' fieldDesc='Renewal Date' operator='ge' required='no' useroption='yes' bottomoption='no' default='' datatype='date' fieldType='text'  fieldSize='10' />
+					<inputParameter paramName='renewalDateEnd' fieldName='renewal_date' fieldDesc='Renewal Date' operator='le' required='no' useroption='yes' bottomoption='no' default='' datatype='date' fieldType='text'  fieldSize='10' />
+					<inputParameter paramName='memberClass' fieldName='member_class_id' fieldDesc='Member Class' operator='eq' required='no' useroption='yes' bottomoption='no' default='' datatype='int' fieldType='select' fieldSize='1' refSourceTable='member_class' refSourceIDField='id' refSourceDescField='name' />
+					<inputParameter paramName='mailingList' fieldName='member_class_id' fieldDesc='Mailing List' operator='eq' required='no' useroption='yes' bottomoption='no' default='' datatype='int' fieldType='select' fieldSize='1' refSourceTable='member_class' refSourceIDField='id' refSourceDescField='name' />
+					<inputParameter paramName='availability' fieldName='active' fieldDesc='Availability' operator='ge' required='no' useroption='yes' bottomoption='no' default='' datatype='bit' fieldType='select'  fieldSize='1'>
+					   <selectOption description='All' value='all' default='yes' />
+					   <selectOption description='Not Available' value='1' default='no' />
+					   <selectOption description='Available' value='0' default='no' />
+					   <selectOption description='Available' value='0' default='no' />
+					   <selectOption description='Available Weekdays' value='0' default='no' />
+					   <selectOption description='Available Weekends' value='0' default='no' />
+					   <selectOption description='Available Last Minute' value='0' default='no' />
+					</inputParameter>
+					<inputParameter paramName='birthdayMonth' fieldName='renewal_date' fieldDesc='Birthday Month' operator='le' required='no' useroption='yes' bottomoption='no' default='' datatype='integer' fieldType='text' fieldSize='2' />
+					<inputParameter paramName='disasterResponseStatus' fieldName='active' fieldDesc='Disaster Response' operator='ge' required='no' useroption='yes' bottomoption='no' default='monthstart' datatype='date' fieldType='select' fieldSize='1'>
+					   <selectOption description='All' value='all' default='yes' />
+					   <selectOption description='HSEATS 2Hr' value='HSEATS 2Hr' default='no' />
+					   <selectOption description='HSEATS 6Hr' value='HSEATS 2Hr' default='no' />
+					   <selectOption description='HSEATS Sustainer' value='HSEATS 2Hr' default='no' />
+					</inputParameter>
+					<inputParameter paramName='position' fieldName='active' fieldDesc='Member Status' operator='ge' required='no' useroption='yes' bottomoption='no' default='monthstart' datatype='date' fieldType='select' fieldSize='10'>
+					   <selectOption description='All' value='all' default='yes' />
+					   <selectOption description='Board Member' value='board_member' default='yes' />
+					   <selectOption description='Coordinator' value='coordinator' default='no' />
+					   <selectOption description='MOP' value='HSEATS 2Hr' default='no' />
+					</inputParameter>
+					<inputParameter paramName='memberWingJob' fieldName='memberWingJob' fieldDesc='Wing Jobs' operator='eq' required='no' useroption='yes' bottomoption='no' default='' datatype='int' fieldType='select' fieldSize='1' refSourceTable='wing_job' refSourceIDField='id' refSourceDescField='name' />
+					<inputParameter paramName='state' fieldName='state' fieldDesc='State' operator='le' required='yes' useroption='yes' bottomoption='no' default='' datatype='text' fieldType='select' fieldSize='1' populateSelect='us_states' />
+					<inputParameter paramName='homeBase' fieldName='homeBase' fieldDesc='Home Base' operator='le' required='no' useroption='yes' bottomoption='no' default='' datatype='text' fieldType='text' fieldSize='4' />
+					<inputParameter paramName='areaCode' fieldName='areaCode' fieldDesc='Area Code' operator='le' required='no' useroption='yes' bottomoption='no' default='' datatype='int' fieldType='text' fieldSize='3' />
+					<inputParameter paramName='email' fieldName='email' fieldDesc='Email Address' operator='le' required='no' useroption='yes' bottomoption='no' default='' datatype='text' fieldType='text' fieldSize='30' />
+				</inputParameters>
+				<orderByFields>
+					<orderByField type='ASC'>lastName</orderByField>
+					<orderByField type='ASC'>firstName</orderByField>
+				</orderByFields>
+			</dataset>
+			<pageSize>0</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Display' primary='yes' stylesheet='memberDirectory.xsl' newwindow='no' templateOption='afidFrame'/>
+				<outputformat type='print' description='Print' primary='no' stylesheet='memberDirectory_print.xsl' newwindow='no' templateOption='printFrame'/>
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='memberDirectory.xsl'/>
+			</outputformats>
+		</report>
+		<report>
+			<reportName>coordination_roster</reportName>
+			<title>Coordination Roster</title>
+			<category>Members</category>
+			<category_2></category_2>
+			<category_3></category_3>
+			<active>false</active>
+			<descriptionText></descriptionText>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='SELECT * FROM monthly_mission_report' commandType='adCmdText' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='startDate' fieldName='mission_date' fieldDesc='Start Date' operator='ge' required='yes' useroption='yes' bottomoption='yes' default='monthstart' datatype='date' fieldType='text'  fieldSize='10' />
+					<inputParameter paramName='endDate' fieldName='mission_date' fieldDesc='End Date' operator='le' required='yes' useroption='yes' bottomoption='yes' default='monthend' datatype='date' fieldType='text'  fieldSize='10' />
+				</inputParameters>
+				<orderByFields>
+					<orderByField type='ASC'>mission_date</orderByField>
+				</orderByFields>
+			</dataset>
+			<pageSize>0</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Display' primary='yes' stylesheet='defaultReport_table.xsl' newwindow='no' templateOption='afidFrame'>
+				</outputformat>
+				<outputformat type='print' description='Print' primary='no' stylesheet='afwPrintReport.xsl' newwindow='no' templateOption='printFrame'>
+				</outputformat>
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='defaultReport_table.xsl'/>
+			</outputformats>
+		</report>
+		<report>
+			<reportName>search_member_applications</reportName>
+			<title>Search Member Applications</title>
+			<category>Members</category>
+			<category_2></category_2>
+			<category_3></category_3>
+			<active>true</active>
+			<descriptionText></descriptionText>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='SELECT * FROM rp_application_search' commandType='adCmdText' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='lastName' fieldName='lastName' fieldDesc='Member Last Name' operator='eq' required='no' useroption='yes' bottomoption='no' default='' datatype='text' fieldType='text' fieldSize='25' />
+					<inputParameter paramName='refSource' fieldName='refSourceID' fieldDesc='Referral Source' operator='eq' required='no' useroption='yes' bottomoption='yes' default='' datatype='int' fieldType='select' fieldSize='1' refSourceTable='ref_source' refSourceIDField='id' refSourceDescField='source_name' />
+					<inputParameter paramName='companyName' fieldName='companyName' fieldDesc='Company Name' operator='eq' required='no' useroption='yes' bottomoption='no' default='' datatype='text' fieldType='text' fieldSize='25' />
+					<inputParameter paramName='companyPosition' fieldName='companyPosition' fieldDesc='Company Position' operator='eq' required='no' useroption='yes' bottomoption='no' default='' datatype='text' fieldType='text' fieldSize='25' />
+					<inputParameter paramName='companyMatchFunds' fieldName='companyMatchFunds' fieldDesc='Company Matches Funds' operator='eq' required='no' useroption='yes' bottomoption='no' default='' datatype='bit' fieldType='radio' fieldSize='1'>
+					   <radioOption description='No' value='0' default='yes' />
+					   <radioOption description='Yes' value='1' default='no' />
+					</inputParameter>
+					<inputParameter paramName='vocationClass' fieldName='vocationClassId' fieldDesc='Business Area' operator='eq' required='no' useroption='yes' bottomoption='no' default='' datatype='int' fieldType='select' fieldSize='1' refSourceTable='vocation_class' refSourceIDField='id' refSourceDescField='name' />
+					<inputParameter paramName='memberOf' fieldName='memberOf' fieldDesc='Member Of:' operator='eq' required='no' useroption='yes' bottomoption='no' default='0' datatype='bit' fieldType='checkbox'  fieldSize='0'>
+						<checkboxOption fieldName='memberKiwanis' description='Kiwanis' fieldValue='1' checked='no' />
+						<checkboxOption fieldName='memberRotary' description='Rotary' fieldValue='1' checked='no' />
+						<checkboxOption fieldName='memberLions' description='Lions' fieldValue='1' checked='no' />
+						<checkboxOption fieldName='member99s' description='The 99s' fieldValue='1' checked='no' />
+						<checkboxOption fieldName='memberWIA' description='Women in Aviation' fieldValue='1' checked='no' />
+					</inputParameter>
+					<inputParameter paramName='interests' fieldName='memberOf' fieldDesc='Areas of volunteer interest:' operator='eq' required='no' useroption='yes' bottomoption='no' default='0' datatype='bit' fieldType='checkbox' fieldSize='0'>
+						<checkboxOption fieldName='missionOrientation' description='Mission Orientation' fieldValue='1' checked='no' />
+						<checkboxOption fieldName='missionCoordination' description='Mission Coordination' fieldValue='1' checked='no' />
+						<checkboxOption fieldName='pilotRecruitment' description='Pilot Recruitment' fieldValue='1' checked='no' />
+						<checkboxOption fieldName='fundRaising' description='Fund raising' fieldValue='1' checked='no' />
+						<checkboxOption fieldName='celebrityContacts' description='Celebrity Contacts' fieldValue='1' checked='no' />
+						<checkboxOption fieldName='graphicArts' description='Graphic Arts' fieldValue='1' checked='no' />
+						<checkboxOption fieldName='hospitalOutreach' description='Hospital Outreach' fieldValue='1' checked='no'/>
+						<checkboxOption fieldName='eventPlanning' description='Event Planning' fieldValue='1' checked='no'/>
+						<checkboxOption fieldName='mediaRelations' description='Media Relations' fieldValue='1' checked='no'/>
+						<checkboxOption fieldName='telephoneWork' description='Telephone Work' fieldValue='1' checked='no'/>
+						<checkboxOption fieldName='computers' description='Computers' fieldValue='1' checked='no'/>
+						<checkboxOption fieldName='clerical' description='Clerical' fieldValue='1' checked='no'/>
+						<checkboxOption fieldName='printing' description='Printing' fieldValue='1' checked='no'/>
+						<checkboxOption fieldName='writing' description='Writing' fieldValue='1' checked='no'/>
+						<checkboxOption fieldName='speakersBureau' description='Speakers Bureau' fieldValue='1' checked='no'/>
+						<checkboxOption fieldName='wingTeam' description='Wing Team' fieldValue='1' checked='no'/>
+						<checkboxOption fieldName='webInternet' description='Web/Internet' fieldValue='1' checked='no'/>
+						<checkboxOption fieldName='foundationContacts' description='Foundation Contacts' fieldValue='1' checked='no'/>
+						<checkboxOption fieldName='aviationContacts' description='Aviation Contacts' fieldValue='1' checked='no'/>
+					</inputParameter>
+					<inputParameter paramName='state' fieldName='state' fieldDesc='State' operator='eq' required='yes' useroption='yes' bottomoption='no' default='' datatype='text' fieldType='select' fieldSize='1' populateSelect='us_states' />
+					<inputParameter paramName='disasterResponseInterest' fieldName='disasterResponseInterest' fieldDesc='Disaster Response Interest:' operator='eq' required='yes' useroption='yes' bottomoption='no' default='' datatype='bit' fieldType='radio' fieldSize='1'>
+					   <radioOption description='All' value='all' default='yes' />
+					   <radioOption description='Yes' value='1' default='no' />
+					   <radioOption description='No' value='0' default='no' />
+					</inputParameter>
+				</inputParameters>
+				<orderByFields>
+					<orderByField type='ASC'>lastName</orderByField>
+					<orderByField type='ASC'>personID</orderByField>
+					<orderByField type='DESC'>applicationDate</orderByField>
+				</orderByFields>
+			</dataset>
+			<pageSize>0</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Display' primary='yes' stylesheet='searchMemberApplications.xsl' newwindow='no' templateOption='afidFrame'>
+				</outputformat>
+				<outputformat type='print' description='Print' primary='no' stylesheet='afwPrintReport.xsl' newwindow='no' templateOption='printFrame'/>
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='searchMemberApplications.xsl'/>
+			</outputformats>
+		</report>
+		<report>
+			<reportName>monthly_mission_report</reportName>
+			<title>Monthly Mission Report</title>
+			<category>Statistics</category>
+			<category_2></category_2>
+			<category_3></category_3>
+			<active>true</active>
+			<descriptionText>Note that this summary only includes missions for which a mission report has been filed and approved. Before distributing, verify that there are no mission reports outstanding.</descriptionText>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='SELECT * FROM rp_monthly_missions' commandType='adCmdText' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='startDate' fieldName='mission_date' fieldDesc='Start Date' operator='ge' required='yes' useroption='yes' bottomoption='yes' default='monthstart' datatype='date' fieldType='text'  fieldSize='10' />
+					<inputParameter paramName='endDate' fieldName='mission_date' fieldDesc='End Date' operator='le' required='yes' useroption='yes' bottomoption='yes' default='monthend' datatype='date' fieldType='text'  fieldSize='10' />
+				</inputParameters>
+				<orderByFields>
+					<orderByField type='ASC'>mission_date</orderByField>
+				</orderByFields>
+			</dataset>
+			<pageSize>0</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Display' primary='yes' stylesheet='defaultReport_jquery.xsl' newwindow='no' templateOption='afidFrame'>
+					<column field="missiondate" label="Mission Date" width="20%" dataType="date" align="left" class=""/>
+					<column field="pilotName" label="Pilot" width="30%" dataType="text" align="left" class=""/>
+					<column field="legCount" label="# Legs" width="15%" dataType="number" align="right" class=""/>
+					<column field="hours" label="Hours" width="15%" dataType="number" align="right" class=""/>
+					<column field="legCost" label="Cost" width="20%" dataType="money" align="right" class=""/>
+					<column field="pilotCost" label="Pilot Cost" width="20%" dataType="money" align="right" class=""/>
+				</outputformat>
+				<outputformat type='print' description='Print' primary='no' stylesheet='afwPrintReport.xsl' newwindow='no' templateOption='printFrame'>
+					<column field="missiondate" label="Mission Date" width="20%" dataType="date" align="left" class=""/>
+					<column field="pilotName" label="Pilot" width="30%" dataType="text" align="left" class=""/>
+					<column field="legCount" label="# Legs" width="15%" dataType="number" align="right" class=""/>
+					<column field="hours" label="Hours" width="15%" dataType="number" align="right" class=""/>
+					<column field="legCost" label="Cost" width="20%" dataType="money" align="right" class=""/>
+					<column field="pilotCost" label="Pilot Cost" width="20%" dataType="money" align="right" class=""/>
+				</outputformat>
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='defaultReport_table.xsl'/>
+			</outputformats>
+		</report>
+		<report>
+			<reportName>coordinatorReportNewMembersByMissionLeg</reportName>
+			<title>Coordination Report: New Members Only</title>
+			<descriptionText>The following is a coordination contact list this mission leg. The list contains the names of Command Pilots who have not yet flown a mission and are based at either the origin or destination airport.</descriptionText>
+			<category>Coordinators</category>
+			<category_2></category_2>
+			<category_3></category_3>
+			<active>false</active>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='SELECT * FROM rp_missions_available_coordination WHERE missionCount = 0' commandType='adCmdText' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter fieldName='missionLegID' operator='eq' name='legID' required='yes' datatype='int' userinput='no' />
+				</inputParameters>
+				<orderByFields>
+					<orderByField type='DESC'>mission_date</orderByField>
+					<orderByField type='ASC'>externalID</orderByField>
+				</orderByFields>
+			</dataset>
+			<pageSize>0</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Normal' primary='yes' stylesheet='missions_available_coordination.xsl' newwindow='no'  templateOption='afidFrame' />
+			</outputformats>
+		</report>
+		<report>
+			<reportName>coordinatorReportAllMembersByMissionLeg</reportName>
+			<title>Coordination Report: All Members</title>
+			<descriptionText>The following is a coordination contact list this mission leg. The list contains the names of Command Pilots who are based at either the origin or destination airport.</descriptionText>
+			<category>Coordinators</category>
+			<category_2></category_2>
+			<category_3></category_3>
+			<active>false</active>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='SELECT * FROM rp_missions_available_coordination' commandType='adCmdText' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter fieldName='missionLegID' operator='eq' name='legID' required='yes' datatype='int' userinput='no' />
+				</inputParameters>
+				<orderByFields>
+					<orderByField type='DESC'>mission_date</orderByField>
+					<orderByField type='ASC'>externalID</orderByField>
+				</orderByFields>
+			</dataset>
+			<pageSize>0</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Normal' primary='yes' stylesheet='missions_available_coordination.xsl' newwindow='no'  templateOption='afidFrame' />
+			</outputformats>
+		</report>
+		<report>
+			<reportName>childrenPassengersReport</reportName>
+			<title>Child Passengers</title>
+			<descriptionText>The following report shows mission legs for all passengers who were under 18 years of age at the time of the mission.</descriptionText>
+			<category>Statistics</category>
+			<category_2></category_2>
+			<category_3></category_3>
+			<active>true</active>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='SELECT * FROM rp_children_passengers' commandType='adCmdText' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='startDate' fieldName='mission_date' fieldDesc='Start Date' operator='ge' required='no' useroption='yes' bottomoption='yes' default='monthstart' datatype='date' fieldType='text'  fieldSize='10' />
+					<inputParameter paramName='endDate' fieldName='mission_date' fieldDesc='End Date' operator='le' required='no' useroption='yes' bottomoption='yes' default='monthend' datatype='date' fieldType='text'  fieldSize='10' />
+					<inputParameter paramName='wing' fieldName='wing_id' fieldDesc='Wing' operator='eq' required='no' useroption='no' bottomoption='yes' default='' datatype='int' fieldType='select' fieldSize='1' refSourceTable='wing' refSourceIDField='id' refSourceDescField='name' />
+					<inputParameter paramName='origin' fieldName='originIdent' fieldDesc='Origin (ident)' operator='eq' required='no' useroption='yes' bottomoption='no' default='' datatype='text' fieldType='text' fieldSize='4' />
+					<inputParameter paramName='dest' fieldName='destIdent' fieldDesc='Destination (ident)' operator='eq' required='no' useroption='yes' bottomoption='no' default='' datatype='text' fieldType='text' fieldSize='4' />
+					<inputParameter paramName='passCounty' fieldName='passCounty' fieldDesc='Passenger County' operator='eq' required='no' useroption='yes' bottomoption='no' default='' datatype='text' fieldType='text' fieldSize='25' />
+					<inputParameter paramName='passLastName' fieldName='last_name' fieldDesc='Passenger Last Name' operator='eq' required='no' useroption='yes' bottomoption='no' default='' datatype='text' fieldType='text' fieldSize='25' />
+				</inputParameters>
+				<orderByFields>
+					<orderByField type='ASC'>mission_date</orderByField>
+				</orderByFields>
+			</dataset>
+			<pageSize>0</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Normal' primary='yes' stylesheet='childrenPassengersReport.xsl' newwindow='yes' templateOption='afidFrame' />
+				<outputformat type='print' description='Print' primary='no' stylesheet='childrenPassengersReport_print.xsl' newwindow='no' templateOption='printFrame' />
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='childrenPassengersReport.xsl'/>
+			</outputformats>
+		</report>
+		<report>
+			<reportName>alaskaAirlines</reportName>
+			<title>Alaska Airlines Report</title>
+			<descriptionText></descriptionText>
+			<category>Missions</category>
+			<category_2></category_2>
+			<category_3></category_3>
+			<active>true</active>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='SELECT mr.mission_date, concat_ws(" ", p.first_name,p.last_name) as passengerName, fa.ident as origin, ta.ident as destination, (case when (mr.airline_ref_number is Not Null) then mr.airline_ref_number else "" END) as VTA, (case when (`pa`.`illness` is null) then "" else pa.illness end) AS `illness` FROM mission m JOIN mission_leg ml on (m.id = ml.mission_id) JOIN passenger pa on (m.passenger_id = pa.id) JOIN person p on (pa.person_id = p.id) JOIN mission_report mr on (ml.mission_report_id = mr.id) JOIN airport fa on (ml.from_airport_id = fa.id) JOIN airport ta on (ml.to_airport_id = ta.id) WHERE pilot_id = 4028' commandType='adCmdText' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='startDate' fieldName='mr.mission_date' fieldDesc='Start Date' operator='ge' required='yes' useroption='yes' default='monthstart' datatype='date' fieldType='text' fieldSize='10' />
+					<inputParameter paramName='endDate' fieldName='mr.mission_date' fieldDesc='End Date' operator='le' required='yes' useroption='yes' default='monthend' datatype='date' fieldType='text' fieldSize='10' />
+				</inputParameters>
+				<orderByFields>
+					<orderByField type='ASC'>mr.mission_date</orderByField>
+				</orderByFields>
+			</dataset>
+			<pageSize>25</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Normal' primary='yes' stylesheet='defaultReport_jquery.xsl' newwindow='no' templateOption='afidFrame' >
+					<column field='missiondate' label='Mission Date' width='10%' dataType="date" align='left' class=""/>
+					<column field='passengerName' label='Passenger Name' dataType="text" width='25%' align='left' class="" />
+					<column field='origin' label='Origin' width='15%' dataType="text" align='left' class="" />
+					<column field='destination' label='Destination' dataType="text" width='15%' align='left' class="" />
+					<column field='VTA' label='VTA' width='10%' dataType="text" align='left' class="" />
+					<column field='illness' label='Illness' width='25%' dataType="text" align='left' class="" />
+				</outputformat>
+				<outputformat type='print' description='Print' primary='no' stylesheet='afwHTMLPrintReport.xsl' newwindow='no' templateOption='printFrame'>
+					<column field='missiondate' label='Mission Date' width='10%' align='left' />
+					<column field='passengerName' label='Passenger Name' width='25%' align='left' />
+					<column field='origin' label='Origin' width='15%' align='left' />
+					<column field='destination' label='Destination' width='15%' align='left' />
+					<column field='VTA' label='VTA' width='10%' align='left' />
+					<column field='illness' label='Illness' width='25%' align='left' />
+				</outputformat>
+				<outputformat type='download' description='Download' primary='no' stylesheet='' newwindow='yes' templateOption='afidFrame' >
+					<column field='missiondate' label='Mission Date' width='10%' align='left' />
+					<column field='passengerName' label='Passenger Name' width='25%' align='left' />
+					<column field='origin' label='Origin' width='15%' align='left' />
+					<column field='destination' label='Destination' width='15%' align='left' />
+					<column field='VTA' label='VTA' width='10%' align='left' />
+					<column field='illness' label='Illness' width='25%' align='left' />
+				</outputformat>
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='defaultReport_table.xsl'/>
+			</outputformats>
+		</report>
+		<report>
+			<reportName>campPassengers</reportName>
+			<title>Camp Passengers</title>
+			<descriptionText></descriptionText>
+			<category>Missions</category>
+			<category_2>Camps</category_2>
+			<category_3></category_3>
+			<active>true</active>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='SELECT * from camp_passengers' commandType='adCmdText' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='start_date' fieldName='missionSelectDate' fieldDesc='Start Date' operator='ge' required='no' useroption='yes' default='monthstart' datatype='date' fieldType='text'  fieldSize='10' />
+					<inputParameter paramName='end_date' fieldName='missionSelectDate' fieldDesc='End Date' operator='le' required='no' useroption='yes' default='monthend' datatype='date' fieldType='text'  fieldSize='10' />
+					<inputParameter paramName='requester_name' fieldName='reqLastName' fieldDesc='Requester Name' operator='like' required='no' useroption='yes' default='' datatype='text' fieldType='text'  fieldSize='20' />
+					<inputParameter paramName='camp_name' fieldName='camp_name' fieldDesc='Camp Name' operator='like' required='no' useroption='yes' default='' datatype='text' fieldType='text'  fieldSize='20' />
+					<inputParameter paramName='include_missions' fieldName='cancelled' fieldDesc='Include Missions' operator='eq' required='yes' useroption='yes' default='' datatype='text' fieldType='select' fieldSize='1'>
+					   <selectOption description='All' value='all' default='yes' />
+					   <selectOption description='Canceled Only' value='Is Not Null' default='no' />
+					   <selectOption description='Not Canceled Only' value='Is Null' default='no' />
+					</inputParameter>
+				</inputParameters>
+				<orderByFields>
+					<orderByField type='ASC'>missionSelectDate</orderByField>
+					<orderByField type='ASC'>passLastName</orderByField>
+					<orderByField type='ASC'>passFirstName</orderByField>
+				</orderByFields>
+			</dataset>
+			<pageSize>25</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Normal' primary='yes' stylesheet='campPassengers.xsl' newwindow='no' templateOption='afidFrame' />
+				<outputformat type='print' description='Print' primary='no' stylesheet='afwHTMLPrintReport.xsl' newwindow='no' templateOption='printFrame'/>
+				<outputformat type='download' description='Download' primary='no' stylesheet='' newwindow='yes' templateOption='afidFrame' />
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='campPassengers.xsl'/>
+			</outputformats>
+		</report>
+		<report>
+			<reportName>weekendSummary</reportName>
+			<title>Missions Summary</title>
+			<descriptionText></descriptionText>
+			<category>Missions</category>
+			<category_2></category_2>
+			<category_3></category_3>
+			<active>true</active>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='SELECT * FROM rp_weekend_summary' commandType='adCmdText' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='start_date' fieldName='mission_date' fieldDesc='Start Date' operator='ge' required='no' useroption='yes' bottomoption='yes' default='monthstart' datatype='date' fieldType='text'  fieldSize='10' />
+					<inputParameter paramName='end_date' fieldName='mission_date' fieldDesc='End Date' operator='le' required='no' useroption='yes' bottomoption='yes' default='monthend' datatype='date' fieldType='text'  fieldSize='10' />
+					<inputParameter paramName='requester_name' fieldName='reqlastName' fieldDesc='Requester Last Name' operator='like' required='no' useroption='yes'  bottomoption='no' default='' datatype='text' fieldType='text'  fieldSize='20' />
+					<inputParameter paramName='pilot_name' fieldName='pilotlastName' fieldDesc='Pilot Last Name' operator='like' required='no' useroption='yes' bottomoption='no' default='' datatype='text' fieldType='text'  fieldSize='20' />
+					<inputParameter paramName='passenger_name' fieldName='passlastName' fieldDesc='Passenger Last Name' operator='like' required='no' useroption='yes' bottomoption='no' default='' datatype='text' fieldType='text'  fieldSize='20' />
+					<inputParameter paramName='passenger_ac' fieldName='passAC' fieldDesc='Passenger Area Code' operator='eq' required='no' useroption='yes' bottomoption='no' default='' datatype='text' fieldType='text'  fieldSize='5' />
+					<inputParameter paramName='passenger_county' fieldName='countyName' fieldDesc='Passenger County' operator='like' required='no' useroption='yes' bottomoption='no' default='' datatype='text' fieldType='text'  fieldSize='15' />
+					<inputParameter paramName='passenger_city' fieldName='passCity' fieldDesc='Passenger City' operator='like' required='no' useroption='yes' bottomoption='no' default='' datatype='text' fieldType='text'  fieldSize='15' />
+					<inputParameter paramName='wing' fieldName='wing_id' fieldDesc='Wing' operator='eq' required='no' useroption='yes' bottomoption='yes' default='' datatype='int' fieldType='select' fieldSize='1' refSourceTable='wing' refSourceIDField='id' refSourceDescField='name' />
+					<inputParameter paramName='missionType' fieldName='missionTypeID' fieldDesc='Mission Type' operator='eq' required='no' useroption='yes' bottomoption='no' default='' datatype='int' fieldType='select' fieldSize='1' refSourceTable='mission_type' refSourceIDField='id' refSourceDescField='name' />
+					<inputParameter paramName='include_missions' fieldName='cancelled' fieldDesc='Mission Status' operator='eq' required='no' useroption='yes' bottomoption='no' default='' datatype='text' fieldType='select' fieldSize='1' refSourceTable='' refSourceIDField='' refSourceDescField='' >
+					   <selectOption description='Canceled Only' value='Is Not Null' default='no' />
+					   <selectOption description='Not Canceled Only' value='Is Null' default='no' />
+					</inputParameter>
+				</inputParameters>
+				<orderByFields>
+				</orderByFields>
+			</dataset>
+			<pageSize>25</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Normal' primary='yes' stylesheet='weekendSummary.xsl' newwindow='no' templateOption='afidFrame'/>
+				<outputformat type='print' description='Print' primary='no' stylesheet='weekendSummary.xsl' newwindow='no' templateOption='printFrame'/>
+				<outputformat type='download' description='Download' primary='no' stylesheet='' newwindow='yes' templateOption='afidFrame' />
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='weekendSummary.xsl'/>
+			</outputformats>
+		</report>
+		<report>
+			<reportName>outreachReport</reportName>
+			<title>Outreach Report</title>
+			<descriptionText></descriptionText>
+			<category>Missions</category>
+			<category_2></category_2>
+			<category_3></category_3>
+			<active>true</active>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='SELECT * FROM rp_outreach_report' commandType='adCmdText' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='start_date' fieldName='mission_date' fieldDesc='Start Date' operator='ge' required='no' useroption='yes' bottomoption='yes' default='monthstart' datatype='date' fieldType='text'  fieldSize='10' />
+					<inputParameter paramName='end_date' fieldName='mission_date' fieldDesc='End Date' operator='le' required='no' useroption='yes' bottomoption='yes' default='monthend' datatype='date' fieldType='text'  fieldSize='10' />
+					<inputParameter paramName='agencyState' fieldName='agencyState' fieldDesc='Agency State' operator='eq' required='no' useroption='yes'  bottomoption='yes' default='' datatype='text' fieldType='text'  fieldSize='2' />
+					<inputParameter paramName='passState' fieldName='passState' fieldDesc='Passenger State' operator='eq' required='no' useroption='yes'  bottomoption='yes' default='' datatype='text' fieldType='text'  fieldSize='2' />
+					<inputParameter paramName='include_missions' fieldName='cancelled' fieldDesc='Mission Status' operator='eq' required='no' useroption='yes' bottomoption='no' default='' datatype='text' fieldType='select' fieldSize='1' refSourceTable='' refSourceIDField='' refSourceDescField='' >
+					   <selectOption description='Canceled Only' value='Is Not Null' default='no' />
+					   <selectOption description='Not Canceled Only' value='Is Null' default='no' />
+					</inputParameter>
+				</inputParameters>
+				<orderByFields>
+					<orderByField type='ASC'>mission_date</orderByField>
+				</orderByFields>
+			</dataset>
+			<pageSize>25</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Normal' primary='yes' stylesheet='outreachReport.xsl' newwindow='no' templateOption='afidFrame'/>
+				<outputformat type='print' description='Print' primary='no' stylesheet='outreachReport.xsl' newwindow='no' templateOption='printFrame'/>
+				<outputformat type='download' description='Download' primary='no' stylesheet='' newwindow='yes' templateOption='afidFrame' />
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='outreachReport.xsl'/>
+			</outputformats>
+		</report>
+		<report>
+			<reportName>originDestination</reportName>
+			<title>Origin Destination Summary Report</title>
+			<descriptionText>This report lists missions with the first origin and ultimate destination of the mission for all missions, including multi-leg missions.</descriptionText>
+			<category>Missions</category>
+			<category_2></category_2>
+			<category_3></category_3>
+			<active>true</active>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='SELECT * FROM rp_missions_origin_destination' commandType='adCmdText' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='start_date' fieldName='mission_date' fieldDesc='Start Date' operator='ge' required='yes' useroption='yes' default='monthstart' datatype='date' fieldType='text'  fieldSize='10' />
+					<inputParameter paramName='end_date' fieldName='mission_date' fieldDesc='End Date' operator='le' required='yes' useroption='yes' default='monthend' datatype='date' fieldType='text'  fieldSize='10' />
+				</inputParameters>
+				<orderByFields>
+					<orderByField type='ASC'>mission_date</orderByField>
+				</orderByFields>
+			</dataset>
+			<pageSize>25</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Normal' primary='yes' stylesheet='defaultReport_jquery.xsl' newwindow='no' templateOption='afidFrame' >
+					<column field='externalID' label='Mission#' width='10%' align='left' />
+					<column field='missionDateDisplay' label='Mission Date' width='10%' align='left' />
+					<column field='originID' label='Origin' width='15%' align='left' />
+					<column field='originCity' label='City' width='20%' align='left' />
+					<column field='destID' label='Destination' width='15%' align='left' />
+					<column field='destCity' label='City' width='20%' align='left' />
+					<column field='legCount' label='#Legs' width='10%' align='left' />
+				</outputformat>
+				<outputformat type='print' description='Print' primary='no' stylesheet='afwHTMLPrintReport.xsl' newwindow='no' templateOption='printFrame'>
+					<column field='externalID' label='Mission#' width='10%' align='left' />
+					<column field='missionDateDisplay' label='Mission Date' width='10%' align='left' />
+					<column field='originID' label='Origin Ident' width='15%' align='left' />
+					<column field='originCity' label='City' width='20%' align='left' />
+					<column field='destID' label='Destination' width='15%' align='left' />
+					<column field='destCity' label='City' width='20%' align='left' />
+					<column field='legCount' label='#Legs' width='10%' align='left' />				
+				</outputformat>
+				<outputformat type='pdf' description='Create PDF' primary='no' stylesheet='afwPDFPrintReport.xsl' newwindow='yes' templateOption='afidFrame' >
+					<column field='externalID' label='Mission#' width='10%' align='left' />
+					<column field='missionDateDisplay' label='Mission Date' width='10%' align='left' />
+					<column field='originID' label='Origin Ident' width='15%' align='left' />
+					<column field='originCity' label='City' width='20%' align='left' />
+					<column field='destID' label='Destination' width='15%' align='left' />
+					<column field='destCity' label='City' width='20%' align='left' />
+					<column field='legCount' label='#Legs' width='10%' align='left' />
+				</outputformat>
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='defaultReport_table.xsl'/>
+			</outputformats>
+		</report>
+		<report>
+			<reportName>originDestinationLegs</reportName>
+			<title>Mission Legs Origin Destination Summary Report</title>
+			<descriptionText>This report lists all mission legs flown with the origin and destination of the mission leg.</descriptionText>
+			<category>Missions</category>
+			<category_2></category_2>
+			<category_3></category_3>
+			<active>true</active>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='SELECT * FROM rp_mission_legs_origin_destination' commandType='adCmdText' commandTimeout='60' ajaxload="true">
+				<inputParameters>
+					<inputParameter paramName='startDate' fieldName='mission_date' fieldDesc='Start Date' operator='ge' required='yes' useroption='yes' bottomoption='yes' default='monthstart' datatype='date' fieldType='text'  fieldSize='10' />
+					<inputParameter paramName='endDate' fieldName='mission_date' fieldDesc='End Date' operator='le' required='yes' useroption='yes' bottomoption='yes' default='monthend' datatype='date' fieldType='text'  fieldSize='10' />
+					<inputParameter paramName='afaLegs' fieldName='isFlown' fieldDesc='Include' operator='eq' required='no' useroption='yes' bottomoption='yes' default='' datatype='text' fieldType='select' fieldSize='1' refSourceTable='' refSourceIDField='' refSourceDescField='' >
+					   <selectOption description='Org Legs Only' value='1' default='yes' />
+					   <selectOption description='All legs' value='' default='no' />
+					</inputParameter>
+				</inputParameters>
+				<orderByFields>
+					<orderByField type='ASC'>missionDate</orderByField>
+					<orderByField type='ASC'>externalID</orderByField>
+					<orderByField type='ASC'>legNumber</orderByField>
+				</orderByFields>
+			</dataset>
+			<pageSize>25</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Normal' primary='yes' stylesheet='missionLegsOriginDestination.xsl' newwindow='no' templateOption='afidFrame'>
+					<column field='missionNo' label='Mission#' width='10%' align='left' />
+					<column field='missionDisplayDate' label='Date' width='10%' align='left' />
+					<column field='origin' label='Origin' width='10%' align='left' />
+					<column field='destination' label='Destination' width='10%' align='left' />
+					<column field='wingName' label='Wing' width='10%' align='left' />
+				</outputformat>
+				<outputformat type='print' description='Print' primary='no' stylesheet='missionLegsOriginDestination.xsl' newwindow='no' templateOption='printFrame'/>
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='missionLegsOriginDestination.xsl'/>
+			</outputformats>
+		</report>
+		<report>
+			<reportName>originDestinationAFA</reportName>
+			<title>Origin Destination Summary Report (ACN Legs)</title>
+			<descriptionText>This report lists missions with the first origin and ultimate destination of the mission for all missions, including multi-leg missions. This report includes ACN Legs.  For non-ACN legs, the report includes only mission legs with approved mission reports. The wing represented is the wing of the pilot who flew the first non-ACN leg.</descriptionText>
+			<category>Missions</category>
+			<category_2></category_2>
+			<category_3></category_3>
+			<active>false</active>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='SELECT * FROM missionsOriginDestinationAFA' commandType='adCmdText' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='start_date' fieldName='missionDate' fieldDesc='Start Date' operator='ge' required='yes' useroption='yes' default='monthstart' datatype='date' fieldType='text'  fieldSize='10' />
+					<inputParameter paramName='end_date' fieldName='missionDate' fieldDesc='End Date' operator='le' required='yes' useroption='yes' default='monthend' datatype='date' fieldType='text'  fieldSize='10' />
+					<inputParameter paramName='wing' fieldName='wingID' fieldDesc='Wing' operator='eq' required='no' useroption='yes' bottomoption='yes' default='' datatype='int' fieldType='select' fieldSize='1' refSourceTable='wings' refSourceIDField='wingID' refSourceDescField='name' />
+				</inputParameters>
+				<orderByFields>
+					<orderByField type='ASC'>missionDate</orderByField>
+				</orderByFields>
+			</dataset>
+			<pageSize>25</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Normal' primary='yes' stylesheet='missionsOriginDestination.xsl' newwindow='no' templateOption='afidFrame'/>
+				<outputformat type='print' description='Print' primary='no' stylesheet='missionsOriginDestination.xsl' newwindow='no' templateOption='printFrame'/>
+				<outputformat type='pdf' description='Create PDF' primary='no' stylesheet='missionsOriginDestination.xsl' newwindow='yes' templateOption='afidFrame' />
+			</outputformats>
+		</report>
+		<report>
+			<reportName>originDestinationLegsAFA</reportName>
+			<title>Mission Legs Origin Destination Summary Report (ACN)</title>
+			<descriptionText>This report lists all mission legs flown with the origin and destination of the mission leg. This report includes ACN legs. For non-ACN legs, the report includes only mission legs with approved mission reports.</descriptionText>
+			<category>Missions</category>
+			<category_2></category_2>
+			<category_3></category_3>
+			<active>false</active>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='SELECT * FROM missionLegsOriginDestinationAFA' commandType='adCmdText' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='start_date' fieldName='missionDate' fieldDesc='Start Date' operator='ge' required='yes' useroption='yes' default='monthstart' datatype='date' fieldType='text'  fieldSize='10' />
+					<inputParameter paramName='end_date' fieldName='missionDate' fieldDesc='End Date' operator='le' required='yes' useroption='yes' default='monthend' datatype='date' fieldType='text'  fieldSize='10' />
+					<inputParameter paramName='wing' fieldName='wingID' fieldDesc='Wing' operator='eq' required='no' useroption='yes' bottomoption='yes' default='' datatype='int' fieldType='select' fieldSize='1' refSourceTable='wings' refSourceIDField='wingID' refSourceDescField='name' />
+				</inputParameters>
+				<orderByFields>
+					<orderByField type='ASC'>missionDate</orderByField>
+					<orderByField type='ASC'>externalID</orderByField>
+					<orderByField type='ASC'>legNumber</orderByField>
+				</orderByFields>
+			</dataset>
+			<pageSize>25</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Normal' primary='yes' stylesheet='missionLegsOriginDestinationAFA.xsl' newwindow='no' templateOption='afidFrame'/>
+				<outputformat type='print' description='Print' primary='no' stylesheet='missionLegsOriginDestinationAFA.xsl' newwindow='no' templateOption='printFrame'/>
+				<outputformat type='pdf' description='Create PDF' primary='no' stylesheet='missionLegsOriginDestinationAFA.xsl' newwindow='yes' templateOption='afidFrame' />
+			</outputformats>
+		</report>
+		<report>
+			<reportName>deceasedPersons</reportName>
+			<title>Deceased Persons Report</title>
+			<descriptionText>Persons who are listed as being deceased.</descriptionText>
+			<category>People</category>
+			<category_2></category_2>
+			<category_3></category_3>
+			<active>true</active>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='SELECT * from rp_deceased_persons' commandType='adCmdText' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='start_date' fieldName='deceased_date' fieldDesc='Start Date' operator='ge' required='yes' useroption='yes' bottomoption='yes' default='monthstart' datatype='date' fieldType='text'  fieldSize='10' />
+					<inputParameter paramName='end_date' fieldName='deceased_date' fieldDesc='End Date' operator='le' required='yes' useroption='yes' bottomoption='yes' default='monthend' datatype='date' fieldType='text'  fieldSize='10' />
+				</inputParameters>
+				<orderByFields>
+					<orderByField type='ASC'>deceased_date</orderByField>
+				</orderByFields>
+			</dataset>
+			<pageSize>25</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Normal' primary='yes' stylesheet='defaultReport_jquery.xsl' newwindow='no' templateOption='afidFrame' >
+					<column field='personName' label='Deceased Date' width='15%' align='left' dataType="text"/>
+					<column field='deceasedDate' label='Person Name' width='35%' align='left' dataType="date" />
+					<column field='deceasedComment' label='Comment' width='50%' align='left' dataType="text" />
+				</outputformat>
+				<outputformat type='print' description='Print' primary='no' stylesheet='afwHTMLPrintReport.xsl' newwindow='no' templateOption='printFrame'>
+					<column field='personName' label='Deceased Date' width='15%' align='left' dataType="text" />
+					<column field='deceasedDate' label='Person Name' width='35%' align='left' dataType="date" />
+					<column field='deceasedComment' label='Comment' width='50%' align='left' dataType="text" />
+				</outputformat>
+				<outputformat type='download' description='Download' primary='no' newwindow='yes' templateOption='afidFrame' >
+					<column field='personName' label='Deceased Date' width='15%' align='left' dataType="text" />
+					<column field='deceasedDate' label='Person Name' width='35%' align='left' dataType="date" />
+					<column field='deceasedComment' label='Comment' width='50%' align='left' dataType="text" />
+				</outputformat>
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='defaultReport_table.xsl'>
+					<column field='personName' label='Deceased Date' width='15%' align='left' dataType="text" />
+					<column field='deceasedDate' label='Person Name' width='35%' align='left' dataType="date" />
+					<column field='deceasedComment' label='Comment' width='50%' align='left' dataType="text" />
+				</outputformat>
+			</outputformats>
+		</report>
+		<report>
+			<reportName>membersTotalHours</reportName>
+			<title>Members Total Hours</title>
+			<descriptionText>Lists active pilot members and their flight hours on record.</descriptionText>
+			<category>Members</category>
+			<category_2></category_2>
+			<category_3></category_3>
+			<active>true</active>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='SELECT concat_ws(" ",`p`.`first_name`,`p`.`last_name`) AS `personName`, m.wing_id as wingID, m.flight_status as flightStatus, pilot.total_hours as totalHours FROM person p JOIN member m ON (p.id = m.person_id) JOIN pilot ON (m.id = pilot.member_id) WHERE active = 1' commandType='adCmdText' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='wing' fieldName='wing_id' fieldDesc='Wing' operator='eq' required='no' useroption='yes' bottomoption='yes' default='' datatype='int' fieldType='select' fieldSize='1' refSourceTable='wing' refSourceIDField='id' refSourceDescField='name' />
+					<inputParameter paramName='lastName' fieldName='p.last_name' fieldDesc='Pilot Last Name' operator='eq' required='no' useroption='yes' bottomoption='yes' default='' datatype='text' fieldType='text' fieldSize='30' />
+					<inputParameter paramName='min_total' fieldName='pilot.total_hours' fieldDesc='Minimum Total Hours' operator='ge' required='no' useroption='yes' bottomoption='yes' default='' datatype='integer' fieldType='text' fieldSize='5' />
+					<inputParameter paramName='max_total' fieldName='pilot.total_hours' fieldDesc='Maximum Total Hours' operator='le' required='no' useroption='yes' bottomoption='yes' default='' datatype='integer' fieldType='text' fieldSize='5' />
+				</inputParameters>
+				<orderByFields>
+					<orderByField type='ASC'>p.last_name</orderByField>
+				</orderByFields>
+			</dataset>
+			<pageSize>25</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Normal' primary='yes' stylesheet='defaultReport_jquery.xsl' newwindow='no' templateOption='afidFrame' >
+					<column field='personName' label='Member Name' width='70%' align='left' />
+					<column field='flightStatus' label='Flight Status' width='10%' align='left' dataType="text"/>
+					<column field='totalHours' label='Total Hours' width='10%' align='right' dataType="number"/>
+				</outputformat>
+				<outputformat type='print' description='Print' primary='no' stylesheet='afwHTMLPrintReport.xsl' newwindow='no' templateOption='printFrame'>
+					<column field='personName' label='Member Name' width='70%' align='left' />
+					<column field='flightStatus' label='Flight Status' width='10%' align='left' dataType="text"/>
+					<column field='totalHours' label='Total Hours' width='10%' align='right' dataType="number"/>
+				</outputformat>
+				<outputformat type='download' description='Download' primary='no' stylesheet='' newwindow='yes' templateOption='afidFrame' >
+					<column field='personName' label='Member Name' width='70%' align='left' />
+					<column field='flightStatus' label='Flight Status' width='10%' align='left' dataType="text"/>
+					<column field='totalHours' label='Total Hours' width='10%' align='right' dataType="number"/>
+				</outputformat>
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='defaultReport_table.xsl'>				
+					<column field='personName' label='Member Name' width='70%' align='left' />
+					<column field='flightStatus' label='Flight Status' width='10%' align='left' dataType="text"/>
+					<column field='totalHours' label='Total Hours' width='10%' align='right' dataType="number"/>
+				</outputformat>			
+			</outputformats>
+		</report>
+		<report>
+			<reportName>hseats</reportName>
+			<title>Pilots Disaster Response Status</title>
+			<descriptionText>Lists pilot members and their Disaster Response Program status.</descriptionText>
+			<category>Members</category>
+			<category_2></category_2>
+			<category_3></category_3>
+			<active>true</active>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='SELECT * FROM rp_disaster_response_status' commandType='adCmdText' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='lastName' fieldName='lastName' fieldDesc='Pilot Last Name' operator='eq' required='no' useroption='yes' default='' datatype='text' fieldType='text' fieldSize='30' />
+					<inputParameter paramName='wing' fieldName='wingID' fieldDesc='Wing' operator='eq' required='no' useroption='yes' bottomoption='yes' default='' datatype='int' fieldType='select' fieldSize='1' refSourceTable='wing' refSourceIDField='id' refSourceDescField='name' />
+					<inputParameter paramName='county' fieldName='county' fieldDesc='County' operator='eq' required='no' useroption='yes' default='' datatype='text' fieldType='text' fieldSize='30' />
+					<inputParameter paramName='flightStatus' fieldName='flightStatus' fieldDesc='Flight Status' operator='eq' required='no' useroption='yes' bottomoption='yes' default='' datatype='text' fieldType='select' fieldSize='1' refSourceTable='' refSourceIDField='' refSourceDescField='' >
+					   <selectOption description='Non-Pilot' value='Non-pilot' default='no' />
+					   <selectOption description='Verify Orientation' value='Verify Orientation' default='no' />
+					   <selectOption description='Command Pilot' value='Command Pilot' default='no' />
+					</inputParameter>
+					<inputParameter paramName='hseats' fieldName='disasterResponse' fieldDesc='Disaster Response Status' operator='eq' required='no' useroption='yes' bottomoption='yes' default='' datatype='text' fieldType='select' fieldSize='1' refSourceTable='' refSourceIDField='' refSourceDescField='' >
+					   <selectOption description='Active' value='Active' default='yes' />
+					   <selectOption description='Not Active' value='is Null' default='no' />
+					</inputParameter>
+				</inputParameters>
+				<orderByFields>
+					<orderByField type='ASC'>lastName</orderByField>
+				</orderByFields>
+			</dataset>
+			<pageSize>25</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Normal' primary='yes' stylesheet='defaultReport_jquery.xsl' newwindow='no' templateOption='afidFrame' >
+					<column field='personName' label='Member Name' width='50%' align='left' dataType='text'/>
+					<column field='disasterResponse' label='Disaster Response Status' width='25%' align='left' dataType='text'/>
+					<column field='flightStatus' label='Flight Status' width='25%' align='left' dataType='text'/>
+				</outputformat>
+				<outputformat type='print' description='Print' primary='no' stylesheet='afwPrintReport.xsl' newwindow='no' templateOption='printFrame'>
+					<column field='personName' label='Member Name' width='80%' align='left' dataType='text'/>
+					<column field='disasterResponse' label='Disaster Response Status' width='20%' align='right' dataType='text'/>
+				</outputformat>
+				<outputformat type='download' description='Download' primary='no' newwindow='yes' templateOption='afidFrame' >
+					<column field='personName' label='Member Name' width='80%' align='left' dataType='text'/>
+					<column field='disasterResponse' label='Disaster Response Status' width='20%' align='right' dataType='text'/>
+				</outputformat>
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='defaultReport_table.xsl'>				
+					<column field='personName' label='Member Name' width='80%' align='left' dataType='text'/>
+					<column field='disasterResponse' label='Disaster Response Status' width='20%' align='right' dataType='text'/>
+				</outputformat>
+			</outputformats>
+		</report>
+		<report>
+			<reportName>campCounts</reportName>
+			<title>Camp Mission Legs</title>
+			<descriptionText>Lists Camp mission legs</descriptionText>
+			<category>Missions</category>
+			<category_2>Camps</category_2>
+			<category_3></category_3>
+			<active>true</active>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='SELECT * FROM rp_camp_count' commandType='adCmdText' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='startDate' fieldName='missionDate' fieldDesc='Start Date' operator='ge' required='no' useroption='yes' bottomoption='yes' default='monthstart' datatype='date' fieldType='text'  fieldSize='10' />
+					<inputParameter paramName='endDate' fieldName='missionDate' fieldDesc='End Date' operator='le' required='no' useroption='yes' bottomoption='yes' default='monthend' datatype='date' fieldType='text'  fieldSize='10' />
+					<inputParameter paramName='campState' fieldName='airportState' fieldDesc='Camp State (airport)' operator='eq' required='no' useroption='yes' default='' datatype='text' fieldType='text' fieldSize='2' />
+					<inputParameter paramName='agencyName' fieldName='agencyName' fieldDesc='Agency Name' operator='like' required='no' useroption='yes' default='' datatype='text' fieldType='text' fieldSize='30' />
+				</inputParameters>
+				<orderByFields>
+					<orderByField type='ASC'>campName</orderByField>
+				</orderByFields>
+			</dataset>
+			<pageSize>25</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Normal' primary='yes' stylesheet='defaultReport_jquery.xsl' newwindow='no' templateOption='afidFrame' >
+					<column field='campName' label='Camp Name' width='55%' align='left' dataType="text" totalColumn='no'/>
+					<column field='legCount' label='Mission Legs' width='15%' align='right' dataType="number" totalColumn='yes'/>
+					<column field='cancelledCount' label='Cancelled Legs' width='15%' align='right' dataType="number" totalColumn='yes'/>
+					<column field='approvedCount' label='Approved Legs' width='15%' align='right' dataType="number" totalColumn='yes'/>
+				</outputformat>
+				<outputformat type='print' description='Print' primary='no' stylesheet='afwHTMLPrintReport.xsl' newwindow='no' templateOption='printFrame'>
+					<column field='campName' label='Camp Name' width='55%' align='left' />
+					<column field='legCount' label='Mission Legs' width='15%' align='right' />
+					<column field='cancelledCount' label='Cancelled Legs' width='15%' align='right' />
+					<column field='approvedCount' label='Approved Legs' width='15%' align='right' />
+				</outputformat>
+				<outputformat type='download' description='Download' primary='no' newwindow='yes' templateOption='afidFrame' >
+					<column field='campName' label='Camp Name' width='55%' align='left' />
+					<column field='legCount' label='Mission Legs' width='15%' align='right' />
+					<column field='cancelledCount' label='Cancelled Legs' width='15%' align='right' />
+					<column field='approvedCount' label='Approved Legs' width='15%' align='right' />
+				</outputformat>
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='defaultReport_table.xsl'>	
+					<column field='campName' label='Camp Name' width='55%' align='left' />
+					<column field='legCount' label='Mission Legs' width='15%' align='right' />
+					<column field='cancelledCount' label='Cancelled Legs' width='15%' align='right' />
+					<column field='approvedCount' label='Approved Legs' width='15%' align='right' />
+				</outputformat>
+			</outputformats>
+		</report>
+		<report>
+			<reportName>newMembers</reportName>
+			<title>New Member Status</title>
+			<descriptionText></descriptionText>
+			<category>Members</category>
+			<category_2>New Members</category_2>
+			<category_3></category_3>
+			<active>true</active>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='SELECT * FROM rp_new_member_status' commandType='adCmdText' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='wing' fieldName='wing_id' fieldDesc='Wing' operator='eq' required='no' useroption='yes' bottomoption='yes' default='' datatype='int' fieldType='select' fieldSize='1' refSourceTable='wing' refSourceIDField='id' refSourceDescField='name' />
+					<inputParameter paramName='startDate' fieldName='joinDateSort' fieldDesc='Join Date Start' operator='ge' required='no' useroption='yes' bottomoption='yes' default='monthstart' datatype='date' fieldType='text'  fieldSize='10' />
+					<inputParameter paramName='endDate' fieldName='joinDateSort' fieldDesc='Join Date End' operator='le' required='no' useroption='yes' bottomoption='yes' default='monthend' datatype='date' fieldType='text'  fieldSize='10' />
+				</inputParameters>
+				<orderByFields>
+					<orderByField type='ASC'>joinDateSort</orderByField>
+				</orderByFields>
+			</dataset>
+			<pageSize>25</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Normal' primary='yes' stylesheet='newMembers.xsl' newwindow='no' templateOption='afidFrame' />
+				<outputformat type='print' description='Print' primary='no' stylesheet='newMembers.xsl' newwindow='no' templateOption='printFrame' />
+				<outputformat type='download' description='Download' primary='no' stylesheet='newMembers.xsl' newwindow='yes' templateOption='afidFrame' />
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='newMembers.xsl'/>	
+			</outputformats>
+		</report>
+		<report>
+			<reportName>newMembersNeedingBadge</reportName>
+			<title>New Members Needing Badge or Notebook</title>
+			<descriptionText>Recent members who have not yet received a badge or notebook</descriptionText>
+			<category>Members</category>
+			<category_2>New Members</category_2>
+			<category_3></category_3>
+			<active>true</active>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='SELECT * FROM rp_new_member_badge' commandType='adCmdText' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='wing' fieldName='wing_id' fieldDesc='Wing' operator='eq' required='no' useroption='yes' bottomoption='yes' default='' datatype='int' fieldType='select' fieldSize='1' refSourceTable='wing' refSourceIDField='id' refSourceDescField='name' />
+				</inputParameters>
+				<orderByFields>
+					<orderByField type='ASC'>joinDateSort</orderByField>
+				</orderByFields>
+			</dataset>
+			<pageSize>25</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Display' primary='yes' stylesheet='newMembersNeedingBadge.xsl' newwindow='no' templateOption='afidFrame'/>
+				<outputformat type='print' description='Print' primary='no' stylesheet='newMembersNeedingBadge_print.xsl' newwindow='no' templateOption='afidFrame' />
+				<outputformat type='download' description='Download' primary='no' stylesheet='' newwindow='yes' templateOption='afidFrame' />
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='newMembersNeedingBadge.xsl'/>
+			</outputformats>
+		</report>
+		<report>
+			<reportName>membersNoMissions</reportName>
+			<title>Command Pilots who have not Flown a Mission</title>
+			<descriptionText>Lists active command pilots who have not yet flown a mission.</descriptionText>
+			<category>Members</category>
+			<category_2></category_2>
+			<category_3></category_3>
+			<active>true</active>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='SELECT * FROM rp_members_no_missions' commandType='adCmdText' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='wing' fieldName='wing_id' fieldDesc='Wing' operator='eq' required='no' useroption='yes' bottomoption='yes' default='' datatype='int' fieldType='select' fieldSize='1' refSourceTable='wing' refSourceIDField='id' refSourceDescField='name' />
+					<inputParameter paramName='county' fieldName='county' fieldDesc='Member County' operator='like' required='no' useroption='yes' bottomoption='no' default='' datatype='text' fieldType='text'  fieldSize='30' />
+					<inputParameter paramName='areacode' fieldName='memberAC' fieldDesc='Member Area Code' operator='eq' required='no' useroption='yes' bottomoption='yes' default='' datatype='text' fieldType='text' fieldSize='3' />
+					<inputParameter paramName='zipcode' fieldName='zipcode' fieldDesc='Member Zip Code' operator='like' required='no' useroption='yes' bottomoption='yes' default='' datatype='text' fieldType='text' fieldSize='10' />
+				</inputParameters>
+				<orderByFields>
+					<orderByField type='ASC'>joinDateSort</orderByField>
+				</orderByFields>
+			</dataset>
+			<pageSize>25</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Normal' primary='yes' stylesheet='membersNoMissions.xsl' newwindow='no' templateOption='afidFrame' />
+				<outputformat type='print' description='Print' primary='no' stylesheet='membersNoMissions.xsl' newwindow='no' templateOption='printFrame' />
+				<outputformat type='download' description='Download' primary='no' stylesheet='' newwindow='yes' templateOption='afidFrame' />
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='membersNoMissions.xsl'/>
+			</outputformats>
+		</report>
+		<report>
+			<reportName>flightStatusWing</reportName>
+			<title>Flight Status by Wing</title>
+			<descriptionText>Currently active members showing flight status by wing.</descriptionText>
+			<category>Members</category>
+			<category_2></category_2>
+			<category_3></category_3>
+			<active>true</active>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='SELECT * FROM rp_flight_status_wing' commandType='adCmdText' commandTimeout='60'>
+				<inputParameters />
+				<orderByFields />
+			</dataset>
+			<pageSize>25</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Normal' primary='yes' stylesheet='defaultReport_table.xsl' newwindow='no' templateOption='afidFrame' >
+					<column field='wingName' label='Wing' width='40%' align='left' dataType="text" totalColumn="no"/>
+					<column field='commandPilot' label='Command Pilot' width='10%' align='right' dataType="number" totalColumn="yes"  />
+					<column field='nonPilot' label='Non-Pilot' width='10%' align='right' dataType="number" totalColumn="yes"  />
+					<column field='verifyOrientation' label='Verify Orientation' width='10%' align='right' dataType="number" totalColumn="yes"  />
+					<column field='groundAngel' label='Ground Angel' width='10%' align='right' dataType="number" totalColumn="yes" />
+					<column field='missionAssistant' label='Mission Assistant' width='10%' align='right' dataType="number" totalColumn="yes" />
+					<column field='totalCount' label='Total' width='10%' align='right' dataType="number" totalColumn="yes" />
+				</outputformat>
+				<outputformat type='print' description='Print' primary='no' stylesheet='afwHTMLReport.xsl' newwindow='no' templateOption='afidFrame' >
+					<column field='wingName' label='Wing' width='40%' align='left' dataType="text" totalColumn="no"  />
+					<column field='commandPilot' label='Command Pilot' width='10%' align='left' dataType="number" totalColumn="yes" />
+					<column field='nonPilot' label='Non-Pilot' width='10%' align='left' dataType="number" totalColumn="yes" />
+					<column field='verifyOrientation' label='Verify Orientation' width='10%' align='left' dataType="number" totalColumn="yes"  />
+					<column field='groundAngel' label='Ground Angel' width='10%' align='left' dataType="number" totalColumn="yes"  />
+					<column field='missionAssistant' label='Mission Assistant' width='10%' align='left' dataType="number" totalColumn="yes"  />
+					<column field='totalCount' label='Total' width='10%' align='left'  dataType="number" totalColumn="yes" />
+
+				</outputformat>
+				<outputformat type='download' description='Download' primary='no' stylesheet='' newwindow='no' templateOption='afidFrame' >
+					<column field='wingName' label='Wing' width='40%' align='left' dataType="text" totalColumn="no"  />
+					<column field='commandPilot' label='Command Pilot' width='10%' align='left' dataType="number" totalColumn="yes"  />
+					<column field='nonPilot' label='Non-Pilot' width='10%' align='left'  dataType="number" totalColumn="yes" />
+					<column field='verifyOrientation' label='Verify Orientation' width='10%' align='left'  dataType="number" totalColumn="yes" />
+					<column field='groundAngel' label='Ground Angel' width='10%' align='left'  dataType="number" totalColumn="yes" />
+					<column field='missionAssistant' label='Mission Assistant' width='10%' align='left' dataType="number" totalColumn="yes"  />
+					<column field='totalCount' label='Total' width='10%' align='left' dataType="number" totalColumn="yes"  />
+				</outputformat>
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='defaultReport_table.xsl'>
+					<column field='wingName' label='Wing' width='40%' align='left' dataType="text" totalColumn="no"  />
+					<column field='commandPilot' label='Command Pilot' width='10%' align='left' dataType="number" totalColumn="yes"  />
+					<column field='nonPilot' label='Non-Pilot' width='10%' align='left'  dataType="number" totalColumn="yes" />
+					<column field='verifyOrientation' label='Verify Orientation' width='10%' align='left'  dataType="number" totalColumn="yes" />
+					<column field='groundAngel' label='Ground Angel' width='10%' align='left'  dataType="number" totalColumn="yes" />
+					<column field='missionAssistant' label='Mission Assistant' width='10%' align='left' dataType="number" totalColumn="yes"  />
+					<column field='totalCount' label='Total' width='10%' align='left' dataType="number" totalColumn="yes"  />
+				</outputformat>
+			</outputformats>
+		</report>
+		<report>
+			<reportName>missionTypesWing</reportName>
+			<title>Mission Types by Wing</title>
+			<descriptionText>Mission leg counts by mission type by wing, based on approved mission reports.</descriptionText>
+			<category>Missions</category>
+			<category_2></category_2>
+			<category_3></category_3>
+			<active>true</active>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='rp_mission_type_wing' commandType='adCmdStoredProc' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='startDate' fieldName='startdate' fieldDesc='Start Date' operator='ge' required='no' useroption='yes' bottomoption='yes' default='monthstart' datatype='date' fieldType='text'  fieldSize='10' />
+					<inputParameter paramName='endDate' fieldName='endDate' fieldDesc='End Date' operator='le' required='no' useroption='yes' bottomoption='yes' default='monthend' datatype='date' fieldType='text'  fieldSize='10' />
+				</inputParameters>
+				<orderByFields />
+			</dataset>
+			<pageSize>25</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Normal' primary='yes' stylesheet='defaultReport_table.xsl' newwindow='no' templateOption='afidFrame' >
+					<column field='wingName' label='Wing' width='30%' align='left' dataType="text"/>
+					<column field='normalCount' label='Normal' width='10%' align='right' dataType="number" />
+					<column field='adminCount' label='Administrative' width='10%' align='right' dataType="number" />
+					<column field='transplantCount' label='Transplant' width='10%' align='right' dataType="number"/>
+					<column field='compassionCount' label='Compassion' width='10%' align='right' dataType="number"/>
+					<column field='commCompCount' label='Commercial Companion' width='10%' align='right' dataType="number"/>
+					<column field='drCount' label='Disaster Response' width='10%' align='right' dataType="number"/>
+					<column field='wingTotal' label='Wing Total' width='10%' align='right' dataType="number"/>				
+				</outputformat>
+				<outputformat type='print' description='Print' primary='no' stylesheet='afwHTMLPrintReport.xsl' newwindow='no' templateOption='printFrame'>
+					<column field='wingName' label='Wing' width='25%' align='left' />
+					<column field='normalCount' label='Normal' width='15%' align='left' />
+					<column field='adminCount' label='Administrative' width='15%' align='left' />
+					<column field='transplantCount' label='Transplant' width='15%' align='left' />
+					<column field='compassionCount' label='Compassion' width='15%' align='left' />
+					<column field='commCompCount' label='Commercial Companion' width='15%' align='left' />
+				</outputformat>
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='defaultReport_table.xsl'>
+					<column field='wingName' label='Wing' width='25%' align='left' />
+					<column field='normalCount' label='Normal' width='15%' align='left' />
+					<column field='adminCount' label='Administrative' width='15%' align='left' />
+					<column field='transplantCount' label='Transplant' width='15%' align='left' />
+					<column field='compassionCount' label='Compassion' width='15%' align='left' />
+					<column field='commCompCount' label='Commercial Companion' width='15%' align='left' />
+				</outputformat>
+			</outputformats>
+		</report>
+		<report>
+			<reportName>memberMissionCounts</reportName>
+			<title>Mission Counts By Member</title>
+			<descriptionText>Mission leg counts by member, based on approved mission reports.</descriptionText>
+			<category>Statistics</category>
+			<category_2></category_2>
+			<category_3></category_3>
+			<active>true</active>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='SELECT mb.external_id as externalID, concat_ws(", ",`p`.`last_name`,`p`.`first_name`) AS `pilotName`, p.last_name as lastName, mr.mission_date as missionDate, mb.wing_id as wingID, count(ml.id) as legCount, sum(hobbs_time)/10 as hobbsTime, sum(commercial_ticket_cost) as commercialTicketCost FROM mission m JOIN mission_leg ml ON (m.id = ml.mission_id) JOIN mission_report mr ON (ml.mission_report_id = mr.id) JOIN member mb ON (ml.pilot_id = mb.id) JOIN person p ON (mb.person_id = p.id)' commandType='adCmdText' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='startDate' fieldName='mr.mission_date' fieldDesc='Start Date' operator='ge' required='no' useroption='yes' bottomoption='yes' default='yearstart' datatype='date' fieldType='text'  fieldSize='10' />
+					<inputParameter paramName='endDate' fieldName='mr.mission_date' fieldDesc='End Date' operator='le' required='no' useroption='yes' bottomoption='yes' default='yearend' datatype='date' fieldType='text'  fieldSize='10' />
+					<inputParameter paramName='wingID' fieldName='wing_id' fieldDesc='Wing' operator='eq' required='no' useroption='yes' bottomoption='yes' default='' datatype='int' fieldType='select' fieldSize='1' refSourceTable='wing' refSourceIDField='id' refSourceDescField='name' />
+				</inputParameters>
+				<orderByFields/>
+				<groupByFields>
+					<groupByField>externalID</groupByField>
+					<groupByField>pilotName</groupByField>
+				</groupByFields>
+			</dataset>
+			<pageSize>25</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Normal' primary='yes' stylesheet='missionsByMember.xsl' newwindow='no' templateOption='afidFrame' >
+					<column field='externalID' datatype='text' label='MemberID' width='15%' align='left' />
+					<column field='pilotName' datatype='text' label='Member Name' width='40%' align='left' />
+					<column field='legCount' datatype='number' label='# Legs' width='15%' align='left' />
+					<column field='hobbsTime' datatype='number' label='Hobbs Time' width='15%' align='left' />
+					<column field='commercialTicketCost' datatype='money' label='Commercial Tix' width='15%' align='left' />
+				</outputformat>
+				<outputformat type='print' description='Print' primary='no' stylesheet='afwHTMLPrintReport.xsl' newwindow='no' templateOption='printFrame'>
+					<column field='externalID' label='MemberID' width='15%' align='left' />
+					<column field='pilotName' label='Member Name' width='40%' align='left' />
+					<column field='legCount' label='# Legs' width='15%' align='left' />
+					<column field='hobbsTime' label='Hobbs Time' width='15%' align='left' />
+					<column field='commercialTicketCost' label='Commercial Tix' width='15%' align='left' />
+				</outputformat>
+				<outputformat type='download' description='Create PDF' primary='no' stylesheet='afwDownloadReport.xsl' newwindow='yes' templateOption='afidFrame' >
+					<column field='externalID' label='MemberID' width='15%' align='left' />
+					<column field='pilotName' label='Member Name' width='40%' align='left' />
+					<column field='legCount' label='# Legs' width='15%' align='left' />
+					<column field='hobbsTime' label='Hobbs Time' width='15%' align='left' />
+					<column field='commercialTicketCost' label='Commercial Tix' width='15%' align='left' />
+				</outputformat>
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='missionsByMember.xsl'>
+					<column field='externalID' label='MemberID' width='15%' align='left' />
+					<column field='pilotName' label='Member Name' width='40%' align='left' />
+					<column field='legCount' label='# Legs' width='15%' align='left' />
+					<column field='hobbsTime' label='Hobbs Time' width='15%' align='left' />
+					<column field='commercialTicketCost' label='Commercial Tix' width='15%' align='left' />
+				</outputformat>
+			</outputformats>
+		</report>
+		<report>
+			<reportName>memberMissionDistribution</reportName>
+			<title>Member Mission Distribution</title>
+			<descriptionText>Distribution of Missions flown by Members</descriptionText>
+			<category>Statistics</category>
+			<category_2></category_2>
+			<category_3></category_3>
+			<active>true</active>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='rp_member_mission_distribution' commandType='adCmdStoredProc' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='startDate' fieldName='missionDate' fieldDesc='Start Date' operator='ge' required='no' useroption='yes' bottomoption='yes' default='monthstart' datatype='date' fieldType='text'  fieldSize='10' />
+					<inputParameter paramName='endDate' fieldName='missionDate' fieldDesc='End Date' operator='le' required='no' useroption='yes' bottomoption='yes' default='monthend' datatype='date' fieldType='text'  fieldSize='10' />
+				</inputParameters>
+				<orderByFields />
+			</dataset>
+			<pageSize>25</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Normal' primary='yes' stylesheet='memberMissionDistribution.xsl' newwindow='no' templateOption='afidFrame' />
+				<outputformat type='print' description='Print' primary='no' stylesheet='memberMissionDistribution.xsl' newwindow='no' templateOption='printFrame' />
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='memberMissionDistribution.xsl'/>
+			</outputformats>
+		</report>
+		<report>
+			<reportName>memberWingStatsMonth</reportName>
+			<title>Permanent Member Statistics</title>
+			<descriptionText>Report of the permanent member statistics.</descriptionText>
+			<category>Statistics</category>
+			<category_2>Permanent Statistics</category_2>
+			<category_3></category_3>
+			<active>true</active>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='SELECT * FROM rp_member_wing_stats_report' commandType='adCmdText' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='monthNo' fieldName='monthNo' fieldDesc='Month' operator='eq' required='yes' useroption='yes' bottomoption='yes' default='' datatype='text' fieldType='select' fieldSize='1' populateSelect="month_name"/>
+					<inputParameter paramName='yearNo' fieldName='yearNo' fieldDesc='Year' operator='eq' required='yes' useroption='yes' bottomoption='yes' default='' datatype='text' fieldType='select' fieldSize='1' populateSelect="years_2005"/>
+				</inputParameters>
+				<orderByFields>
+					<orderByField type='ASC'>wingName</orderByField>
+				</orderByFields>
+			</dataset>
+			<pageSize>1000</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Normal' primary='yes' stylesheet='memberWingStatsMonth.xsl' newwindow='no' templateOption='afidFrame' />
+				<outputformat type='print' description='Print' primary='no' stylesheet='memberWingStatsMonth.xsl' newwindow='no' templateOption='printFrame' />
+				<outputformat type='download' description='Download' primary='no' stylesheet='memberWingStatsMonth.xsl' newwindow='yes' templateOption='afidFrame' />
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='memberWingStatsMonth.xsl'/>
+			</outputformats>
+		</report>
+		<report>
+			<reportName>memberWingStatsWing</reportName>
+			<title>Permanent Member Statistics</title>
+			<descriptionText>Report of the permanent member statistics.</descriptionText>
+			<category>Statistics</category>
+			<category_2>Permanent Statistics</category_2>
+			<category_3></category_3>
+			<active>false</active>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='SELECT * FROM rp_member_wing_stats_report' commandType='adCmdText' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='yearNo' fieldName='yearNo' fieldDesc='Year' operator='eq' required='yes' useroption='yes' bottomoption='yes' default='' datatype='text' fieldType='select' fieldSize='1' populateSelect="years_2005"/>
+				</inputParameters>
+				<orderByFields>
+					<orderByField type='ASC'>wingName</orderByField>
+				</orderByFields>
+			</dataset>
+			<pageSize>1000</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Normal' primary='yes' stylesheet='memberWingStatsWing.xsl' newwindow='no' templateOption='afidFrame' />
+				<outputformat type='print' description='Print' primary='no' stylesheet='memberWingStatsWing.xsl' newwindow='no' templateOption='printFrame' />
+				<outputformat type='download' description='Download' primary='no' stylesheet='' newwindow='yes' templateOption='afidFrame' />
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='memberWingStatsWing.xsl'/>
+			</outputformats>
+		</report>
+		<report>
+			<reportName>missionTypeWingStatsLeg</reportName>
+			<title>Permanent Mission Statistics</title>
+			<descriptionText>Report of the permanent mission statistics.</descriptionText>
+			<category>Statistics</category>
+			<category_2>Permanent Statistics</category_2>
+			<category_3></category_3>
+			<active>true</active>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='SELECT * FROM rp_mission_type_wing_stats' commandType='adCmdText' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='wingID' fieldName='wingID' fieldDesc='Wing' operator='eq' required='no' useroption='yes' bottomoption='yes' default='' datatype='int' fieldType='select' fieldSize='1' refSourceTable='wing' refSourceIDField='id' refSourceDescField='name' />
+					<inputParameter paramName='yearNo' fieldName='yearNo' fieldDesc='Year' operator='eq' required='yes' useroption='yes' bottomoption='yes' default='' datatype='text' fieldType='select' fieldSize='1' populateSelect="years_1998"/>
+				</inputParameters>
+				<orderByFields>
+					<orderByField type='ASC'>monthNo</orderByField>
+					<orderByField type='ASC'>missionTypeID</orderByField>
+				</orderByFields>
+			</dataset>
+			<pageSize>1000</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Normal' primary='yes' stylesheet='missionTypeWingStatsLeg.xsl' newwindow='no' templateOption='afidFrame' />
+				<outputformat type='print' description='Print' primary='no' stylesheet='missionTypeWingStatsLeg.xsl' newwindow='no' templateOption='printFrame' />
+				<outputformat type='download' description='Download' primary='no' stylesheet='' newwindow='yes' templateOption='afidFrame' />
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='missionTypeWingStatsLeg.xsl'/>
+			</outputformats>
+		</report>
+		<report>
+			<reportName>missionTypeWingStatsHours</reportName>
+			<title>Permanent Mission Statistics</title>
+			<descriptionText>Report of the permanent mission statistics.</descriptionText>
+			<category>Statistics</category>
+			<category_2>Permanent Statistics</category_2>
+			<category_3></category_3>
+			<active>false</active>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='SELECT * FROM rp_mission_type_wing_stats' commandType='adCmdText' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='wing' fieldName='wingID' fieldDesc='Wing' operator='eq' required='no' useroption='yes' bottomoption='yes' default='' datatype='int' fieldType='select' fieldSize='1' refSourceTable='wing' refSourceIDField='id' refSourceDescField='name' />
+					<inputParameter paramName='yearNo' fieldName='yearNo' fieldDesc='Year' operator='eq' required='yes' useroption='yes' bottomoption='yes' default='' datatype='text' fieldType='select' fieldSize='1' populateSelect="years_1998"/>
+				</inputParameters>
+				<orderByFields>
+					<orderByField type='ASC'>monthNo</orderByField>
+					<orderByField type='ASC'>missionTypeID</orderByField>
+				</orderByFields>
+			</dataset>
+			<pageSize>1000</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Normal' primary='yes' stylesheet='missionTypeWingStatsHours.xsl' newwindow='no' templateOption='afidFrame' />
+				<outputformat type='print' description='Print' primary='no' stylesheet='missionTypeWingStatsHours.xsl' newwindow='no' templateOption='printFrame' />
+				<outputformat type='download' description='Download' primary='no' stylesheet='' newwindow='yes' templateOption='afidFrame' />
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='missionTypeWingStatsHours.xsl'/>				
+			</outputformats>
+		</report>
+		<report>
+			<reportName>missionTypeWingStatsCost</reportName>
+			<title>Permanent Mission Statistics</title>
+			<descriptionText>Report of the permanent mission statistics.</descriptionText>
+			<category>Statistics</category>
+			<category_2>Permanent Statistics</category_2>
+			<category_3></category_3>
+			<active>false</active>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='SELECT * FROM rp_mission_type_wing_stats' commandType='adCmdText' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='wing' fieldName='wingID' fieldDesc='Wing' operator='eq' required='no' useroption='yes' bottomoption='yes' default='' datatype='int' fieldType='select' fieldSize='1' refSourceTable='wing' refSourceIDField='id' refSourceDescField='name' />
+					<inputParameter paramName='yearNo' fieldName='yearNo' fieldDesc='Year' operator='eq' required='yes' useroption='yes' bottomoption='yes' default='' datatype='text' fieldType='select' fieldSize='1' populateSelect="years_1998"/>
+				</inputParameters>
+				<orderByFields>
+					<orderByField type='ASC'>monthNo</orderByField>
+					<orderByField type='ASC'>missionTypeID</orderByField>
+				</orderByFields>
+			</dataset>
+			<pageSize>1000</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Normal' primary='yes' stylesheet='missionTypeWingStatsCost.xsl' newwindow='no' templateOption='afidFrame' />
+				<outputformat type='print' description='Print' primary='no' stylesheet='missionTypeWingStatsCost.xsl' newwindow='no' templateOption='printFrame' />
+				<outputformat type='download' description='Download' primary='no' stylesheet='' newwindow='yes' templateOption='afidFrame' />
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='missionTypeWingStatsCost.xsl'/>
+			</outputformats>
+		</report>
+		<report>
+			<reportName>missionTypeWingStatsComm</reportName>
+			<title>Permanent Mission Statistics</title>
+			<descriptionText>Report of the permanent mission statistics.</descriptionText>
+			<category>Statistics</category>
+			<category_2>Permanent Statistics</category_2>
+			<category_3></category_3>
+			<active>false</active>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='SELECT * FROM rp_mission_type_wing_stats' commandType='adCmdText' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='wing' fieldName='wingID' fieldDesc='Wing' operator='eq' required='no' useroption='yes' bottomoption='yes' default='' datatype='int' fieldType='select' fieldSize='1' refSourceTable='wing' refSourceIDField='id' refSourceDescField='name' />
+					<inputParameter paramName='yearNo' fieldName='yearNo' fieldDesc='Year' operator='eq' required='yes' useroption='yes' bottomoption='yes' default='' datatype='text' fieldType='select' fieldSize='1' populateSelect="years_1998"/>
+				</inputParameters>
+				<orderByFields>
+					<orderByField type='ASC'>monthNo</orderByField>
+					<orderByField type='ASC'>missionTypeID</orderByField>
+				</orderByFields>
+			</dataset>
+			<pageSize>1000</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Normal' primary='yes' stylesheet='missionTypeWingStatsComm.xsl' newwindow='no' templateOption='afidFrame' />
+				<outputformat type='print' description='Print' primary='no' stylesheet='missionTypeWingStatsComm.xsl' newwindow='no' templateOption='printFrame' />
+				<outputformat type='download' description='Download' primary='no' stylesheet='' newwindow='yes' templateOption='afidFrame' />
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='missionTypeWingStatsComm.xsl'/>				
+			</outputformats>
+		</report>
+		<report>
+			<reportName>missionCostTracker</reportName>
+			<title>Commercial Ticket Cost Tracking</title>
+			<descriptionText>Track the costs of missions paid with commercial tickets</descriptionText>
+			<category>Missions</category>
+			<category_2></category_2>
+			<category_3></category_3>
+			<active>true</active>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='SELECT * FROM `rp_mission_cost_tracking`' commandType='adCmdText' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='startDate' fieldName='mission_date' fieldDesc='Start Date' operator='ge' required='no' useroption='yes' bottomoption='yes' default='monthstart' datatype='date' fieldType='text'  fieldSize='10' />
+					<inputParameter paramName='endDate' fieldName='mission_date' fieldDesc='End Date' operator='le' required='no' useroption='yes' bottomoption='yes' default='monthend' datatype='date' fieldType='text'  fieldSize='10' />
+					<inputParameter paramName='pilotID' fieldName='pilot_id' fieldDesc='Airline or Fund' operator='eq' required='yes' useroption='yes' bottomoption='yes' default='4028' datatype='text' fieldType='select' fieldSize='1'>
+					   <selectOption description='Alaska' value='4028' default='yes' />
+					   <selectOption description='Alaska Haiti Relief' value='6925' default='yes' />
+					   <selectOption description='Frontier' value='2915' default='no' />
+					   <selectOption description='Aloha' value='4562' default='no' />
+					   <selectOption description='Patient Assistance Fund' value='4560' default='no' />
+					</inputParameter>
+					<inputParameter paramName='approvedOnly' fieldName='approved' fieldDesc='Approved Only' operator='eq' required='yes' useroption='yes' bottomoption='yes' default='1' datatype='text' fieldType='select' fieldSize='1'>
+					   <selectOption description='Approved Only' value='1' default='no' />
+					   <selectOption description='All' value='all' default='yes' />
+					</inputParameter>
+				</inputParameters>
+				<orderByFields>
+					<orderByField type='ASC'>mission_date</orderByField>
+				</orderByFields>
+			</dataset>
+			<pageSize>1000</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Normal' primary='yes' stylesheet='commercialCost.xsl' newwindow='no' templateOption='afidFrame' />
+				<outputformat type='print' description='Print' primary='no' stylesheet='commercialCost.xsl' newwindow='no' templateOption='printFrame' />
+				<outputformat type='download' description='Download' primary='no' stylesheet='' newwindow='yes' templateOption='afidFrame' />
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='commercialCost.xsl'/>
+			</outputformats>
+		</report>
+		<report>
+			<reportName>auditLog</reportName>
+			<title>AFIDS Audit Logs</title>
+			<descriptionText></descriptionText>
+			<category>Auditing</category>
+			<category_2></category_2>
+			<category_3></category_3>
+			<active>true</active>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='SELECT * FROM rp_audit_logs' commandType='adCmdText' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='start_date' fieldName='date_time' fieldDesc='Start Date' operator='ge' required='yes' useroption='yes' default='monthstart' datatype='date' fieldType='text'  fieldSize='10' />
+					<inputParameter paramName='end_date' fieldName='date_time' fieldDesc='End Date' operator='le' required='yes' useroption='yes' default='monthend' datatype='date' fieldType='text'  fieldSize='10' />
+					<inputParameter paramName='event_reason' fieldName='eventreason' fieldDesc='Event Reason' operator='like' required='no' useroption='yes' default='' datatype='text' fieldType='text'  fieldSize='20' />
+					<inputParameter paramName='audit_event' fieldName='event' fieldDesc='Event Type' operator='eq' required='yes' useroption='yes' default='' datatype='text' fieldType='select' fieldSize='1' refSourceTable='' refSourceIDField='' refSourceDescField='' >
+					   <selectOption description='All' value='all' default='yes' />
+					   <selectOption description='Logins' value='login' default='no' />
+					   <selectOption description='Missions' value='mission' default='no' />
+					   <selectOption description='Mass Emails' value='mass_email' default='no' />
+				   </inputParameter>
+				</inputParameters>
+				<orderByFields>
+					<orderByField type='ASC'>date_time</orderByField>
+				</orderByFields>
+			</dataset>
+			<pageSize>25</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Normal' primary='yes' stylesheet='defaultReport_jquery.xsl' newwindow='no' templateOption='afidFrame' >
+					<column field='DateTimeDisplay' label='Date' width='10%' align='left' />
+					<column field='auditidentity' label='Identity' width='25%' align='left' />
+					<column field='event' label='Event' width='40%' align='left' />
+					<column field='eventreason' label='Event Reason' width='25%' align='left' />
+				</outputformat>
+				<outputformat type='print' description='Print' primary='no' stylesheet='afwHTMLPrintReport.xsl' newwindow='no' templateOption='printFrame'>
+					<column field='datetime' label='Date' width='10%' align='left' />
+					<column field='personid' label='Identity' width='15%' align='left' />
+					<column field='event' label='Event' width='8%' align='left' />
+					<column field='eventreason' label='Event Reason' width='25%' align='left' />
+				</outputformat>
+				<outputformat type='download' description='Download' primary='no' stylesheet='afwDownloadReport.xsl' newwindow='yes' templateOption='afidFrame' >
+					<column field='datetime' label='Date' width='10%' align='left' />
+					<column field='personid' label='Identity' width='15%' align='left' />
+					<column field='event' label='Event' width='8%' align='left' />
+					<column field='eventreason' label='Event Reason' width='25%' align='left' />
+				</outputformat>
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='defaultReport_table.xsl'>
+					<column field='datetime' label='Date' width='10%' align='left' />
+					<column field='personid' label='Identity' width='15%' align='left' />
+					<column field='event' label='Event' width='8%' align='left' />
+					<column field='eventreason' label='Event Reason' width='25%' align='left' />
+				</outputformat>
+			</outputformats>
+		</report>
+		<report>
+			<reportName>loginsSummary</reportName>
+			<title>AFIDS Audit Log Summary</title>
+			<descriptionText></descriptionText>
+			<category>Auditing</category>
+			<category_2></category_2>
+			<category_3></category_3>
+			<active>true</active>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='rp_audit_logins_summary' commandType='adCmdStoredProc' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='startDate' fieldDesc='Start Date' required='yes' useroption='yes' bottomoption='yes' default='monthstart' datatype='date' fieldType='text'  fieldSize='10' />
+					<inputParameter paramName='endDate' fieldDesc='End Date' required='yes' useroption='yes' bottomoption='yes' default='monthend' datatype='date' fieldType='text'  fieldSize='10' />
+				</inputParameters>
+			</dataset>
+			<pageSize>25</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Normal' primary='yes' stylesheet='defaultReport_table.xsl' newwindow='no' templateOption='afidFrame' >
+					<column field='Status' label='Login Type' width='15%' align='left' dataType='text' totalColumn='no'/>
+					<column field='total' label='Total' width='5%' align='right' dataType='number' totalColumn='yes'/>
+				</outputformat>
+				<outputformat type='print' description='Print' primary='no' stylesheet='afwHTMLPrintReport.xsl' newwindow='no' templateOption='printFrame'>
+					<column field='total' label='Total' width='5%' align='right' />
+					<column field='type' label='Login Type' width='15%' align='left' />
+				</outputformat>
+				<outputformat type='download' description='Download' primary='no' stylesheet='afwDownloadReport.xsl' newwindow='yes' templateOption='afidFrame' >
+					<column field='total' label='Total' width='5%' align='right' />
+					<column field='type' label='Login Type' width='15%' align='left' />
+				</outputformat>
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='defaultReport_table.xsl'>
+					<column field='total' label='Total' width='5%' align='right' />
+					<column field='type' label='Login Type' width='15%' align='left' />
+				</outputformat>
+			</outputformats>
+		</report>
+		<report>
+			<reportName>loginsNonStaff</reportName>
+			<title>AFIDS Logins by non-staff</title>
+			<descriptionText></descriptionText>
+			<category>Auditing</category>
+			<category_2></category_2>
+			<category_3></category_3>
+			<active>true</active>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='rp_audit_logins_non_staff' commandType='adCmdStoredProc' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='startDate' fieldDesc='Start Date' required='yes' useroption='yes' default='monthstart' datatype='date' fieldType='text'  fieldSize='10' />
+					<inputParameter paramName='endDate' fieldDesc='End Date' required='yes' useroption='yes' default='monthend' datatype='date' fieldType='text'  fieldSize='10' />
+				</inputParameters>
+			</dataset>
+			<pageSize>25</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Normal' primary='yes' stylesheet='defaultReport_jquery.xsl' newwindow='no' templateOption='afidFrame' >
+					<column field='total' label='Logins' width='5%' align='right' />
+					<column field='audit_identity' label='Identity' width='25%' align='left' />
+					<column field='status' label='Member Status' width='15%' align='left' />
+					<column field='event_reason' label='Event' width='15%' align='left' />
+				</outputformat>
+				<outputformat type='print' description='Print' primary='no' stylesheet='afwHTMLPrintReport.xsl' newwindow='no' templateOption='printFrame'>
+					<column field='total' label='Logins' width='5%' align='right' />
+					<column field='audit_identity' label='Identity' width='25%' align='left' />
+					<column field='status' label='Member Status' width='15%' align='left' />
+					<column field='eventReason' label='Event' width='15%' align='left' />
+				</outputformat>
+				<outputformat type='download' description='Download' primary='no' stylesheet='afwDownloadReport.xsl' newwindow='yes' templateOption='afidFrame' >
+					<column field='total' label='Logins' width='5%' align='left' />
+					<column field='audit_identity' label='Identity' width='25%' align='left' />
+					<column field='status' label='Member Status' width='15%' align='left' />
+					<column field='eventReason' label='Event' width='15%' align='left' />
+				</outputformat>
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='defaultReport_table.xsl'>
+					<column field='total' label='Logins' width='5%' align='left' />
+					<column field='audit_identity' label='Identity' width='25%' align='left' />
+					<column field='status' label='Member Status' width='15%' align='left' />
+					<column field='eventReason' label='Event' width='15%' align='left' />
+				</outputformat>
+			</outputformats>
+		</report>
+		<report>
+			<reportName>loginsStaff</reportName>
+			<title>AFIDS Audit Logs by Staff</title>
+			<descriptionText></descriptionText>
+			<category>Auditing</category>
+			<category_2></category_2>
+			<category_3></category_3>
+			<active>true</active>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='rp_audit_logins_staff' commandType='adCmdStoredProc' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='startDate' fieldDesc='Start Date' required='yes' useroption='yes' default='monthstart' datatype='date' fieldType='text'  fieldSize='10' />
+					<inputParameter paramName='endDate' fieldDesc='End Date' required='yes' useroption='yes' default='monthend' datatype='date' fieldType='text'  fieldSize='10' />
+				</inputParameters>
+				</dataset>
+			<pageSize>25</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Normal' primary='yes' stylesheet='defaultReport_jquery.xsl' newwindow='no' templateOption='afidFrame' >
+					<column field='total' label='Logins' width='5%' align='right' />
+					<column field='audit_identity' label='Identity' width='25%' align='left' />
+					<column field='event_reason' label='Event' width='15%' align='left' />
+				</outputformat>
+				<outputformat type='print' description='Print' primary='no' stylesheet='afwHTMLPrintReport.xsl' newwindow='no' templateOption='printFrame'>
+					<column field='total' label='Logins' width='5%' align='right' />
+					<column field='audit_identity' label='Identity' width='25%' align='left' />
+					<column field='eventReason' label='Event' width='15%' align='left' />
+				</outputformat>
+				<outputformat type='download' description='Download' primary='no' stylesheet='afwDownloadReport.xsl' newwindow='yes' templateOption='afidFrame' >
+					<column field='total' label='Logins' width='5%' align='right' />
+					<column field='audit_identity' label='Identity' width='25%' align='left' />
+					<column field='eventReason' label='Event' width='15%' align='left' />
+				</outputformat>
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='defaultReport_table.xsl'>
+					<column field='total' label='Logins' width='5%' align='right' />
+					<column field='audit_identity' label='Identity' width='25%' align='left' />
+					<column field='eventReason' label='Event' width='15%' align='left' />
+				</outputformat>
+			</outputformats>
+		</report>
+		<report>
+			<reportName>memberApplications</reportName>
+			<title>Member Applications for Reconciliation</title>
+			<descriptionText>Member Applications and Renewals for Reconciliation</descriptionText>
+			<category>Members</category>
+			<category_2>New Members</category_2>
+			<category_3></category_3>
+			<active>true</active>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='SELECT * FROM rp_member_application_reconciliation' commandType='adCmdText' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='startDate' fieldName='application_date' fieldDesc='Start Date' operator='ge' required='no' useroption='yes' bottomoption='yes' default='monthstart' datatype='date' fieldType='text'  fieldSize='10' />
+					<inputParameter paramName='endDate' fieldName='application_date' fieldDesc='End Date' operator='le' required='no' useroption='yes' bottomoption='yes' default='monthend' datatype='date' fieldType='text'  fieldSize='10' />
+					<inputParameter paramName='applicationType' fieldName='renewal' fieldDesc='Application Type' operator='eq' required='no' useroption='yes' bottomoption='yes' default='0' datatype='text' fieldType='select' fieldSize='1' refSourceTable='' refSourceIDField='' refSourceDescField='' >
+					   <selectOption description='New Members' value='0' default='yes' />
+					   <selectOption description='Renewals' value='1' default='no' />
+					   <selectOption description='All' value='all' default='no' />					   
+					</inputParameter>
+				</inputParameters>
+				<orderByFields>
+					<orderByField type='ASC'>application_date</orderByField>
+				</orderByFields>
+			</dataset>
+			<pageSize>1000</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Normal' primary='yes' stylesheet='memberApplicationReconcile.xsl' newwindow='no' templateOption='afidFrame' />
+				<outputformat type='print' description='Print' primary='no' stylesheet='memberApplicationReconcile.xsl' newwindow='no' templateOption='printFrame' />
+				<outputformat type='download' description='Download' primary='no' stylesheet='' newwindow='yes' templateOption='afidFrame' />
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='memberApplicationReconcile.xsl'/>
+			</outputformats>
+		</report>
+		<report>
+			<reportName>missionItinerary</reportName>
+			<title>Mission Itinerary</title>
+			<descriptionText></descriptionText>
+			<category>Missions</category>
+			<category_2></category_2>
+			<category_3></category_3>
+			<active>true</active>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='SELECT * FROM rp_mission_itinerary' commandType='adCmdText' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='externalID' fieldName='externalID' fieldDesc='Mission ID' operator='eq' required='yes' useroption='yes' bottomoption='yes' default='1000' datatype='int' fieldType='text' fieldSize='5' />
+				</inputParameters>
+				<orderByFields>
+					<orderByField type='ASC'>legNumber</orderByField>
+				</orderByFields>
+			</dataset>
+			<pageSize>1000</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Normal' primary='yes' stylesheet='missionItinerary.xsl' newwindow='no' templateOption='afidFrame' />
+				<outputformat type='print' description='Print' primary='no' stylesheet='missionItinerary_print.xsl' newwindow='no' templateOption='printFrame' printTemplate='itinerary'/>
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='missionItinerary.xsl' printTemplate='itinerary'/>
+			</outputformats>
+		</report>
+		<report>
+			<reportName>memberApplication</reportName>
+			<title>Member Application</title>
+			<descriptionText></descriptionText>
+			<category>Members</category>
+			<category_2></category_2>
+			<category_3></category_3>
+			<active>true</active>
+			<security>
+				<userRights>
+					<userRight>REPNV</userRight>
+				</userRights>
+			</security>
+			<dataset commandText='SELECT * FROM rp_member_application' commandType='adCmdText' commandTimeout='60'>
+				<inputParameters>
+					<inputParameter paramName='applicationID' fieldName='applicationID' fieldDesc='ApplicationID' operator='eq' required='yes' useroption='yes' bottomoption='yes' default='1000' datatype='int' fieldType='text' fieldSize='5' />
+				</inputParameters>
+				<orderByFields>
+				</orderByFields>
+			</dataset>
+			<pageSize>1000</pageSize>
+			<outputformats>
+				<outputformat type='html' description='Normal' primary='yes' stylesheet='memberApplication.xsl' newwindow='no' templateOption='afidFrame' />
+				<outputformat type='print' description='Print' primary='no' stylesheet='memberApplication_print.xsl' newwindow='no' templateOption='printFrame' printTemplate='itinerary'/>
+				<outputformat type='email' description='Send Email' primary='no' stylesheet='memberApplication.xsl' printTemplate='itinerary'/>
+			</outputformats>
+		</report>
+	</reports>
+</reportWriter>

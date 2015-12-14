@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/afids/!svn/ver/1154/browse/trunk/web/reports
+END
+footer.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/afids/!svn/ver/522/browse/trunk/web/reports/footer.php
+END
+reports.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/afids/!svn/ver/1154/browse/trunk/web/reports/reports.php
+END
+config.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/afids/!svn/ver/666/browse/trunk/web/reports/config.php
+END
+database_objects.sql
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/afids/!svn/ver/655/browse/trunk/web/reports/database_objects.sql
+END
+index.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/afids/!svn/ver/1048/browse/trunk/web/reports/index.php
+END
+header.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/afids/!svn/ver/566/browse/trunk/web/reports/header.php
+END

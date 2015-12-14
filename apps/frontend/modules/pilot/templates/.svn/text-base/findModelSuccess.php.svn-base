@@ -1,0 +1,2 @@
+<?php use_helper("Form", "Tag")?>
+<?php echo select_tag('model', options_for_select($models, $sf_params->get('name'), array('include_custom' => '- any -')), array('id' => 'ff_model','class'=>'text narrow'))?>

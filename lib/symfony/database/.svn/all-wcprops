@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/afids/!svn/ver/2/browse/trunk/lib/symfony/database
+END
+sfDatabaseManager.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/afids/!svn/ver/2/browse/trunk/lib/symfony/database/sfDatabaseManager.class.php
+END
+sfMySQLiDatabase.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/afids/!svn/ver/2/browse/trunk/lib/symfony/database/sfMySQLiDatabase.class.php
+END
+sfDatabase.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/afids/!svn/ver/2/browse/trunk/lib/symfony/database/sfDatabase.class.php
+END
+sfPDODatabase.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/afids/!svn/ver/2/browse/trunk/lib/symfony/database/sfPDODatabase.class.php
+END
+sfPostgreSQLDatabase.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/afids/!svn/ver/2/browse/trunk/lib/symfony/database/sfPostgreSQLDatabase.class.php
+END
+sfMySQLDatabase.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/afids/!svn/ver/2/browse/trunk/lib/symfony/database/sfMySQLDatabase.class.php
+END

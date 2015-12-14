@@ -1,0 +1,23 @@
+.mission-options li{background-image: expression( (this===this.parentNode.childNodes[0]) ? "none" : "auto");}
+.person-options li{background-image: expression( (this===this.parentNode.childNodes[0]) ? "none" : "auto");}
+.drop .b{
+	filter: progid:dximagetransform.microsoft.alphaimageloader(src='images/bg-drop-bottom.png',sizingmethod='scale');
+	background:none;
+}
+.right-c{
+	filter: progid:dximagetransform.microsoft.alphaimageloader(src='images/bg-steps-first-right.png',sizingmethod='scale');
+	background:none;
+}
+.first-active .right-c{
+	filter: progid:dximagetransform.microsoft.alphaimageloader(src='images/bg-steps-first-right-active.png',sizingmethod='scale');
+	background:none;
+}
+.first-checked .right-c{
+	filter: progid:dximagetransform.microsoft.alphaimageloader(src='images/bg-steps-first-right-checked.png',sizingmethod='scale');
+	background:none;
+}
+.drop .b{
+	filter: progid:dximagetransform.microsoft.alphaimageloader(src='images/bg-drop-bottom.png',sizingmethod='scale');
+	background:none;
+}
+body {width:expression(document.documentElement.clientWidth < 976 ? "976px" : "auto");}

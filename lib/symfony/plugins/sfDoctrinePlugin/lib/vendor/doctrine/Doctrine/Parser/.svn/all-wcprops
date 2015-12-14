@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/lib/vendor/doctrine/Doctrine/Parser
+END
+Json.php
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/lib/vendor/doctrine/Doctrine/Parser/Json.php
+END
+YamlSf.php
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/lib/vendor/doctrine/Doctrine/Parser/YamlSf.php
+END
+Exception.php
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/lib/vendor/doctrine/Doctrine/Parser/Exception.php
+END
+Spyc.php
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/lib/vendor/doctrine/Doctrine/Parser/Spyc.php
+END
+Xml.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/lib/vendor/doctrine/Doctrine/Parser/Xml.php
+END
+Yml.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/lib/vendor/doctrine/Doctrine/Parser/Yml.php
+END
+Serialize.php
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/lib/vendor/doctrine/Doctrine/Parser/Serialize.php
+END

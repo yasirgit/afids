@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/afids/!svn/ver/2/browse/trunk/lib/symfony/form
+END
+sfForm.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/afids/!svn/ver/2/browse/trunk/lib/symfony/form/sfForm.class.php
+END
+sfFormField.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/afids/!svn/ver/2/browse/trunk/lib/symfony/form/sfFormField.class.php
+END
+sfFormFieldSchema.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/afids/!svn/ver/2/browse/trunk/lib/symfony/form/sfFormFieldSchema.class.php
+END
+sfFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/afids/!svn/ver/2/browse/trunk/lib/symfony/form/sfFormFilter.class.php
+END

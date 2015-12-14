@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/lib/generator
+END
+sfDoctrineGenerator.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/lib/generator/sfDoctrineGenerator.class.php
+END
+sfDoctrineFormGenerator.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/lib/generator/sfDoctrineFormGenerator.class.php
+END
+sfDoctrineColumn.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/lib/generator/sfDoctrineColumn.class.php
+END
+sfDoctrineFormFilterGenerator.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/lib/generator/sfDoctrineFormFilterGenerator.class.php
+END

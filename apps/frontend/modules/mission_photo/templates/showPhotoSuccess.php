@@ -1,0 +1,1 @@
+<img src="/uploads/mission_photo/display/<?php echo $mission_photo->getPhotoFilename() ?>"/>

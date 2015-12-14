@@ -1,0 +1,7 @@
+calenderSuccess:
+  is_secure: off
+calendarDetailsSuccess:
+  is_secure: off
+eventSignupSuccess:
+  is_secure: off
+

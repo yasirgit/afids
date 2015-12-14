@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/afids/!svn/ver/1217/browse/trunk/lib
+END
+AssetHelper.php.func_bkup
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/afids/!svn/ver/2/browse/trunk/lib/AssetHelper.php.func_bkup
+END
+sfWidgetAfidsFormInputCheckbox.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/afids/!svn/ver/348/browse/trunk/lib/sfWidgetAfidsFormInputCheckbox.php
+END
+afids_custom_propel_pager.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/afids/!svn/ver/1026/browse/trunk/lib/afids_custom_propel_pager.php
+END
+afids_paymentgateway.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/afids/!svn/ver/538/browse/trunk/lib/afids_paymentgateway.php
+END
+retrieveEmailAddressesRelatedToItinerary.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/afids/!svn/ver/1105/browse/trunk/lib/retrieveEmailAddressesRelatedToItinerary.php
+END

@@ -1,0 +1,252 @@
+<?php
+class retrieveEmailAddressesRelatedToItinerary {
+   public static function getEmailAddressesOfPersonsRelatedToItinerary(Itinerary $itinerary) {
+      $receivers = array();
+      //Get Passenger email address
+      $passenger = PassengerPeer::retrieveByPK($itinerary->getPassengerId());
+      if($passenger){
+         $passenger = $passenger->getPerson()->getEmail();
+         if(!empty($passenger))
+            //$receivers['itinerary_passenger'] = $passenger;
+                    if(preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/', $passenger)){
+                        $receivers[] = $passenger;
+                    }
+             }
+      unset($passenger);
+
+
+      // Get Requester email address
+      $requestr = RequesterPeer::retrieveByPK($itinerary->getRequesterId());
+      if($requestr) {
+         $requestr = $requestr->getPerson()->getEmail();
+         if(!empty($requestr))
+        //$receivers['itinerary_requestr'] = $requestr;
+                    if(preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/', $requestr)){
+                        $receivers[] = $requestr;
+                    }
+             }
+      unset($requestr);
+
+      // Get Agency email Address
+      $agency = AgencyPeer::retrieveByPK($itinerary->getAgencyId());
+      if($agency) {
+         $agency = $agency->getEmail();
+         if(!empty($agency))
+//            $receivers['itinerary_agency'] = $agency;
+                if(preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/', $agency)){
+                    $receivers[] = $agency;
+                }
+             }
+      unset($agency);
+      return $receivers;
+   }
+   public static function getEmailAddressesOfPersonsRelatedToMissionLeg(MissionLeg $mission_leg) {
+
+         $receivers = array();
+         // Get Coordinator email address
+         $coordinator = CoordinatorPeer::retrieveByPK($mission_leg->getCoordinatorId());
+         if($coordinator && $coordinator = $coordinator->getMember()){
+            $coordinator = $coordinator->getPerson()->getEmail();         
+            if(!empty($coordinator)) {
+   //            $receivers['coordinator_'.$mission_leg->getId()] = $coordinator;
+                if(preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/', $coordinator)){
+                    $receivers[] = $coordinator;
+                }
+             }
+          }
+         unset($coordinator);
+
+         // Get Pilot email address
+         $pilot = PilotPeer::retrieveByPK($mission_leg->getPilotId());
+         if($pilot && $pilot = $pilot->getMember()) {
+            $pilot = $pilot->getPerson ()->getEmail ();
+            if(!empty($pilot)) {
+      //        $receivers['pilot_'.$mission_leg->getId()] = $pilot;
+                     if(preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/', $pilot)){
+                            $receivers[] = $pilot;
+                        }
+                 }
+            }
+         unset($pilot);
+
+         // Get Backup Pilot email address
+         $backup_pilot = PilotPeer::retrieveByPK($mission_leg->getBackupPilotId());
+         if($backup_pilot && $backup_pilot = $backup_pilot->getMember()) {
+            $backup_pilot = $backup_pilot->getPerson ()->getEmail ();
+            if(!empty($backup_pilot)) {
+   //            $receivers['backup_pilot_'.$mission_leg->getId()] = $backup_pilot;
+                         if(preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/', $backup_pilot)){
+                            $receivers[] = $backup_pilot;
+                        }
+                 }
+            }
+         unset($backup_pilot);
+
+         // Get Co-Pilot which is relate to Member
+         $co_pilot = MemberPeer::retrieveByPK($mission_leg->getCopilotId());
+         if($co_pilot) {
+            $co_pilot = $co_pilot->getPerson ()->getEmail ();
+            if(!empty($co_pilot)) {
+   //            $receivers['co_pilot_'.$mission_leg->getId()] = $co_pilot;
+                        if(preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/', $co_pilot)){
+                            $receivers[] = $co_pilot;
+                        }
+                 }
+            }
+         unset($co_pilot);
+
+         // Get Backup Co-pilot email address
+         $backup_co_pilot = MemberPeer::retrieveByPK($mission_leg->getBackupCopilotId());
+         if($backup_co_pilot) {
+            $backup_co_pilot = $backup_co_pilot->getPerson ()->getEmail ();
+            if(!empty($backup_co_pilot)) {
+   //            $receivers['backup_co_pilot_'.$mission_leg->getId()] = $backup_co_pilot;
+                        if(preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/', $backup_co_pilot)){
+                            $receivers[] = $backup_co_pilot;
+                        }
+                 }
+            }
+         unset($backup_co_pilot);
+
+         // Get mission assist email address
+         $mission_assist = MemberPeer::retrieveByPK($mission_leg->getMissAssisId());
+         if($mission_assist) {
+            $mission_assist = $mission_assist->getPerson ()->getEmail ();
+            if(!empty($mission_assist)) {
+   //            $receivers['mission_assist_'.$mission_leg->getId()] = $mission_assist;
+                        if(preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/', $mission_assist)){
+                            $receivers[] = $mission_assist;
+                        }
+                 }
+            }
+         unset($mission_assist);
+
+         // Get Backup mission assist email address
+         $backup_mission_assist = MemberPeer::retrieveByPK($mission_leg->getBackupMissAssisId());
+         if($backup_mission_assist) {
+            $backup_mission_assist = $backup_mission_assist->getPerson ()->getEmail ();
+            if(!empty($backup_mission_assist)) {
+   //            $receivers['backup_mission_assist_'.$mission_leg->getId()] = $backup_mission_assist;
+                        if(preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/', $backup_mission_assist)){
+                            $receivers[] = $backup_mission_assist;
+                        }
+                 }
+            }
+         unset($backup_mission_assist);
+
+         // Get Pilot Aircraft email address
+
+         $pilot_aircraft = PilotAircraftPeer::retrieveByPK($mission_leg->getPilotAircraftId());
+         if($pilot_aircraft && $pilot_aircraft = $pilot_aircraft->getMember ()) {
+            $pilot_aircraft = $pilot_aircraft->getPerson ()->getEmail ();
+            if(!empty($pilot_aircraft)) {
+   //            $receivers['pilot_aircraft_'.$mission_leg->getId()] = $pilot_aircraft;
+                        if(preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/', $pilot_aircraft)){
+                            $receivers[] = $pilot_aircraft;
+                        }
+                 }
+            }
+         unset($pilot_aircraft);
+
+         // Get Share AFA ORG email address
+         $afa_org = AfaOrgPeer::retrieveByPK($mission_leg->getShareAfaOrgId());
+         if($afa_org) {
+            $afa_org = $afa_org->getRefContactEmail ();
+            if(!empty($afa_org)) {
+   //            $receivers['afa_org_'.$mission_leg->getId()] = $afa_org;
+                        if(preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/', $afa_org)){
+                            $receivers[] = $afa_org;
+                        }
+                 }
+            }
+         unset($afa_org);
+         
+         return $receivers;
+   }
+   public static function getEmailAddressesOfPersonsRelatedToMission(Mission $mission) {
+
+       $receivers = array();
+      // Get Passenger email address
+      $passenger = PassengerPeer::retrieveByPK($mission->getPassengerId());
+      if($passenger){
+         $passenger = $passenger->getPerson()->getEmail();
+         if(!empty($passenger)) {
+   //            $receivers['passenger_'.$mission->getId()] = $passenger;
+             if(preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/', $passenger)){
+                $receivers[] = $passenger;
+              }
+                 
+         }
+      }
+      unset($passenger);
+
+
+      // Get Requester email address
+      $requestr = RequesterPeer::retrieveByPK($mission->getRequesterId());
+      if($requestr) {
+         $requestr = $requestr->getPerson()->getEmail();
+         if(!empty($requestr)) {
+//            $receivers['requestr_'.$mission->getId()] = $requestr;
+              if(preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/', $requestr)){
+                $receivers[] = $requestr;
+            }
+         }
+      }
+      unset($requestr);
+
+      // Get Coordinator email address
+      $coordinator = CoordinatorPeer::retrieveByPK($mission->getCoordinatorId());
+      if($coordinator && $coordinator = $coordinator->getMember()){
+         $coordinator = $coordinator->getPerson()->getEmail();
+
+         if(!empty($coordinator)) {
+//            $receivers['coordinator_'.$mission->getId()] = $coordinator;
+                    if(preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/', $coordinator)){
+                        $receivers[] = $coordinator;
+                    }
+             }
+         }
+      unset($coordinator);
+
+      // Get Other Requester email address
+      $other_requestr = RequesterPeer::retrieveByPK($mission->getOtherRequesterId());
+      if($other_requestr) {
+         $other_requestr = $other_requestr->getPerson()->getEmail();
+         if(!empty($other_requestr)) {
+//            $receivers['other_requestr_'.$mission->getId()] = $other_requestr;
+                if(preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/', $other_requestr)){
+                    $receivers[] = $other_requestr;
+                }
+             }
+         }
+      unset($other_requestr);
+
+      // Get Other Agency email address
+      $other_agency = AgencyPeer::retrieveByPK($mission->getOtherAgencyId());
+      if($other_agency) {
+         $other_agency = $other_agency->getEmail();
+         if(!empty($other_requestr)) {
+//            $receivers['other_agency_'.$mission->getId()] = $other_agency;
+                if(preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/', $other_agency)){
+                    $receivers[] = $other_agency;
+                }
+             }
+         }
+      unset($other_agency);
+
+      // Get Agency email address
+      $agency = AgencyPeer::retrieveByPK($mission->getAgencyId());
+      if($agency) {
+         $agency = $agency->getEmail();
+         if(!empty($agency)) {
+//            $receivers['agency_'.$mission->getId()] = $agency;
+                if(preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/', $agency)){
+                    $receivers[] = $agency;
+                }
+             }
+         }
+      unset($agency);
+
+      return $receivers;
+   }
+}

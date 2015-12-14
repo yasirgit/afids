@@ -1,0 +1,56 @@
+<?php
+/**
+ * Companion form.
+ *
+ * @package    angelflight
+ * @subpackage form
+ * @author     Ariunbayar
+ * @version    SVN: $Id: sfPropelFormTemplate.php 10377 2008-07-21 07:10:32Z dwhittle $
+ */
+class CompanionForm extends BaseCompanionForm
+{
+  public function configure()
+  {
+    unset($this['person_id']);
+    $phone_options = array('mask' => '(999) 999-9999', 'ok_class' => 'field_ok', 'holder_class' => 'field_hold');
+
+    # Fields
+    $this->widgetSchema['passenger_id'] = new sfWidgetFormInputHidden();
+    $this->widgetSchema['name'] = new sfWidgetFormInput(array(), array('class' => 'text'));
+    $this->widgetSchema['relationship'] = new sfWidgetFormInput(array(), array('class' => 'text'));
+    $this->widgetSchema['date_of_birth'] =  new widgetFormDate(array('change_year' => true, 'change_month' => true, 'format_date' => array('js' => 'mm/dd/yy', 'php' => 'm/d/Y')), array('class' => 'text narrow'));
+    $this->widgetSchema['weight'] = new sfWidgetFormInput(array(), array('class' => 'text narrowest'));
+    $this->widgetSchema['companion_phone'] = new widgetFormInputPhone($phone_options, array('class' => 'text narrow'));
+    $this->widgetSchema['companion_phone_comment'] = new sfWidgetFormTextarea(array(), array('class'=>'text'));
+
+    $this->widgetSchema->setLabels(array('passenger_id' => 'Passenger'));
+    $this->widgetSchema->setLabels(array('name' => 'Name'));
+    $this->widgetSchema->setLabels(array('relationship' => 'Relationship to Person'));
+    $this->widgetSchema->setLabels(array('date_of_birth' => 'Date of birth'));
+    $this->widgetSchema->setLabels(array('weight' => 'Weight'));
+    $this->widgetSchema->setLabels(array('companion_phone' => 'Phone'));
+    $this->widgetSchema->setLabels(array('companion_phone_comment' => 'Phone comment'));
+
+    $this->validatorSchema['name'] = new sfValidatorString(array('required' => false));
+    $this->validatorSchema['relationship'] = new sfValidatorString(array('required' => false));
+    $this->validatorSchema['date_of_birth'] = new sfValidatorDate(array('max' => time(),'required' => false),array('invalid'=>'Date of birth is invalid !.'));
+    $this->validatorSchema['weight'] = new sfValidatorInteger(array('required' => false),array('invalid'=>'Weight must be in number format !'));
+    $this->validatorSchema['companion_phone'] = new sfValidatorString(array('required' => false));
+    $this->validatorSchema['companion_phone_comment'] = new sfValidatorString(array('required' => false));
+
+    $this->widgetSchema->setNameFormat('campnn[%s]');
+
+    $this->validatorSchema->setPostValidator(
+      new sfValidatorCallback(array('callback' => array($this, 'validateAtLeast')))
+    );
+  }
+
+  public function validateAtLeast($validator, $values)
+  {
+    if (empty($values['name']) && empty($values['relationship'])) {
+      throw new sfValidatorError($validator, 'Please fill one of Name and Relationship!');
+    }
+
+    return $values;
+  }
+}

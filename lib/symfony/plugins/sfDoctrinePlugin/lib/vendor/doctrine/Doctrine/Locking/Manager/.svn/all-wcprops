@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/lib/vendor/doctrine/Doctrine/Locking/Manager
+END
+Pessimistic.php
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/lib/vendor/doctrine/Doctrine/Locking/Manager/Pessimistic.php
+END

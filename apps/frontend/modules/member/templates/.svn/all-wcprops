@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/afids/!svn/ver/1184/browse/trunk/apps/frontend/modules/member/templates
+END
+indexSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/afids/!svn/ver/1168/browse/trunk/apps/frontend/modules/member/templates/indexSuccess.php
+END
+_master_for.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/afids/!svn/ver/42/browse/trunk/apps/frontend/modules/member/templates/_master_for.php
+END
+autoCompleteFirstSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/afids/!svn/ver/513/browse/trunk/apps/frontend/modules/member/templates/autoCompleteFirstSuccess.php
+END
+boardMemberViewSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/afids/!svn/ver/1151/browse/trunk/apps/frontend/modules/member/templates/boardMemberViewSuccess.php
+END
+viewSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/afids/!svn/ver/1184/browse/trunk/apps/frontend/modules/member/templates/viewSuccess.php
+END
+indexMclassSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/afids/!svn/ver/1151/browse/trunk/apps/frontend/modules/member/templates/indexMclassSuccess.php
+END
+rosterSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/afids/!svn/ver/502/browse/trunk/apps/frontend/modules/member/templates/rosterSuccess.php
+END
+needsBNSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/afids/!svn/ver/821/browse/trunk/apps/frontend/modules/member/templates/needsBNSuccess.php
+END
+boardMemberSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/afids/!svn/ver/1151/browse/trunk/apps/frontend/modules/member/templates/boardMemberSuccess.php
+END
+findSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/afids/!svn/ver/1151/browse/trunk/apps/frontend/modules/member/templates/findSuccess.php
+END
+updateSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/afids/!svn/ver/1151/browse/trunk/apps/frontend/modules/member/templates/updateSuccess.php
+END
+autoCompleteFirstNotMemberSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/afids/!svn/ver/553/browse/trunk/apps/frontend/modules/member/templates/autoCompleteFirstNotMemberSuccess.php
+END
+updateMclassSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/afids/!svn/ver/486/browse/trunk/apps/frontend/modules/member/templates/updateMclassSuccess.php
+END
+autoCompleteLastSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/afids/!svn/ver/513/browse/trunk/apps/frontend/modules/member/templates/autoCompleteLastSuccess.php
+END
+autoCompleteLastNotMemberSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/afids/!svn/ver/553/browse/trunk/apps/frontend/modules/member/templates/autoCompleteLastNotMemberSuccess.php
+END

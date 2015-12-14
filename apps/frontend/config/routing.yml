@@ -1,0 +1,799 @@
+#update_medical_release
+update_medical_release:
+  url:   /update_medical_release
+  param: { module: mission, action: updateMedicalRelease}
+  
+#request_group_mission
+request_group_mission:
+  url:   /request_group_mission/:id
+  param: { module: mission, action: requestGroupMission}
+  
+#mission_avalaible_camp
+mission_avalaible_camp:
+  url:   /mission_avalaible_camp
+  param: { module: mission, action: availableCamp}
+  
+#add_pass_ajax
+add_pass_ajax:
+  url:   /add_pass_ajax
+  param: { module: camp, action: addPassengerAjax}
+
+#add_passengers
+add_passengers:
+  url:   /add_passengers/:id
+  param: { module: camp, action: addPassengers}
+  
+#reverse
+reverse:
+  url:   /reverse/:id
+  param: { module: mission, action: reverse}
+  
+#staff_available
+staff_available:
+  url:   /staff_available
+  param: { module: mission, action: staffAvailable}
+  
+#pilot_req_accept
+pilot_req_accept:
+  url:   /pilot_req/accept/:id
+  param: { module: pilotRequest, action: accept, id: 0 }
+
+#pilot_req_process
+pilot_req_process:
+  url:   /pilot_req/process/:id
+  param: { module: pilotRequest, action: process}
+
+#pilot_req_hold
+pilot_req_hold:
+  url:   /pilot_req/hold/:id
+  param: { module: pilotRequest, action: hold}
+  
+#plot_aircraft
+edit_group_aircraft:
+  url:   /edit_group_aircraft/*
+  param: { module: pilot, action: editGroupAircraft}
+  
+remove_group_aircraft:
+  url:   /remove_group_aircraft/*
+  param: { module: pilot, action: removeGroupAircraft}
+  
+paircraft_delete:
+  url:   /paircraft/delete
+  param: { module: pilot, action: deleteAir}
+  
+#plot_aircraft
+paircraft_create:
+  url:   /paircraft/create/*
+  param: { module: pilot, action: aircraft}
+  
+paircraft_edit:
+  url:   /paircraft/edit/:id
+  param: { module: pilot, action: aircraft}
+  
+#pilot_req
+pilot_request:
+  url:   /pilot_request/:id
+  param: { module: pilotRequest, action: update}
+  
+#pilot_form
+request_legs:
+  url:   /request_legs/*
+  param: { module: pilotRequest, action: requestLegs}
+  
+pilot_request_list:
+  url:   /pilot_request_list
+  param: { module: pilotRequest, action: index}  
+  
+pilot_thanks:
+  url:   /pilot_thanks/:id
+  param: { module: pilotRequest, action: pilotThanks}
+
+#mission_photo
+upload_mission_photo:
+  url:   /mission_photo/upload_photo
+  param: { module: mission_photo, action: uploadMissionPhoto}
+
+mission_photo_approved:
+  url:   /mission_photo/approved_photo
+  param: { module: mission_photo, action: photoApproved}
+
+#leg role
+leg:
+  url:   /leg
+  param: { module: missionLeg, action: index}
+  
+leg_edit:
+  url:   /leg_edit/:id
+  param: { module: missionLeg, action: update}
+  
+leg_view:
+  url:   /leg_view/:id
+  param: { module: missionLeg, action: view}
+  
+leg_delete:
+  url:   /leg_delete/:id
+  param: { module: missionLeg, action: delete}
+
+legpilot_delete:
+  url:   /legpilot_delete/:id
+  param: { module: missionLeg, action: pilotDelete}
+  
+leg_save:
+  url:   /leg_save/*
+  param: { module: missionLeg, action: save}
+  
+leg_create:
+  url:   /leg_create
+  param: { module: missionLeg, action: update}
+
+leg_email:
+  url:   /leg_email
+  param: { module: missionLeg, action: email}
+
+send_leg_email:
+  url:   /send_leg_email
+  param: { module: missionLeg, action: sendLegEmail}
+
+print_mission_leg :
+  url:   /print_mission_leg/:id
+  param: { module: missionLeg, action: printMissionLeg}
+
+create_companion:
+  url:   /create_companion/:id
+  param: { module: missionLeg, action: createCompanion}
+  
+save_companion:
+  url:   /save_companion
+  param: { module: missionLeg, action: saveCompanion}
+  
+#mission
+mission:
+  url:   /mission
+  param: { module: mission, action: index}
+  
+mission_create:
+  url:   /mission/create
+  param: { module: mission, action: update}
+  
+mission_edit:
+  url:   /mission/edit/:id
+  param: { module: mission, action: edit}
+  
+mission_delete:
+  url:   /mission/delete/:id
+  param: { module: mission, action: delete} 
+  
+mission_view:
+  url:   /mission/view/:id
+  param: { module: mission, action: view}
+
+mission_copy:
+  url:   /mission/copy/:id/*
+  param: { module: mission, action: copy}
+  
+#um_request
+um_request:
+  url:   /um_request
+  param: { module: missionRequest, action: index}
+  
+um_request_create:
+  url:   /um_request/create
+  param: { module: missionRequest, action: userStep}
+  
+um_request_edit:
+  url:   /um_request/edit/:id
+  param: { module: missionRequest, action: userStep1}
+  
+um_request_delete:
+  url:   /um_request/delete/:id
+  param: { module: missionRequest, action: delete} 
+  
+um_request_view:
+  url:   /um_request/view/:id
+  param: { module: missionRequest, action: userView} 
+  
+#itinerary
+itinerary:
+  url:   /itinerary
+  param: { module: itinerary, action: index}
+  
+itinerary_find:
+  url:   /itinerary/find
+  param: { module: itinerary, action: find}
+  
+itinerary_create:
+  url:   /itinerary/create
+  param: { module: itinerary, action: update}
+  
+itinerary_edit:
+  url:   /itinerary_edit/:id
+  param: { module: itinerary, action: update}
+  
+itinerary_delete:
+  url:   /itinerary/delete/:id
+  param: { module: itinerary, action: delete} 
+  
+itinerary_detail:
+  url:   /itinerary/detail/:id
+  param: { module: itinerary, action: detail}
+
+itinerary_copy:
+  url:   /itinerary/copy/:id
+  param: { module: itinerary, action: copy}
+
+itinerary_copy_form:
+  url:   /itinerary/copyForm/:id
+  param: { module: itinerary, action: copyForm}
+  
+#mission request
+miss_req:
+  url:   /miss_req
+  param: { module: missionRequest, action: index}
+  
+miss_req_create:
+  url:   /miss_req/create
+  param: { module: missionRequest, action: step1}
+  
+miss_req_edit:
+  url:   /miss_req/edit/:id
+  param: { module: missionRequest, action: step1}
+  
+miss_req_delete:
+  url:   /miss_req/delete/:id
+  param: { module: missionRequest, action: delete}
+  
+#event
+event:
+  url:   /event
+  param: { module: event, action: index}
+
+event_create:
+  url:   /event/new
+  param: { module: event, action: create}
+
+event_edit:
+  url:   /event/edit/:id
+  param: { module: event, action: edit}
+
+event_delete:
+  url:   /event/delete/:id
+  param: { module: event, action: delete}
+
+#calendar
+calendar:
+  url:   /calendar
+  param: { module: event, action: calendar}
+
+#wing
+wing:
+  url:   /wing
+  param: { module: wing, action: index}
+  
+wing_create:
+  url:   /wing/create
+  param: { module: wing, action: update}
+  
+wing_edit:
+  url:   /wing/edit/:id
+  param: { module: wing, action: update}
+  
+wing_delete:
+  url:   /wing/delete/:id
+  param: { module: wing, action: delete} 
+  
+#mis_type
+mis_type:
+  url:   /mis_type
+  param: { module: mission, action: indexMisType}
+  
+mis_type_create:
+  url:   /mis_type/create
+  param: { module: mission, action: updateMisType}
+  
+mis_type_edit:
+  url:   /mis_type/edit/:id
+  param: { module: mission, action: updateMisType}
+  
+mis_type_delete:
+  url:   /mis_type/delete/:id
+  param: { module: mission, action: deleteMisType} 
+  
+#mclass 
+mclass:
+  url:   /mclass
+  param: { module: member, action: indexMclass}
+  
+mclass_create:
+  url:   /mclass/create
+  param: { module: member, action: updateMclass}
+  
+mclass_edit:
+  url:   /mclass/edit/:id
+  param: { module: member, action: updateMclass}
+  
+mclass_delete:
+  url:   /mclass/delete/:id
+  param: { module: member, action: deleteMclass}
+
+  
+#contact 
+ctype:
+  url:   /ctype
+  param: { module: contact, action: indexType}
+  
+ctype_create:
+  url:   /ctype/create
+  param: { module: contact, action: updateType}
+  
+ctype_edit:
+  url:   /ctype/edit/:id
+  param: { module: contact, action: updateType}
+  
+ctype_delete:
+  url:   /ctype/delete/:id
+  param: { module: contact, action: delete} 
+  
+#contact 
+contact:
+  url:   /contact
+  param: { module: contact, action: index}
+  
+contact_create:
+  url:   /contact/create
+  param: { module: contact, action: update}
+  
+contact_edit:
+  url:   /contact/edit/:id
+  param: { module: contact, action: update}
+  
+contact_delete:
+  url:   /contact/delete/:id
+  param: { module: contact, action: delete} 
+  
+contact_view:
+  url:   /contact/view/:id
+  param: { module: contact, action: view}
+
+#coordinator role
+coordinator:
+  url:   /coordinator
+  param: { module: coordinator, action: index}
+  
+coordinator_create:
+  url:   /coordinator_create/*
+  param: { module: coordinator, action: update}
+  
+coordinator_edit:
+  url:   /coordinator/edit/:id/*
+  param: { module: coordinator, action: update}
+  
+coordinator_delete:
+  url:   /coordinator/delete/:id
+  param: { module: coordinator, action: delete}  
+
+coordinator_view:
+  url:   /coordinator/view/:id/*
+  param: { module: coordinator, action: view}  
+
+#fob role
+fbo:
+  url:   /fbo
+  param: { module: airport, action: fboIndex}
+
+fbo_create:
+  url:   /fbo/create/*
+  param: { module: airport, action: fboUpdate}
+  
+fbo_edit:
+  url:   /fbo/edit/:id
+  param: { module: airport, action: fboUpdate}
+  
+fbo_delete:
+  url:   /fbo/delete/:id
+  param: { module: airport, action: fboDelete}
+
+#board_member  
+board:
+  url:   /board/update
+  param: { module: member, action: boardMember }
+  
+board_delete:
+  url:   /board/delete/:id
+  param: { module: member, action: boardDelete }
+  
+board_edit:
+  url:   /board/edit/:id
+  param: { module: member, action: boardMember }
+board_view:
+  url:   /board/view/:id
+  param: { module: member, action: boardMemberView }
+  
+#member
+member_create:
+  url:   /member/create/*
+  param: { module: member, action: update }
+  
+member_edit:
+  url:   /member/edit/:id
+  param: { module: member, action: update }
+  
+member_delete:
+  url:   /member/delete/:id
+  param: { module: member, action: delete }
+  
+member_find:
+  url:   /member/find/*
+  param: { module: member, action: find }
+
+member_view:
+  url:   /member/view/*
+  param: { module: member, action: view }
+  
+#reqstr role
+requester:
+  url:   /requester
+  param: { module: requester, action: index }
+
+requester_find:
+  url:   /requester/find
+  param: { module: requester, action: find}
+  
+requester_create:
+  url:   /requester/create/*
+  param: { module: requester, action: update}
+  
+requester_edit:
+  url:   /requester/edit/:id
+  param: { module: requester, action: update}
+  
+requester_delete:
+  url:   /reqstr/delete/:id
+  param: { module: requester, action: delete}
+  
+#person
+person:
+  url:  /person
+  param: {module: person, action: index}
+
+person_edit:
+  url:  /person/edit/:id
+  param: {module: person, action: update}
+  
+person_view:
+  url:  /person/view/:id
+  param: {module: person, action: view}
+  
+person_delete:
+  url:  /person/delete
+  param: {module: person, action: delete}
+  
+#agency role
+agency:
+  url:   /agency
+  param: { module: agency, action: index }
+  
+agency_create:
+  url:   /agency/create
+  param: { module: agency, action: update}
+  
+agency_edit:
+  url:   /agency/edit/:id
+  param: { module: agency, action: update}
+  
+agency_delete:
+  url:   /agency/delete/:id
+  param: { module: agency, action: delete}
+  
+#account role
+account_pilot:
+  url:   /account_pilot
+  param: { module: account, action: indexPilot }
+  
+account:
+  url:   /account
+  param: { module: account, action: index }
+  
+account_create:
+  url:   /account/create
+  param: { module: account, action: update }
+  
+account_edit:
+  url:   /account/edit/:id
+  param: { module: account, action: update }
+ 
+password_edit:
+  url:   /password/edit/:id
+  param: { module: account, action: updatePassword }
+  
+#fund role
+fund:
+  url:   /fund
+  param: { module: fund, action: index }
+  
+fund_create:
+  url:   /fund/create
+  param: { module: fund, action: update}
+  
+fund_edit:
+  url:   /fund/edit/:id
+  param: { module: fund, action: update}
+  
+fund_delete:
+  url:   /fund/delete/:id
+  param: { module: fund, action: delete}
+  
+#gift role
+gift:
+  url:   /gift
+  param: { module: donation, action: indexGift }
+  
+gift_create:
+  url:   /gift/create
+  param: { module: donation, action: updateGift }
+  
+gift_edit:
+  url:   /gift/edit/:id
+  param: { module: donation, action: updateGift}
+  
+gift_delete:
+  url:   /gift/delete/:id
+  param: { module: donation, action: deleteGift }
+  
+#donation role
+donation:
+  url:   /donation
+  param: { module: donation, action: index }
+  
+donation_create:
+  url:   /donation/create
+  param: { module: donation, action: update }
+  
+donation_edit:
+  url:   /donation/edit/:id
+  param: { module: donation, action: update}
+  
+donation_delete:
+  url:   /donation/delete/:id
+  param: { module: donation, action: delete }
+  
+#campaign role
+campaign:
+  url:   /campaign
+  param: { module: campaign, action: index }
+  
+campaign_create:
+  url:   /campaign/create
+  param: { module: campaign, action: update }
+  
+campaign_edit:
+  url:   /campaign/edit/:id
+  param: { module: campaign, action: update}
+  
+campaign_delete:
+  url:   /campaign/delete/:id
+  param: { module: campaign, action: delete }
+  
+#donor role
+donor:
+  url:   /donor
+  param: { module: donor, action: index }
+  
+donor_create:
+  url:   /donor/create
+  param: { module: donor, action: update }
+  
+donor_edit:
+  url:   /donor/edit/:id
+  param: { module: donor, action: update}
+  
+donor_delete:
+  url:   /donor/delete/:id
+  param: { module: donor, action: delete }
+  
+#companion role
+companion:
+  url:   /companion
+  param: { module: companion, action: index }
+  
+companion_create:
+  url:   /companion/create
+  param: { module: companion, action: update }
+  
+companion_edit:
+  url:   /companion/edit/:id
+  param: { module: companion, action: update}
+  
+companion_delete:
+  url:   /companion/delete/:id
+  param: { module: companion, action: delete }
+
+ #passenger
+passenger:
+   url:  /passenger
+   param: {module: passenger, action: index}
+   
+passenger_create:
+  url:   /passenger/create/*
+  param: { module: passenger, action: step1}
+  
+passenger_edit:
+  url:   /passenger/edit/:id
+  param: { module: passenger, action: step1}
+  
+passenger_find:
+  url:   /passenger/find/*
+  param: { module: passenger, action: find }   
+   
+passenger_view:
+  url:   /passenger/view/:id
+  param: { module: passenger, action: view }   
+  
+passenger_change:
+  url:   /passenger/change/:id
+  param: { module: passenger, action: change }   
+   
+#passenger illness category role
+pill:
+  url:   /pill
+  param: { module: passenger, action: indexIllness }
+  
+pill_create:
+  url:   /pill/create
+  param: { module: passenger, action: updateIllness }
+  
+pill_edit:
+  url:   /pill/edit/:id
+  param: { module: passenger, action: updateIllness}
+  
+pill_delete:
+  url:   /pill/delete/:id
+  param: { module: passenger, action: deleteIllness }
+  
+#passenger type role
+ptype:
+  url:   /ptype
+  param: { module: passenger, action: indexType }
+  
+ptype_create:
+  url:   /ptype/create
+  param: { module: passenger, action: updateType }
+  
+ptype_edit:
+  url:   /ptype/edit/:id
+  param: { module: passenger, action: updateType }
+  
+ptype_delete:
+  url:   /ptype/delete/:id
+  param: { module: passenger, action: deleteType }
+
+# camp rules
+camp:
+  url:   /camp
+  param: { module: camp, action: index }
+ 
+camp_create:
+  url:   /camp/create
+  param: { module: camp, action: update }
+
+camp_edit:
+  url:   /camp/edit/:id
+  param: { module: camp, action: update }
+  
+camp_delete:
+  url:   /camp/delete/:id
+  param: { module: camp, action: delete }
+  
+camp_pilot_match:
+  url:   /camp_pilot_match/:id
+  param: { module: camp, action: match }
+  
+# afaorg rules
+afaOrg:
+  url:   /afaOrg
+  param: { module: afaOrg, action: index }
+ 
+afaOrg_create:
+  url:   /afaOrg/create
+  param: { module: afaOrg, action: update }
+
+afaOrg_edit:
+  url:   /afaOrg/edit/:id
+  param: { module: afaOrg, action: update }
+  
+afaOrg_delete:
+  url:   /afaOrg/delete/:id
+  param: { module: afaOrg, action: delete }
+  
+# aircraft rules
+aircraft:
+  url:   /aircraft
+  param: { module: aircraft, action: index }
+ 
+aircraft_create:
+  url:   /aircraft/create
+  param: { module: aircraft, action: update }
+
+aircraft_edit:
+  url:   /aircraft/edit/:id
+  param: { module: aircraft, action: update }
+  
+aircraft_delete:
+  url:   /aircraft/delete/:id
+  param: { module: aircraft, action: delete }
+  
+# airport rules
+airport:
+  url:   /airport
+  param: { module: airport, action: index }
+ 
+airport_create:
+  url:   /airport/create
+  param: { module: airport, action: update }
+
+airport_edit:
+  url:   /airport/edit/:id/*
+  param: { module: airport, action: update }
+  
+airport_delete:
+  url:   /airport/delete/:id
+  param: { module: airport, action: delete }
+
+# pilot rules
+pilot:
+  url:   /pilot
+  param: { module: pilot, action: index }
+ 
+pilot_create:
+  url:   /pilot/create/*
+  param: { module: pilot, action: update }
+
+pilot_edit:
+  url:   /pilot/edit/:id/*
+  param: { module: pilot, action: update }
+  
+pilot_delete:
+  url:   /pilot/delete/:id
+  param: { module: pilot, action: delete }
+  
+pilot_view:
+  url:   /pilot/view/:id/*
+  param: { module: pilot, action: view }
+
+# member rules
+member_needsbn:
+  url:   /member/needsBN
+  param: { module: member, action: needsBN }
+
+member_update_bn:
+  url:   /member/updateBN/:id/*
+  param: { module: member, action: updateBN }
+
+# mission missing waivers
+missing_waivers:
+  url:   /mission/missingWaivers
+  param: { module: mission, action: missingWaivers }
+
+missing_waivers_update:
+  url:   /mission/updateMissingWaivers
+  param: { module: mission, action: updateMissingWaivers }
+
+#camp missions available
+available_camps:
+  url:   /available_camps/*
+  param: { module: mission, action: availableCamp}
+
+#  default rules
+homepage:
+  url:   /
+  param: { module: dashboard, action: index }
+
+  #homepage:
+  #url:   /
+  #param: { module: public_pages, action: index }
+
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*

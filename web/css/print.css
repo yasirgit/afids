@@ -1,0 +1,22 @@
+#sidebar{
+    display: none;
+}
+#header {
+    display: none;
+}
+
+#wrapper {
+    background: url("../images/bg-wrapper.gif") repeat-y scroll 0 0 transparent;
+    float: left;
+    left: -50%;
+    min-height: 500px;
+    padding: 10px 27px 0;
+    position: relative;
+    width: 976px;
+}
+.logo {
+    display: none;
+}
+#footer {
+    display: none;
+}

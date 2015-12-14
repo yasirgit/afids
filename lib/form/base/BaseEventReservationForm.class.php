@@ -1,0 +1,82 @@
+<?php
+
+/**
+ * EventReservation form base class.
+ *
+ * @package    angelflight
+ * @subpackage form
+ * @author     Your name here
+ * @version    SVN: $Id: sfPropelFormGeneratedTemplate.php 16976 2009-04-04 12:47:44Z fabien $
+ */
+class BaseEventReservationForm extends BaseFormPropel
+{
+  public function setup()
+  {
+    $this->setWidgets(array(
+      'id'                  => new sfWidgetFormInputHidden(),
+      'event_id'            => new sfWidgetFormPropelChoice(array('model' => 'Event', 'add_empty' => true)),
+      'member_id'           => new sfWidgetFormInput(),
+      'reservation_date'    => new sfWidgetFormDateTime(),
+      'first_name'          => new sfWidgetFormInput(),
+      'last_name'           => new sfWidgetFormInput(),
+      'address'             => new sfWidgetFormInput(),
+      'city'                => new sfWidgetFormInput(),
+      'state'               => new sfWidgetFormInput(),
+      'zipcode'             => new sfWidgetFormInput(),
+      'phone'               => new sfWidgetFormInput(),
+      'email'               => new sfWidgetFormInput(),
+      'adult_guests'        => new sfWidgetFormInput(),
+      'child_guests'        => new sfWidgetFormInput(),
+      'guest_names'         => new sfWidgetFormTextarea(),
+      'amt_paid'            => new sfWidgetFormInput(),
+      'method_of_payment'   => new sfWidgetFormInput(),
+      'payment_date'        => new sfWidgetFormDateTime(),
+      'auth_number'         => new sfWidgetFormInput(),
+      'status'              => new sfWidgetFormInput(),
+      'comments'            => new sfWidgetFormInput(),
+      'collect_secure_info' => new sfWidgetFormInput(),
+      'addl_info_fields'    => new sfWidgetFormInput(),
+      'novapointe_trans_id' => new sfWidgetFormInput(),
+    ));
+
+    $this->setValidators(array(
+      'id'                  => new sfValidatorPropelChoice(array('model' => 'EventReservation', 'column' => 'id', 'required' => false)),
+      'event_id'            => new sfValidatorPropelChoice(array('model' => 'Event', 'column' => 'id', 'required' => false)),
+      'member_id'           => new sfValidatorInteger(array('required' => false)),
+      'reservation_date'    => new sfValidatorDateTime(array('required' => false)),
+      'first_name'          => new sfValidatorString(array('max_length' => 60, 'required' => false)),
+      'last_name'           => new sfValidatorString(array('max_length' => 60, 'required' => false)),
+      'address'             => new sfValidatorString(array('max_length' => 40, 'required' => false)),
+      'city'                => new sfValidatorString(array('max_length' => 30, 'required' => false)),
+      'state'               => new sfValidatorString(array('max_length' => 2, 'required' => false)),
+      'zipcode'             => new sfValidatorString(array('max_length' => 10, 'required' => false)),
+      'phone'               => new sfValidatorString(array('max_length' => 16, 'required' => false)),
+      'email'               => new sfValidatorString(array('max_length' => 60, 'required' => false)),
+      'adult_guests'        => new sfValidatorInteger(array('required' => false)),
+      'child_guests'        => new sfValidatorInteger(array('required' => false)),
+      'guest_names'         => new sfValidatorString(array('required' => false)),
+      'amt_paid'            => new sfValidatorInteger(array('required' => false)),
+      'method_of_payment'   => new sfValidatorString(array('max_length' => 10, 'required' => false)),
+      'payment_date'        => new sfValidatorDateTime(array('required' => false)),
+      'auth_number'         => new sfValidatorString(array('max_length' => 10, 'required' => false)),
+      'status'              => new sfValidatorString(array('max_length' => 10, 'required' => false)),
+      'comments'            => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'collect_secure_info' => new sfValidatorInteger(array('required' => false)),
+      'addl_info_fields'    => new sfValidatorString(array('max_length' => 500, 'required' => false)),
+      'novapointe_trans_id' => new sfValidatorString(array('max_length' => 12, 'required' => false)),
+    ));
+
+    $this->widgetSchema->setNameFormat('event_reservation[%s]');
+
+    $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+
+    parent::setup();
+  }
+
+  public function getModelName()
+  {
+    return 'EventReservation';
+  }
+
+
+}

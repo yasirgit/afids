@@ -1,0 +1,2931 @@
+propel:
+  _attributes:
+    package: lib.model
+    defaultIdMethod: native
+  activity:
+    _attributes: { phpName: Activity }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    content: { type: LONGVARCHAR, required: true }
+    created_at: { type: TIMESTAMP, required: true }
+  afa_leg:
+    _attributes: { phpName: AfaLeg }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true, foreignTable: mission_leg, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    pilot_name: { type: VARCHAR, size: '50', required: false }
+    day_phone: { type: VARCHAR, size: '16', required: false }
+    night_phone: { type: VARCHAR, size: '16', required: false}
+    fax_phone: { type: VARCHAR, size: '16', required: false }
+    aircraft_id: { type: INTEGER, size: '4', required: false, foreignTable: aircraft, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    n_number: { type: VARCHAR, size: '8', required: false }
+    aircraft_color: { type: VARCHAR, size: '20', required: false }
+    etd: { type: VARCHAR, size: '15', required: false }
+    eta: { type: VARCHAR, size: '15', required: false }
+    afa_org_id: { type: INTEGER, size: '4', required: false, foreignTable: afa_org, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    pilot_mobile_phone: { type: INTEGER, size: '16', required: false }
+    _indexes: { aircraft_id: [aircraft_id], afa_org_id: [afa_org_id] }
+  afa_org:
+    _attributes: { phpName: AfaOrg }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    name: { type: VARCHAR, size: '60', required: true }
+    org_phone: { type: VARCHAR, size: '16', required: false }
+    home_page_url: { type: VARCHAR, size: '80', required: false }
+    org_fax: { type: VARCHAR, size: '16', required: false }
+    ref_contact_name: { type: VARCHAR, size: '25', required: false }
+    ref_contact_email: { type: VARCHAR, size: '80', required: false }
+    vpo_soap_server_url: { type: VARCHAR, size: '125', required: false }
+    vpo_request_post_email: { type: VARCHAR, size: '125', required: false }
+    vpo_user_id: { type: VARCHAR, size: '25', required: false }
+    vpo_user_password: { type: VARCHAR, size: '25', required: false }
+    vpo_org_id: { type: VARCHAR, size: '5', required: false }
+    afids_requester_user_name: { type: VARCHAR, size: '25', required: false }
+    afids_requester_password: { type: VARCHAR, size: '25', required: false }
+    afids_soap_server_url: { type: VARCHAR, size: '125', required: false }
+    afids_request_post_email: { type: VARCHAR, size: '125', required: false }
+    phone_number1: { type: VARCHAR, size: '16', required: false }
+    phone_number2: { type: VARCHAR, size: '16', required: false }
+  affiliation:
+    _attributes: { phpName: Affiliation }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    description: { type: VARCHAR, size: '25', required: false }
+  agency:
+    _attributes: { phpName: Agency }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    name: { type: VARCHAR, size: '80', required: true }
+    address1: { type: VARCHAR, size: '40', required: false }
+    address2: { type: VARCHAR, size: '40', required: false }
+    city: { type: VARCHAR, size: '30', required: false }
+    county: { type: VARCHAR, size: '30', required: false }
+    state: { type: VARCHAR, size: '2', required: false }
+    country: { type: VARCHAR, size: '30', required: false }
+    zipcode: { type: VARCHAR, size: '10', required: false }
+    phone: { type: VARCHAR, size: '16', required: false }
+    comment: { type: VARCHAR, size: '40', required: false }
+    fax_phone: { type: VARCHAR, size: '16', required: false }
+    fax_comment: { type: VARCHAR, size: '40', required: false }
+    email: { type: VARCHAR, size: '80', required: false }
+  aircraft:
+    _attributes: { phpName: Aircraft }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    make: { type: VARCHAR, size: '50', required: false }
+    model: { type: VARCHAR, size: '25', required: false }
+    name: { type: VARCHAR, size: '50', required: false }
+    tail: { type: VARCHAR, size: '20', required: false }
+    faa: { type: VARCHAR, size: '10', required: false }
+    engines: { type: TINYINT, size: '1', required: false }
+    def_seats: { type: TINYINT, size: '1', required: false }
+    speed: { type: INTEGER, size: '2', required: false }
+    pressurized: { type: TINYINT, size: '1', required: true }
+    cost: { type: INTEGER, size: '4', required: true }
+    range: { type: INTEGER, size: '2', required: false }
+    ac_load: { type: INTEGER, size: '2', required: false }
+  airline:
+    _attributes: { phpName: Airline }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    name: { type: VARCHAR, size: '255', required: true }
+  airport:
+    _attributes: { phpName: Airport }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    ident: { type: VARCHAR, size: '4', required: false }
+    name: { type: VARCHAR, size: '30', required: false }
+    city: { type: VARCHAR, size: '30', required: false }
+    state: { type: VARCHAR, size: '2', required: false }
+    latitude: { type: FLOAT, size: '15', scale: '11', required: true, defaultValue: '0.00000000000' }
+    longitude: { type: FLOAT, size: '15', scale: '11', required: true, defaultValue: '0.00000000000' }
+    runway_length: { type: INTEGER, size: '2', required: false }
+    wing_id: { type: INTEGER, size: '4', required: false, foreignTable: wing, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    gmt_offset: { type: INTEGER, size: '4', required: false }
+    dst_offset: { type: INTEGER, size: '4', required: false }
+    zipcode: { type: VARCHAR, size: '5', required: false }
+    closed: { type: TINYINT, size: '1', required: false }
+    faa_site_number: { type: VARCHAR, size: '18', required: false }
+    atct: { type: TINYINT, size: '4', required: false }
+    is_private: { type: TINYINT, size: '4', required: false }
+    non_commercial_landing_fee: { type: TINYINT, size: '4', required: false }
+    elevation: { type: INTEGER, size: '11', required: false }
+    _indexes: { name: [name], city: [city, state], wing_id: [wing_id] }
+  application:
+    _attributes: { phpName: Application }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    ccard_number: { type: VARCHAR, size: '20', required: false }
+    ccard_code: { type: VARCHAR, size: '5', required: false }
+    ccard_expire: { type: DATE, required: false }
+    member_id: { type: INTEGER, size: '4', required: true, foreignTable: member, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    renewal: { type: TINYINT, size: '1', required: false }
+    date: { type: TIMESTAMP, required: true }
+    vocation_class_id: { type: INTEGER, size: '4', required: false, foreignTable: vocation_class, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    company: { type: VARCHAR, size: '40', required: false }
+    license_type: { type: VARCHAR, size: '10', required: false }
+    ifr: { type: TINYINT, size: '1', required: false }
+    multi_engine: { type: TINYINT, size: '1', required: false }
+    se_instructor: { type: VARCHAR, size: '5', required: false }
+    me_instructor: { type: VARCHAR, size: '5', required: false }
+    other_ratings: { type: VARCHAR, size: '50', required: false }
+    total_hours: { type: INTEGER, size: '4', required: false }
+    fbo: { type: VARCHAR, size: '80', required: false }
+    mission_orientation: { type: TINYINT, size: '1', required: false }
+    mission_coordination: { type: TINYINT, size: '1', required: false }
+    pilot_recruitment: { type: TINYINT, size: '1', required: false }
+    fund_raising: { type: TINYINT, size: '1', required: false }
+    celebrity_contacts: { type: TINYINT, size: '1', required: false }
+    hospital_outreach: { type: TINYINT, size: '1', required: false }
+    member_meetings: { type: TINYINT, size: '1', required: false }
+    media_relations: { type: TINYINT, size: '1', required: false }
+    telephone_work: { type: TINYINT, size: '1', required: false }
+    computers: { type: TINYINT, size: '1', required: false }
+    clerical: { type: TINYINT, size: '1', required: false }
+    publicity: { type: TINYINT, size: '1', required: false }
+    writing: { type: TINYINT, size: '1', required: false }
+    speakers_bureau: { type: TINYINT, size: '1', required: false }
+    executive_board: { type: TINYINT, size: '1', required: false }
+    wing_team: { type: TINYINT, size: '1', required: false }
+    graphic_arts: { type: TINYINT, size: '1', required: false }
+    other_volunteer: { type: VARCHAR, size: '50', required: false }
+    t_shirt_size: { type: CHAR, size: '5', required: false }
+    dues_amount_paid: { type: FLOAT, required: true, defaultValue: '0' }
+    method_of_payment: { type: VARCHAR, size: '20', required: false }
+    check_number: { type: INTEGER, size: '4', required: false }
+    donation_amount_paid: { type: FLOAT, required: false }
+    title: { type: VARCHAR, size: '12', required: false }
+    first_name: { type: VARCHAR, size: '40', required: false }
+    last_name: { type: VARCHAR, size: '40', required: false }
+    address1: { type: VARCHAR, size: '40', required: false }
+    address2: { type: VARCHAR, size: '40', required: false }
+    city: { type: VARCHAR, size: '30', required: false }
+    state: { type: VARCHAR, size: '2', required: false }
+    zipcode: { type: VARCHAR, size: '10', required: false }
+    day_phone: { type: VARCHAR, size: '16', required: false }
+    day_comment: { type: VARCHAR, size: '40', required: false }
+    eve_phone: { type: VARCHAR, size: '16', required: false }
+    eve_comment: { type: VARCHAR, size: '40', required: false }
+    mobile_phone: { type: VARCHAR, size: '16', required: false }
+    mobile_comment: { type: VARCHAR, size: '40', required: false }
+    pager_phone: { type: VARCHAR, size: '16', required: false }
+    pager_comment: { type: VARCHAR, size: '40', required: false }
+    fax_phone1: { type: VARCHAR, size: '16', required: false }
+    fax_comment1: { type: VARCHAR, size: '40', required: false }
+    fax_phone2: { type: VARCHAR, size: '16', required: false }
+    fax_comment2: { type: VARCHAR, size: '40', required: false }
+    other_phone: { type: VARCHAR, size: '16', required: false }
+    other_comment: { type: VARCHAR, size: '40', required: false }
+    email: { type: VARCHAR, size: '80', required: false }
+    spouse_first_name: { type: VARCHAR, size: '40', required: false }
+    spouse_last_name: { type: VARCHAR, size: '40', required: false }
+    applicant_pilot: { type: TINYINT, size: '1', required: false }
+    languages_spoken: { type: VARCHAR, size: '125', required: false }
+    home_base: { type: VARCHAR, size: '20', required: false }
+    secondary_home_bases: { type: VARCHAR, size: '30', required: true }
+    aircraft_primary_id: { type: INTEGER, size: '4', required: false }
+    aircraft_primary_own: { type: TINYINT, size: '1', required: false }
+    aircraft_primary_ice: { type: TINYINT, size: '1', required: false }
+    aircraft_primary_seats: { type: INTEGER, size: '4', required: false }
+    aircraft_primary_n_number: { type: VARCHAR, size: '10', required: false }
+    aircraft_secondary_id: { type: INTEGER, size: '4', required: false }
+    aircraft_secondary_own: { type: TINYINT, size: '1', required: false }
+    aircraft_secondary_ice: { type: TINYINT, size: '1', required: false }
+    aircraft_secondary_seats: { type: INTEGER, size: '4', required: false }
+    aircraft_secondary_n_number: { type: VARCHAR, size: '10', required: false }
+    pilot_certificate: { type: VARCHAR, size: '40', required: false }
+    medical_class: { type: INTEGER, size: '4', required: false }
+    ifr_hours: { type: INTEGER, size: '4', required: false }
+    multi_hours: { type: INTEGER, size: '4', required: false }
+    other_hours: { type: INTEGER, size: '4', required: false }
+    date_of_birth: { type: DATE, required: false }
+    height: { type: INTEGER, size: '4', required: false }
+    weight: { type: INTEGER, size: '4', required: false }
+    availability_weekdays: { type: TINYINT, size: '1', required: false }
+    availability_weeknights: { type: TINYINT, size: '1', required: false }
+    availability_weekends: { type: TINYINT, size: '1', required: false }
+    availability_notice: { type: TINYINT, size: '1', required: false }
+    availability_last_minute: { type: TINYINT, size: '1', required: false }
+    availability_copilot: { type: TINYINT, size: '1', required: false }
+    affirmation_agreed: { type: TINYINT, size: '1', required: false }
+    insurance_agreed: { type: TINYINT, size: '1', required: false }
+    volunteer_interest: { type: VARCHAR, size: '255', required: false }
+    company_position: { type: VARCHAR, size: '40', required: false }
+    company_match_funds: { type: TINYINT, size: '1', required: false }
+    company_business_category_id: { type: INTEGER, size: '4', required: false }
+    referral_source: { type: INTEGER, size: '11', required: false, foreignTable: ref_source, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    premium_choice: { type: INTEGER, size: '4', required: false }
+    premium_size: { type: INTEGER, size: '4', required: false }
+    ccard_approval_number: { type: VARCHAR, size: '20', required: false }
+    ccard_error_code: { type: VARCHAR, size: '10', required: false }
+    ccard_avs_result: { type: VARCHAR, size: '25', required: false }
+    processed_date: { type: TIMESTAMP, required: false }
+    event_planning: { type: TINYINT, size: '1', required: false }
+    web_internet: { type: TINYINT, size: '1', required: false }
+    foundation_contacts: { type: TINYINT, size: '1', required: false }
+    aviation_contacts: { type: TINYINT, size: '1', required: false }
+    printing: { type: TINYINT, size: '1', required: false }
+    member_aopa: { type: TINYINT, size: '1', required: false }
+    member_kiwanis: { type: TINYINT, size: '1', required: false }
+    member_rotary: { type: TINYINT, size: '1', required: false }
+    member_lions: { type: TINYINT, size: '1', required: false }
+    novapointe_id: { type: INTEGER, size: '4', required: false }
+    premium_ship_date: { type: TIMESTAMP, required: false }
+    premium_ship_method: { type: VARCHAR, size: '10', required: false }
+    premium_ship_cost: { type: INTEGER, size: '8', required: false }
+    premium_ship_tracking_number: { type: VARCHAR, size: '35', required: false }
+    spouse_pilot: { type: TINYINT, size: '1', required: false }
+    applicant_copilot: { type: TINYINT, size: '1', required: false }
+    pager_email: { type: VARCHAR, size: '80', required: false }
+    member_99s: { type: TINYINT, size: '1', required: false }
+    member_wia: { type: TINYINT, size: '1', required: false }
+    mission_email_optin: { type: TINYINT, size: '1', required: false }
+    hseats_interest: { type: TINYINT, size: '1', required: false }
+    master_application_id: { type: INTEGER, size: '4', required: false }
+    master_member_id: { type: INTEGER, size: '4', required: false }
+    referral_source_other: { type: VARCHAR, size: '40', required: false }
+    secondary_email: { type: VARCHAR, size: '80', required: false }
+    payment_transaction_id: { type: INTEGER, size: '4', required: false }
+    aircraft_third_ice: { type: TINYINT, size: '1', required: false }
+    aircraft_third_id: { type: INTEGER, size: '11', required: false }
+    aircraft_third_n_number: { type: VARCHAR, size: '10', required: false }
+    aircraft_third_own: { type: TINYINT, size: '1', required: false }
+    aircraft_third_seats: { type: INTEGER, size: '11', required: false }
+    drivers_license_number: { type: VARCHAR, size: '25', required: false }
+    drivers_license_state: { type: VARCHAR, size: '2', required: false }
+    emergency_contact_name: { type: VARCHAR, size: '40', required: false }
+    emergency_contact_phone: { type: VARCHAR, size: '40', required: false }
+    country: { type: VARCHAR, size: '30', required: false }
+    middle_name: { type: VARCHAR, size: '40', required: false }
+    suffix: { type: VARCHAR, size: '25', required: false }
+    nickname: { type: VARCHAR, size: '40', required: false }
+    veteran: { type: TINYINT, size: '4', required: false }
+    gender: { type: VARCHAR, size: '7', required: false }
+    _indexes: { member_id: [member_id], vocation_class_id: [vocation_class_id], referral_source: [referral_source] }
+  application_temp:
+    _attributes: { phpName: ApplicationTemp }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    application_date: { type: TIMESTAMP, required: false }
+    renewal: { type: TINYINT, size: '1', required: false }
+    title: { type: VARCHAR, size: '12', required: false }
+    first_name: { type: VARCHAR, size: '40', required: false }
+    last_name: { type: VARCHAR, size: '40', required: false }
+    address1: { type: VARCHAR, size: '40', required: false }
+    address2: { type: VARCHAR, size: '40', required: false }
+    city: { type: VARCHAR, size: '30', required: false }
+    state: { type: VARCHAR, size: '2', required: false }
+    zipcode: { type: VARCHAR, size: '10', required: false }
+    day_phone: { type: VARCHAR, size: '16', required: false }
+    day_comment: { type: VARCHAR, size: '40', required: false }
+    eve_phone: { type: VARCHAR, size: '16', required: false }
+    eve_comment: { type: VARCHAR, size: '40', required: false }
+    mobile_phone: { type: VARCHAR, size: '16', required: false }
+    mobile_comment: { type: VARCHAR, size: '40', required: false }
+    pager_phone: { type: VARCHAR, size: '16', required: false }
+    pager_comment: { type: VARCHAR, size: '40', required: false }
+    fax_phone1: { type: VARCHAR, size: '16', required: false }
+    fax_comment1: { type: VARCHAR, size: '40', required: false }
+    fax_phone2: { type: VARCHAR, size: '16', required: false }
+    fax_comment2: { type: VARCHAR, size: '40', required: false }
+    other_phone: { type: VARCHAR, size: '16', required: false }
+    other_comment: { type: VARCHAR, size: '40', required: false }
+    email: { type: VARCHAR, size: '80', required: false }
+    spouse_first_name: { type: VARCHAR, size: '40', required: false }
+    spouse_last_name: { type: VARCHAR, size: '40', required: false }
+    applicant_pilot: { type: TINYINT, size: '1', required: false }
+    spouse_pilot: { type: TINYINT, size: '1', required: false }
+    applicant_copilot: { type: TINYINT, size: '1', required: false }
+    languages_spoken: { type: VARCHAR, size: '125', required: false }
+    home_base: { type: VARCHAR, size: '20', required: false }
+    fbo_name: { type: VARCHAR, size: '80', required: false }
+    aircraft_primary_id: { type: INTEGER, size: '4', required: false }
+    aircraft_primary_own: { type: TINYINT, size: '1', required: false }
+    aircraft_primary_ice: { type: TINYINT, size: '1', required: false }
+    aircraft_primary_seats: { type: INTEGER, size: '4', required: false }
+    aircraft_primary_n_number: { type: VARCHAR, size: '10', required: false }
+    aircraft_secondary_id: { type: INTEGER, size: '4', required: false }
+    aircraft_secondary_own: { type: TINYINT, size: '1', required: false }
+    aircraft_secondary_ice: { type: TINYINT, size: '1', required: false }
+    aircraft_secondary_seats: { type: INTEGER, size: '4', required: false }
+    aircraft_secondary_n_number: { type: VARCHAR, size: '10', required: false }
+    pilot_certificate: { type: VARCHAR, size: '40', required: false }
+    ratings: { type: VARCHAR, size: '80', required: false }
+    medical_class: { type: INTEGER, size: '4', required: false }
+    license_type: { type: VARCHAR, size: '10', required: false }
+    total_hours: { type: INTEGER, size: '4', required: false }
+    ifr_hours: { type: INTEGER, size: '4', required: false }
+    multi_hours: { type: INTEGER, size: '4', required: false }
+    other_hours: { type: INTEGER, size: '4', required: false }
+    date_of_birth: { type: TIMESTAMP, required: false }
+    height: { type: INTEGER, size: '4', required: false }
+    weight: { type: INTEGER, size: '4', required: false }
+    availability_weekdays: { type: TINYINT, size: '1', required: false }
+    availability_weeknights: { type: TINYINT, size: '1', required: false }
+    availability_weekends: { type: TINYINT, size: '1', required: false }
+    availability_notice: { type: TINYINT, size: '1', required: false }
+    availability_last_minute: { type: TINYINT, size: '1', required: false }
+    availability_copilot: { type: TINYINT, size: '1', required: false }
+    affirmation_agreed: { type: TINYINT, size: '1', required: false }
+    insurance_agreed: { type: TINYINT, size: '1', required: false }
+    volunteer_interest: { type: VARCHAR, size: '255', required: false }
+    company_name: { type: VARCHAR, size: '40', required: false }
+    company_position: { type: VARCHAR, size: '40', required: false }
+    company_match_funds: { type: TINYINT, size: '1', required: false }
+    company_business_category_id: { type: INTEGER, size: '4', required: false }
+    referral_source: { type: INTEGER, size: '11', required: false }
+    premium_choice: { type: INTEGER, size: '4', required: false }
+    premium_size: { type: INTEGER, size: '4', required: false }
+    dues_amount_paid: { type: INTEGER, size: '8', required: false }
+    donation_amount_paid: { type: INTEGER, size: '8', required: false }
+    method_of_payment_id: { type: INTEGER, size: '4', required: false }
+    ccard_approval_number: { type: VARCHAR, size: '20', required: false }
+    ccard_error_code: { type: VARCHAR, size: '10', required: false }
+    ccard_avs_result: { type: VARCHAR, size: '25', required: false }
+    processed_date: { type: TIMESTAMP, required: false }
+    member_id: { type: INTEGER, size: '4', required: false }
+    mission_orientation: { type: TINYINT, size: '1', required: false }
+    mission_coordination: { type: TINYINT, size: '1', required: false }
+    pilot_recruitment: { type: TINYINT, size: '1', required: false }
+    fund_raising: { type: TINYINT, size: '1', required: false }
+    celebrity_contacts: { type: TINYINT, size: '1', required: false }
+    hospital_outreach: { type: TINYINT, size: '1', required: false }
+    media_relations: { type: TINYINT, size: '1', required: false }
+    telephone_work: { type: TINYINT, size: '1', required: false }
+    computers: { type: TINYINT, size: '1', required: false }
+    clerical: { type: TINYINT, size: '1', required: false }
+    publicity: { type: TINYINT, size: '1', required: false }
+    writing: { type: TINYINT, size: '1', required: false }
+    speakers_bureau: { type: TINYINT, size: '1', required: false }
+    wing_team: { type: TINYINT, size: '1', required: false }
+    graphic_arts: { type: TINYINT, size: '1', required: false }
+    event_planning: { type: TINYINT, size: '1', required: false }
+    web_internet: { type: TINYINT, size: '1', required: false }
+    foundation_contacts: { type: TINYINT, size: '1', required: false }
+    aviation_contacts: { type: TINYINT, size: '1', required: false }
+    printing: { type: TINYINT, size: '1', required: false }
+    member_aopa: { type: TINYINT, size: '1', required: false }
+    member_kiwanis: { type: TINYINT, size: '1', required: false }
+    member_rotary: { type: TINYINT, size: '1', required: false }
+    member_lions: { type: TINYINT, size: '1', required: false }
+    person_id: { type: INTEGER, size: '4', required: false }
+    novapointe_id: { type: INTEGER, size: '4', required: false }
+    premium_ship_date: { type: TIMESTAMP, required: false }
+    premium_ship_method: { type: VARCHAR, size: '10', required: false }
+    premium_ship_cost: { type: INTEGER, size: '8', required: false }
+    premium_ship_tracking_number: { type: VARCHAR, size: '35', required: false }
+    referer_name: { type: VARCHAR, size: '40', required: false }
+    referral_session_id: { type: INTEGER, size: '4', required: false }
+    aircraft_third_id: { type: INTEGER, size: '4', required: false }
+    aircraft_third_own: { type: TINYINT, size: '1', required: false }
+    aircraft_third_ice: { type: TINYINT, size: '1', required: false }
+    aircraft_third_seats: { type: INTEGER, size: '4', required: false }
+    aircraft_third_n_number: { type: VARCHAR, size: '10', required: false }
+    ip_address: { type: VARCHAR, size: '20', required: false }
+    pager_email: { type: VARCHAR, size: '80', required: false }
+    member_99s: { type: TINYINT, size: '1', required: false }
+    member_wia: { type: TINYINT, size: '1', required: false }
+    mission_email_optin: { type: TINYINT, size: '1', required: false }
+    hseats_interest: { type: TINYINT, size: '1', required: false }
+    master_application_id: { type: INTEGER, size: '4', required: false }
+    master_member_id: { type: INTEGER, size: '4', required: false }
+    referral_source_other: { type: VARCHAR, size: '40', required: false }
+    secondary_email: { type: VARCHAR, size: '80', required: false }
+    payment_transaction_id: { type: INTEGER, size: '4', required: false }
+    middle_name: { type: VARCHAR, size: '40', required: false }
+    suffix: { type: VARCHAR, size: '25', required: false }
+    nickname: { type: VARCHAR, size: '40', required: false }
+    veteran: { type: TINYINT, size: '1', required: false }
+    gender: { type: VARCHAR, size: '7', required: false }
+    emergency_contact_name: { type: VARCHAR, size: '40', required: false }
+    emergency_contact_phone: { type: VARCHAR, size: '40', required: false }
+    country: { type: VARCHAR, size: '30', required: false }
+    drivers_license_state: { type: VARCHAR, size: '2', required: false }
+    drivers_license_number: { type: VARCHAR, size: '25', required: false }
+    ccard_number: { type: VARCHAR, size: '20', required: false }
+    ccard_code: { type: VARCHAR, size: '5', required: false }
+    ccard_expire: { type: DATE, required: false }
+    is_complete: { type: TINYINT, size: '1', required: true, defaultValue: '-4' }
+    member_class_id: { type: INTEGER, size: '11', required: false }
+    wing_id: { type: INTEGER, size: '11', required: false }
+  audit_log:
+    _attributes: { phpName: AuditLog }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    date_time: { type: TIMESTAMP, required: false }
+    person_id: { type: INTEGER, size: '11', required: false }
+    event: { type: VARCHAR, size: '15', required: false }
+    event_reason: { type: VARCHAR, size: '1000', required: false }
+  availability:
+    _attributes: { phpName: Availability }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    member_id: { type: INTEGER, size: '4', required: true, foreignTable: member, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    first_date: { type: DATE, required: false }
+    last_date: { type: DATE, required: false }
+    not_available: { type: TINYINT, size: '1', required: false }
+    no_weekday: { type: TINYINT, size: '1', required: false }
+    no_night: { type: TINYINT, size: '1', required: false }
+    last_minute: { type: TINYINT, size: '1', required: false }
+    no_weekend: { type: TINYINT, size: '1', required: false }
+    as_mission_mssistant: { type: TINYINT, size: '1', required: false }
+    availability_comment: { type: VARCHAR, size: '50', required: false }
+    _indexes: { first_date: [first_date], last_date: [last_date] }
+    _uniques: { member_id_2: [member_id] }
+  board_committee:
+    _attributes: { phpName: BoardCommittee }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    board_member_id: { type: INTEGER, size: '4', required: true, foreignTable: board_member, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    committee_id: { type: INTEGER, size: '4', required: true, foreignTable: committee, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    chairman: { type: TINYINT, size: '1', required: true }
+    _indexes: { committee_id: [committee_id], board_member_id_2: [board_member_id] }
+    _uniques: { board_member_id: [board_member_id, committee_id] }
+  board_member:
+    _attributes: { phpName: BoardMember }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    person_id: { type: INTEGER, size: '11', required: true, foreignTable: person, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    startyear: { type: INTEGER, size: '4', required: true }
+    endyear: { type: INTEGER, size: '4', required: true }
+    _indexes: { person_id: [person_id] }
+  camp:
+    _attributes: { phpName: Camp }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    agency_id: { type: INTEGER, size: '4', required: true, foreignTable: agency, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    airport_id: { type: INTEGER, size: '4', required: false, foreignTable: airport, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    fbo_id: { type: INTEGER, size: '4', required: false, foreignTable: fbo, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    camp_name: { type: VARCHAR, size: '40', required: false }
+    camp_phone: { type: VARCHAR, size: '16', required: false }
+    session: { type: VARCHAR, size: '100', required: false }
+    camp_phone_comment: { type: VARCHAR, size: '40', required: false }
+    lodging_name: { type: VARCHAR, size: '40', required: false }
+    lodging_phone: { type: VARCHAR, size: '16', required: false }
+    lodging_phone_comment: { type: VARCHAR, size: '40', required: false }
+    arrival_date: { type: TIMESTAMP, required: false }
+    arrival_comment: { type: VARCHAR, size: '150', required: false }
+    departure_date: { type: TIMESTAMP, required: false }
+    departure_comment: { type: VARCHAR, size: '150', required: false }
+    comment: { type: VARCHAR, size: '500', required: false }
+    grouped_mission: { type: VARCHAR, size: '5', required: false }
+    flight_information: { type: VARCHAR, size: '255', required: false }
+    _indexes: { agency_id: [agency_id], fbo_id: [fbo_id], airport_id: [airport_id] }
+  camp_passenger:
+    _attributes: { phpName: CampPassenger }
+    camp_id: { type: INTEGER, size: '11', primaryKey: true, required: true, foreignTable: camp, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    passenger_id: { type: INTEGER, size: '11', primaryKey: true, required: true, foreignTable: passenger, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    airport_id: { type: INTEGER, size: '11', required: true }
+    note: { type: VARCHAR, size: '255', required: false }
+    link: { type: INTEGER, size: '11', required: false }
+    return_airport_id: { type: INTEGER, size: '12', required: true }
+    mission_id: { type: INTEGER, size: '11', primaryKey: true, required: true }
+    _indexes: { passenger_id: [passenger_id] }
+  camp_pilot_passenger:
+    _attributes: { phpName: CampPilotPassenger }
+    camp_id: { type: INTEGER, size: '11', primaryKey: true, required: true }
+    member_id: { type: INTEGER, size: '11', required: true }
+    passenger_id: { type: INTEGER, size: '11', required: true }
+    flight_date: { type: DATE, required: true }
+  campaign:
+    _attributes: { phpName: Campaign }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    campaign_decs: { type: VARCHAR, size: '25', required: false }
+    premium_sku: { type: VARCHAR, size: '12', required: false }
+    premium_min: { type: INTEGER, size: '4', required: false }
+  committee:
+    _attributes: { phpName: Committee }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    name: { type: VARCHAR, size: '40', required: true }
+  companion:
+    _attributes: { phpName: Companion }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    passenger_id: { type: INTEGER, size: '4', required: true, foreignTable: passenger, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    name: { type: VARCHAR, size: '50', required: false }
+    relationship: { type: VARCHAR, size: '30', required: false }
+    date_of_birth: { type: DATE, required: false }
+    weight: { type: INTEGER, size: '2', required: false }
+    companion_phone: { type: VARCHAR, size: '16', required: false }
+    companion_phone_comment: { type: VARCHAR, size: '40', required: false }
+    person_id: { type: INTEGER, size: '11', required: true, foreignTable: person, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    _indexes: { passenger_id: [passenger_id], person_id: [person_id] }
+  company:
+    _attributes: { phpName: Company }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    name: { type: VARCHAR, size: '40', required: false }
+    has_matching_program: { type: TINYINT, size: '1', required: false }
+    has_payroll_withholding_program: { type: TINYINT, size: '1', required: false }
+  contact:
+    _attributes: { phpName: Contact }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    person_id: { type: INTEGER, size: '4', required: true, foreignTable: person, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    ref_source_id: { type: INTEGER, size: '4', required: false, foreignTable: ref_source, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    send_app_format: { type: VARCHAR, size: '10', required: false }
+    comment: { type: VARCHAR, size: '100', required: false }
+    letter_sent: { type: DATE, required: false }
+    contact_type_id: { type: INTEGER, size: '4', required: false, foreignTable: contact_type, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    date_added: { type: DATE, required: false }
+    date_updated: { type: DATE, required: false }
+    company_name: { type: VARCHAR, size: '60', required: false }
+    _indexes: { person_id: [person_id], ref_source_id: [ref_source_id], contact_type_id: [contact_type_id] }
+  contact_request:
+    _attributes: { phpName: ContactRequest }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    first_name: { type: VARCHAR, size: '40', required: false }
+    last_name: { type: VARCHAR, size: '40', required: false }
+    title: { type: VARCHAR, size: '12', required: false }
+    address1: { type: VARCHAR, size: '40', required: false }
+    address2: { type: VARCHAR, size: '40', required: false }
+    city: { type: VARCHAR, size: '30', required: false }
+    state: { type: VARCHAR, size: '2', required: false }
+    zipcode: { type: VARCHAR, size: '10', required: false }
+    country: { type: VARCHAR, size: '30', required: false }
+    day_phone: { type: VARCHAR, size: '40', required: false }
+    day_comment: { type: VARCHAR, size: '40', required: false }
+    eve_phone: { type: VARCHAR, size: '40', required: false }
+    eve_comment: { type: VARCHAR, size: '40', required: false }
+    fax_phone: { type: VARCHAR, size: '40', required: false }
+    fax_comment: { type: VARCHAR, size: '40', required: false }
+    mobile_phone: { type: VARCHAR, size: '40', required: false }
+    mobile_comment: { type: VARCHAR, size: '40', required: false }
+    pager_phone: { type: VARCHAR, size: '40', required: false }
+    pager_comment: { type: VARCHAR, size: '40', required: false }
+    email: { type: VARCHAR, size: '80', required: false }
+    ref_source_id: { type: INTEGER, size: '11', required: false }
+    send_app_format: { type: VARCHAR, size: '10', required: false }
+    comment: { type: VARCHAR, size: '100', required: false }
+    contact_type_id: { type: INTEGER, size: '11', required: false }
+    person_id: { type: INTEGER, size: '11', required: false }
+    processed: { type: TINYINT, size: '4', required: false }
+    letter_to_send: { type: INTEGER, size: '11', required: false }
+    letter_sent_date: { type: TIMESTAMP, required: false }
+    request_date: { type: TIMESTAMP, required: false }
+    session_id: { type: VARCHAR, size: '120', required: false }
+    ip_address: { type: VARCHAR, size: '20', required: false }
+  contact_type:
+    _attributes: { phpName: ContactType }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    contact_type_desc: { type: VARCHAR, size: '40', required: false }
+  coordinator:
+    _attributes: { phpName: Coordinator }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    member_id: { type: INTEGER, size: '11', required: false, foreignTable: member, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    lead_id: { type: INTEGER, size: '4', required: false, foreignTable: coordinator, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    coor_of_the_week: { type: TINYINT, size: '1', required: false }
+    coor_week_date: { type: TIMESTAMP, required: false }
+    initial_contact: { type: VARCHAR, size: '40', required: false }
+    _indexes: { lead_id: [lead_id], member_id: [member_id] }
+  county:
+    _attributes: { phpName: County }
+    fips_code: { type: INTEGER, size: '4', primaryKey: true, required: true }
+    name: { type: VARCHAR, size: '25', required: false }
+  discussion:
+    _attributes: { phpName: Discussion }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    user_id: { type: INTEGER, size: '11', required: true }
+    leg_id: { type: INTEGER, size: '11', required: true }
+    comment: { type: LONGVARCHAR, required: false }
+    created_at: { type: TIMESTAMP, required: false }
+    is_split: { type: TINYINT, size: '1', required: false }
+    _indexes: { user_id: [user_id] }
+  donation:
+    _attributes: { phpName: Donation }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    donor_id: { type: INTEGER, size: '11', required: true, foreignTable: donor, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    gift_date: { type: DATE, required: false }
+    gift_amount: { type: INTEGER, size: '8', required: false }
+    deductible_amount: { type: INTEGER, size: '8', required: false }
+    gift_type: { type: INTEGER, size: '11', required: true, foreignTable: gift_type, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    check_number: { type: VARCHAR, size: '10', required: false }
+    campain_id: { type: INTEGER, size: '11', required: true, foreignTable: campaign, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    fund_id: { type: INTEGER, size: '11', required: true, foreignTable: fund, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    gift_note: { type: VARCHAR, size: '125', required: false }
+    printed_note: { type: VARCHAR, size: '255', required: false }
+    receipt_generated_date: { type: TIMESTAMP, required: false }
+    follow_up: { type: TINYINT, size: '1', required: false }
+    premium_order_date: { type: TIMESTAMP, required: false }
+    tribute_first_name: { type: VARCHAR, size: '30', required: false }
+    tribute_last_name: { type: VARCHAR, size: '30', required: false }
+    tribute_address1: { type: VARCHAR, size: '30', required: false }
+    tribute_address2: { type: VARCHAR, size: '30', required: false }
+    tribute_city: { type: VARCHAR, size: '30', required: false }
+    tribute_state: { type: VARCHAR, size: '2', required: false }
+    tribute_zipcode: { type: VARCHAR, size: '10', required: false }
+    tribute_email: { type: VARCHAR, size: '80', required: false }
+    tribute_category: { type: VARCHAR, size: '20', required: false }
+    tribute_message: { type: VARCHAR, size: '255', required: false }
+    tribute_deliver_by: { type: VARCHAR, size: '20', required: false }
+    tribute_gift_id: { type: INTEGER, size: '11', required: false }
+    person_id: { type: INTEGER, size: '11', required: false }
+    processedDate: { type: DATE, required: false }
+    novapointe_id: { type: VARCHAR, size: '30', required: false }
+    ccard_approval_number: { type: VARCHAR, size: '30', required: false }
+    novapointe_fulfillment_id: { type: VARCHAR, size: '30', required: false }
+    novapointe_tracking_number: { type: VARCHAR, size: '40', required: false }
+    novapointe_ship_date: { type: DATE, required: false }
+    tribute_letter_sent_date: { type: DATE, required: false }
+    send_tribute_card: { type: TINYINT, size: '1', required: false }
+    tribute_image_id: { type: INTEGER, size: '11', required: false }
+    ecard_read_date: { type: DATE, required: false }
+    ecardEmailSentDate: { type: DATE, required: false }
+    ecard_email_sent_result: { type: INTEGER, size: '11', required: false }
+    _indexes: { campain_id: [campain_id], donor_id: [donor_id], fund_id: [fund_id], gift_type: [gift_type] }
+  donor:
+    _attributes: { phpName: Donor }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    co_donor_id: { type: INTEGER, size: '11', required: false }
+    affiliation_id: { type: INTEGER, size: '11', required: false, foreignTable: affiliation, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    block_mailings: { type: TINYINT, size: '1', required: false }
+    prospect_comment: { type: VARCHAR, size: '500', required: false }
+    salutation: { type: VARCHAR, size: '125', required: false }
+    company_id: { type: INTEGER, size: '11', required: false, foreignTable: company, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    position: { type: VARCHAR, size: '40', required: false }
+    donor_potential: { type: INTEGER, size: '11', required: false }
+    person_id: { type: INTEGER, size: '11', required: false, foreignTable: person, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    date_added: { type: DATE, required: false }
+    date_updated: { type: DATE, required: false }
+    _indexes: { person_id: [person_id], company_id: [company_id], affiliation_id: [affiliation_id] }
+  dp_donor_mapping:
+    _attributes: { phpName: DpDonorMapping }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    afids_person_id: { type: INTEGER, size: '11', required: false }
+    dp_donor_id: { type: INTEGER, size: '11', required: false }
+    dateAdded: { type: TIMESTAMP, required: false }
+  email_letter:
+    _attributes: { phpName: EmailLetter }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    subject: { type: VARCHAR, size: '50', required: false }
+    sender_name: { type: VARCHAR, size: '30', required: false }
+    sender_email: { type: VARCHAR, size: '50', required: false }
+    body: { type: LONGVARCHAR, required: false }
+    attach_file_path: { type: VARCHAR, size: '255', required: false }
+    recipients: { type: LONGVARCHAR, required: false }
+  email_list:
+    _attributes: { phpName: EmailList }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    description: { type: VARCHAR, size: '25', required: false }
+    is_private: { type: TINYINT, size: '1', required: false }
+    wing_id: { type: INTEGER, size: '4', required: false, foreignTable: wing, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    _indexes: { wing_id: [wing_id] }
+  email_list_person:
+    _attributes: { phpName: EmailListPerson }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    list_id: { type: INTEGER, size: '11', required: true, foreignTable: email_list, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    person_id: { type: INTEGER, size: '11', required: true, foreignTable: person, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    _indexes: { list_id: [list_id], person_id: [person_id] }
+  email_list_role:
+    _attributes: { phpName: EmailListRole }
+    list_id: { type: INTEGER, size: '11', primaryKey: true, required: true, foreignTable: email_list, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    role_id: { type: INTEGER, size: '11', primaryKey: true, required: true, foreignTable: role, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    _indexes: { role_id: [role_id] }
+  email_log:
+    _attributes: { phpName: EmailLog }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    send_date: { type: TIMESTAMP, required: false }
+    sender_name: { type: VARCHAR, size: '40', required: false }
+    sender_email: { type: VARCHAR, size: '80', required: false }
+    recipient_count: { type: INTEGER, size: '4', required: false }
+    letter_id: { type: INTEGER, size: '4', required: false, foreignTable: email_letter, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    error_count: { type: INTEGER, size: '4', required: false }
+    batch_id: { type: INTEGER, size: '4', required: false }
+    _indexes: { letter_id: [letter_id] }
+  email_queue:
+    _attributes: { phpName: EmailQueue }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    person_id: { type: INTEGER, size: '4', required: true, foreignTable: person, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    letter_id: { type: INTEGER, size: '4', required: true, foreignTable: email_letter, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    request_date: { type: TIMESTAMP, required: false }
+    send_date: { type: TIMESTAMP, required: false }
+    priority: { type: TINYINT, size: '2', required: false }
+    send_status: { type: VARCHAR, size: '255', required: false, defaultValue: pending }
+    _indexes: { letter_id: [letter_id], person_id: [person_id] }
+  email_template:
+    _attributes: { phpName: EmailTemplate }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    name: { type: VARCHAR, size: '255', required: true }
+    subject: { type: VARCHAR, size: '255', required: false }
+    sender_name: { type: VARCHAR, size: '255', required: false }
+    sender_email: { type: VARCHAR, size: '255', required: false }
+    body: { type: LONGVARCHAR, required: false }
+    person_id: { type: INTEGER, size: '11', required: true, foreignTable: person, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
+    _indexes: { person_id: [person_id] }
+  email_tracking:
+    _attributes: { phpName: EmailTracking }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    track_date: { type: TIMESTAMP, required: false }
+    send_date: { type: TIMESTAMP, required: false }
+    letter_id: { type: INTEGER, size: '4', required: false, foreignTable: email_letter, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    rec_count: { type: INTEGER, size: '4', required: false }
+    afids_user_id: { type: INTEGER, size: '4', required: false }
+    _indexes: { letter_id: [letter_id] }
+  event:
+    _attributes: { phpName: Event }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    event_name: { type: VARCHAR, size: '60', required: true }
+    event_date: { type: TIMESTAMP, required: false }
+    event_time: { type: VARCHAR, size: '30', required: false }
+    location: { type: VARCHAR, size: '60', required: false }
+    short_desc: { type: VARCHAR, size: '500', required: false }
+    long_desc: { type: LONGVARCHAR, required: false }
+    contact_info: { type: VARCHAR, size: '100', required: false }
+    email_sent_date: { type: TIMESTAMP, required: false }
+    online_reservation: { type: TINYINT, size: '1', required: false }
+    adult_cost: { type: INTEGER, size: '8', required: false }
+    child_cost: { type: INTEGER, size: '8', required: false }
+    adult_door_cost: { type: INTEGER, size: '8', required: false }
+    child_door_cost: { type: INTEGER, size: '8', required: false }
+    signup_deadline: { type: TIMESTAMP, required: false }
+    onsite_signup_ok: { type: TINYINT, size: '1', required: false }
+    max_persons: { type: INTEGER, size: '4', required: false }
+    collect_secure_info: { type: TINYINT, size: '1', required: false }
+    addl_info_fields: { type: VARCHAR, size: '500', required: false }
+    addl_info_fields_help: { type: VARCHAR, size: '500', required: false }
+  event_reservation:
+    _attributes: { phpName: EventReservation }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    event_id: { type: INTEGER, size: '4', required: false, foreignTable: event, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    member_id: { type: INTEGER, size: '4', required: false }
+    reservation_date: { type: TIMESTAMP, required: false }
+    first_name: { type: VARCHAR, size: '60', required: false }
+    last_name: { type: VARCHAR, size: '60', required: false }
+    address: { type: VARCHAR, size: '40', required: false }
+    city: { type: VARCHAR, size: '30', required: false }
+    state: { type: VARCHAR, size: '2', required: false }
+    zipcode: { type: VARCHAR, size: '10', required: false }
+    phone: { type: VARCHAR, size: '16', required: false }
+    email: { type: VARCHAR, size: '60', required: false }
+    adult_guests: { type: INTEGER, size: '4', required: false }
+    child_guests: { type: INTEGER, size: '4', required: false }
+    guest_names: { type: CLOB, required: false }
+    amt_paid: { type: INTEGER, size: '8', required: false }
+    method_of_payment: { type: VARCHAR, size: '10', required: false }
+    payment_date: { type: TIMESTAMP, required: false }
+    auth_number: { type: VARCHAR, size: '10', required: false }
+    status: { type: VARCHAR, size: '10', required: false }
+    comments: { type: VARCHAR, size: '255', required: false }
+    collect_secure_info: { type: TINYINT, size: '1', required: false }
+    addl_info_fields: { type: VARCHAR, size: '500', required: false }
+    novapointe_trans_id: { type: VARCHAR, size: '12', required: false }
+    _indexes: { event_id: [event_id] }
+  event_wings:
+    _attributes: { phpName: EventWings }
+    event_id: { type: INTEGER, size: '11', primaryKey: true, required: true, foreignTable: event, foreignReference: id, onDelete: CASCADE, onUpdate: RESTRICT }
+    wing_id: { type: INTEGER, size: '11', primaryKey: true, required: true, foreignTable: wing, foreignReference: id, onDelete: CASCADE, onUpdate: RESTRICT }
+    _indexes: { event_wings_FI_2: [wing_id] }
+  fbo:
+    _attributes: { phpName: Fbo }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    airport_id: { type: INTEGER, size: '4', required: true, foreignTable: airport, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    name: { type: VARCHAR, size: '40', required: true }
+    voice_phone: { type: VARCHAR, size: '16', required: false }
+    fax_phone: { type: VARCHAR, size: '16', required: false }
+    discount_amount: { type: TINYINT, size: '1', required: true }
+    fuel_discount: { type: DOUBLE, required: true }
+    default_fbo: { type: INTEGER, size: '4', required: false }
+    address: { type: VARCHAR, size: '40', required: false }
+    _indexes: { name: [name], airport_id: [airport_id] }
+  fund:
+    _attributes: { phpName: Fund }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    fund_desc: { type: VARCHAR, size: '25', required: false }
+  gift_type:
+    _attributes: { phpName: GiftType }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    gift_type_desc: { type: VARCHAR, size: '25', required: false }
+  itinerary:
+    _attributes: { phpName: Itinerary }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    date_requested: { type: TIMESTAMP, required: true }
+    mission_request_id: { type: INTEGER, size: '11', required: false, foreignTable: mission_request, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    mission_type_id: { type: INTEGER, size: '11', required: false }
+    apoint_time: { type: VARCHAR, size: '50', required: true }
+    passenger_id: { type: INTEGER, size: '11', required: true }
+    requester_id: { type: INTEGER, size: '11', required: false }
+    facility: { type: VARCHAR, size: '50', required: false }
+    lodging: { type: VARCHAR, size: '50', required: false }
+    orgin_city: { type: VARCHAR, size: '50', required: false }
+    orgin_state: { type: VARCHAR, size: '2', required: false }
+    dest_city: { type: VARCHAR, size: '50', required: false }
+    dest_state: { type: VARCHAR, size: '2', required: false }
+    waiver_need: { type: TINYINT, size: '4', required: false }
+    need_medical_release: { type: TINYINT, size: '4', required: false }
+    comment: { type: VARCHAR, size: '255', required: false }
+    agency_id: { type: INTEGER, size: '11', required: true }
+    camp_id: { type: INTEGER, size: '11', required: false }
+    leg_id: { type: INTEGER, size: '11', required: false }
+    point_time: { type: TIME, required: false }
+    timetype: { type: VARCHAR, size: '2', required: false }
+    cancel_itinerary: { type: TINYINT, size: '4', required: false }
+    copied_itinerary: { type: VARCHAR, size: '15', required: false }
+    _indexes: { mission_type_id: [mission_type_id], passenger_id: [passenger_id], requester_id: [requester_id], agency_id: [agency_id], camp_id: [camp_id], leg_id: [leg_id], mission_request_id: [mission_request_id] }
+  itinerary_backup:
+    _attributes: { phpName: ItineraryBackup }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    date_requested: { type: TIMESTAMP, required: true }
+    mission_request_id: { type: INTEGER, size: '11', required: false }
+    mission_type_id: { type: INTEGER, size: '11', required: false }
+    apoint_time: { type: VARCHAR, size: '50', required: true }
+    passenger_id: { type: INTEGER, size: '11', required: true }
+    requester_id: { type: INTEGER, size: '11', required: false }
+    facility: { type: VARCHAR, size: '50', required: false }
+    lodging: { type: VARCHAR, size: '50', required: false }
+    orgin_city: { type: VARCHAR, size: '50', required: false }
+    orgin_state: { type: VARCHAR, size: '2', required: false }
+    dest_city: { type: VARCHAR, size: '50', required: false }
+    dest_state: { type: VARCHAR, size: '2', required: false }
+    waiver_need: { type: TINYINT, size: '4', required: false }
+    need_medical_release: { type: TINYINT, size: '4', required: false }
+    comment: { type: VARCHAR, size: '255', required: false }
+    agency_id: { type: INTEGER, size: '11', required: true }
+    camp_id: { type: INTEGER, size: '11', required: false }
+    leg_id: { type: INTEGER, size: '11', required: false }
+    point_time: { type: TIME, required: false }
+    _indexes: { mission_type_id: [mission_type_id], passenger_id: [passenger_id], requester_id: [requester_id], agency_id: [agency_id], camp_id: [camp_id], leg_id: [leg_id], mission_request_id: [mission_request_id] }
+  member:
+    _attributes: { phpName: Member }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    person_id: { type: INTEGER, size: '4', required: true, foreignTable: person, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    external_id: { type: INTEGER, size: '4', required: false }
+    wing_id: { type: INTEGER, size: '4', required: false, foreignTable: wing, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    member_class_id: { type: INTEGER, size: '4', required: true, foreignTable: member_class, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    master_member_id: { type: INTEGER, size: '4', required: false, foreignTable: member, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    join_date: { type: DATE, required: true }
+    active: { type: TINYINT, size: '1', required: true, defaultValue: '1' }
+    inactive_reason: { type: VARCHAR, size: '15', required: false }
+    inactive_comment: { type: VARCHAR, size: '40', required: false }
+    flight_status: { type: VARCHAR, size: '20', required: true }
+    co_pilot: { type: TINYINT, size: '1', required: true }
+    contact: { type: VARCHAR, size: '10', required: false }
+    date_of_birth: { type: DATE, required: false }
+    weight: { type: INTEGER, size: '4', required: false }
+    spouse_name: { type: VARCHAR, size: '50', required: false }
+    languages: { type: VARCHAR, size: '50', required: false }
+    coordinator_notes: { type: VARCHAR, size: '255', required: false }
+    renewed_date: { type: DATE, required: false }
+    renewal_date: { type: DATE, required: false }
+    renewal_notice1: { type: DATE, required: false }
+    renewal_notice2: { type: DATE, required: false }
+    renewal_notice3: { type: DATE, required: false }
+    renewal_notice4: { type: DATE, required: false }
+    review_done: { type: DATE, required: false }
+    ed_new_member_notify: { type: DATE, required: false }
+    wn_new_memberN_ntify: { type: DATE, required: false }
+    no_wing_contact_ack: { type: TINYINT, size: '1', required: true }
+    hold_harmless_received: { type: TINYINT, size: '1', required: true }
+    member_welcomed: { type: DATE, required: false }
+    badge_made: { type: DATE, required: false }
+    notebook_sent: { type: DATE, required: false }
+    clothing_sent: { type: DATE, required: false }
+    s_mod_member_notify: { type: VARCHAR, size: '255', required: false }
+    w_mod_member_notify: { type: VARCHAR, size: '255', required: false }
+    renew_mark: { type: TINYINT, size: '1', required: true }
+    renewal_sent_date: { type: TINYINT, size: '4', required: false }
+    s_late_renewal_notify: { type: TINYINT, size: '1', required: true }
+    w_late_renewal_notify: { type: TINYINT, size: '1', required: true }
+    s_inactive_notify: { type: TINYINT, size: '1', required: true }
+    w_inactive_notify: { type: TINYINT, size: '1', required: true }
+    w_not_oriented_notify_date1: { type: DATE, required: false }
+    w_not_oriented_notify_date2: { type: DATE, required: false }
+    emergency_contact_name: { type: VARCHAR, size: '40', required: false }
+    emergency_contact_phone: { type: VARCHAR, size: '40', required: false }
+    drivers_license_state: { type: VARCHAR, size: '2', required: false }
+    drivers_license_number: { type: VARCHAR, size: '25', required: false }
+    height: { type: INTEGER, size: '11', required: false }
+    secondary_wing_id: { type: INTEGER, size: '4', required: false }
+    _indexes: { wing_id: [wing_id], master_member_id: [master_member_id], member_class_id: [member_class_id] }
+    _uniques: { person_id: [person_id] }
+  member_class:
+    _attributes: { phpName: MemberClass }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    name: { type: VARCHAR, size: '20', required: true }
+    initial_fee: { type: INTEGER, size: '4', required: true }
+    renewal_fee: { type: INTEGER, size: '4', required: true }
+    sub_initial_fee: { type: INTEGER, size: '4', required: true }
+    sub_renewal_fee: { type: INTEGER, size: '4', required: true }
+    renewal_period: { type: TINYINT, size: '2', required: false }
+    fly_missions: { type: TINYINT, size: '1', required: true }
+    newsletters: { type: TINYINT, size: '1', required: true }
+    sub_newsletters: { type: TINYINT, size: '1', required: true }
+  member_wing_job:
+    _attributes: { phpName: MemberWingJob }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    member_id: { type: INTEGER, size: '4', required: true, foreignTable: member, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    wing_job_id: { type: INTEGER, size: '4', required: true, foreignTable: wing_job, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    _indexes: { wing_job_id: [wing_job_id] }
+    _uniques: { member_id: [member_id, wing_job_id] }
+  member_wing_stats:
+    _attributes: { phpName: MemberWingStats }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    month: { type: INTEGER, size: '4', required: false }
+    year: { type: INTEGER, size: '4', required: false }
+    wing_id: { type: INTEGER, size: '4', required: false, foreignTable: wing, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    flight_status: { type: VARCHAR, size: '20', required: false }
+    member_count: { type: INTEGER, size: '4', required: false }
+    _indexes: { wing_id: [wing_id] }
+  mission:
+    _attributes: { phpName: Mission }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    external_id: { type: INTEGER, size: '4', required: false }
+    request_id: { type: INTEGER, size: '4', required: false, foreignTable: mission_request, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    itinerary_id: { type: INTEGER, size: '11', required: false, foreignTable: itinerary, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    mission_type_id: { type: INTEGER, size: '4', required: true, foreignTable: mission_type, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    mission_date: { type: TIMESTAMP, required: false }
+    date_requested: { type: TIMESTAMP, required: true }
+    passenger_id: { type: INTEGER, size: '4', required: false, foreignTable: passenger, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    requester_id: { type: INTEGER, size: '4', required: false, foreignTable: requester, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    agency_id: { type: INTEGER, size: '4', required: false, foreignTable: agency, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    other_requester_id: { type: INTEGER, size: '4', required: false, foreignTable: requester, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    other_agency_id: { type: INTEGER, size: '4', required: false, foreignTable: agency, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    camp_id: { type: INTEGER, size: '4', required: false, foreignTable: camp, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    coordinator_id: { type: INTEGER, size: '4', required: false, foreignTable: coordinator, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    appt_date: { type: TIMESTAMP, required: false }
+    flight_time: { type: VARCHAR, size: '60', required: false }
+    treatment: { type: VARCHAR, size: '30', required: false }
+    comment: { type: VARCHAR, size: '100', required: false }
+    appointment: { type: VARCHAR, size: '50', required: false }
+    mission_specific_comments: { type: VARCHAR, size: '255', required: false }
+    start: { type: INTEGER, size: '2', required: true }
+    apoint_time: { type: VARCHAR, size: '50', required: true }
+    mission_count: { type: INTEGER, size: '1', required: true, defaultValue: '0' }
+    b_weight: { type: INTEGER, size: '4', required: true, defaultValue: '0' }
+    b_type: { type: VARCHAR, size: '2', required: false }
+    b_desc: { type: VARCHAR, size: '255', required: false }
+    cancel_mission: { type: TINYINT, size: '4', required: false, defaultValue: '1' }
+    copied_mission: { type: VARCHAR, size: '15', required: false }
+    _indexes: { mission_type_id: [mission_type_id], passenger_id: [passenger_id], requester_id: [requester_id], agency_id: [agency_id], other_requester_id: [other_requester_id], other_agency_id: [other_agency_id], camp_id: [camp_id], coordinator_id: [coordinator_id], itinerary_id: [itinerary_id], request_id: [request_id] }
+    _uniques: { external_id: [external_id] }
+  mission_backup:
+    _attributes: { phpName: MissionBackup }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    external_id: { type: INTEGER, size: '4', required: false }
+    request_id: { type: INTEGER, size: '4', required: false }
+    itinerary_id: { type: INTEGER, size: '11', required: false }
+    mission_type_id: { type: INTEGER, size: '4', required: true }
+    mission_date: { type: TIMESTAMP, required: false }
+    date_requested: { type: TIMESTAMP, required: true }
+    passenger_id: { type: INTEGER, size: '4', required: false }
+    requester_id: { type: INTEGER, size: '4', required: false }
+    agency_id: { type: INTEGER, size: '4', required: false }
+    other_requester_id: { type: INTEGER, size: '4', required: false }
+    other_agency_id: { type: INTEGER, size: '4', required: false }
+    camp_id: { type: INTEGER, size: '4', required: false }
+    coordinator_id: { type: INTEGER, size: '4', required: false }
+    appt_date: { type: TIMESTAMP, required: false }
+    flight_time: { type: VARCHAR, size: '60', required: false }
+    treatment: { type: VARCHAR, size: '30', required: false }
+    comment: { type: VARCHAR, size: '100', required: false }
+    appointment: { type: VARCHAR, size: '50', required: false }
+    mission_specific_comments: { type: VARCHAR, size: '255', required: false }
+    _indexes: { mission_type_id: [mission_type_id], passenger_id: [passenger_id], requester_id: [requester_id], agency_id: [agency_id], other_requester_id: [other_requester_id], other_agency_id: [other_agency_id], camp_id: [camp_id], coordinator_id: [coordinator_id], itinerary_id: [itinerary_id], request_id: [request_id] }
+    _uniques: { external_id: [external_id] }
+  mission_companion:
+    _attributes: { phpName: MissionCompanion }
+    mission_id: { type: INTEGER, size: '11', primaryKey: true, required: true, foreignTable: mission, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
+    companion_id: { type: INTEGER, size: '11', primaryKey: true, required: true, foreignTable: companion, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
+    _indexes: { companion_id: [companion_id] }
+  mission_leg:
+    _attributes: { phpName: MissionLeg }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    mission_id: { type: INTEGER, size: '4', required: true, foreignTable: mission, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    leg_number: { type: INTEGER, size: '2', required: true }
+    from_airport_id: { type: INTEGER, size: '11', required: false, foreignTable: airport, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    to_airport_id: { type: INTEGER, size: '11', required: false, foreignTable: airport, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    reverse_from: { type: INTEGER, size: '11', required: false }
+    pass_on_board: { type: TINYINT, size: '1', required: true }
+    baggage_weight: { type: INTEGER, size: '2', required: false }
+    baggage_desc: { type: VARCHAR, size: '50', required: false }
+    coordinator_id: { type: INTEGER, size: '4', required: false, foreignTable: coordinator, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    public_c_note: { type: VARCHAR, size: '255', required: false }
+    private_c_note: { type: VARCHAR, size: '255', required: false }
+    copilot_wanted: { type: TINYINT, size: '1', required: false }
+    pilot_id: { type: INTEGER, size: '4', required: false, foreignTable: pilot, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    copilot_id: { type: INTEGER, size: '4', required: false, foreignTable: member, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    miss_assis_id: { type: INTEGER, size: '11', required: false }
+    backup_pilot_id: { type: INTEGER, size: '4', required: false, foreignTable: pilot, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    backup_copilot_id: { type: INTEGER, size: '4', required: false, foreignTable: member, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    backup_miss_assis_id: { type: INTEGER, size: '11', required: false }
+    cancelled: { type: VARCHAR, size: '25', required: false }
+    cancel_comment: { type: VARCHAR, size: '60', required: false }
+    waiver_received: { type: TIMESTAMP, required: false }
+    web_coordinated: { type: TINYINT, size: '1', required: true }
+    mission_report_id: { type: INTEGER, size: '4', required: false, foreignTable: mission_report, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    pilot_aircraft_id: { type: INTEGER, size: '4', required: false, foreignTable: pilot_aircraft, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    fbo_id: { type: INTEGER, size: '4', required: false, foreignTable: fbo, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    fbo_address_new: { type: VARCHAR, size: '100', required: false }
+    fbo_dest_id: { type: INTEGER, size: '4', required: false }
+    share_afa_org_id: { type: INTEGER, size: '4', required: false }
+    transportation: { type: VARCHAR, size: '20', required: true }
+    ground_origin: { type: VARCHAR, size: '10', required: false }
+    ground_destination: { type: VARCHAR, size: '10', required: false }
+    flight_time: { type: TIME, required: false }
+    airline_id: { type: INTEGER, size: '11', required: false }
+    fund_id: { type: INTEGER, size: '11', required: false }
+    confirm_code: { type: VARCHAR, size: '50', required: false }
+    flight_cost: { type: INTEGER, size: '11', required: false }
+    comm_origin: { type: VARCHAR, size: '50', required: false }
+    comm_dest: { type: VARCHAR, size: '50', required: false }
+    flight_number: { type: VARCHAR, size: '50', required: false }
+    departure: { type: TIME, required: false }
+    arrival: { type: TIME, required: false }
+    prefix: { type: VARCHAR, size: '10', required: true }
+    cancel_mission_leg: { type: INTEGER, size: '5', required: true, defaultValue: '1' }
+    copied_mission_leg: { type: VARCHAR, size: '15', required: false }
+    _indexes: { mission_id: [mission_id], from_airport_id: [from_airport_id], to_airport_id: [to_airport_id], pilot_id: [pilot_id], copilot_id: [copilot_id], mission_report_id: [mission_report_id], fbo_id: [fbo_id], coordinator_id: [coordinator_id], pilot_aircraft_id: [pilot_aircraft_id], backup_pilot_id: [backup_pilot_id], backup_copilot_id: [backup_copilot_id] }
+    _uniques: { mission_id_2: [mission_id, leg_number] }
+  mission_leg_change:
+    _attributes: { phpName: MissionLegChange }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    leg_id: { type: INTEGER, size: '4', required: false }
+    change_date: { type: TIMESTAMP, required: false }
+    cancelled: { type: VARCHAR, size: '25', required: false }
+    pilot_id: { type: INTEGER, size: '4', required: false, foreignTable: pilot, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    cancelled_to: { type: VARCHAR, size: '25', required: false }
+    pilot_id_new: { type: INTEGER, size: '4', required: false }
+    change_by: { type: INTEGER, size: '4', required: false }
+    event_type_id: { type: INTEGER, size: '4', required: false }
+    event_desc: { type: VARCHAR, size: '175', required: false }
+    person_id: { type: INTEGER, size: '4', required: false }
+    _indexes: { pilot_id: [pilot_id] }
+  mission_photo:
+    _attributes: { phpName: MissionPhoto }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    first_name: { type: VARCHAR, size: '50', required: false }
+    last_name: { type: VARCHAR, size: '50', required: false }
+    submission_date: { type: TIMESTAMP, required: false }
+    mission_date: { type: TIMESTAMP, required: false }
+    passenger_name: { type: VARCHAR, size: '50', required: false }
+    pilot_name: { type: VARCHAR, size: '50', required: false }
+    origin: { type: VARCHAR, size: '25', required: false }
+    destination: { type: VARCHAR, size: '25', required: false }
+    caption: { type: VARCHAR, size: '255', required: false }
+    comment: { type: VARCHAR, size: '255', required: false }
+    photo_filename: { type: VARCHAR, size: '75', required: false }
+    mission_id: { type: INTEGER, size: '4', required: false, foreignTable: mission, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    review_date: { type: TIMESTAMP, required: false }
+    review_by: { type: INTEGER, size: '4', required: false }
+    approved: { type: TINYINT, size: '1', required: false }
+    filesize: { type: INTEGER, size: '4', required: false }
+    height: { type: INTEGER, size: '4', required: false }
+    width: { type: INTEGER, size: '4', required: false }
+    file_format: { type: INTEGER, size: '4', required: false }
+    photo_quality: { type: INTEGER, size: '4', required: false }
+    event_id: { type: INTEGER, size: '11', required: false }
+    leg_id: { type: INTEGER, size: '4', required: false, foreignTable: mission_leg, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    category: { type: VARCHAR, size: '25', required: false }
+    photo_use: { type: VARCHAR, size: '25', required: false }
+    _indexes: { mission_id: [mission_id], leg_id: [leg_id] }
+  mission_report:
+    _attributes: { phpName: MissionReport }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    report_date: { type: TIMESTAMP, required: false }
+    mission_date: { type: TIMESTAMP, required: false }
+    copilot_name: { type: VARCHAR, size: '50', required: false }
+    member_copilot: { type: TINYINT, size: '1', required: false }
+    aircraft_id: { type: INTEGER, size: '4', required: false, foreignTable: aircraft, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    n_number: { type: VARCHAR, size: '8', required: false }
+    makemodel: { type: VARCHAR, size: '60', required: false }
+    hobbs_time: { type: TIME, required: false }
+    passenger_names: { type: VARCHAR, size: '255', required: false }
+    mission_comments: { type: LONGVARCHAR, required: false }
+    expense_report: { type: LONGVARCHAR, required: false }
+    approved: { type: TINYINT, size: '1', required: false }
+    pickup_airport_ident: { type: VARCHAR, size: '25', required: false }
+    dropoff_airport_ident: { type: VARCHAR, size: '25', required: false }
+    routing: { type: VARCHAR, size: '40', required: false }
+    commercial_ticket_cost: { type: INTEGER, size: '8', required: false }
+    airline_ref_number: { type: VARCHAR, size: '40', required: false }
+    airline_owrt: { type: VARCHAR, size: '2', required: false }
+    mileage: { type: INTEGER, size: '4', required: false }
+    photo1: { type: VARCHAR, size: '255', required: false }
+    photo2: { type: VARCHAR, size: '255', required: false }
+    photo3: { type: VARCHAR, size: '255', required: false }
+    photo4: { type: VARCHAR, size: '255', required: false }
+    photo5: { type: VARCHAR, size: '255', required: false }
+    _indexes: { aircraft_id: [aircraft_id] }
+  mission_request:
+    _attributes: { phpName: MissionRequest }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    requester_id: { type: INTEGER, size: '11', required: true }
+    requester_date: { type: TIMESTAMP, required: false }
+    request_by: { type: INTEGER, size: '11', required: true }
+    on_behalf: { type: VARCHAR, size: '20', required: true }
+    appt_date: { type: TIMESTAMP, required: true }
+    mission_date: { type: TIMESTAMP, required: false }
+    return_date: { type: TIMESTAMP, required: false }
+    baggage_weight: { type: INTEGER, size: '11', required: false }
+    baggage_desc: { type: VARCHAR, size: '50', required: false }
+    pass_title: { type: VARCHAR, size: '7', required: true }
+    pass_first_name: { type: VARCHAR, size: '30', required: true }
+    pass_last_name: { type: VARCHAR, size: '30', required: true }
+    pass_address1: { type: VARCHAR, size: '50', required: false }
+    pass_address2: { type: VARCHAR, size: '50', required: false }
+    pass_city: { type: VARCHAR, size: '30', required: false }
+    pass_county: { type: VARCHAR, size: '30', required: false }
+    pass_state: { type: VARCHAR, size: '30', required: false }
+    pass_country: { type: VARCHAR, size: '30', required: false }
+    pass_zipcode: { type: VARCHAR, size: '10', required: true }
+    pass_day_phone: { type: VARCHAR, size: '16', required: false }
+    pass_day_comment: { type: VARCHAR, size: '30', required: false }
+    pass_eve_phone: { type: VARCHAR, size: '16', required: false }
+    pass_eve_comment: { type: VARCHAR, size: '30', required: false }
+    pass_mobile_phone: { type: VARCHAR, size: '16', required: false }
+    pass_mobile_comment: { type: VARCHAR, size: '30', required: false }
+    pass_pager_phone: { type: VARCHAR, size: '16', required: false }
+    pass_pager_comment: { type: VARCHAR, size: '30', required: false }
+    pass_other_phone: { type: VARCHAR, size: '16', required: false }
+    pass_other_comment: { type: VARCHAR, size: '30', required: false }
+    pass_email: { type: VARCHAR, size: '30', required: false }
+    pass_date_of_birth: { type: TIMESTAMP, required: true }
+    illness: { type: VARCHAR, size: '60', required: false }
+    financial: { type: VARCHAR, size: '100', required: false }
+    pass_weight: { type: INTEGER, size: '11', required: false, defaultValue: '0' }
+    releasing_physician: { type: VARCHAR, size: '40', required: false }
+    release_phone: { type: VARCHAR, size: '16', required: false }
+    release_phone_comment: { type: VARCHAR, size: '30', required: false }
+    release_fax: { type: VARCHAR, size: '16', required: false }
+    release_fax_comment: { type: VARCHAR, size: '30', required: false }
+    release_email: { type: VARCHAR, size: '30', required: false }
+    treating_physician: { type: VARCHAR, size: '30', required: false }
+    treating_phone: { type: VARCHAR, size: '16', required: false }
+    treating_phone_comment: { type: VARCHAR, size: '30', required: false }
+    treating_fax: { type: VARCHAR, size: '16', required: false }
+    treating_fax_comment: { type: VARCHAR, size: '30', required: false }
+    req_title: { type: VARCHAR, size: '7', required: false }
+    req_first_name: { type: VARCHAR, size: '30', required: true }
+    req_last_name: { type: VARCHAR, size: '30', required: true }
+    agency_name: { type: VARCHAR, size: '40', required: false }
+    req_address1: { type: VARCHAR, size: '30', required: false }
+    req_address2: { type: VARCHAR, size: '30', required: false }
+    req_city: { type: VARCHAR, size: '30', required: false }
+    req_county: { type: VARCHAR, size: '30', required: false }
+    req_state: { type: VARCHAR, size: '2', required: false }
+    req_country: { type: VARCHAR, size: '40', required: false }
+    req_zipcode: { type: VARCHAR, size: '10', required: false }
+    req_day_phone: { type: VARCHAR, size: '16', required: false }
+    req_day_comment: { type: VARCHAR, size: '30', required: false }
+    req_eve_phone: { type: VARCHAR, size: '16', required: false }
+    req_eve_comment: { type: VARCHAR, size: '30', required: false }
+    req_mobile_phone: { type: VARCHAR, size: '16', required: false }
+    req_mobile_comment: { type: VARCHAR, size: '30', required: false }
+    req_pager_phone: { type: VARCHAR, size: '16', required: false }
+    req_pager_comment: { type: VARCHAR, size: '30', required: false }
+    req_other_phone: { type: VARCHAR, size: '16', required: false }
+    req_other_comment: { type: VARCHAR, size: '30', required: false }
+    req_email: { type: VARCHAR, size: '30', required: false }
+    req_secondary_email: { type: VARCHAR, size: '50', required: false }
+    req_pager_email: { type: VARCHAR, size: '50', required: false }
+    req_position: { type: VARCHAR, size: '80', required: false }
+    req_discharge: { type: VARCHAR, size: '2', required: false }
+    orgin_ident: { type: VARCHAR, size: '40', required: false }
+    orgin_id: { type: INTEGER, size: '11', required: false }
+    orgin_city: { type: VARCHAR, size: '30', required: true }
+    orgin_state: { type: VARCHAR, size: '2', required: true }
+    orgin_zipcode: { type: VARCHAR, size: '10', required: true }
+    dest_ident: { type: VARCHAR, size: '4', required: false }
+    dest_id: { type: INTEGER, size: '11', required: false }
+    dest_city: { type: VARCHAR, size: '30', required: true }
+    dest_state: { type: VARCHAR, size: '2', required: true }
+    dest_zipcode: { type: VARCHAR, size: '10', required: true }
+    com1_name: { type: VARCHAR, size: '50', required: false }
+    com1_relationship: { type: VARCHAR, size: '30', required: false }
+    com1_date_of_birth: { type: TIMESTAMP, required: false }
+    com1_weigth: { type: INTEGER, size: '11', required: false }
+    com1_phone: { type: VARCHAR, size: '16', required: false }
+    com1_comment: { type: VARCHAR, size: '30', required: false }
+    com2_name: { type: VARCHAR, size: '30', required: false }
+    com2_relationship: { type: VARCHAR, size: '30', required: false }
+    com2_date_of_birth: { type: TIMESTAMP, required: false }
+    com2_weigth: { type: INTEGER, size: '11', required: false }
+    com2_phone: { type: VARCHAR, size: '16', required: false }
+    com2_comment: { type: VARCHAR, size: '30', required: false }
+    com3_name: { type: VARCHAR, size: '30', required: false }
+    com3_relationship: { type: VARCHAR, size: '30', required: false }
+    com3_date_of_birth: { type: TIMESTAMP, required: false }
+    com3_weigth: { type: INTEGER, size: '11', required: false }
+    com3_phone: { type: VARCHAR, size: '16', required: false }
+    com3_comment: { type: VARCHAR, size: '30', required: false }
+    com4_name: { type: VARCHAR, size: '30', required: false }
+    com4_relationship: { type: VARCHAR, size: '30', required: false }
+    com4_date_of_birth: { type: TIMESTAMP, required: false }
+    com4_weigth: { type: INTEGER, size: '11', required: false }
+    com4_phone: { type: VARCHAR, size: '16', required: false }
+    com4_comment: { type: VARCHAR, size: '30', required: false }
+    com5_name: { type: VARCHAR, size: '30', required: false }
+    com5_relationship: { type: VARCHAR, size: '30', required: false }
+    com5_date_of_birth: { type: TIMESTAMP, required: false }
+    com5_weigth: { type: INTEGER, size: '11', required: false }
+    com5_phone: { type: VARCHAR, size: '16', required: false }
+    com5_comment: { type: VARCHAR, size: '30', required: false }
+    lodging_name: { type: VARCHAR, size: '30', required: false }
+    lodging_phone: { type: VARCHAR, size: '16', required: false }
+    lodging_phone_comment: { type: VARCHAR, size: '30', required: false }
+    facility_name: { type: VARCHAR, size: '30', required: false }
+    facility_phone: { type: VARCHAR, size: '16', required: false }
+    facility_phone_comment: { type: VARCHAR, size: '30', required: false }
+    req_language: { type: VARCHAR, size: '30', required: false }
+    best_contact: { type: VARCHAR, size: '80', required: false }
+    emergency_name: { type: VARCHAR, size: '30', required: false }
+    emergency_phone1: { type: VARCHAR, size: '16', required: false }
+    emergency_phone1_comment: { type: VARCHAR, size: '30', required: false }
+    emergency_phone2: { type: VARCHAR, size: '16', required: false }
+    emergency_phone2_comment: { type: VARCHAR, size: '30', required: false }
+    comment: { type: VARCHAR, size: '80', required: false }
+    processed_date: { type: TIMESTAMP, required: false }
+    session_id: { type: INTEGER, size: '11', required: false }
+    ip_address: { type: VARCHAR, size: '40', required: false }
+    pass_fax_phone1: { type: VARCHAR, size: '16', required: false }
+    pass_fax_comment1: { type: VARCHAR, size: '30', required: false }
+    guar_first_name: { type: VARCHAR, size: '30', required: false }
+    guar_last_name: { type: VARCHAR, size: '30', required: false }
+    guar_address1: { type: VARCHAR, size: '30', required: false }
+    guar_address2: { type: VARCHAR, size: '30', required: false }
+    guar_city: { type: VARCHAR, size: '30', required: false }
+    guar_state: { type: VARCHAR, size: '2', required: false }
+    guar_zipcode: { type: VARCHAR, size: '10', required: false }
+    guar_day_phone: { type: VARCHAR, size: '16', required: false }
+    guar_day_comment: { type: VARCHAR, size: '30', required: false }
+    guar_eve_phone: { type: VARCHAR, size: '16', required: false }
+    guar_eve_comment: { type: VARCHAR, size: '30', required: false }
+    guar_fax_phone: { type: VARCHAR, size: '16', required: false }
+    guar_fax_comment: { type: VARCHAR, size: '30', required: false }
+    guar_mobile_phone: { type: VARCHAR, size: '16', required: false }
+    guar_mobile_comment: { type: VARCHAR, size: '30', required: false }
+    guar_other_phone: { type: VARCHAR, size: '16', required: false }
+    guar_other_comment: { type: VARCHAR, size: '30', required: false }
+    guar_pager_phone: { type: VARCHAR, size: '16', required: false }
+    guar_pager_comment: { type: VARCHAR, size: '30', required: false }
+    guar_guar_email: { type: VARCHAR, size: '30', required: false }
+    req_fax_phone1: { type: VARCHAR, size: '16', required: false }
+    req_fax_comment1: { type: VARCHAR, size: '30', required: false }
+    pass_english: { type: TINYINT, size: '1', required: false }
+    pass_language: { type: VARCHAR, size: '50', required: false }
+    treating_email: { type: VARCHAR, size: '30', required: false }
+    pass_height: { type: INTEGER, size: '11', required: false, defaultValue: '0' }
+    pass_oxygen: { type: TINYINT, size: '1', required: false }
+    pass_medical: { type: TINYINT, size: '1', required: false }
+    referral_source_id: { type: INTEGER, size: '11', required: false }
+    follow_up_contact_name: { type: VARCHAR, size: '30', required: true }
+    follow_up_contact_phone: { type: VARCHAR, size: '16', required: true }
+    follow_up_email: { type: VARCHAR, size: '30', required: true }
+    miss_req_orginator_afa_org_id: { type: INTEGER, size: '11', required: false }
+    afa_org_id: { type: INTEGER, size: '11', required: false }
+    afa_org_mission_id: { type: INTEGER, size: '11', required: false }
+    mission_request_type_id: { type: INTEGER, size: '11', required: false, foreignTable: mission_type, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    last_page_processed: { type: INTEGER, size: '11', required: false }
+    pass_gender: { type: VARCHAR, size: '10', required: false }
+    pass_type: { type: INTEGER, size: '11', required: false }
+    pass_private_cons: { type: VARCHAR, size: '150', required: false }
+    pass_public_cons: { type: VARCHAR, size: '150', required: false }
+    appt_time: { type: TIME, required: false }
+    flight_time: { type: TIME, required: false }
+    waiver_required: { type: VARCHAR, size: '5', required: false }
+    _indexes: { mission_request_type_id: [mission_request_type_id] }
+  mission_request_temp:
+    _attributes: { phpName: MissionRequestTemp }
+    id: { type: INTEGER, size: '11', primaryKey: true, required: true }
+    request_date: { type: TIMESTAMP, required: false }
+    request_by: { type: INTEGER, size: '11', required: false }
+    request_on_behalf: { type: INTEGER, size: '11', required: false }
+    appt_date: { type: TIMESTAMP, required: false }
+    return_date: { type: TIMESTAMP, required: false }
+    baggage_weight: { type: INTEGER, size: '11', required: false }
+    baggage_desc: { type: VARCHAR, size: '30', required: false }
+    pass_title: { type: VARCHAR, size: '7', required: false }
+    pass_first_name: { type: VARCHAR, size: '40', required: false }
+    pass_last_name: { type: VARCHAR, size: '40', required: false }
+    pass_address1: { type: VARCHAR, size: '40', required: false }
+    pass_address2: { type: VARCHAR, size: '40', required: false }
+    pass_city: { type: VARCHAR, size: '30', required: false }
+    pass_county: { type: VARCHAR, size: '30', required: false }
+    pass_state: { type: CHAR, size: '2', required: false }
+    pass_country: { type: VARCHAR, size: '30', required: false }
+    pass_zipcode: { type: VARCHAR, size: '10', required: false }
+    pass_day_phone: { type: VARCHAR, size: '16', required: false }
+    pass_day_comment: { type: VARCHAR, size: '40', required: false }
+    pass_eve_phone: { type: VARCHAR, size: '16', required: false }
+    pass_eve_comment: { type: VARCHAR, size: '40', required: false }
+    pass_mobile_phone: { type: VARCHAR, size: '16', required: false }
+    pass_mobile_comment: { type: VARCHAR, size: '40', required: false }
+    pass_pager_phone: { type: VARCHAR, size: '16', required: false }
+    pass_pager_comment: { type: VARCHAR, size: '40', required: false }
+    pass_other_phone: { type: VARCHAR, size: '16', required: false }
+    pass_other_comment: { type: VARCHAR, size: '40', required: false }
+    pass_email: { type: VARCHAR, size: '80', required: false }
+    pass_date_of_birth: { type: TIMESTAMP, required: false }
+    illness: { type: VARCHAR, size: '60', required: false }
+    financial: { type: VARCHAR, size: '100', required: false }
+    pass_weight: { type: SMALLINT, size: '6', required: false }
+    releasing_physician: { type: VARCHAR, size: '40', required: false }
+    release_phone: { type: VARCHAR, size: '16', required: false }
+    release_phone_comment: { type: VARCHAR, size: '40', required: false }
+    release_fax: { type: VARCHAR, size: '16', required: false }
+    release_fax_comment: { type: VARCHAR, size: '40', required: false }
+    release_email: { type: VARCHAR, size: '80', required: false }
+    treating_physician: { type: VARCHAR, size: '40', required: false }
+    treating_phone: { type: VARCHAR, size: '16', required: false }
+    treating_phone_comment: { type: VARCHAR, size: '40', required: false }
+    treating_fax: { type: VARCHAR, size: '16', required: false }
+    treating_fax_comment: { type: VARCHAR, size: '40', required: false }
+    req_title: { type: VARCHAR, size: '7', required: false }
+    req_first_name: { type: VARCHAR, size: '40', required: false }
+    req_last_name: { type: VARCHAR, size: '40', required: false }
+    agency_name: { type: VARCHAR, size: '40', required: false }
+    req_address1: { type: VARCHAR, size: '30', required: false }
+    req_address2: { type: VARCHAR, size: '30', required: false }
+    req_city: { type: VARCHAR, size: '30', required: false }
+    req_county: { type: VARCHAR, size: '30', required: false }
+    req_state: { type: CHAR, size: '2', required: false }
+    req_country: { type: VARCHAR, size: '40', required: false }
+    req_zipcode: { type: VARCHAR, size: '10', required: false }
+    req_day_phone: { type: VARCHAR, size: '16', required: false }
+    req_day_comment: { type: VARCHAR, size: '40', required: false }
+    req_eve_phone: { type: VARCHAR, size: '16', required: false }
+    req_eve_comment: { type: VARCHAR, size: '40', required: false }
+    req_mobile_phone: { type: VARCHAR, size: '16', required: false }
+    req_mobile_comment: { type: VARCHAR, size: '40', required: false }
+    req_pager_phone: { type: VARCHAR, size: '16', required: false }
+    req_pager_comment: { type: VARCHAR, size: '40', required: false }
+    req_other_phone: { type: VARCHAR, size: '16', required: false }
+    req_other_comment: { type: VARCHAR, size: '40', required: false }
+    req_email: { type: VARCHAR, size: '80', required: false }
+    origin_ident: { type: VARCHAR, size: '4', required: false }
+    origin_id: { type: INTEGER, size: '11', required: false }
+    origin_city: { type: VARCHAR, size: '30', required: false }
+    origin_state: { type: CHAR, size: '2', required: false }
+    origin_zipcode: { type: VARCHAR, size: '10', required: false }
+    dest_ident: { type: VARCHAR, size: '4', required: false }
+    dest_id: { type: INTEGER, size: '11', required: false }
+    dest_city: { type: VARCHAR, size: '30', required: false }
+    dest_state: { type: CHAR, size: '2', required: false }
+    dest_zipcode: { type: VARCHAR, size: '10', required: false }
+    com1_name: { type: VARCHAR, size: '50', required: false }
+    com1_relationship: { type: VARCHAR, size: '30', required: false }
+    com1_date_of_birth: { type: TIMESTAMP, required: false }
+    com1_weight: { type: SMALLINT, size: '6', required: false }
+    com1_phone: { type: VARCHAR, size: '16', required: false }
+    com1_comment: { type: VARCHAR, size: '40', required: false }
+    com2_name: { type: VARCHAR, size: '50', required: false }
+    com2_relationship: { type: VARCHAR, size: '30', required: false }
+    com2_date_of_birth: { type: TIMESTAMP, required: false }
+    com2_weight: { type: SMALLINT, size: '6', required: false }
+    com2_phone: { type: VARCHAR, size: '16', required: false }
+    com2_comment: { type: VARCHAR, size: '40', required: false }
+    com3_name: { type: VARCHAR, size: '50', required: false }
+    com3_relationship: { type: VARCHAR, size: '30', required: false }
+    com3_date_of_birth: { type: TIMESTAMP, required: false }
+    com3_weight: { type: SMALLINT, size: '6', required: false }
+    com3_phone: { type: VARCHAR, size: '16', required: false }
+    com3_comment: { type: VARCHAR, size: '40', required: false }
+    com4_name: { type: VARCHAR, size: '50', required: false }
+    com4_relationship: { type: VARCHAR, size: '30', required: false }
+    com4_date_of_birth: { type: TIMESTAMP, required: false }
+    com4_weight: { type: SMALLINT, size: '6', required: false }
+    com4_phone: { type: VARCHAR, size: '16', required: false }
+    com4_comment: { type: VARCHAR, size: '40', required: false }
+    lodging_name: { type: VARCHAR, size: '60', required: false }
+    lodging_phone: { type: VARCHAR, size: '16', required: false }
+    facility_name: { type: VARCHAR, size: '60', required: false }
+    facility_phone: { type: VARCHAR, size: '16', required: false }
+    facility_phone_comment: { type: VARCHAR, size: '40', required: false }
+    req_language_spoken: { type: VARCHAR, size: '30', required: false }
+    best_contact: { type: VARCHAR, size: '80', required: false }
+    emergency_name: { type: VARCHAR, size: '40', required: false }
+    emergency_phone1: { type: VARCHAR, size: '16', required: false }
+    emergency_phone2: { type: VARCHAR, size: '16', required: false }
+    emergency_phone1_comment: { type: VARCHAR, size: '40', required: false }
+    emergency_phone2_comment: { type: VARCHAR, size: '40', required: false }
+    comment: { type: VARCHAR, size: '125', required: false }
+    processed_date: { type: TIMESTAMP, required: false }
+    session_id: { type: INTEGER, size: '11', required: false }
+    ip_address: { type: VARCHAR, size: '40', required: false }
+    pass_fax_phone1: { type: VARCHAR, size: '16', required: false }
+    pass_fax_comment1: { type: VARCHAR, size: '40', required: false }
+    guar_first_name: { type: VARCHAR, size: '40', required: false }
+    guar_last_name: { type: VARCHAR, size: '40', required: false }
+    guar_address1: { type: VARCHAR, size: '40', required: false }
+    guar_address2: { type: VARCHAR, size: '40', required: false }
+    guar_city: { type: VARCHAR, size: '30', required: false }
+    guar_state: { type: CHAR, size: '2', required: false }
+    guar_zipcode: { type: VARCHAR, size: '10', required: false }
+    guar_day_phone: { type: VARCHAR, size: '16', required: false }
+    guar_day_comment: { type: VARCHAR, size: '40', required: false }
+    guar_eve_phone: { type: VARCHAR, size: '16', required: false }
+    guar_eve_comment: { type: VARCHAR, size: '40', required: false }
+    guar_fax_phone1: { type: VARCHAR, size: '16', required: false }
+    guar_fax_comment1: { type: VARCHAR, size: '40', required: false }
+    guar_mobile_phone: { type: VARCHAR, size: '16', required: false }
+    guar_mobile_comment: { type: VARCHAR, size: '40', required: false }
+    guar_pager_phone: { type: VARCHAR, size: '16', required: false }
+    guar_pager_comment: { type: VARCHAR, size: '40', required: false }
+    guar_other_phone: { type: VARCHAR, size: '16', required: false }
+    guar_other_comment: { type: VARCHAR, size: '40', required: false }
+    guar_guar_email: { type: VARCHAR, size: '80', required: false }
+    req_fax_phone1: { type: VARCHAR, size: '16', required: false }
+    req_fax_comment1: { type: VARCHAR, size: '40', required: false }
+    pass_english: { type: TINYINT, size: '4', required: false }
+    pass_language: { type: VARCHAR, size: '20', required: false }
+    appt_time: { type: VARCHAR, size: '20', required: false }
+    requester_id: { type: INTEGER, size: '11', required: false }
+    passenger_id: { type: INTEGER, size: '11', required: false }
+    mission_id: { type: INTEGER, size: '11', required: false }
+    treating_email: { type: VARCHAR, size: '80', required: false }
+    pass_height: { type: INTEGER, size: '11', required: false }
+    return_time: { type: VARCHAR, size: '20', required: false }
+    pass_oxygen: { type: TINYINT, size: '4', required: false }
+    pass_medical: { type: TINYINT, size: '4', required: false }
+    referral_source_id: { type: INTEGER, size: '11', required: false }
+    follow_up_contact_name: { type: VARCHAR, size: '40', required: false }
+    follow_up_contact_phone: { type: VARCHAR, size: '16', required: false }
+    follow_up_email: { type: VARCHAR, size: '80', required: false }
+    miss_req_originator_afa_org_id: { type: INTEGER, size: '11', required: false }
+    afa_org_id: { type: INTEGER, size: '11', required: false }
+    afa_org_mission_id: { type: INTEGER, size: '11', required: false }
+    mission_request_type: { type: INTEGER, size: '11', required: false }
+    last_page_processed: { type: INTEGER, size: '11', required: false }
+    guardian_middle_name: { type: VARCHAR, size: '40', required: false }
+    guardian_nickname: { type: VARCHAR, size: '40', required: false }
+    guardian_pager_email: { type: VARCHAR, size: '80', required: false }
+    guardian_secondary_email: { type: VARCHAR, size: '80', required: false }
+    guardian_suffix: { type: VARCHAR, size: '25', required: false }
+    guardian_title: { type: VARCHAR, size: '7', required: false }
+    guardian_veteran: { type: TINYINT, size: '4', required: false }
+    pass_gender: { type: VARCHAR, size: '7', required: false }
+    pass_middle_name: { type: VARCHAR, size: '40', required: false }
+    pass_nickname: { type: VARCHAR, size: '40', required: false }
+    pass_pager_email: { type: VARCHAR, size: '80', required: false }
+    pass_secondary_email: { type: VARCHAR, size: '80', required: false }
+    pass_suffix: { type: VARCHAR, size: '25', required: false }
+    pass_veteran: { type: TINYINT, size: '4', required: false }
+    req_middle_name: { type: VARCHAR, size: '40', required: false }
+    req_nickname: { type: VARCHAR, size: '40', required: false }
+    req_pager_email: { type: VARCHAR, size: '80', required: false }
+    req_secondary_email: { type: VARCHAR, size: '80', required: false }
+    req_suffix: { type: VARCHAR, size: '25', required: false }
+    req_veteran: { type: TINYINT, size: '4', required: false }
+    lodging_phone_comment: { type: VARCHAR, size: '40', required: false }
+    req_gender: { type: VARCHAR, size: '7', required: false }
+    guardian_gender: { type: VARCHAR, size: '7', required: false }
+    agency_position: { type: VARCHAR, size: '40', required: false }
+  mission_type:
+    _attributes: { phpName: MissionType }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    name: { type: VARCHAR, size: '40', required: true }
+    stat_count: { type: TINYINT, size: '1', required: false }
+    color: { type: VARCHAR, size: '25', required: false }
+  mission_type_wing_stats:
+    _attributes: { phpName: MissionTypeWingStats }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    month_no: { type: INTEGER, size: '4', required: false }
+    year_no: { type: INTEGER, size: '4', required: false }
+    wing_id: { type: INTEGER, size: '4', required: false, foreignTable: wing, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    mission_type_id: { type: INTEGER, size: '4', required: false, foreignTable: mission_type, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    leg_count: { type: INTEGER, size: '4', required: false }
+    total_hours: { type: INTEGER, size: '4', required: false }
+    aircraft_cost: { type: INTEGER, size: '4', required: false }
+    commercial_cost: { type: INTEGER, size: '4', required: false }
+    _indexes: { mission_type_id: [mission_type_id], wing_id: [wing_id] }
+  passenger:
+    _attributes: { phpName: Passenger }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    person_id: { type: INTEGER, size: '11', required: true, foreignTable: person, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    passenger_type_id: { type: INTEGER, size: '11', required: false, foreignTable: passenger_type, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    parent: { type: VARCHAR, size: '50', required: false }
+    date_of_birth: { type: TIMESTAMP, required: false }
+    illness: { type: VARCHAR, size: '60', required: false }
+    financial: { type: VARCHAR, size: '255', required: false }
+    weight: { type: INTEGER, size: '2', required: false }
+    public_considerations: { type: VARCHAR, size: '255', required: false }
+    private_considerations: { type: VARCHAR, size: '255', required: false }
+    releasing_physician: { type: VARCHAR, size: '40', required: false }
+    releasing_phone: { type: VARCHAR, size: '16', required: false }
+    lodging_name: { type: VARCHAR, size: '40', required: false }
+    lodging_phone: { type: VARCHAR, size: '16', required: false }
+    lodging_phone_comment: { type: VARCHAR, size: '40', required: false }
+    facility_name: { type: VARCHAR, size: '40', required: false }
+    facility_city: { type: VARCHAR, size: '50', required: false }
+    facility_state: { type: VARCHAR, size: '2', required: false }
+    facility_phone: { type: VARCHAR, size: '16', required: false }
+    facility_phone_comment: { type: VARCHAR, size: '40', required: false }
+    requester_id: { type: INTEGER, size: '4', required: false, foreignTable: requester, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    medical_release_requested: { type: TIMESTAMP, required: false }
+    medical_release_received: { type: TIMESTAMP, required: false }
+    passenger_illness_category_id: { type: INTEGER, size: '4', required: false, foreignTable: passenger_illness_category, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    releasing_fax1: { type: INTEGER, size: '16', required: false }
+    releasing_fax1_comment: { type: VARCHAR, size: '40', required: false }
+    releasing_email: { type: VARCHAR, size: '80', required: false }
+    treating_physician: { type: VARCHAR, size: '40', required: false }
+    treating_phone: { type: INTEGER, size: '16', required: false }
+    treating_fax1: { type: VARCHAR, size: '16', required: false }
+    treating_fax1_comment: { type: VARCHAR, size: '80', required: false }
+    treating_email: { type: VARCHAR, size: '80', required: false }
+    language_spoken: { type: VARCHAR, size: '30', required: false }
+    best_contact_method: { type: VARCHAR, size: '80', required: false }
+    emergency_contact_name: { type: VARCHAR, size: '40', required: false }
+    emergency_contact_primary_phone: { type: VARCHAR, size: '16', required: false }
+    emergency_contact_secondary_phone: { type: VARCHAR, size: '16', required: false }
+    emergency_contact_primary_comment: { type: VARCHAR, size: '80', required: false }
+    emergency_contact_secondary_comment: { type: VARCHAR, size: '80', required: false }
+    travel_history_notes: { type: VARCHAR, size: '255', required: false }
+    need_medical_release: { type: TINYINT, size: '1', required: false }
+    ground_transportation_comment: { type: VARCHAR, size: '255', required: false }
+    _indexes: { person_id: [person_id], passenger_type_id: [passenger_type_id], requester_id: [requester_id], passenger_illness_category_id: [passenger_illness_category_id] }
+  passenger_backup:
+    _attributes: { phpName: PassengerBackup }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    person_id: { type: INTEGER, size: '11', required: true }
+    passenger_type_id: { type: INTEGER, size: '11', required: false }
+    parent: { type: VARCHAR, size: '50', required: false }
+    date_of_birth: { type: TIMESTAMP, required: false }
+    illness: { type: VARCHAR, size: '60', required: false }
+    financial: { type: VARCHAR, size: '255', required: false }
+    weight: { type: INTEGER, size: '2', required: false }
+    public_considerations: { type: VARCHAR, size: '255', required: false }
+    private_considerations: { type: VARCHAR, size: '255', required: false }
+    releasing_physician: { type: VARCHAR, size: '40', required: false }
+    releasing_phone: { type: VARCHAR, size: '16', required: false }
+    lodging_name: { type: VARCHAR, size: '40', required: false }
+    lodging_phone: { type: VARCHAR, size: '16', required: false }
+    lodging_phone_comment: { type: VARCHAR, size: '40', required: false }
+    facility_name: { type: VARCHAR, size: '40', required: false }
+    facility_phone: { type: VARCHAR, size: '16', required: false }
+    facility_phone_comment: { type: VARCHAR, size: '40', required: false }
+    requester_id: { type: INTEGER, size: '4', required: false }
+    medical_release_requested: { type: TIMESTAMP, required: false }
+    medical_release_received: { type: TIMESTAMP, required: false }
+    passenger_illness_category_id: { type: INTEGER, size: '4', required: false }
+    releasing_fax1: { type: INTEGER, size: '16', required: false }
+    releasing_fax1_comment: { type: VARCHAR, size: '40', required: false }
+    releasing_email: { type: VARCHAR, size: '80', required: false }
+    treating_physician: { type: VARCHAR, size: '40', required: false }
+    treating_phone: { type: INTEGER, size: '16', required: false }
+    treating_fax1: { type: VARCHAR, size: '16', required: false }
+    treating_fax1_comment: { type: VARCHAR, size: '80', required: false }
+    treating_email: { type: VARCHAR, size: '80', required: false }
+    language_spoken: { type: VARCHAR, size: '30', required: false }
+    best_contact_method: { type: VARCHAR, size: '80', required: false }
+    emergency_contact_name: { type: VARCHAR, size: '40', required: false }
+    emergency_contact_primary_phone: { type: VARCHAR, size: '16', required: false }
+    emergency_contact_secondary_phone: { type: VARCHAR, size: '16', required: false }
+    emergency_contact_primary_comment: { type: VARCHAR, size: '80', required: false }
+    emergency_contact_secondary_comment: { type: VARCHAR, size: '80', required: false }
+    travel_history_notes: { type: VARCHAR, size: '255', required: false }
+    need_medical_release: { type: TINYINT, size: '1', required: false }
+    ground_transportation_comment: { type: VARCHAR, size: '255', required: false }
+    _indexes: { person_id: [person_id], passenger_type_id: [passenger_type_id], requester_id: [requester_id], passenger_illness_category_id: [passenger_illness_category_id] }
+  passenger_dest:
+    _attributes: { phpName: PassengerDest }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    passenger_id: { type: INTEGER, size: '11', required: true }
+    lodging: { type: VARCHAR, size: '50', required: false }
+    facility: { type: VARCHAR, size: '50', required: false }
+    facility_city: { type: VARCHAR, size: '50', required: false }
+    facility_state: { type: VARCHAR, size: '2', required: false }
+    lod_phone: { type: VARCHAR, size: '16', required: false }
+    lod_phone_comment: { type: VARCHAR, size: '40', required: false }
+    fac_phone: { type: VARCHAR, size: '16', required: false }
+    facility_phone_comment: { type: VARCHAR, size: '40', required: false }
+  passenger_illness_category:
+    _attributes: { phpName: PassengerIllnessCategory }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    category_description: { type: VARCHAR, size: '30', required: false }
+    super_category_description: { type: VARCHAR, size: '30', required: false }
+  passenger_type:
+    _attributes: { phpName: PassengerType }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    name: { type: VARCHAR, size: '30', required: true }
+  password_request:
+    _attributes: { phpName: PasswordRequest }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    person_id: { type: INTEGER, size: '11', required: true, foreignTable: person, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
+    email: { type: VARCHAR, size: '80', required: true }
+    token: { type: VARCHAR, size: '32', required: true }
+    created_at: { type: TIMESTAMP, required: false }
+    _indexes: { person_id: [person_id] }
+    _uniques: { token: [token] }
+  permission:
+    _attributes: { phpName: Permission }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    code: { type: VARCHAR, size: '30', required: false }
+    title: { type: VARCHAR, size: '30', required: false }
+    description: { type: VARCHAR, size: '255', required: false }
+    _uniques: { code: [code] }
+  permission_backup:
+    _attributes: { phpName: PermissionBackup }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    code: { type: VARCHAR, size: '30', required: false }
+    title: { type: VARCHAR, size: '30', required: false }
+    description: { type: VARCHAR, size: '255', required: false }
+    _uniques: { code: [code] }
+  person:
+    _attributes: { phpName: Person }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    title: { type: VARCHAR, size: '12', required: false }
+    first_name: { type: VARCHAR, size: '40', required: true }
+    last_name: { type: VARCHAR, size: '40', required: true }
+    address1: { type: VARCHAR, size: '40', required: false }
+    address2: { type: VARCHAR, size: '40', required: false }
+    city: { type: VARCHAR, size: '30', required: false }
+    county: { type: VARCHAR, size: '30', required: false }
+    state: { type: VARCHAR, size: '2', required: false }
+    country: { type: VARCHAR, size: '30', required: false }
+    zipcode: { type: VARCHAR, size: '30', required: false }
+    day_phone: { type: VARCHAR, size: '16', required: false }
+    day_comment: { type: VARCHAR, size: '40', required: false }
+    evening_phone: { type: VARCHAR, size: '16', required: false }
+    evening_comment: { type: VARCHAR, size: '40', required: false }
+    mobile_phone: { type: VARCHAR, size: '16', required: false }
+    mobile_comment: { type: VARCHAR, size: '40', required: false }
+    pager_phone: { type: VARCHAR, size: '16', required: false }
+    pager_comment: { type: VARCHAR, size: '40', required: false }
+    other_phone: { type: VARCHAR, size: '16', required: false }
+    other_comment: { type: VARCHAR, size: '40', required: false }
+    fax_phone1: { type: VARCHAR, size: '16', required: false }
+    fax_comment1: { type: VARCHAR, size: '40', required: false }
+    auto_fax: { type: TINYINT, size: '1', required: true, defaultValue: '0' }
+    fax_phone2: { type: VARCHAR, size: '16', required: false }
+    fax_comment2: { type: VARCHAR, size: '40', required: false }
+    email: { type: VARCHAR, size: '80', required: false }
+    email_text_only: { type: TINYINT, size: '1', required: false }
+    email_blocked: { type: TINYINT, size: '1', required: false }
+    username: { type: VARCHAR, size: '20', required: false }
+    password: { type: VARCHAR, size: '50', required: false }
+    comment: { type: VARCHAR, size: '255', required: false }
+    wf_policy_agreed: { type: INTEGER, size: '4', required: false }
+    wf_policy_agreed_date: { type: DATE, required: false }
+    pager_email: { type: VARCHAR, size: '80', required: false }
+    block_mailings: { type: TINYINT, size: '1', required: false }
+    newsletter: { type: TINYINT, size: '1', required: false }
+    gender: { type: VARCHAR, size: '7', required: false }
+    deceased: { type: TINYINT, size: '1', required: false }
+    deceased_comment: { type: VARCHAR, size: '255', required: false }
+    secondary_email: { type: VARCHAR, size: '80', required: false }
+    deceased_date: { type: DATE, required: false }
+    middle_name: { type: VARCHAR, size: '25', required: false }
+    suffix: { type: VARCHAR, size: '25', required: false }
+    nickname: { type: VARCHAR, size: '25', required: false }
+    veteran: { type: TINYINT, size: '1', required: false }
+    created_at: { type: TIMESTAMP, required: false }
+    _indexes: { state: [state], gender: [gender], first_name: [first_name] }
+    _uniques: { username: [username] }
+  person_role:
+    _attributes: { phpName: PersonRole }
+    person_id: { type: INTEGER, size: '11', primaryKey: true, required: true, foreignTable: person, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
+    role_id: { type: INTEGER, size: '11', primaryKey: true, required: true, foreignTable: role, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    priority: { type: VARCHAR, size: '60', required: false }
+    _indexes: { role_id: [role_id] }
+  personal_flight:
+    _attributes: { phpName: PersonalFlight }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    pilot_id: { type: INTEGER, size: '11', required: true, foreignTable: pilot, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    name: { type: VARCHAR, size: '255', required: true }
+    departure_date: { type: DATE, required: false }
+    return_date: { type: DATE, required: false }
+    origin_city: { type: VARCHAR, size: '255', required: false }
+    origin_zipcode: { type: VARCHAR, size: '12', required: false }
+    destination_city: { type: VARCHAR, size: '255', required: false }
+    destination_zipcode: { type: VARCHAR, size: '12', required: false }
+    _indexes: { pilot_id: [pilot_id] }
+  personal_note:
+    _attributes: { phpName: PersonalNote }
+    person_id: { type: INTEGER, size: '11', primaryKey: true, required: true, foreignTable: person, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
+    note: { type: LONGVARCHAR, required: false }
+  pilot:
+    _attributes: { phpName: Pilot }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    member_id: { type: INTEGER, size: '11', required: true, foreignTable: member, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    primary_airport_id: { type: INTEGER, size: '4', required: false, foreignTable: airport, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    secondary_home_bases: { type: VARCHAR, size: '30', required: false }
+    total_hours: { type: INTEGER, size: '4', required: false }
+    license_type: { type: VARCHAR, size: '10', required: true }
+    ifr: { type: TINYINT, size: '1', required: true }
+    multi_engine: { type: TINYINT, size: '1', required: true }
+    se_instructor: { type: VARCHAR, size: '5', required: false }
+    me_instructor: { type: VARCHAR, size: '5', required: false }
+    other_ratings: { type: VARCHAR, size: '50', required: false }
+    insurance_received: { type: TIMESTAMP, required: false }
+    oriented_member_id: { type: INTEGER, size: '4', required: false, foreignTable: pilot, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    oriented_date: { type: TIMESTAMP, required: false }
+    mop_active_status: { type: INTEGER, size: '5', required: true, defaultValue: '1' }
+    mop_oriented_member_id: { type: INTEGER, size: '4', required: false, foreignTable: pilot, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    mop_oriented_date: { type: TIMESTAMP, required: false }
+    mop_regions_served: { type: VARCHAR, size: '125', required: false }
+    mop_served_by: { type: VARCHAR, size: '500', required: true }
+    mop_qualifications: { type: VARCHAR, size: '125', required: false }
+    hseats: { type: VARCHAR, size: '30', required: false }
+    transplant: { type: TINYINT, size: '1', required: false }
+    _indexes: { primary_airport_id: [primary_airport_id], oriented_member_id: [oriented_member_id], mop_oriented_member_id: [mop_oriented_member_id], member_id: [member_id] }
+  pilot_aircraft:
+    _attributes: { phpName: PilotAircraft }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    member_id: { type: INTEGER, size: '4', required: true, foreignTable: member, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    aircraft_id: { type: INTEGER, size: '4', required: true, foreignTable: aircraft, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    n_number: { type: VARCHAR, size: '8', required: false }
+    own: { type: TINYINT, size: '1', required: false }
+    primary: { type: TINYINT, size: '4', required: false }
+    seats: { type: TINYINT, size: '1', required: false }
+    known_ice: { type: TINYINT, size: '1', required: false }
+    _indexes: { member_id: [member_id, aircraft_id], aircraft_id: [aircraft_id] }
+  pilot_date:
+    _attributes: { phpName: PilotDate }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    member_id: { type: INTEGER, size: '11', required: true, foreignTable: member, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    date: { type: TIMESTAMP, required: false }
+    available_seats: { type: INTEGER, size: '11', required: false }
+    pilot_request_id: { type: INTEGER, size: '11', required: true, foreignTable: pilot_request, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    _indexes: { member_id: [member_id, pilot_request_id], pilot_request_id: [pilot_request_id] }
+  pilot_request:
+    _attributes: { phpName: PilotRequest }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    member_id: { type: INTEGER, size: '4', required: true, foreignTable: member, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    group_camp_id: { type: INTEGER, size: '11', required: false, foreignTable: camp, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    home_base: { type: VARCHAR, size: '4', required: false }
+    number_seats: { type: INTEGER, size: '11', required: false }
+    total_weight: { type: INTEGER, size: '11', required: false }
+    multiple_pick: { type: TINYINT, size: '4', required: false }
+    leg_id: { type: INTEGER, size: '4', required: false, foreignTable: mission_leg, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    date: { type: VARCHAR, size: '100', required: false }
+    pilot_type: { type: VARCHAR, size: '17', required: false }
+    comment: { type: VARCHAR, size: '200', required: false }
+    accepted: { type: TINYINT, size: '1', required: true }
+    processed: { type: TINYINT, size: '1', required: true }
+    pilot_status: { type: TINYINT, size: '1', required: false }
+    on_hold: { type: TINYINT, size: '4', required: true, defaultValue: '0' }
+    mission_assistant_wanted: { type: TINYINT, size: '1', required: false }
+    miss_assis_id: { type: INTEGER, size: '4', required: true }
+    mission_assistant_name: { type: VARCHAR, size: '50', required: false }
+    ifr_backup_wanted: { type: TINYINT, size: '4', required: false }
+    created_at: { type: TIMESTAMP, required: false }
+    number_date_assign: { type: INTEGER, size: '11', required: false }
+    aircraft_id: { type: INTEGER, size: '11', required: false }
+    tail: { type: VARCHAR, size: '100', required: false }
+    _indexes: { member_id: [member_id], leg_id: [leg_id], group_camp_id: [group_camp_id] }
+  policy:
+    _attributes: { phpName: Policy }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    description: { type: VARCHAR, size: '25', required: false }
+    effective_date: { type: TIMESTAMP, required: false }
+  ref_source:
+    _attributes: { phpName: RefSource }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    source_name: { type: VARCHAR, size: '60', required: true }
+  renewal:
+    _attributes: { phpName: Renewal }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    renewal_date: { type: TIMESTAMP, required: false }
+    renewal_desc: { type: VARCHAR, size: '25', required: false }
+    renewal_month: { type: INTEGER, size: '4', required: false }
+    renewal_year: { type: INTEGER, size: '4', required: false }
+    letter_count: { type: INTEGER, size: '4', required: false }
+    invoice_total: { type: INTEGER, size: '4', required: false }
+    product_price: { type: INTEGER, size: '4', required: false }
+    printing_cost_total: { type: INTEGER, size: '4', required: false }
+    verified_postage_count: { type: INTEGER, size: '4', required: false }
+    verified_postage_cost: { type: INTEGER, size: '4', required: false }
+    unverified_postage_count: { type: INTEGER, size: '4', required: false }
+    unverified_postage_cost: { type: INTEGER, size: '4', required: false }
+    undeliverable_postage_count: { type: INTEGER, size: '4', required: false }
+    undeliverable_postage_cost: { type: INTEGER, size: '4', required: false }
+    international_postage_count: { type: INTEGER, size: '4', required: false }
+    international_postage_cost: { type: INTEGER, size: '4', required: false }
+    postage_cost_total: { type: INTEGER, size: '4', required: false }
+    mailers_club_order_number: { type: INTEGER, size: '4', required: false }
+    mailers_club_order_date: { type: TIMESTAMP, required: false }
+    mailers_club_completed_date: { type: TIMESTAMP, required: false }
+    mailers_club_mailing_name: { type: VARCHAR, size: '40', required: false }
+    processing_log_text: { type: VARCHAR, size: '2500', required: false }
+    data_file_name: { type: VARCHAR, size: '75', required: false }
+    data_file_size: { type: INTEGER, size: '4', required: false }
+    proof_url: { type: VARCHAR, size: '125', required: false }
+    proof_approved_date: { type: TIMESTAMP, required: false }
+  renewal_batch:
+    _attributes: { phpName: RenewalBatch }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    renewal_batch_date: { type: TIMESTAMP, required: false }
+    first_renewal_id: { type: INTEGER, size: '4', required: false }
+    second_renewal_id: { type: INTEGER, size: '4', required: false }
+    third_renewal_id: { type: INTEGER, size: '4', required: false }
+    fourth_renewal_id: { type: INTEGER, size: '4', required: false }
+    missing_form_renewal_id: { type: INTEGER, size: '4', required: false }
+    _indexes: { first_renewal_id: [first_renewal_id], second_renewal_id: [second_renewal_id], third_renewal_id: [third_renewal_id], fourth_renewal_id: [fourth_renewal_id], missing_form_renewal_id: [missing_form_renewal_id] }
+  renewal_month:
+    _attributes: { phpName: RenewalMonth }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    renewal_month: { type: INTEGER, size: '4', required: false }
+    renewal_year: { type: INTEGER, size: '4', required: false }
+    first_renewal_id: { type: INTEGER, size: '4', required: false }
+    second_renewal_id: { type: INTEGER, size: '4', required: false }
+    third_renewal_id: { type: INTEGER, size: '4', required: false }
+    fourth_renewal_id: { type: INTEGER, size: '4', required: false }
+    missing_form_renewal_id: { type: INTEGER, size: '4', required: false }
+    deletion_date: { type: TIMESTAMP, required: false }
+    deletion_count: { type: INTEGER, size: '4', required: false }
+    renewal_month_year: { type: VARCHAR, size: '8', required: false }
+    _indexes: { first_renewal_id: [first_renewal_id], second_renewal_id: [second_renewal_id], third_renewal_id: [third_renewal_id], fourth_renewal_id: [fourth_renewal_id], missing_form_renewal_id: [missing_form_renewal_id] }
+  requester:
+    _attributes: { phpName: Requester }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    person_id: { type: INTEGER, size: '4', required: true, foreignTable: person, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    agency_id: { type: INTEGER, size: '4', required: true, foreignTable: agency, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    title: { type: VARCHAR, size: '40', required: false }
+    how_find_af: { type: VARCHAR, size: '40', required: false }
+    _indexes: { person_id: [person_id], agency_id: [agency_id] }
+  role:
+    _attributes: { phpName: Role }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    title: { type: VARCHAR, size: '30', required: false }
+    description: { type: VARCHAR, size: '255', required: false }
+    _uniques: { title: [title] }
+  role_notification:
+    _attributes: { phpName: RoleNotification }
+    id: { type: INTEGER, size: '9', primaryKey: true, autoIncrement: true, required: true }
+    mid: { type: VARCHAR, size: '255', required: true }
+    role_id: { type: INTEGER, size: '5', required: true }
+    notification: { type: TINYINT, size: '1', required: true }
+  role_permission:
+    _attributes: { phpName: RolePermission }
+    role_id: { type: INTEGER, size: '11', primaryKey: true, required: true }
+    permission_id: { type: INTEGER, size: '11', primaryKey: true, required: true }
+    _indexes: { permission_id: [permission_id] }
+  role_permission_backup:
+    _attributes: { phpName: RolePermissionBackup }
+    role_id: { type: INTEGER, size: '11', primaryKey: true, required: true, foreignTable: role, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
+    permission_id: { type: INTEGER, size: '11', primaryKey: true, required: true, foreignTable: permission_backup, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
+    _indexes: { permission_id: [permission_id] }
+  rp_application_search:
+    _attributes: { phpName: RpApplicationSearch }
+    applicationID: { type: INTEGER, size: '11', required: true, defaultValue: '0' }
+    applicationDate: { type: TIMESTAMP, required: true }
+    personID: { type: INTEGER, size: '11', required: true, defaultValue: '0' }
+    firstName: { type: VARCHAR, size: '40', required: true }
+    lastName: { type: VARCHAR, size: '40', required: true }
+    address1: { type: VARCHAR, size: '40', required: false }
+    city: { type: VARCHAR, size: '30', required: false }
+    state: { type: VARCHAR, size: '2', required: false }
+    zipcode: { type: VARCHAR, size: '30', required: false }
+    county: { type: VARCHAR, size: '30', required: false }
+    areaCode: { type: VARCHAR, size: '3', required: false }
+    dayPhone: { type: VARCHAR, size: '16', required: false }
+    dayComment: { type: VARCHAR, size: '40', required: false }
+    eveningPhone: { type: VARCHAR, size: '16', required: false }
+    eveComment: { type: VARCHAR, size: '40', required: false }
+    mobilePhone: { type: VARCHAR, size: '16', required: false }
+    mobileComment: { type: VARCHAR, size: '40', required: false }
+    otherPhone: { type: VARCHAR, size: '16', required: false }
+    otherComment: { type: VARCHAR, size: '40', required: false }
+    pagerPhone: { type: VARCHAR, size: '16', required: false }
+    pagerComment: { type: VARCHAR, size: '40', required: false }
+    email: { type: VARCHAR, size: '80', required: false }
+    spousePilot: { type: TINYINT, size: '1', required: false }
+    wingID: { type: INTEGER, size: '4', required: true, defaultValue: '0' }
+    wingName: { type: VARCHAR, size: '30', required: true }
+    renewalDate: { type: DATE, required: false }
+    joinDate: { type: DATE, required: true }
+    joinYear: { type: INTEGER, size: '4', required: false }
+    refSourceID: { type: INTEGER, size: '4', required: false, defaultValue: '0' }
+    refSourceName: { type: VARCHAR, size: '60', required: false }
+    companyMatchFunds: { type: TINYINT, size: '1', required: false }
+    companyName: { type: VARCHAR, size: '40', required: false }
+    companyPosition: { type: VARCHAR, size: '40', required: false }
+    vocationClassID: { type: INTEGER, size: '4', required: false, defaultValue: '0' }
+    vocationClassName: { type: VARCHAR, size: '30', required: false }
+    memberAOPA: { type: TINYINT, size: '1', required: false }
+    memberKiwanis: { type: TINYINT, size: '1', required: false }
+    memberRotary: { type: TINYINT, size: '1', required: false }
+    memberLions: { type: TINYINT, size: '1', required: false }
+    member99s: { type: TINYINT, size: '1', required: false }
+    memberWIA: { type: TINYINT, size: '1', required: false }
+    missionOrientation: { type: TINYINT, size: '1', required: false }
+    missionCoordination: { type: TINYINT, size: '1', required: false }
+    pilotRecruitment: { type: TINYINT, size: '1', required: false }
+    fundRaising: { type: TINYINT, size: '1', required: false }
+    celebrityContacts: { type: TINYINT, size: '1', required: false }
+    graphicArts: { type: TINYINT, size: '1', required: false }
+    hospitalOutreach: { type: TINYINT, size: '1', required: false }
+    eventPlanning: { type: TINYINT, size: '1', required: false }
+    mediaRelations: { type: TINYINT, size: '1', required: false }
+    telephoneWork: { type: TINYINT, size: '1', required: false }
+    computers: { type: TINYINT, size: '1', required: false }
+    printing: { type: TINYINT, size: '1', required: false }
+    writing: { type: TINYINT, size: '1', required: false }
+    speakersBureau: { type: TINYINT, size: '1', required: false }
+    wingTeam: { type: TINYINT, size: '1', required: false }
+    webInternet: { type: TINYINT, size: '1', required: false }
+    foundationContacts: { type: TINYINT, size: '1', required: false }
+    aviationContacts: { type: TINYINT, size: '1', required: false }
+    disasterResponseInterest: { type: TINYINT, size: '1', required: false }
+    active: { type: TINYINT, size: '1', required: true, defaultValue: '1' }
+    primary_airport_id: { type: INTEGER, size: '4', required: false }
+    homeBase: { type: VARCHAR, size: '4', required: false }
+  rp_audit_logs:
+    _attributes: { phpName: RpAuditLogs }
+    DateTimeDisplay: { type: VARCHAR, size: '10', required: false }
+    date_time: { type: TIMESTAMP, required: false }
+    audit_identity: { type: VARCHAR, size: '82', required: false }
+    event: { type: VARCHAR, size: '15', required: false }
+    event_reason: { type: VARCHAR, size: '1000', required: false }
+  rp_camp_count:
+    _attributes: { phpName: RpCampCount }
+    campID: { type: INTEGER, size: '4', required: true, defaultValue: '0' }
+    campName: { type: VARCHAR, size: '40', required: false }
+    agencyName: { type: VARCHAR, size: '80', required: false }
+    airportState: { type: VARCHAR, size: '2', required: false }
+    legCount: { type: BIGINT, size: '21', required: true, defaultValue: '0' }
+    cancelledCount: { type: BIGINT, size: '21', required: true, defaultValue: '0' }
+    approvedCount: { type: BIGINT, size: '21', required: true, defaultValue: '0' }
+    missionDate: { type: TIMESTAMP, required: false }
+  rp_camp_passengers:
+    _attributes: { phpName: RpCampPassengers }
+    passID: { type: INTEGER, size: '11', required: true, defaultValue: '0' }
+    passName: { type: VARCHAR, size: '81', required: true, defaultValue: '' }
+    passLastName: { type: VARCHAR, size: '40', required: true }
+    passFirstName: { type: VARCHAR, size: '40', required: true }
+    weight: { type: INTEGER, size: '2', required: false }
+    passDayPhone: { type: VARCHAR, size: '16', required: false }
+    passEvePhone: { type: VARCHAR, size: '16', required: false }
+    passMobilePhone: { type: VARCHAR, size: '16', required: false }
+    passPagerPhone: { type: VARCHAR, size: '16', required: false }
+    passOtherPhone: { type: VARCHAR, size: '16', required: false }
+    passFaxPhone: { type: VARCHAR, size: '16', required: false }
+    passDayComment: { type: VARCHAR, size: '40', required: false }
+    passEveComment: { type: VARCHAR, size: '40', required: false }
+    passMobileComment: { type: VARCHAR, size: '40', required: false }
+    passPagerComment: { type: VARCHAR, size: '40', required: false }
+    passOtherComment: { type: VARCHAR, size: '40', required: false }
+    passFaxComment: { type: VARCHAR, size: '40', required: false }
+    reqName: { type: VARCHAR, size: '81', required: true, defaultValue: '' }
+    reqFirstName: { type: VARCHAR, size: '40', required: true }
+    reqLastName: { type: VARCHAR, size: '40', required: true }
+    reqDayPhone: { type: VARCHAR, size: '16', required: false }
+    reqEvePhone: { type: VARCHAR, size: '16', required: false }
+    reqMobilePhone: { type: VARCHAR, size: '16', required: false }
+    reqPagerPhone: { type: VARCHAR, size: '16', required: false }
+    reqOtherPhone: { type: VARCHAR, size: '16', required: false }
+    reqFaxPhone: { type: VARCHAR, size: '16', required: false }
+    reqDayComment: { type: VARCHAR, size: '40', required: false }
+    reqEveComment: { type: VARCHAR, size: '40', required: false }
+    reqMobileComment: { type: VARCHAR, size: '40', required: false }
+    reqPagerComment: { type: VARCHAR, size: '40', required: false }
+    reqOtherComment: { type: VARCHAR, size: '40', required: false }
+    reqFaxComment: { type: VARCHAR, size: '40', required: false }
+    campName: { type: VARCHAR, size: '40', required: false }
+    campPhone: { type: VARCHAR, size: '16', required: false }
+    pilotName: { type: VARCHAR, size: '81', required: false }
+    pilotFirstName: { type: VARCHAR, size: '40', required: false }
+    pilotLastName: { type: VARCHAR, size: '40', required: false }
+    pilotMemberID: { type: INTEGER, size: '4', required: false, defaultValue: '0' }
+    pilotDayPhone: { type: VARCHAR, size: '16', required: false }
+    pilotEvePhone: { type: VARCHAR, size: '16', required: false }
+    pilotMobilePhone: { type: VARCHAR, size: '16', required: false }
+    pilotOtherPhone: { type: VARCHAR, size: '16', required: false }
+    pilotPagerPhone: { type: VARCHAR, size: '16', required: false }
+    pilotFaxPhone: { type: VARCHAR, size: '16', required: false }
+    homeBase: { type: VARCHAR, size: '4', required: false }
+    pilotDayComment: { type: VARCHAR, size: '40', required: false }
+    pilotEveComment: { type: VARCHAR, size: '40', required: false }
+    pilotMobileComment: { type: VARCHAR, size: '40', required: false }
+    pilotPagerComment: { type: VARCHAR, size: '40', required: false }
+    pilotOtherComment: { type: VARCHAR, size: '40', required: false }
+    pilotFaxComment: { type: VARCHAR, size: '40', required: false }
+    pilotEmail: { type: VARCHAR, size: '80', required: false }
+    ifr: { type: TINYINT, size: '1', required: false }
+    toAirportName: { type: VARCHAR, size: '30', required: false }
+    toAirportIdent: { type: VARCHAR, size: '4', required: false }
+    fromAirportName: { type: VARCHAR, size: '30', required: false }
+    fromAirportIdent: { type: VARCHAR, size: '4', required: false }
+    missionID: { type: INTEGER, size: '4', required: false }
+    missionSelectDate: { type: TIMESTAMP, required: false }
+    missionDate: { type: VARCHAR, size: '10', required: false }
+    medicalReleaseReceived: { type: VARCHAR, size: '10', required: false }
+    waiverReceived: { type: VARCHAR, size: '10', required: false }
+    private_c_note: { type: VARCHAR, size: '255', required: false }
+    cancelled: { type: VARCHAR, size: '25', required: false }
+    n_number: { type: VARCHAR, size: '8', required: false }
+    make: { type: VARCHAR, size: '50', required: false }
+    model: { type: VARCHAR, size: '25', required: false }
+  rp_cancelled_missions:
+    _attributes: { phpName: RpCancelledMissions }
+    year: { type: INTEGER, size: '4', required: false }
+    month: { type: INTEGER, size: '2', required: false }
+    cancelled: { type: VARCHAR, size: '25', required: false }
+    mission_leg: { type: BIGINT, size: '21', required: true, defaultValue: '0' }
+    coordinated: { type: BIGINT, size: '21', required: true, defaultValue: '0' }
+  rp_children_passengers:
+    _attributes: { phpName: RpChildrenPassengers }
+    mission_date: { type: TIMESTAMP, required: false }
+    displayDate: { type: VARCHAR, size: '10', required: false }
+    first_name: { type: VARCHAR, size: '40', required: true }
+    initial: { type: VARCHAR, size: '2', required: true, defaultValue: '' }
+    last_name: { type: VARCHAR, size: '40', required: true }
+    passCity: { type: VARCHAR, size: '30', required: false }
+    passState: { type: VARCHAR, size: '2', required: false }
+    passCounty: { type: VARCHAR, size: '30', required: false }
+    originIdent: { type: VARCHAR, size: '4', required: false }
+    originName: { type: VARCHAR, size: '30', required: false }
+    originCity: { type: VARCHAR, size: '30', required: false }
+    originState: { type: VARCHAR, size: '2', required: false }
+    destIdent: { type: VARCHAR, size: '4', required: false }
+    destName: { type: VARCHAR, size: '30', required: false }
+    destCity: { type: VARCHAR, size: '30', required: false }
+    destState: { type: VARCHAR, size: '2', required: false }
+    agencyName: { type: VARCHAR, size: '80', required: true }
+    facility_name: { type: VARCHAR, size: '40', required: false }
+    illness: { type: VARCHAR, size: '60', required: false }
+    passAge: { type: BIGINT, size: '11', required: false }
+    wing_id: { type: INTEGER, size: '4', required: false }
+    passengerIllness: { type: VARCHAR, size: '30', required: false }
+    passengerIllnessID: { type: INTEGER, size: '4', required: true, defaultValue: '0' }
+  rp_deceased_persons:
+    _attributes: { phpName: RpDeceasedPersons }
+    personName: { type: VARCHAR, size: '82', required: true, defaultValue: '' }
+    memberID: { type: INTEGER, size: '4', required: false }
+    dateOfBirth: { type: VARCHAR, size: '10', required: false }
+    deceased_date: { type: DATE, required: false }
+    #deceasedDate: { type: VARCHAR, size: '10', required: false }
+    deceasedComment: { type: VARCHAR, size: '255', required: false }
+  rp_disaster_response_status:
+    _attributes: { phpName: RpDisasterResponseStatus }
+    lastName: { type: VARCHAR, size: '40', required: true }
+    personName: { type: VARCHAR, size: '82', required: true, defaultValue: '' }
+    disasterResponse: { type: VARCHAR, size: '30', required: false }
+    county: { type: VARCHAR, size: '30', required: false }
+    wingID: { type: INTEGER, size: '4', required: false }
+    wingName: { type: VARCHAR, size: '30', required: true }
+    flightStatus: { type: VARCHAR, size: '20', required: true }
+  rp_flight_status_wing:
+    _attributes: { phpName: RpFlightStatusWing }
+    wingID: { type: INTEGER, size: '4', required: true, defaultValue: '0' }
+    wingName: { type: VARCHAR, size: '30', required: true }
+    commandPilot: { type: BIGINT, size: '21', required: false }
+    nonPilot: { type: BIGINT, size: '21', required: false }
+    verifyOrientation: { type: BIGINT, size: '21', required: false }
+    groundAngel: { type: BIGINT, size: '21', required: false }
+    missionAssistant: { type: BIGINT, size: '21', required: false }
+    totalCount: { type: BIGINT, size: '21', required: false }
+  rp_member_application:
+    _attributes: { phpName: RpMemberApplication }
+    applicationID: { type: INTEGER, size: '11', required: true, defaultValue: '0' }
+    applicationDate: { type: VARCHAR, size: '10', required: false }
+    title: { type: VARCHAR, size: '12', required: false }
+    firstName: { type: VARCHAR, size: '40', required: true }
+    lastName: { type: VARCHAR, size: '40', required: true }
+    addressOne: { type: VARCHAR, size: '40', required: false }
+    addressTwo: { type: VARCHAR, size: '40', required: false }
+    city: { type: VARCHAR, size: '30', required: false }
+    state: { type: VARCHAR, size: '2', required: false }
+    zipcode: { type: VARCHAR, size: '30', required: false }
+    dayPhone: { type: VARCHAR, size: '16', required: false }
+    pilotDayComment: { type: VARCHAR, size: '40', required: false }
+    evePhone: { type: VARCHAR, size: '16', required: false }
+    pilotEveComment: { type: VARCHAR, size: '40', required: false }
+    faxPhone1: { type: VARCHAR, size: '16', required: false }
+    pilotFaxComment: { type: VARCHAR, size: '40', required: false }
+    faxPhone2: { type: VARCHAR, size: '16', required: false }
+    pilotFaxComment2: { type: VARCHAR, size: '40', required: false }
+    mobilePhone: { type: VARCHAR, size: '16', required: false }
+    pilotMobileComment: { type: VARCHAR, size: '40', required: false }
+    pagerPhone: { type: VARCHAR, size: '16', required: false }
+    pilotPagerComment: { type: VARCHAR, size: '40', required: false }
+    otherPhone: { type: VARCHAR, size: '16', required: false }
+    pilotOtherComment: { type: VARCHAR, size: '40', required: false }
+    email: { type: VARCHAR, size: '80', required: false }
+    pageEmail: { type: VARCHAR, size: '80', required: false }
+    secondaryEmail: { type: VARCHAR, size: '80', required: false }
+    spouseFirstName: { type: VARCHAR, size: '40', required: false }
+    spouseLastName: { type: VARCHAR, size: '40', required: false }
+    applicantPilot: { type: VARCHAR, size: '3', required: false }
+    spousePilot: { type: VARCHAR, size: '3', required: false }
+    applicantCopilot: { type: VARCHAR, size: '3', required: false }
+    languagesSpoken: { type: VARCHAR, size: '125', required: false }
+    homeBase: { type: VARCHAR, size: '20', required: false }
+    fboName: { type: VARCHAR, size: '80', required: false }
+    apMake: { type: VARCHAR, size: '50', required: false }
+    apModel: { type: VARCHAR, size: '25', required: false }
+    aircraftPrimaryOwn: { type: VARCHAR, size: '3', required: false }
+    aircraftPrimaryIce: { type: VARCHAR, size: '3', required: false }
+    aircraftPrimarySeats: { type: INTEGER, size: '4', required: false }
+    aircraftPrimaryNNumber: { type: VARCHAR, size: '10', required: false }
+    asMake: { type: VARCHAR, size: '50', required: false }
+    asModel: { type: VARCHAR, size: '25', required: false }
+    aircraftSecondaryOwn: { type: VARCHAR, size: '3', required: false }
+    aircraftSecondaryIce: { type: VARCHAR, size: '3', required: false }
+    aircraftSecondarySeats: { type: INTEGER, size: '4', required: false }
+    aircraftSecondaryNNumber: { type: VARCHAR, size: '10', required: false }
+    pilotCertificate: { type: VARCHAR, size: '40', required: false }
+    ratings: { type: VARCHAR, size: '50', required: false }
+    medicalClass: { type: INTEGER, size: '4', required: false }
+    licenseType: { type: VARCHAR, size: '10', required: false }
+    totalHours: { type: INTEGER, size: '4', required: false }
+    ifrHours: { type: INTEGER, size: '4', required: false }
+    multiHours: { type: INTEGER, size: '4', required: false }
+    otherHours: { type: INTEGER, size: '4', required: false }
+    dateOfBirth: { type: VARCHAR, size: '10', required: false }
+    height: { type: INTEGER, size: '4', required: false }
+    weight: { type: INTEGER, size: '4', required: false }
+    availabilityWeekdays: { type: VARCHAR, size: '3', required: false }
+    availabilityWeeknights: { type: VARCHAR, size: '3', required: false }
+    availabilityWeekends: { type: VARCHAR, size: '3', required: false }
+    availabilityNotice: { type: VARCHAR, size: '3', required: false }
+    availabilityLastMinute: { type: VARCHAR, size: '3', required: false }
+    availabilityCopilot: { type: VARCHAR, size: '3', required: false }
+    affirmationAgreed: { type: VARCHAR, size: '10', required: false }
+    insuranceAgreed: { type: VARCHAR, size: '10', required: false }
+    hseatsInterest: { type: VARCHAR, size: '3', required: false }
+    volunteerInterest: { type: VARCHAR, size: '255', required: false }
+    companyPosition: { type: VARCHAR, size: '40', required: false }
+    companyMatchFunds: { type: VARCHAR, size: '3', required: false }
+    companyBusinessCategoryID: { type: INTEGER, size: '4', required: false }
+    referralSource: { type: VARCHAR, size: '60', required: false }
+    referralSourceOther: { type: VARCHAR, size: '40', required: false }
+    premiumChoice: { type: VARCHAR, size: '7', required: false }
+    premiumSize: { type: VARCHAR, size: '8', required: false }
+    duesAmountPaid: { type: FLOAT, required: true, defaultValue: '0' }
+    donationAmountPaid: { type: FLOAT, required: false }
+    methodOfPaymentID: { type: VARCHAR, size: '20', required: false }
+    ccardApprovalNumber: { type: VARCHAR, size: '20', required: false }
+    processedDate: { type: VARCHAR, size: '10', required: false }
+    missionOrientation: { type: VARCHAR, size: '3', required: false }
+    missionCoordination: { type: VARCHAR, size: '3', required: false }
+    pilotRecruitment: { type: VARCHAR, size: '3', required: false }
+    fundRaising: { type: VARCHAR, size: '3', required: false }
+    celebrityContacts: { type: VARCHAR, size: '3', required: false }
+    hospitalOutreach: { type: VARCHAR, size: '3', required: false }
+    mediaRelations: { type: VARCHAR, size: '3', required: false }
+    telephoneWork: { type: VARCHAR, size: '3', required: false }
+    computers: { type: VARCHAR, size: '3', required: false }
+    clerical: { type: VARCHAR, size: '3', required: false }
+    publicity: { type: VARCHAR, size: '3', required: false }
+    writing: { type: VARCHAR, size: '3', required: false }
+    speakersBureau: { type: VARCHAR, size: '3', required: false }
+    wingTeam: { type: VARCHAR, size: '3', required: false }
+    graphicArts: { type: VARCHAR, size: '3', required: false }
+    eventPlanning: { type: VARCHAR, size: '3', required: false }
+    webInternet: { type: VARCHAR, size: '3', required: false }
+    foundationContacts: { type: VARCHAR, size: '3', required: false }
+    aviationContacts: { type: VARCHAR, size: '3', required: false }
+    printing: { type: VARCHAR, size: '3', required: false }
+    memberAOPA: { type: VARCHAR, size: '3', required: false }
+    memberKiwanis: { type: VARCHAR, size: '3', required: false }
+    memberRotary: { type: VARCHAR, size: '3', required: false }
+    memberLions: { type: VARCHAR, size: '3', required: false }
+    memberNinetyNines: { type: VARCHAR, size: '3', required: false }
+    memberWIA: { type: VARCHAR, size: '3', required: false }
+    EDNewMemberNotify: { type: VARCHAR, size: '10', required: false }
+    WNewMemberNotify: { type: VARCHAR, size: '10', required: false }
+    badgeMade: { type: VARCHAR, size: '10', required: false }
+    notebookSent: { type: VARCHAR, size: '10', required: false }
+    externalID: { type: INTEGER, size: '4', required: false }
+    novapointeID: { type: INTEGER, size: '4', required: false }
+    premiumShipDate: { type: VARCHAR, size: '10', required: false }
+    premiumShipMethod: { type: VARCHAR, size: '10', required: false }
+    premiumShipTrackingNumber: { type: VARCHAR, size: '35', required: false }
+  rp_member_application_reconciliation:
+    _attributes: { phpName: RpMemberApplicationReconciliation }
+    first_name: { type: VARCHAR, size: '40', required: true }
+    last_name: { type: VARCHAR, size: '40', required: true }
+    external_id: { type: INTEGER, size: '4', required: false }
+    renewal: { type: TINYINT, size: '1', required: false }
+    dues_amount_paid: { type: FLOAT, required: true, defaultValue: '0' }
+    method_of_payment: { type: VARCHAR, size: '20', required: false }
+    check_number: { type: INTEGER, size: '4', required: false }
+    donation_amount_paid: { type: FLOAT, required: false }
+    application_date: { type: TIMESTAMP, required: true }
+    applicationDateDisplay: { type: VARCHAR, size: '10', required: false }
+    processedDate: { type: VARCHAR, size: '10', required: false }
+    ccard_approval_number: { type: VARCHAR, size: '20', required: false }
+    payment_transaction_id: { type: INTEGER, size: '4', required: false }
+    member_class_id: { type: INTEGER, size: '4', required: true }
+    memberClass: { type: VARCHAR, size: '20', required: true }
+    master_member_id: { type: INTEGER, size: '4', required: false }
+    masterMemberExternalID: { type: INTEGER, size: '4', required: false }
+    masterMemberFirstName: { type: VARCHAR, size: '40', required: false }
+    masterMemberLastName: { type: VARCHAR, size: '40', required: false }
+    renewal_date: { type: DATE, required: false }
+  rp_member_directory:
+    _attributes: { phpName: RpMemberDirectory }
+    external_id: { type: INTEGER, size: '4', required: false }
+    personID: { type: INTEGER, size: '11', required: true, defaultValue: '0' }
+    firstName: { type: VARCHAR, size: '40', required: true }
+    lastName: { type: VARCHAR, size: '40', required: true }
+    address_one: { type: VARCHAR, size: '40', required: false }
+    address_two: { type: VARCHAR, size: '40', required: false }
+    city: { type: VARCHAR, size: '30', required: false }
+    state: { type: VARCHAR, size: '2', required: false }
+    zipcode: { type: VARCHAR, size: '30', required: false }
+    deceased: { type: TINYINT, size: '1', required: false }
+    emailBlocked: { type: TINYINT, size: '1', required: false }
+    email: { type: VARCHAR, size: '80', required: false }
+    secondaryEmail: { type: VARCHAR, size: '80', required: false }
+    pagerEmail: { type: VARCHAR, size: '80', required: false }
+    countyName: { type: VARCHAR, size: '30', required: false }
+    areaCode: { type: VARCHAR, size: '3', required: false }
+    dayPhone: { type: VARCHAR, size: '16', required: false }
+    day_comment: { type: VARCHAR, size: '40', required: false }
+    evePhone: { type: VARCHAR, size: '16', required: false }
+    evening_comment: { type: VARCHAR, size: '40', required: false }
+    mobilePhone: { type: VARCHAR, size: '16', required: false }
+    mobile_comment: { type: VARCHAR, size: '40', required: false }
+    pagerPhone: { type: VARCHAR, size: '16', required: false }
+    pager_comment: { type: VARCHAR, size: '40', required: false }
+    faxPhone1: { type: VARCHAR, size: '16', required: false }
+    fax_comment1: { type: VARCHAR, size: '40', required: false }
+    faxPhone2: { type: VARCHAR, size: '16', required: false }
+    fax_comment2: { type: VARCHAR, size: '40', required: false }
+    otherPhone: { type: VARCHAR, size: '16', required: false }
+    other_comment: { type: VARCHAR, size: '40', required: false }
+    license_type: { type: VARCHAR, size: '10', required: false }
+    ifr: { type: TINYINT, size: '1', required: false }
+    multiEngine: { type: INTEGER, size: '1', required: false }
+    se_instructor: { type: VARCHAR, size: '5', required: false }
+    hseats: { type: VARCHAR, size: '30', required: false }
+    transplant: { type: TINYINT, size: '1', required: false }
+    me_instructor: { type: VARCHAR, size: '5', required: false }
+    mop_regions_served: { type: VARCHAR, size: '125', required: false }
+    mop: { type: INTEGER, required: true, defaultValue: '0' }
+    insurance_received: { type: TIMESTAMP, required: false }
+    cfi: { type: INTEGER, required: false }
+    insuranceExpired: { type: INTEGER, required: false }
+    memberID: { type: INTEGER, size: '4', required: true, defaultValue: '0' }
+    flight_status: { type: VARCHAR, size: '20', required: true }
+    renewal_date: { type: DATE, required: false }
+    date_of_birth: { type: DATE, required: false }
+    birthdayMonth: { type: INTEGER, size: '2', required: false }
+    disasterResponseStatus: { type: VARCHAR, size: '30', required: false }
+    coordinator_notes: { type: VARCHAR, size: '255', required: false }
+    wingName: { type: VARCHAR, size: '30', required: true }
+    wing_id: { type: INTEGER, size: '4', required: false }
+    active: { type: TINYINT, size: '1', required: true, defaultValue: '1' }
+    member_class_id: { type: INTEGER, size: '4', required: true }
+    homeBase: { type: VARCHAR, size: '4', required: false }
+    wingJobID: { type: INTEGER, size: '4', required: false, defaultValue: '0' }
+    wingJob: { type: VARCHAR, size: '30', required: false }
+    coordinator: { type: INTEGER, required: true, defaultValue: '0' }
+    coordinatorID: { type: INTEGER, size: '4', required: false, defaultValue: '0' }
+    boardMember: { type: INTEGER, required: true, defaultValue: '0' }
+    boardMemberID: { type: INTEGER, size: '11', required: false, defaultValue: '0' }
+    notAvailable: { type: TINYINT, size: '1', required: false }
+    noWeekday: { type: TINYINT, size: '1', required: false }
+    noNight: { type: TINYINT, size: '1', required: false }
+    noWeekend: { type: TINYINT, size: '1', required: false }
+    lastMinute: { type: TINYINT, size: '1', required: false }
+    firstDate: { type: DATE, required: false }
+    lastDate: { type: DATE, required: false }
+    availabilityComment: { type: VARCHAR, size: '50', required: false }
+    aircraftOwner: { type: INTEGER, size: '4', required: false }
+    fastestAircraft: { type: BIGINT, size: '11', required: false }
+    longestRangeAircraft: { type: BIGINT, size: '11', required: false }
+    mostSeatsAircraft: { type: INTEGER, size: '4', required: false }
+    maxLoadAircraft: { type: BIGINT, size: '11', required: false }
+    missionCountThisYear: { type: BIGINT, size: '21', required: false }
+    missionCountTotal: { type: BIGINT, size: '21', required: false }
+    lastMissionFlown: { type: VARCHAR, size: '10', required: false }
+    nextPendingMission: { type: VARCHAR, size: '10', required: false }
+  rp_member_photos:
+    _attributes: { phpName: RpMemberPhotos }
+    memberID: { type: INTEGER, size: '4', required: true, defaultValue: '0' }
+    passID: { type: INTEGER, size: '11', required: true, defaultValue: '0' }
+    photoID: { type: INTEGER, size: '4', required: true, defaultValue: '0' }
+    submissionDate: { type: VARCHAR, size: '10', required: false }
+    missionDate: { type: VARCHAR, size: '10', required: false }
+    passengerName: { type: VARCHAR, size: '81', required: true, defaultValue: '' }
+    pilotName: { type: VARCHAR, size: '81', required: true, defaultValue: '' }
+    photo_quality: { type: INTEGER, size: '4', required: false }
+    photo_filename: { type: VARCHAR, size: '75', required: false }
+    photoThumb: { type: VARCHAR, size: '235', required: false }
+    wing_id: { type: INTEGER, size: '4', required: false }
+    passLastName: { type: VARCHAR, size: '40', required: true }
+    pilotLastName: { type: VARCHAR, size: '40', required: true }
+  rp_member_wing_stats_report:
+    _attributes: { phpName: RpMemberWingStatsReport }
+    monthNo: { type: INTEGER, size: '4', required: false }
+    yearNo: { type: INTEGER, size: '4', required: false }
+    wingID: { type: INTEGER, size: '4', required: false }
+    wingName: { type: VARCHAR, size: '30', required: true }
+    flightStatus: { type: VARCHAR, size: '20', required: false }
+    memberCount: { type: INTEGER, size: '4', required: false }
+  rp_members_no_missions:
+    _attributes: { phpName: RpMembersNoMissions }
+    firstName: { type: VARCHAR, size: '40', required: true }
+    lastName: { type: VARCHAR, size: '40', required: true }
+    county: { type: VARCHAR, size: '30', required: false }
+    zipcode: { type: VARCHAR, size: '30', required: false }
+    memberAC: { type: VARCHAR, size: '3', required: false }
+    joinDate: { type: VARCHAR, size: '10', required: false }
+    orientedDate: { type: VARCHAR, size: '10', required: false }
+    joinDateSort: { type: DATE, required: true }
+    wing_id: { type: INTEGER, size: '4', required: false }
+    email: { type: VARCHAR, size: '80', required: false }
+  rp_mission_cost_tracking:
+    _attributes: { phpName: RpMissionCostTracking }
+    mission_date: { type: TIMESTAMP, required: false }
+    missionDateDisplay: { type: VARCHAR, size: '10', required: false }
+    external_id: { type: INTEGER, size: '4', required: false }
+    pilot_id: { type: INTEGER, size: '4', required: false }
+    pilotName: { type: VARCHAR, size: '81', required: true, defaultValue: '' }
+    id: { type: INTEGER, size: '4', required: true, defaultValue: '0' }
+    commercial_ticket_cost: { type: INTEGER, size: '8', required: false }
+    yearNo: { type: INTEGER, size: '4', required: false }
+    approved: { type: TINYINT, size: '1', required: false }
+    passengerName: { type: VARCHAR, size: '81', required: true, defaultValue: '' }
+  rp_mission_itinerary:
+    _attributes: { phpName: RpMissionItinerary }
+    Now: { type: VARCHAR, size: '10', required: false }
+    missionID: { type: INTEGER, size: '4', required: true, defaultValue: '0' }
+    externalID: { type: INTEGER, size: '4', required: false }
+    missionTypeID: { type: INTEGER, size: '4', required: true }
+    missionDate: { type: VARCHAR, size: '10', required: false }
+    apptDate: { type: TIMESTAMP, required: false }
+    flightTime: { type: VARCHAR, size: '60', required: false }
+    releasingPhysician: { type: VARCHAR, size: '40', required: false }
+    releasingPhone: { type: VARCHAR, size: '16', required: false }
+    releasingFax: { type: INTEGER, size: '16', required: false }
+    releasingFaxComment: { type: VARCHAR, size: '40', required: false }
+    releasingEmail: { type: VARCHAR, size: '80', required: false }
+    lodging: { type: VARCHAR, size: '40', required: false }
+    lodgingPhone: { type: VARCHAR, size: '16', required: false }
+    lodging_phone_comment: { type: VARCHAR, size: '40', required: false }
+    facilityName: { type: VARCHAR, size: '40', required: false }
+    facilityPhone: { type: VARCHAR, size: '16', required: false }
+    facilityPhoneComment: { type: VARCHAR, size: '40', required: false }
+    publicConsiderations: { type: VARCHAR, size: '255', required: false }
+    privateConsiderations: { type: VARCHAR, size: '255', required: false }
+    illness: { type: VARCHAR, size: '60', required: false }
+    groundTransportationComment: { type: VARCHAR, size: '255', required: false }
+    treatingPhysician: { type: VARCHAR, size: '40', required: false }
+    treatingPhone: { type: INTEGER, size: '16', required: false }
+    treatingFax: { type: VARCHAR, size: '16', required: false }
+    treatingFaxComment: { type: VARCHAR, size: '80', required: false }
+    treatingEmail: { type: VARCHAR, size: '80', required: false }
+    languageSpoken: { type: VARCHAR, size: '30', required: false }
+    bestContactMethod: { type: VARCHAR, size: '80', required: false }
+    emergencyContactName: { type: VARCHAR, size: '40', required: false }
+    emergencyContactPrimaryPhone: { type: VARCHAR, size: '16', required: false }
+    emergencyContactSecondaryPhone: { type: VARCHAR, size: '16', required: false }
+    emergencyContactPrimaryComment: { type: VARCHAR, size: '80', required: false }
+    emergencyContactSecondaryComment: { type: VARCHAR, size: '80', required: false }
+    passFirstName: { type: VARCHAR, size: '40', required: true }
+    passLastName: { type: VARCHAR, size: '40', required: true }
+    passCity: { type: VARCHAR, size: '30', required: false }
+    passState: { type: VARCHAR, size: '2', required: false }
+    passZipcode: { type: VARCHAR, size: '30', required: false }
+    passAge: { type: BIGINT, size: '11', required: false }
+    passWeight: { type: INTEGER, size: '2', required: false }
+    passDayPhone: { type: VARCHAR, size: '16', required: false }
+    passDayComment: { type: VARCHAR, size: '40', required: false }
+    passEvePhone: { type: VARCHAR, size: '16', required: false }
+    passEveComment: { type: VARCHAR, size: '40', required: false }
+    passPagerPhone: { type: VARCHAR, size: '16', required: false }
+    passPagerComment: { type: VARCHAR, size: '40', required: false }
+    passMobilePhone: { type: VARCHAR, size: '16', required: false }
+    passMobileComment: { type: VARCHAR, size: '40', required: false }
+    passOtherPhone: { type: VARCHAR, size: '16', required: false }
+    passOtherComment: { type: VARCHAR, size: '40', required: false }
+    passFaxPhone1: { type: VARCHAR, size: '16', required: false }
+    passFax1Comment: { type: VARCHAR, size: '40', required: false }
+    passEmail: { type: VARCHAR, size: '80', required: false }
+    passAddressOne: { type: VARCHAR, size: '40', required: false }
+    passAddressTwo: { type: VARCHAR, size: '40', required: false }
+    comment: { type: VARCHAR, size: '100', required: false }
+    id: { type: INTEGER, size: '4', required: true, defaultValue: '0' }
+    legNumber: { type: INTEGER, size: '2', required: true }
+    passOnBoard: { type: TINYINT, size: '1', required: true }
+    baggageWeight: { type: INTEGER, size: '2', required: false }
+    baggageDesc: { type: VARCHAR, size: '50', required: false }
+    publicCNote: { type: VARCHAR, size: '255', required: false }
+    privateCNote: { type: VARCHAR, size: '255', required: false }
+    copilotWanted: { type: TINYINT, size: '1', required: false }
+    fromAirportIdent: { type: VARCHAR, size: '4', required: false }
+    fromAirportName: { type: VARCHAR, size: '30', required: false }
+    fromAirportCity: { type: VARCHAR, size: '30', required: false }
+    fromAirportState: { type: VARCHAR, size: '2', required: false }
+    fromAirportGMTOffset: { type: INTEGER, size: '4', required: false }
+    fromAirportDSTOffset: { type: INTEGER, size: '4', required: false }
+    toAirportIdent: { type: VARCHAR, size: '4', required: false }
+    toAirportName: { type: VARCHAR, size: '30', required: false }
+    toAirportCity: { type: VARCHAR, size: '30', required: false }
+    toAirportState: { type: VARCHAR, size: '2', required: false }
+    toAirportGMTOffset: { type: INTEGER, size: '4', required: false }
+    toAirportDSTOffset: { type: INTEGER, size: '4', required: false }
+    pilotFirstName: { type: VARCHAR, size: '40', required: false }
+    pilotLastName: { type: VARCHAR, size: '40', required: false }
+    pilotDayPhone: { type: VARCHAR, size: '16', required: false }
+    pilotDayComment: { type: VARCHAR, size: '40', required: false }
+    pilotEvePhone: { type: VARCHAR, size: '16', required: false }
+    pilotEveComment: { type: VARCHAR, size: '40', required: false }
+    pilotFaxPhone: { type: VARCHAR, size: '16', required: false }
+    pilotFaxComment: { type: VARCHAR, size: '40', required: false }
+    pilotMobilePhone: { type: VARCHAR, size: '16', required: false }
+    pilotMobileComment: { type: VARCHAR, size: '40', required: false }
+    pilotPagerPhone: { type: VARCHAR, size: '16', required: false }
+    pilotPagerComment: { type: VARCHAR, size: '40', required: false }
+    pilotOtherPhone: { type: VARCHAR, size: '16', required: false }
+    pilotOtherComment: { type: VARCHAR, size: '40', required: false }
+    pilotEmail: { type: VARCHAR, size: '80', required: false }
+    coPilotFirstName: { type: VARCHAR, size: '40', required: false }
+    coPilotLastName: { type: VARCHAR, size: '40', required: false }
+    CoPilotDayPhone: { type: VARCHAR, size: '16', required: false }
+    coPilotDayComment: { type: VARCHAR, size: '40', required: false }
+    CoPilotEvePhone: { type: VARCHAR, size: '16', required: false }
+    coPilotEveComment: { type: VARCHAR, size: '40', required: false }
+    CoPilotMobilePhone: { type: VARCHAR, size: '16', required: false }
+    coPilotMobileComment: { type: VARCHAR, size: '40', required: false }
+    CoPilotPagerPhone: { type: VARCHAR, size: '16', required: false }
+    coPilotPagerComment: { type: VARCHAR, size: '40', required: false }
+    CoPilotOtherPhone: { type: VARCHAR, size: '16', required: false }
+    coPilotOtherComment: { type: VARCHAR, size: '40', required: false }
+    CoPilotFaxPhone: { type: VARCHAR, size: '16', required: false }
+    coPilotFaxComment: { type: VARCHAR, size: '40', required: false }
+    coPilotEmail: { type: VARCHAR, size: '80', required: false }
+    buPilotFirstName: { type: VARCHAR, size: '40', required: false }
+    buPilotLastName: { type: VARCHAR, size: '40', required: false }
+    buPilotDayPhone: { type: VARCHAR, size: '16', required: false }
+    buPilotDayComment: { type: VARCHAR, size: '40', required: false }
+    buPilotEvePhone: { type: VARCHAR, size: '16', required: false }
+    buPilotEveComment: { type: VARCHAR, size: '40', required: false }
+    buPilotMobilePhone: { type: VARCHAR, size: '16', required: false }
+    buPilotMobileComment: { type: VARCHAR, size: '40', required: false }
+    buPilotPagerPhone: { type: VARCHAR, size: '16', required: false }
+    buPilotPagerComment: { type: VARCHAR, size: '40', required: false }
+    buPilotOtherPhone: { type: VARCHAR, size: '16', required: false }
+    buPilotOtherComment: { type: VARCHAR, size: '40', required: false }
+    buPilotFaxPhone: { type: VARCHAR, size: '16', required: false }
+    buPilotFaxComment: { type: VARCHAR, size: '40', required: false }
+    buPilotEmail: { type: VARCHAR, size: '80', required: false }
+    coordFirstName: { type: VARCHAR, size: '40', required: false }
+    coordLastName: { type: VARCHAR, size: '40', required: false }
+    coordDayPhone: { type: VARCHAR, size: '16', required: false }
+    coordDayComment: { type: VARCHAR, size: '40', required: false }
+    coordEvePhone: { type: VARCHAR, size: '16', required: false }
+    coordEveComment: { type: VARCHAR, size: '40', required: false }
+    coordMobilePhone: { type: VARCHAR, size: '16', required: false }
+    coordMobileComment: { type: VARCHAR, size: '40', required: false }
+    coordPagerPhone: { type: VARCHAR, size: '16', required: false }
+    coordPagerComment: { type: VARCHAR, size: '40', required: false }
+    coordOtherPhone: { type: VARCHAR, size: '16', required: false }
+    coordOtherComment: { type: VARCHAR, size: '40', required: false }
+    coordFaxPhone: { type: VARCHAR, size: '16', required: false }
+    coordFaxComment: { type: VARCHAR, size: '40', required: false }
+    coordEmail: { type: VARCHAR, size: '80', required: false }
+    requesterName: { type: VARCHAR, size: '81', required: true, defaultValue: '' }
+    reqFirstName: { type: VARCHAR, size: '40', required: true }
+    reqLastName: { type: VARCHAR, size: '40', required: true }
+    reqDayPhone: { type: VARCHAR, size: '16', required: false }
+    reqEvePhone: { type: VARCHAR, size: '16', required: false }
+    reqMobilePhone: { type: VARCHAR, size: '16', required: false }
+    reqPagerPhone: { type: VARCHAR, size: '16', required: false }
+    reqOtherPhone: { type: VARCHAR, size: '16', required: false }
+    reqFaxPhone: { type: VARCHAR, size: '16', required: false }
+    reqDayComment: { type: VARCHAR, size: '40', required: false }
+    reqEveComment: { type: VARCHAR, size: '40', required: false }
+    reqPagerComment: { type: VARCHAR, size: '40', required: false }
+    reqMobileComment: { type: VARCHAR, size: '40', required: false }
+    reqFaxComment: { type: VARCHAR, size: '40', required: false }
+    reqOtherComment: { type: VARCHAR, size: '40', required: false }
+    reqEmail: { type: VARCHAR, size: '80', required: false }
+    companionName: { type: VARCHAR, size: '50', required: false }
+    companionRelationship: { type: VARCHAR, size: '30', required: false }
+    companionDOB: { type: VARCHAR, size: '10', required: false }
+    companionAge: { type: BIGINT, size: '11', required: false }
+    companionWeight: { type: INTEGER, size: '2', required: false }
+    companionPhone: { type: VARCHAR, size: '16', required: false }
+    companionPhoneComment: { type: VARCHAR, size: '40', required: false }
+    pilotName: { type: VARCHAR, size: '50', required: false }
+    afaDayPhone: { type: VARCHAR, size: '16', required: false }
+    afaNightPhone: { type: VARCHAR, size: '16', required: false }
+    afaFaxPhone: { type: VARCHAR, size: '16', required: false }
+    afaPilotMobilePhone: { type: INTEGER, size: '16', required: false }
+    afaAircraft: { type: VARCHAR, size: '76', required: false }
+    afaNNumber: { type: VARCHAR, size: '8', required: false }
+    aircraftColor: { type: VARCHAR, size: '20', required: false }
+    etd: { type: VARCHAR, size: '15', required: false }
+    eta: { type: VARCHAR, size: '15', required: false }
+    afaOrgName: { type: VARCHAR, size: '60', required: false }
+    afaOrgPhone: { type: VARCHAR, size: '16', required: false }
+    fboName: { type: VARCHAR, size: '40', required: false }
+    fboPhone: { type: VARCHAR, size: '16', required: false }
+    fboFax: { type: VARCHAR, size: '16', required: false }
+    fboFuelDiscount: { type: DOUBLE, required: false }
+    fboAirportIdent: { type: VARCHAR, size: '4', required: false }
+    aircraftSeats: { type: TINYINT, size: '1', required: false }
+    aircraftNNumber: { type: VARCHAR, size: '8', required: false }
+    aircraftKnownIce: { type: TINYINT, size: '1', required: false }
+    aircraftMake: { type: VARCHAR, size: '50', required: false }
+    aircraftModel: { type: VARCHAR, size: '25', required: false }
+    campName: { type: VARCHAR, size: '40', required: false }
+    campPhone: { type: VARCHAR, size: '16', required: false }
+    campPhoneComment: { type: VARCHAR, size: '40', required: false }
+    campLodgingName: { type: VARCHAR, size: '40', required: false }
+    campLodgingPhone: { type: VARCHAR, size: '16', required: false }
+    campLodgingPhoneComment: { type: VARCHAR, size: '40', required: false }
+    campComment: { type: VARCHAR, size: '500', required: false }
+    flightInformation: { type: VARCHAR, size: '255', required: false }
+  rp_mission_leg_companion_count:
+    _attributes: { phpName: RpMissionLegCompanionCount }
+    mission_id: { type: INTEGER, size: '11', required: true }
+    CompanionCount: { type: BIGINT, size: '21', required: true, defaultValue: '0' }
+    CompanionTotalWeight: { type: DECIMAL, size: '32', scale: '0', required: false }
+  rp_mission_legs_origin_destination:
+    _attributes: { phpName: RpMissionLegsOriginDestination }
+    missionNo: { type: VARCHAR, size: '23', required: false }
+    externalID: { type: INTEGER, size: '4', required: false }
+    #missionDate: { type: TIMESTAMP, required: false }
+    legNumber: { type: INTEGER, size: '2', required: true }
+    missionDisplayDate: { type: VARCHAR, size: '10', required: false }
+    origin: { type: VARCHAR, size: '41', required: false }
+    destination: { type: VARCHAR, size: '41', required: false }
+    wingName: { type: VARCHAR, size: '30', required: false }
+    mission_date: { type: TIMESTAMP, required: false }
+    legID: { type: INTEGER, size: '11', required: false, defaultValue: '0' }
+    isAfaLeg: { type: INTEGER, required: false }
+    isFlown: { type: INTEGER, required: false }
+  rp_mission_summary:
+    _attributes: { phpName: RpMissionSummary }
+    passName: { type: VARCHAR, size: '81', required: true, defaultValue: '' }
+    passLastName: { type: VARCHAR, size: '40', required: true }
+    weight: { type: INTEGER, size: '2', required: false }
+    passDayPhone: { type: VARCHAR, size: '16', required: false }
+    passDayPhoneSearch: { type: VARCHAR, size: '16', required: false }
+    passEvePhone: { type: VARCHAR, size: '16', required: false }
+    passMobilePhone: { type: VARCHAR, size: '16', required: false }
+    passPagerPhone: { type: VARCHAR, size: '16', required: false }
+    passOtherPhone: { type: VARCHAR, size: '16', required: false }
+    passFaxPhone: { type: VARCHAR, size: '16', required: false }
+    passDayComment: { type: VARCHAR, size: '40', required: false }
+    passEveComment: { type: VARCHAR, size: '40', required: false }
+    passMobileComment: { type: VARCHAR, size: '40', required: false }
+    passPagerComment: { type: VARCHAR, size: '40', required: false }
+    passOtherComment: { type: VARCHAR, size: '40', required: false }
+    passFaxComment: { type: VARCHAR, size: '40', required: false }
+    reqName: { type: VARCHAR, size: '81', required: true, defaultValue: '' }
+    reqLastName: { type: VARCHAR, size: '40', required: true }
+    reqDayPhone: { type: VARCHAR, size: '16', required: false }
+    reqEvePhone: { type: VARCHAR, size: '16', required: false }
+    reqMobilePhone: { type: VARCHAR, size: '16', required: false }
+    reqPagerPhone: { type: VARCHAR, size: '16', required: false }
+    reqOtherPhone: { type: VARCHAR, size: '16', required: false }
+    reqFaxPhone: { type: VARCHAR, size: '16', required: false }
+    reqDayComment: { type: VARCHAR, size: '40', required: false }
+    reqEveComment: { type: VARCHAR, size: '40', required: false }
+    reqMobileComment: { type: VARCHAR, size: '40', required: false }
+    reqPagerComment: { type: VARCHAR, size: '40', required: false }
+    reqOtherComment: { type: VARCHAR, size: '40', required: false }
+    reqFaxComment: { type: VARCHAR, size: '40', required: false }
+    pilotName: { type: VARCHAR, size: '81', required: false }
+    pilotLastName: { type: VARCHAR, size: '40', required: false }
+    pilotDayPhone: { type: VARCHAR, size: '16', required: false }
+    pilotEvePhone: { type: VARCHAR, size: '16', required: false }
+    pilotMobilePhone: { type: VARCHAR, size: '16', required: false }
+    pilotPagerPhone: { type: VARCHAR, size: '16', required: false }
+    pilotOtherPhone: { type: VARCHAR, size: '16', required: false }
+    pilotFaxPhone: { type: VARCHAR, size: '16', required: false }
+    homeBase: { type: VARCHAR, size: '4', required: false }
+    pilotDayComment: { type: VARCHAR, size: '40', required: false }
+    pilotEveComment: { type: VARCHAR, size: '40', required: false }
+    pilotMobileComment: { type: VARCHAR, size: '40', required: false }
+    pilotPagerComment: { type: VARCHAR, size: '40', required: false }
+    pilotOtherComment: { type: VARCHAR, size: '40', required: false }
+    pilotFaxComment: { type: VARCHAR, size: '40', required: false }
+    toAirportName: { type: VARCHAR, size: '30', required: false }
+    toAirportIdent: { type: VARCHAR, size: '4', required: false }
+    fromAirportName: { type: VARCHAR, size: '30', required: false }
+    fromAirportIdent: { type: VARCHAR, size: '4', required: false }
+    mission_date: { type: TIMESTAMP, required: false }
+    mission_type_id: { type: INTEGER, size: '4', required: true }
+    missionDisplayDate: { type: VARCHAR, size: '10', required: false }
+    missionType: { type: VARCHAR, size: '40', required: true }
+    missionID: { type: INTEGER, size: '4', required: false }
+    wing_id: { type: INTEGER, size: '4', required: false }
+    cancelled: { type: VARCHAR, size: '25', required: false }
+    countyName: { type: VARCHAR, size: '30', required: false }
+  rp_mission_type_wing_stats:
+    _attributes: { phpName: RpMissionTypeWingStats }
+    monthNo: { type: INTEGER, size: '4', required: false }
+    yearNo: { type: INTEGER, size: '4', required: false }
+    missionTypeID: { type: INTEGER, size: '4', required: false }
+    wingID: { type: INTEGER, size: '4', required: false }
+    legCount: { type: INTEGER, size: '4', required: false }
+    totalHours: { type: INTEGER, size: '4', required: false }
+    aircraftCost: { type: INTEGER, size: '4', required: false }
+    commercialCost: { type: INTEGER, size: '4', required: false }
+  rp_missions_origin_destination:
+    _attributes: { phpName: RpMissionsOriginDestination }
+    externalID: { type: INTEGER, size: '4', required: false }
+    mission_date: { type: TIMESTAMP, required: false }
+    missionDateDisplay: { type: VARCHAR, size: '10', required: false }
+    originID: { type: VARCHAR, size: '4', required: false }
+    originCity: { type: VARCHAR, size: '30', required: false }
+    destID: { type: VARCHAR, size: '4', required: false }
+    destCity: { type: VARCHAR, size: '30', required: false }
+    legCount: { type: BIGINT, size: '21', required: false }
+    wingID: { type: BIGINT, size: '11', required: false }
+    wingName: { type: VARCHAR, size: '30', required: false }
+  rp_monthly_missions:
+    _attributes: { phpName: RpMonthlyMissions }
+    id: { type: INTEGER, size: '4', required: true, defaultValue: '0' }
+    missionDateDisplay: { type: VARCHAR, size: '10', required: false }
+    mission_date: { type: TIMESTAMP, required: false }
+    first_name: { type: VARCHAR, size: '40', required: true }
+    pilotLastName: { type: VARCHAR, size: '40', required: true }
+    pilotName: { type: VARCHAR, size: '81', required: true, defaultValue: '' }
+    legCount: { type: BIGINT, size: '21', required: true, defaultValue: '0' }
+    hours: { type: DOUBLE, required: false }
+    legCost: { type: DOUBLE, required: false }
+    pilotCost: { type: DOUBLE, required: false }
+    commercialTicketCost: { type: INTEGER, size: '8', required: false }
+  rp_new_member_badge:
+    _attributes: { phpName: RpNewMemberBadge }
+    applicationID: { type: INTEGER, size: '11', required: false, defaultValue: '0' }
+    personID: { type: INTEGER, size: '11', required: true, defaultValue: '0' }
+    memberID: { type: INTEGER, size: '4', required: true, defaultValue: '0' }
+    externalID: { type: INTEGER, size: '4', required: false }
+    firstName: { type: VARCHAR, size: '40', required: true }
+    lastName: { type: VARCHAR, size: '40', required: true }
+    email: { type: VARCHAR, size: '80', required: false }
+    addressOne: { type: VARCHAR, size: '40', required: false }
+    addressTwo: { type: VARCHAR, size: '40', required: false }
+    city: { type: VARCHAR, size: '30', required: false }
+    state: { type: VARCHAR, size: '2', required: false }
+    zipcode: { type: VARCHAR, size: '30', required: false }
+    badgeMade: { type: DATE, required: false }
+    notebookSent: { type: DATE, required: false }
+    ed_new_member_notify: { type: DATE, required: false }
+    wn_new_memberN_ntify: { type: DATE, required: false }
+    joinDate: { type: DATE, required: true }
+    flightStatus: { type: VARCHAR, size: '20', required: true }
+    wing_id: { type: INTEGER, size: '4', required: false }
+    joinDateSort: { type: DATE, required: true }
+  rp_new_member_status:
+    _attributes: { phpName: RpNewMemberStatus }
+    firstName: { type: VARCHAR, size: '40', required: true }
+    lastName: { type: VARCHAR, size: '40', required: true }
+    joinDate: { type: VARCHAR, size: '10', required: false }
+    flightStatus: { type: VARCHAR, size: '20', required: true }
+    insuranceReceived: { type: VARCHAR, size: '10', required: false }
+    badgeMade: { type: VARCHAR, size: '10', required: false }
+    notebookSent: { type: VARCHAR, size: '10', required: false }
+    joinDateSort: { type: DATE, required: true }
+    wing_id: { type: INTEGER, size: '4', required: false }
+    email: { type: VARCHAR, size: '80', required: false }
+  rp_outreach_report:
+    _attributes: { phpName: RpOutreachReport }
+    externalID: { type: INTEGER, size: '4', required: false }
+    legNumber: { type: INTEGER, size: '2', required: true }
+    mission_date: { type: TIMESTAMP, required: false }
+    displayDate: { type: VARCHAR, size: '10', required: false }
+    cancelled: { type: VARCHAR, size: '25', required: false }
+    pilotName: { type: VARCHAR, size: '81', required: true, defaultValue: '' }
+    pilotLastName: { type: VARCHAR, size: '40', required: true }
+    agencyName: { type: VARCHAR, size: '80', required: true }
+    passName: { type: VARCHAR, size: '43', required: true, defaultValue: '' }
+    passLastName: { type: VARCHAR, size: '40', required: true }
+    passAge: { type: DECIMAL, size: '10', scale: '4', required: false }
+    illness: { type: VARCHAR, size: '60', required: false }
+    facilityName: { type: VARCHAR, size: '40', required: false }
+    lodgingName: { type: VARCHAR, size: '40', required: false }
+    agencyCity: { type: VARCHAR, size: '30', required: false }
+    agencyState: { type: VARCHAR, size: '2', required: false }
+    pass_state: { type: VARCHAR, size: '2', required: false }
+    agencyID: { type: INTEGER, size: '11', required: true, defaultValue: '0' }
+    passengerID: { type: INTEGER, size: '11', required: true, defaultValue: '0' }
+  team_note:
+    _attributes: { phpName: TeamNote }
+    role_id: { type: INTEGER, size: '11', primaryKey: true, required: true, foreignTable: role, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
+    note: { type: LONGVARCHAR, required: false }
+  user_filter:
+    _attributes: { phpName: UserFilter }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    person_id: { type: INTEGER, size: '11', required: true }
+    date_range1: { type: TIMESTAMP, required: false }
+    date_range2: { type: TIMESTAMP, required: false }
+    day1: { type: VARCHAR, size: '20', required: false }
+    day2: { type: VARCHAR, size: '20', required: false }
+    day3: { type: VARCHAR, size: '20', required: false }
+    day4: { type: VARCHAR, size: '20', required: false }
+    day5: { type: VARCHAR, size: '20', required: false }
+    day6: { type: VARCHAR, size: '20', required: false }
+    day7: { type: VARCHAR, size: '20', required: false }
+    wing: { type: VARCHAR, size: '50', required: false }
+    ident: { type: VARCHAR, size: '4', required: false }
+    city: { type: VARCHAR, size: '50', required: false }
+    zipcode: { type: VARCHAR, size: '10', required: false }
+    state: { type: VARCHAR, size: '10', required: false }
+    orgin: { type: TINYINT, size: '4', required: false }
+    dest: { type: TINYINT, size: '4', required: false }
+    is_pilot: { type: TINYINT, size: '4', required: false }
+    is_ma: { type: TINYINT, size: '4', required: false }
+    ifr_backup: { type: TINYINT, size: '4', required: false }
+    filled: { type: TINYINT, size: '4', required: false }
+    open: { type: TINYINT, size: '4', required: false }
+    max_passenger: { type: INTEGER, size: '11', required: false }
+    max_weight: { type: INTEGER, size: '11', required: false }
+    max_distance: { type: INTEGER, size: '11', required: false }
+    max_effciency: { type: INTEGER, size: '11', required: false }
+    availability: { type: TINYINT, size: '4', required: false }
+    alltype: { type: TINYINT, size: '4', required: false }
+  user_filter_mission_types:
+    _attributes: { phpName: UserFilterMissionTypes }
+    user_filter_id: { type: INTEGER, size: '11', primaryKey: true, required: true, foreignTable: user_filter, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
+    mission_type_id: { type: INTEGER, size: '11', primaryKey: true, required: true, foreignTable: mission_type, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
+    _indexes: { user_filter_id: [user_filter_id], user_filter_mission_types_FI_2: [mission_type_id] }
+  vocation_class:
+    _attributes: { phpName: VocationClass }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    name: { type: VARCHAR, size: '30', required: true }
+  vpo_request:
+    _attributes: { phpName: VpoRequest }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    hazardous_cargo_flag: { type: TINYINT, size: '1', required: false }
+    request_date: { type: DATE, required: false }
+    request_reason_desc: { type: VARCHAR, size: '125', required: false }
+    agency_name: { type: VARCHAR, size: '80', required: false }
+    req_first_name: { type: VARCHAR, size: '40', required: false }
+    req_last_name: { type: VARCHAR, size: '40', required: false }
+    agency_division: { type: VARCHAR, size: '40', required: false }
+    req_address1: { type: VARCHAR, size: '40', required: false }
+    req_address2: { type: VARCHAR, size: '40', required: false }
+    req_city: { type: VARCHAR, size: '30', required: false }
+    req_state: { type: VARCHAR, size: '2', required: false }
+    req_country: { type: VARCHAR, size: '30', required: false }
+    req_zipcode: { type: VARCHAR, size: '10', required: false }
+    req_office_phone: { type: VARCHAR, size: '16', required: false }
+    req_office_comment: { type: VARCHAR, size: '40', required: false }
+    req_mobile_phone: { type: VARCHAR, size: '16', required: false }
+    req_mobile_comment: { type: VARCHAR, size: '40', required: false }
+    req_fax_phone: { type: VARCHAR, size: '16', required: false }
+    req_fax_comment: { type: VARCHAR, size: '40', required: false }
+    req_pager_phone: { type: VARCHAR, size: '16', required: false }
+    req_pager_comment: { type: VARCHAR, size: '40', required: false }
+    req_other_phone1: { type: VARCHAR, size: '16', required: false }
+    req_other_comment1: { type: VARCHAR, size: '40', required: false }
+    req_other_phone2: { type: VARCHAR, size: '16', required: false }
+    req_other_comment2: { type: VARCHAR, size: '40', required: false }
+    req_other_phone3: { type: INTEGER, size: '16', required: false }
+    req_other_comment3: { type: VARCHAR, size: '40', required: false }
+    req_email: { type: VARCHAR, size: '80', required: false }
+    req_alt_email: { type: VARCHAR, size: '80', required: false }
+    contact_notes: { type: VARCHAR, size: '125', required: false }
+    origin_city: { type: VARCHAR, size: '30', required: false }
+    origin_state: { type: VARCHAR, size: '2', required: false }
+    dest_city: { type: VARCHAR, size: '30', required: false }
+    dest_state: { type: VARCHAR, size: '2', required: false }
+    preferred_date: { type: DATE, required: false }
+    alternative_date: { type: DATE, required: false }
+    transport_type: { type: VARCHAR, size: '25', required: false }
+    request_posted_date: { type: DATE, required: false }
+    request_posted_to_afa_org_id: { type: INTEGER, size: '4', required: false }
+    reques_processed_date: { type: DATE, required: false }
+    request_disposition: { type: VARCHAR, size: '25', required: false }
+    caller_name: { type: VARCHAR, size: '40', required: false }
+    caller_phone: { type: VARCHAR, size: '16', required: false }
+    request_post_results: { type: VARCHAR, size: '500', required: false }
+    requester_vpo_user_id: { type: VARCHAR, size: '25', required: false }
+    source: { type: VARCHAR, size: '10', required: false }
+    soap_post_from_afa_org_id: { type: VARCHAR, size: '5', required: false }
+    soap_post_request_id: { type: INTEGER, size: '4', required: false }
+    request_processed_by: { type: INTEGER, size: '4', required: false }
+  vpo_request_animal:
+    _attributes: { phpName: VpoRequestAnimal }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    request_id: { type: INTEGER, size: '4', required: false, foreignTable: vpo_request, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    animal_name: { type: VARCHAR, size: '40', required: false }
+    animal_type: { type: VARCHAR, size: '40', required: false }
+    weight: { type: INTEGER, size: '4', required: false }
+    harness: { type: VARCHAR, size: '20', required: false }
+    kennel_height: { type: INTEGER, size: '4', required: false }
+    kennel_width: { type: INTEGER, size: '4', required: false }
+    kennel_length: { type: INTEGER, size: '4', required: false }
+    handler_traveling: { type: TINYINT, size: '1', required: false }
+    _indexes: { request_id: [request_id] }
+  vpo_request_cargo:
+    _attributes: { phpName: VpoRequestCargo }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    request_id: { type: INTEGER, size: '4', required: false, foreignTable: vpo_request, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    hazardous: { type: TINYINT, size: '1', required: false }
+    cargo_type: { type: VARCHAR, size: '40', required: false }
+    weight: { type: INTEGER, size: '4', required: false }
+    height: { type: INTEGER, size: '4', required: false }
+    length: { type: INTEGER, size: '4', required: false }
+    width: { type: INTEGER, size: '4', required: false }
+    special_handling: { type: VARCHAR, size: '125', required: false }
+    oc_first_name: { type: VARCHAR, size: '40', required: false }
+    oc_last_name: { type: VARCHAR, size: '40', required: false }
+    oc_day_phone: { type: VARCHAR, size: '16', required: false }
+    oc_day_comment: { type: VARCHAR, size: '40', required: false }
+    oc_mobile_phone: { type: VARCHAR, size: '16', required: false }
+    oc_mobile_comment: { type: VARCHAR, size: '40', required: false }
+    oc_other_phone1: { type: VARCHAR, size: '16', required: false }
+    oc_other_comment1: { type: VARCHAR, size: '40', required: false }
+    oc_other_phone2: { type: VARCHAR, size: '16', required: false }
+    oc_other_comment2: { type: VARCHAR, size: '40', required: false }
+    oc_email: { type: VARCHAR, size: '80', required: false }
+    oc_alt_email: { type: VARCHAR, size: '80', required: false }
+    dc_first_name: { type: VARCHAR, size: '40', required: false }
+    dc_last_name: { type: VARCHAR, size: '40', required: false }
+    dc_day_phone: { type: VARCHAR, size: '16', required: false }
+    dc_day_comment: { type: VARCHAR, size: '40', required: false }
+    dc_mobile_hone: { type: INTEGER, size: '16', required: false }
+    dc_mobile_comment: { type: VARCHAR, size: '40', required: false }
+    dc_other_phone1: { type: VARCHAR, size: '16', required: false }
+    dc_other_comment1: { type: VARCHAR, size: '40', required: false }
+    dc_other_phone2: { type: VARCHAR, size: '16', required: false }
+    dc_other_comment2: { type: VARCHAR, size: '40', required: false }
+    dc_email: { type: VARCHAR, size: '80', required: false }
+    dc_alt_email: { type: VARCHAR, size: '80', required: false }
+    item_description: { type: VARCHAR, size: '255', required: false }
+    _indexes: { request_id: [request_id] }
+  vpo_request_passenger:
+    _attributes: { phpName: VpoRequestPassenger }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    request_id: { type: INTEGER, size: '4', required: false, foreignTable: vpo_request, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    fema_no: { type: VARCHAR, size: '25', required: false }
+    first_name: { type: VARCHAR, size: '40', required: false }
+    last_lame: { type: VARCHAR, size: '40', required: false }
+    address1: { type: VARCHAR, size: '40', required: false }
+    address2: { type: VARCHAR, size: '40', required: false }
+    city: { type: VARCHAR, size: '30', required: false }
+    state: { type: VARCHAR, size: '2', required: false }
+    country: { type: VARCHAR, size: '30', required: false }
+    zipcode: { type: VARCHAR, size: '10', required: false }
+    day_phone: { type: VARCHAR, size: '16', required: false }
+    day_comment: { type: VARCHAR, size: '40', required: false }
+    eve_phone: { type: TINYINT, size: '16', required: false }
+    eve_comment: { type: VARCHAR, size: '40', required: false }
+    mobile_phone: { type: VARCHAR, size: '16', required: false }
+    mobile_comment: { type: VARCHAR, size: '40', required: false }
+    fax_phone: { type: VARCHAR, size: '16', required: false }
+    fax_comment: { type: VARCHAR, size: '40', required: false }
+    pager_phone: { type: VARCHAR, size: '16', required: false }
+    pager_comment: { type: VARCHAR, size: '40', required: false }
+    other_phone1: { type: VARCHAR, size: '16', required: false }
+    other_comment1: { type: VARCHAR, size: '40', required: false }
+    other_phone2: { type: VARCHAR, size: '16', required: false }
+    other_comment2: { type: VARCHAR, size: '40', required: false }
+    other_phone3: { type: VARCHAR, size: '16', required: false }
+    other_comment3: { type: VARCHAR, size: '40', required: false }
+    email: { type: VARCHAR, size: '80', required: false }
+    alt_email: { type: VARCHAR, size: '80', required: false }
+    age: { type: INTEGER, size: '4', required: false }
+    date_of_birth: { type: DATE, required: false }
+    primary_language: { type: VARCHAR, size: '30', required: false }
+    english_spoken: { type: VARCHAR, size: '25', required: false }
+    pregnant: { type: VARCHAR, size: '25', required: false }
+    oxygen_required: { type: VARCHAR, size: '25', required: false }
+    weight: { type: INTEGER, size: '4', required: false }
+    ambulatory: { type: VARCHAR, size: '25', required: false }
+    notes: { type: VARCHAR, size: '125', required: false }
+    known_medicalCondition: { type: VARCHAR, size: '125', required: false }
+    baggage_weight: { type: INTEGER, size: '4', required: false }
+    baggage_desc: { type: VARCHAR, size: '125', required: false }
+    _indexes: { request_id: [request_id] }
+  web_site_news:
+    _attributes: { phpName: WebSiteNews }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    news_item: { type: INTEGER, size: '4', required: true }
+    item_date: { type: DATE, required: false }
+    expire_date: { type: DATE, required: false }
+    archive_date: { type: DATE, required: false }
+    headline: { type: VARCHAR, size: '75', required: false }
+    author: { type: VARCHAR, size: '50', required: false }
+    wing_list: { type: VARCHAR, size: '255', required: false }
+    contact_name: { type: VARCHAR, size: '50', required: false }
+    contact_email: { type: VARCHAR, size: '75', required: false }
+    news_body: { type: VARCHAR, size: '5000', required: false }
+    short_description: { type: VARCHAR, size: '255', required: false }
+    priority: { type: INTEGER, size: '4', required: false }
+  wing:
+    _attributes: { phpName: Wing }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    name: { type: VARCHAR, size: '30', required: true }
+    newsletter_abbreviation: { type: VARCHAR, size: '20', required: false }
+    display_name: { type: VARCHAR, size: '25', required: false }
+    state: { type: VARCHAR, size: '2', required: false }
+  wing_job:
+    _attributes: { phpName: WingJob }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    name: { type: VARCHAR, size: '30', required: true }
+    short_name: { type: VARCHAR, size: '15', required: false }
+    person_id: { type: INTEGER, size: '11', required: true }
+  wing_leader:
+    _attributes: { phpName: WingLeader }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    person_id: { type: INTEGER, size: '11', required: false, foreignTable: person, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    startyear: { type: INTEGER, size: '4', required: true }
+    _indexes: { person_id: [person_id] }
+  workflow:
+    _attributes: { phpName: Workflow }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    description: { type: VARCHAR, size: '50', required: false }
+    stored_proc_name: { type: VARCHAR, size: '80', required: false }
+    redirect_if_true: { type: VARCHAR, size: '80', required: false }
+    redirect_if_false: { type: VARCHAR, size: '80', required: false }
+    message_if_true: { type: VARCHAR, size: '255', required: false }
+    message_if_false: { type: VARCHAR, size: '255', required: false }
+  workflow_role:
+    _attributes: { phpName: WorkflowRole }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    role_id: { type: INTEGER, size: '11', required: true, foreignTable: role, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    work_flow_id: { type: INTEGER, size: '11', required: true, foreignTable: workflow, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    _indexes: { role_id: [role_id], work_flow_id: [work_flow_id] }
+  zipcode:
+    _attributes: { phpName: Zipcode }
+    id: { type: INTEGER, size: '4', primaryKey: true, autoIncrement: true, required: true }
+    city: { type: VARCHAR, size: '28', required: false }
+    state: { type: VARCHAR, size: '10', required: false }
+    zipcode: { type: VARCHAR, size: '5', required: true }
+    area_code: { type: VARCHAR, size: '3', required: false }
+    fips_code: { type: INTEGER, size: '4', required: false }
+    county_name: { type: VARCHAR, size: '25', required: false }
+    preferred: { type: VARCHAR, size: '1', required: false }
+    time_zone: { type: VARCHAR, size: '5', required: false }
+    dst_flag: { type: VARCHAR, size: '1', required: false }
+    zip_type: { type: VARCHAR, size: '1', required: false }
+    gmt_offset: { type: INTEGER, size: '4', required: false }
+    dst_offset: { type: INTEGER, size: '4', required: false }
+    afa_org_id: { type: INTEGER, size: '4', required: false }
+    latitude: { type: FLOAT, required: false }
+    longitude: { type: FLOAT, required: false }
+    wing_id: { type: INTEGER, size: '11', required: false }
+    _indexes: { wing_id: [wing_id] }

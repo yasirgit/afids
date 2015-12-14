@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/afids/!svn/ver/1168/browse/trunk/apps/frontend/modules/person/templates
+END
+autoCompleteSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/afids/!svn/ver/631/browse/trunk/apps/frontend/modules/person/templates/autoCompleteSuccess.php
+END
+autoNotPassengerSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/afids/!svn/ver/631/browse/trunk/apps/frontend/modules/person/templates/autoNotPassengerSuccess.php
+END
+subscribeSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/afids/!svn/ver/1151/browse/trunk/apps/frontend/modules/person/templates/subscribeSuccess.php
+END
+updateSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/afids/!svn/ver/649/browse/trunk/apps/frontend/modules/person/templates/updateSuccess.php
+END
+autoCompleteLastSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/afids/!svn/ver/500/browse/trunk/apps/frontend/modules/person/templates/autoCompleteLastSuccess.php
+END
+updatePasswordSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/afids/!svn/ver/499/browse/trunk/apps/frontend/modules/person/templates/updatePasswordSuccess.php
+END
+indexSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/afids/!svn/ver/1151/browse/trunk/apps/frontend/modules/person/templates/indexSuccess.php
+END
+autoCompleteFirstSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/afids/!svn/ver/500/browse/trunk/apps/frontend/modules/person/templates/autoCompleteFirstSuccess.php
+END
+autoNotRequesterSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/afids/!svn/ver/342/browse/trunk/apps/frontend/modules/person/templates/autoNotRequesterSuccess.php
+END
+viewSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/afids/!svn/ver/1168/browse/trunk/apps/frontend/modules/person/templates/viewSuccess.php
+END
+mailingListSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/afids/!svn/ver/1151/browse/trunk/apps/frontend/modules/person/templates/mailingListSuccess.php
+END
+saveSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/afids/!svn/ver/97/browse/trunk/apps/frontend/modules/person/templates/saveSuccess.php
+END

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/lib/vendor/propel-generator/test
+END
+tree-test.php
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/lib/vendor/propel-generator/test/tree-test.php
+END
+bookstore-packaged-test.php
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/lib/vendor/propel-generator/test/bookstore-packaged-test.php
+END
+bookstore-test.php
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/lib/vendor/propel-generator/test/bookstore-test.php
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/lib/vendor/propel-generator/test/README
+END
+test.xml
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/lib/vendor/propel-generator/test/test.xml
+END

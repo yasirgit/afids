@@ -1,0 +1,362 @@
+
+				  </div>
+        </div>
+        <!--content ends-->
+        <!--sidebar starts-->
+        <div id="sidebar">
+          <h3 class="side-heading misson-heading">MISSIONS</h3>
+          <!--mission options-->
+          <ul class="mission-options">
+            <li><a href="#">Avail</a></li>
+            <li><a href="#">Pending</a></li>
+            <li><a href="#">Visual</a></li>
+          </ul>
+          <h3 class="side-heading person-heading">PERSON</h3>
+          <!--person options-->
+          <ul class="person-options">
+            <li><a href="#">Find</a></li>
+            <li><a href="#">Add</a></li>
+          </ul>
+          <!--side tab box-->
+          <div class="side-tab-box">
+            <!--tab set-->
+            <ul class="tab-set">
+              <li class="tab-1"><a href="#tab1" class="tab active">Search</a></li>
+              <li class="tab-2"><a href="#tab2" class="tab">DISTANCE CALC</a></li>
+            </ul>
+            <!--tab content-->
+            <div class="tab-content">
+              <div class="bg">
+                <div id="tab1">
+                  <form action="#">
+                    <fieldset>
+                    <div class="search">
+                      <div class="search-input">
+                        <input type="text" title="search" />
+                      </div>
+                      <select title="all">
+                        <option>All</option>
+                      </select>
+                      <a href="#" class="btn-go">GO</a> </div>
+                    <input type="submit" class="hide" value="submit" />
+                    </fieldset>
+                  </form>
+                </div>
+                <div id="tab2"> tab2 text </div>
+              </div>
+            </div>
+          </div>
+          <!--recent activity-->
+          <div class="recent-activity">
+            <h3>recent activity</h3>
+            <div class="frame">
+              <ul>
+                <li class="alt"> <a href="#" class="btn-close">Close</a>
+                  <div class="wrap">
+                    <p>Brock Landry posted <a href="#">Mission #125,555</a> from Bakersfield to Los Angeles</p>
+                    <em class="time">50 seconds ago</em> </div>
+                </li>
+                <li> <a href="#" class="btn-close">Close</a>
+                  <div class="wrap">
+                    <p>Missy Stevens updated <a href="#">Mission #126,667</a> - Leg 1 pilot has been assigned. </p>
+                    <em class="time">1 minute ago</em> </div>
+                </li>
+                <li class="alt"> <a href="#" class="btn-close">Close</a>
+                  <div class="wrap">
+                    <p><a href="#">Mission #125,334</a> has been cancelled</p>
+                    <em class="time">2 minutes ago</em> </div>
+                </li>
+                <li> <a href="#" class="btn-close">Close</a>
+                  <div class="wrap">
+                    <p>Brock Landry has sent available missions to the California, South Wing.</p>
+                    <em class="time">10 minutes ago</em> </div>
+                </li>
+                <li class="alt"> <a href="#" class="btn-close">Close</a>
+                  <div class="wrap">
+                    <p><a href="#">Mission #125,334</a> has been cancelled</p>
+                    <em class="time">2 minutes ago</em> </div>
+                </li>
+                <li> <a href="#" class="btn-close">Close</a>
+                  <div class="wrap">
+                    <p>Brock Landry has sent available missions to the California, South Wing.</p>
+                    <em class="time">10 minutes ago</em> </div>
+                </li>
+                <li class="alt"> <a href="#" class="btn-close">Close</a>
+                  <div class="wrap">
+                    <p><a href="#">Mission #125,334</a> has been cancelled</p>
+                    <em class="time">2 minutes ago</em> </div>
+                </li>
+                <li> <a href="#" class="btn-close">Close</a>
+                  <div class="wrap">
+                    <p>Brock Landry has sent available missions to the California, South Wing.</p>
+                    <em class="time">10 minutes ago</em> </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!--recent items-->
+          <div class="recent-items">
+            <h3><span>Your RECENT ITEMS</span></h3>
+            <ul>
+              <li> <img src="images/ico-recent-item-1.png" alt="ico" /> <a href="#">Mission Legs</a> </li>
+              <li class="alt"> <img src="images/ico-recent-item-2.png" alt="ico" /> <a href="#">Pilot Brock Landry</a> </li>
+              <li> <img src="images/ico-recent-item-3.png" alt="ico" /> <a href="#">Missions</a> </li>
+              <li class="alt"> <img src="images/ico-recent-item-4.png" alt="ico" /> <a href="#">Passenger Name</a> </li>
+              <li> <img src="images/ico-recent-item-5.png" alt="ico" /> <a href="#">Camp Name</a> </li>
+            </ul>
+          </div>
+        </div>
+        <!--sidebar ends-->
+      </div>
+      <!--main ends-->
+      <!--header starts-->
+      <div id="header">
+        <!--additional navigation-->
+        <div class="ad-nav">
+          <ul>
+            <li><a href="#">Log Out</a></li>
+            <li><a href="#">Account Settings</a></li>
+            <li><a href="#">AFW West Home</a></li>
+          </ul>
+        </div>
+        <p class="welcome">Welcome, Francisco Perez of Angel Flight West</p>
+        <a href="#" class="help">Help</a>
+        <!--navigation starts-->
+        <ul class="nav">
+          <li><a href="#" class="link-instrumental"><span><strong class="txt-nav">Instrument Panel</strong></span></a></li>
+          <li class="mission-el"> <a href="#" class="link-mission"><span><strong class="txt-nav">Mission Coordination</strong></span></a>
+            <!--drop down-->
+            <div class="drop">
+              <div class="t">&nbsp;</div>
+              <div class="c">
+                <div class="bg">
+                  <div class="drop-columns three">
+                    <div class="holder alt">
+                      <h3>Find</h3>
+                      <ul class="alter">
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">Passenger</span></span></span></a></li>
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">Companion</span></span></span></a></li>
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">Mission</span></span></span></a></li>
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">Leg</span></span></span></a></li>
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">Requester</span></span></span></a></li>
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">Agency</span></span></span></a></li>
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">Pilot Request</span></span></span></a></li>
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">Mission Request</span></span></span></a></li>
+                      </ul>
+                      <ul>
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">Coordinator</span></span></span></a></li>
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">Camp</span></span></span></a></li>
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">Airport</span></span></span></a></li>
+                      </ul>
+                    </div>
+                    <div class="holder">
+                      <h3>Find</h3>
+                      <ul>
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">Person</span></span></span></a></li>
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">Passenger</span></span></span></a></li>
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">Mission</span></span></span></a></li>
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">Requester</span></span></span></a></li>
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">Agency</span></span></span></a></li>
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">Pilot Request</span></span></span></a></li>
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">Mission Request</span></span></span></a></li>
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">Camp</span></span></span></a></li>
+                      </ul>
+                    </div>
+                    <div class="holder">
+                      <h3>Other Stuff</h3>
+                      <ul>
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">Link 1</span></span></span></a></li>
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">Link 2</span></span></span></a></li>
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">Link 3</span></span></span></a></li>
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">Link 4</span></span></span></a></li>
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">Link 5</span></span></span></a></li>
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">Link 6</span></span></span></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="b">&nbsp;</div>
+              <span class="triangle">&nbsp;</span> </div>
+          </li>
+          <li><a href="#" class="link-members"><span><strong class="txt-nav">Members</strong></span></a></li>
+          <li><a href="#" class="link-reference"><span><strong class="txt-nav">Reference</strong></span></a></li>
+          <li class="content-tools-el"> <a href="#" class="link-content-tools"><span><strong class="txt-nav">Content/Tools</strong></span></a>
+            <!--drop down-->
+            <div class="drop">
+              <div class="t">&nbsp;</div>
+              <div class="c">
+                <div class="bg">
+                  <div class="drop-columns">
+                    <div class="holder">
+                      <h3>Web Content</h3>
+                      <ul>
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">Review Mission Photos</span></span></span></a></li>
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">News Items</span></span></span></a></li>
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">List/Edit events in the database</span></span></span></a></li>
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">Add a new event</span></span></span></a></li>
+                      </ul>
+                      <h3>Bulk Emails</h3>
+                      <ul>
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">Create New Emails to Members</span></span></span></a></li>
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">Create New Emails to Members (using missions)</span></span></span></a></li>
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">List/Edit Email Letters</span></span></span></a></li>
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">List/Edit Email Queue</span></span></span></a></li>
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">List/Edit Sent Emails</span></span></span></a></li>
+                      </ul>
+                    </div>
+                    <div class="holder">
+                      <h3>Contacts</h3>
+                      <ul>
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">Search Contacts</span></span></span></a></li>
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">Add Contacts</span></span></span></a></li>
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">List Outstanding Data Requests</span></span></span></a></li>
+                      </ul>
+                      <h3>Data For Printing</h3>
+                      <ul>
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">Mail Merge Data</span></span></span></a></li>
+                      </ul>
+                      <h3>Merchandise Orders</h3>
+                      <ul>
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">Mail Merge Data</span></span></span></a></li>
+                      </ul>
+                      <h3>Tools</h3>
+                      <ul>
+                        <li><a href="#"><span class="t-r"><span class="b-l"><span class="b-r">Distance Calculator</span></span></span></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="b">&nbsp;</div>
+              <span class="triangle">&nbsp;</span> </div>
+          </li>
+          <li class="reports-el"> <a href="#" class="link-reports"><span><strong class="txt-nav">Reports</strong></span></a>
+            <!--drop down-->
+            <div class="drop">
+              <div class="t">&nbsp;</div>
+              <div class="c">
+                <div class="bg">
+                  <ul class="reports-bar">
+                    <li class="active"><a href="#tab3" class="tab active">Statistics</a></li>
+                    <li><a href="#tab4" class="tab">Members</a></li>
+                    <li><a href="#tab5" class="tab">Missions</a></li>
+                    <li><a href="#tab6" class="tab">Misc.</a></li>
+                  </ul>
+                  <div id="tab3">
+                    <div class="drop-columns">
+                      <div class="holder">
+                        <ul>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Mission Counts (YTD)</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Mission Counts by Member</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Mission Counts by Member (by Wing)</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">ACN Mission Counts Year to Date</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Mission Month Summary</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Cancelled Missions Detail</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Member Counts</span></span></span></a></li>
+                        </ul>
+                      </div>
+                      <div class="holder">
+                        <ul>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Mission Counts (YTD)</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Mission Counts by Member</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Mission Counts by Member (by Wing)</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">ACN Mission Counts Year to Date</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Mission Month Summary</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Cancelled Missions Detail</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Member Counts</span></span></span></a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="tab4">
+                    <div class="drop-columns">
+                      <div class="holder">
+                        <ul>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Mission Counts (YTD)</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Mission Counts by Member</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Mission Counts by Member (by Wing)</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">ACN Mission Counts Year to Date</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Mission Month Summary</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Cancelled Missions Detail</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Member Counts</span></span></span></a></li>
+                        </ul>
+                      </div>
+                      <div class="holder">
+                        <ul>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Mission Counts (YTD)</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Mission Counts by Member</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Mission Counts by Member (by Wing)</span></span></span></a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="tab5">
+                    <div class="drop-columns">
+                      <div class="holder">
+                        <ul>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Mission Counts (YTD)</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Mission Counts by Member</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Mission Counts by Member (by Wing)</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">ACN Mission Counts Year to Date</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Mission Month Summary</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Cancelled Missions Detail</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Member Counts</span></span></span></a></li>
+                        </ul>
+                      </div>
+                      <div class="holder">
+                        <ul>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Mission Counts (YTD)</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Mission Counts by Member</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Mission Counts by Member (by Wing)</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">ACN Mission Counts Year to Date</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Mission Month Summary</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Cancelled Missions Detail</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Member Counts</span></span></span></a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="tab6">
+                    <div class="drop-columns">
+                      <div class="holder">
+                        <ul>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Mission Counts (YTD)</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Mission Counts by Member</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Mission Counts by Member (by Wing)</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">ACN Mission Counts Year to Date</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Mission Month Summary</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Cancelled Missions Detail</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Member Counts</span></span></span></a></li>
+                        </ul>
+                      </div>
+                      <div class="holder">
+                        <ul>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Mission Counts (YTD)</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Mission Counts by Member</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">Mission Counts by Member (by Wing)</span></span></span></a></li>
+                          <li><a href="index.php"><span class="t-r"><span class="b-l"><span class="b-r">ACN Mission Counts Year to Date</span></span></span></a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="b">&nbsp;</div>
+              <span class="triangle">&nbsp;</span> </div>
+          </li>
+        </ul>
+        <!--navigation ends-->
+      </div>
+      <!--footer starts-->
+      <div id="footer"> <a href="#" class="footer-logo">AngelFlight</a>
+        <p>&copy; 2008 - 2009 Angel Flight West</p>
+      </div>
+      <!--footer ends-->
+    </div>
+  </div>
+</div>
+<!--wrapper ends-->
+
+</body>
+</html>

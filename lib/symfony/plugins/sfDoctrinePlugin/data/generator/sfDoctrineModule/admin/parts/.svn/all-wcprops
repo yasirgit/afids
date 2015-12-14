@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/data/generator/sfDoctrineModule/admin/parts
+END
+fieldsConfiguration.php
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/data/generator/sfDoctrineModule/admin/parts/fieldsConfiguration.php
+END
+processFormAction.php
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/data/generator/sfDoctrineModule/admin/parts/processFormAction.php
+END
+filtersConfiguration.php
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/data/generator/sfDoctrineModule/admin/parts/filtersConfiguration.php
+END
+deleteAction.php
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/data/generator/sfDoctrineModule/admin/parts/deleteAction.php
+END
+createAction.php
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/data/generator/sfDoctrineModule/admin/parts/createAction.php
+END
+indexAction.php
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/data/generator/sfDoctrineModule/admin/parts/indexAction.php
+END
+filtersAction.php
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/data/generator/sfDoctrineModule/admin/parts/filtersAction.php
+END
+configuration.php
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/data/generator/sfDoctrineModule/admin/parts/configuration.php
+END
+sortingConfiguration.php
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/data/generator/sfDoctrineModule/admin/parts/sortingConfiguration.php
+END
+batchAction.php
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/data/generator/sfDoctrineModule/admin/parts/batchAction.php
+END
+updateAction.php
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/data/generator/sfDoctrineModule/admin/parts/updateAction.php
+END
+paginationConfiguration.php
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/data/generator/sfDoctrineModule/admin/parts/paginationConfiguration.php
+END
+sortingAction.php
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/data/generator/sfDoctrineModule/admin/parts/sortingAction.php
+END
+filterAction.php
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/data/generator/sfDoctrineModule/admin/parts/filterAction.php
+END
+editAction.php
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/data/generator/sfDoctrineModule/admin/parts/editAction.php
+END
+paginationAction.php
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/data/generator/sfDoctrineModule/admin/parts/paginationAction.php
+END
+newAction.php
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/data/generator/sfDoctrineModule/admin/parts/newAction.php
+END
+actionsConfiguration.php
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/data/generator/sfDoctrineModule/admin/parts/actionsConfiguration.php
+END

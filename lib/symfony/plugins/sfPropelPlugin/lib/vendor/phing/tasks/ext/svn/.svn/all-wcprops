@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/lib/vendor/phing/tasks/ext/svn
+END
+SvnExportTask.php
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/lib/vendor/phing/tasks/ext/svn/SvnExportTask.php
+END
+SvnLastRevisionTask.php
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/lib/vendor/phing/tasks/ext/svn/SvnLastRevisionTask.php
+END
+SvnUpdateTask.php
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/lib/vendor/phing/tasks/ext/svn/SvnUpdateTask.php
+END
+SvnCheckoutTask.php
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/lib/vendor/phing/tasks/ext/svn/SvnCheckoutTask.php
+END
+SvnBaseTask.php
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/lib/vendor/phing/tasks/ext/svn/SvnBaseTask.php
+END

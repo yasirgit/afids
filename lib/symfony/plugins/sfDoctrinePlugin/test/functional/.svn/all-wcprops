@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/test/functional
+END
+PagerTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/test/functional/PagerTest.php
+END
+I18nTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/test/functional/I18nTest.php
+END
+sfDoctrineRecordTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/test/functional/sfDoctrineRecordTest.php
+END
+FormTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/test/functional/FormTest.php
+END
+EnvironmentSetupTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/test/functional/EnvironmentSetupTest.php
+END
+UniqueTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/test/functional/UniqueTest.php
+END

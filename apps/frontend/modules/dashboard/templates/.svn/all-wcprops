@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/afids/!svn/ver/1221/browse/trunk/apps/frontend/modules/dashboard/templates
+END
+pilotSignupEventDetailSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/afids/!svn/ver/1083/browse/trunk/apps/frontend/modules/dashboard/templates/pilotSignupEventDetailSuccess.php
+END
+_personalNotepad.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/afids/!svn/ver/553/browse/trunk/apps/frontend/modules/dashboard/templates/_personalNotepad.php
+END
+_filternew.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/afids/!svn/ver/834/browse/trunk/apps/frontend/modules/dashboard/templates/_filternew.php
+END
+_instrumentNotication.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/afids/!svn/ver/1151/browse/trunk/apps/frontend/modules/dashboard/templates/_instrumentNotication.php
+END
+indexSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/afids/!svn/ver/1219/browse/trunk/apps/frontend/modules/dashboard/templates/indexSuccess.php
+END
+_teamNotepad.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/afids/!svn/ver/555/browse/trunk/apps/frontend/modules/dashboard/templates/_teamNotepad.php
+END
+_distance_calculator.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/afids/!svn/ver/966/browse/trunk/apps/frontend/modules/dashboard/templates/_distance_calculator.php
+END
+_matching_legs.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/afids/!svn/ver/1221/browse/trunk/apps/frontend/modules/dashboard/templates/_matching_legs.php
+END
+_availableMissions.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/afids/!svn/ver/1219/browse/trunk/apps/frontend/modules/dashboard/templates/_availableMissions.php
+END
+_currentMissions.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/afids/!svn/ver/1151/browse/trunk/apps/frontend/modules/dashboard/templates/_currentMissions.php
+END
+_requests.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/afids/!svn/ver/1170/browse/trunk/apps/frontend/modules/dashboard/templates/_requests.php
+END
+pilotRequestDeclinedViewSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/afids/!svn/ver/834/browse/trunk/apps/frontend/modules/dashboard/templates/pilotRequestDeclinedViewSuccess.php
+END
+_priorityList.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/afids/!svn/ver/1220/browse/trunk/apps/frontend/modules/dashboard/templates/_priorityList.php
+END
+pilotRequestAcceptedViewSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/afids/!svn/ver/834/browse/trunk/apps/frontend/modules/dashboard/templates/pilotRequestAcceptedViewSuccess.php
+END
+_matchingnew_legs.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/afids/!svn/ver/990/browse/trunk/apps/frontend/modules/dashboard/templates/_matchingnew_legs.php
+END
+_interested_legs.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/afids/!svn/ver/1221/browse/trunk/apps/frontend/modules/dashboard/templates/_interested_legs.php
+END
+_recentItems.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/afids/!svn/ver/533/browse/trunk/apps/frontend/modules/dashboard/templates/_recentItems.php
+END
+pilotMissionLegCancellationViewSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/afids/!svn/ver/978/browse/trunk/apps/frontend/modules/dashboard/templates/pilotMissionLegCancellationViewSuccess.php
+END
+_filter.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/afids/!svn/ver/1215/browse/trunk/apps/frontend/modules/dashboard/templates/_filter.php
+END
+signupSingleEventDetailSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/afids/!svn/ver/1083/browse/trunk/apps/frontend/modules/dashboard/templates/signupSingleEventDetailSuccess.php
+END

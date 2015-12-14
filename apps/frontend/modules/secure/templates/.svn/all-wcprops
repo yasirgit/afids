@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/afids/!svn/ver/1117/browse/trunk/apps/frontend/modules/secure/templates
+END
+error404Success.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/afids/!svn/ver/2/browse/trunk/apps/frontend/modules/secure/templates/error404Success.php
+END
+forgotPasswordSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/afids/!svn/ver/486/browse/trunk/apps/frontend/modules/secure/templates/forgotPasswordSuccess.php
+END
+resetPasswordSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/afids/!svn/ver/323/browse/trunk/apps/frontend/modules/secure/templates/resetPasswordSuccess.php
+END
+createPasswordSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/afids/!svn/ver/323/browse/trunk/apps/frontend/modules/secure/templates/createPasswordSuccess.php
+END
+secureSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/afids/!svn/ver/2/browse/trunk/apps/frontend/modules/secure/templates/secureSuccess.php
+END
+loginSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/afids/!svn/ver/806/browse/trunk/apps/frontend/modules/secure/templates/loginSuccess.php
+END
+retrievePasswordSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/afids/!svn/ver/1117/browse/trunk/apps/frontend/modules/secure/templates/retrievePasswordSuccess.php
+END
+retrieveToPasswordSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/afids/!svn/ver/2/browse/trunk/apps/frontend/modules/secure/templates/retrieveToPasswordSuccess.php
+END
+newPasswordSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/afids/!svn/ver/2/browse/trunk/apps/frontend/modules/secure/templates/newPasswordSuccess.php
+END

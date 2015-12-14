@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/afids/!svn/ver/2/browse/trunk/plugins/sfSwiftMailerPlugin/lib/vendor/swift/classes/Swift/CharacterStream
+END
+NgCharacterStream.php
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/afids/!svn/ver/2/browse/trunk/plugins/sfSwiftMailerPlugin/lib/vendor/swift/classes/Swift/CharacterStream/NgCharacterStream.php
+END
+ArrayCharacterStream.php
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/afids/!svn/ver/2/browse/trunk/plugins/sfSwiftMailerPlugin/lib/vendor/swift/classes/Swift/CharacterStream/ArrayCharacterStream.php
+END

@@ -1,0 +1,80 @@
+# default values
+all:
+  password_request_lifetime: 2700 # in seconds
+  password_minimum_length: 6 # allows 6 characters or more
+  mail: postmaster@angelflightwest.org
+  name: Angel Flight West
+  siteurl: http://69.50.211.150/
+  webmaster_email: webmaster@angelflightwest.org
+  postmaster_email: postmaster@angelflightwest.org
+  member_info_name: Lauren James
+  member_info_email: memberinfo@angelflightwest.org
+  requester_info_email: swinfo@angelflightwest.org
+  coordination_name: Coordination Staff
+  coordination_email: coordination@angelflightwest.org
+  orders_email: orders@angelflightwest.org
+  postmaster_name: Postmaster
+  webmaster_name: Webmaster
+  organization_acronym : AFW
+  organization_name: Angel Flight West
+  organization_address_1: 3161 Donald Douglas Loop South
+  organization_address_2: Santa Monica, CA 90405
+  organization_home_page: http://www.angelflightwest.org
+  organization_phone: (310) 390-2958
+  organization_hotline: (888) 4-AN-ANGEL
+  organization_fax: (310) 397-9636
+  
+  # http://afids
+  #gmap_key: ABQIAAAAD7JFu0oyTraMJuVwXje_xRR8TjTb2Imw5jhexet1vB8QhQAR5hTvkWCc-Rupt52vdylfigHvEbXHCQ
+  # http://af.com
+  gmap_key: ABQIAAAA7EAfJBBtxz8UFGACdVcirRSvoEyKuLjRhpFUgUuXkqNipjvp7xS8lkE0UFuD1TfAihH_Wsvf90LzUw
+  # http://69.50.211.150
+  #gmap_key: ABQIAAAAD7JFu0oyTraMJuVwXje_xRSvoEyKuLjRhpFUgUuXkqNipjvp7xRqIX6N9StAc7d_57KQw-tnIzHUFA
+  # http://afids.tsegcom.net
+  #gmap_key: ABQIAAAAD7JFu0oyTraMJuVwXje_xRQqw2gGTtDJ90C8-cBG82k1wDg66hScet9PO-g-gq7JuKcwSUFubMGjxQ
+  
+  max:
+    permission_per_page: 50 
+    role_per_page: 50 
+    person_per_page: 10
+    passenger_per_page: 10
+    application_per_page: 25
+    airport_distance: 350
+    mission_summary_per_page: 10
+    mop_per_page: 10
+    member_roster_per_pager: 25
+    member_needsbn_per_pager: 10
+    mission_report_per_pager: 10
+    recent_activity: 50
+    mission_available_per_pager: 5
+
+    
+  default:
+    airport_ident: APA # see table: airport
+
+  allowed_note_tags: '<strong><p><ul><li><ol><em><span>'
+    
+  .arrays:
+    ground_address_type: { patient: "Patient's Address", lodging: 'Lodging Address', facility: 'Facility address' }
+    person_titles: { Ms: 'Ms', Mrs: 'Mrs', Mr: 'Mr', Dr: 'Dr' }
+    gender_types: { male: 'Male', female: 'Female', unknown: 'Unknown' }
+    medicals: { 0: 'Medical', 1: 'Compassionate' }
+    countries: { 'United States':'United States', 'Canada':'Canada', 'Mexico':'Mexico' }
+    flight_statuses: { 'Command pilot':'Command pilot', 'Orientation Complete':'Orientation Complete','Verify Orientation':'Verify Orientation','Non-pilot':'Non-pilot','Ground Angel':'Ground Angel','Mission Assistant':'Mission Assistant' }
+    pilot_license_types: { 'Private':'Private', 'Commercial':'Commercial', 'ATP':'ATP' }
+    pilot_me_instructor: { 'MEI':'MEI', 'MEII':'MEII' }
+    pilot_se_instructor: { 'CFI':'CFI', 'CFII':'CFII' }
+    pilot_medical_classes: [ 'Class I', 'Class II', 'Class III' ]
+    payment_types: { 'Check':'Check', 'Credit Card':'Credit Card', 'Cash':'Cash' }
+    premium_choices: { '1':'Hat', '2':'T-Shirt' }
+    premium_sizes: [ 'N/A', 'Medium', 'Large', 'X-Large', 'XX-Large' ]
+    appoints: { morning: 'Morning', noon: 'Noon', afternoon: 'Afternoon', evening: 'Evening', exact_time: 'Exact Time'}
+    states: {AL: 'Alabama', AK: 'Alaska', AZ: 'Arizona', AR: 'Arkansas', CA: 'California', CO: 'Colorado', CT: 'Connecticut', DE: 'Delaware', DC: 'District of Columbia', FL: 'Florida', GA: 'Georgia', HI: 'Hawaii', ID: 'Idaho', IL: 'Illinois', IN: 'Indiana', IA: 'Iowa', KS: 'Kansas', KY: 'Kentucky', LA: 'Louisiana', ME: 'Maine', MD: 'Maryland', MA: 'Massachusetts', MI: 'Michigan', MN: 'Minnesota', MS: 'Mississippi', MO: 'Missouri', MT: 'Montana', NE: 'Nebraska', NV: 'Nevada', NH: 'New Hampshire', NJ: 'New Jersey', NM: 'New Mexico', NY: 'New York', NC: 'North Carolina', ND: 'North Dakota', OH: 'Ohio', OK: 'Oklahoma', OR: 'Oregon', PA: 'Pennsylvania', PR: 'Puerto Rico', RI: 'Rhode Island', SC: 'South Carolina', SD: 'South Dakota', TN: 'Tennessee', TX: 'Texas', UT: 'Utah', VT: 'Vermont', VA: 'Virginia', WA: 'Washington', WV: 'West Virginia', WI: 'Wisconsin', WY: 'Wyoming' }
+    short_states: { AL: 'AL', AK: 'AK', AZ: 'AZ', AR: 'AR', CA: 'CA', CO: 'CO', CT: 'CT', DE: 'DE', DC: 'DC', FL: 'FL', GA: 'GA', HI: 'HI', ID: 'ID', IL: 'IL', IN: 'IN', IA: 'IA', KS: 'KS', KY: 'KY', LA: 'LA', ME: 'ME', MD: 'MD', MA: 'MA', MI: 'MI', MN: 'MN', MS: 'MS', MO: 'MO', MT: 'MT', NE: 'NE', NV: 'NV', NH: 'NH', NJ: 'NJ', NM: 'NM', NY: 'NY', NC: 'NC', ND: 'ND', OH: 'OH', OK: 'OK', OR: 'OR', PA: 'PA', PR: 'PR', RI: 'RI', SC: 'SC', SD: 'SD', TN: 'TN', TX: 'TX', UT: 'UT', VT: 'VT', VA: 'VA', WA: 'WA', WV: 'WV', WI: 'WI', WY: 'WY' }
+    on_behalf: { Yourself: 'Yourself', Someone_else: 'Someone else'}
+    behalf_person: { 1: 'A social worker', 2: 'Physician or physicians office staff', 3: 'Other health care professional', 4: 'Friend or relative ' }
+    relationship: { relative: 'Relative', friend: 'Friend', caregiver: 'Caregiver'}
+    premium_choices: { hat: [ 'Hat - One Size', 1, 0 ], shirt_med: [ 'T-Shirt - Medium', 2, 1 ], shirt_lar: [ 'T-Shirt - Large', 2, 2 ], shirt_xll: [ 'T-Shirt - XL', 2, 3 ], shirt_xxl: [ 'T-Shirt - XXL', 2, 4 ] }
+    # Please don't edit Member, Pilot and Admin roles. They are hardcoded
+    default_roles: [ '@Member', '@Pilot', '@Staff', '@Admin' ]
+    

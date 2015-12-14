@@ -1,0 +1,695 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/afids/!svn/ver/1050/browse/trunk/web/reports/xsl_templates
+END
+memberPhotos_email.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/memberPhotos_email.xsl
+END
+cancelledMissions_print.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/cancelledMissions_print.xsl
+END
+commercialCost_email.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/commercialCost_email.xsl
+END
+missions_available_pilot.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/missions_available_pilot.xsl
+END
+newMembers_email.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/newMembers_email.xsl
+END
+memberWingStatsWing_print.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/memberWingStatsWing_print.xsl
+END
+missions_available_coordination.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/missions_available_coordination.xsl
+END
+childrenPassengersReport.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/childrenPassengersReport.xsl
+END
+defaultReport_jquery.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/defaultReport_jquery.xsl
+END
+missionTypeWingStatsComm_print.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/missionTypeWingStatsComm_print.xsl
+END
+missionTypeWingStatsLeg.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/missionTypeWingStatsLeg.xsl
+END
+searchMemberApplications_print.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/searchMemberApplications_print.xsl
+END
+memberWingStatsMonth.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/memberWingStatsMonth.xsl
+END
+afwEmailReport.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/afwEmailReport.xsl
+END
+commercialCost_bak.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/commercialCost_bak.xsl
+END
+cancelledMissions_wing.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/afids/!svn/ver/788/browse/trunk/web/reports/xsl_templates/cancelledMissions_wing.xsl
+END
+childrenPassengersReport_email.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/childrenPassengersReport_email.xsl
+END
+missionTypeWingStatsLeg_email.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/missionTypeWingStatsLeg_email.xsl
+END
+membersNoMissions_print.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/membersNoMissions_print.xsl
+END
+memberWingStatsMonth_email.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/memberWingStatsMonth_email.xsl
+END
+cancelledMissions_wing_email.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/afids/!svn/ver/788/browse/trunk/web/reports/xsl_templates/cancelledMissions_wing_email.xsl
+END
+childrenpassengersreport_bak.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/childrenpassengersreport_bak.xsl
+END
+missionTypeWingStatsCost_print.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/missionTypeWingStatsCost_print.xsl
+END
+newMembersNeedingBadge_print.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/newMembersNeedingBadge_print.xsl
+END
+memberFlightStatusWing.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/afids/!svn/ver/768/browse/trunk/web/reports/xsl_templates/memberFlightStatusWing.xsl
+END
+memberWingStatsWing.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/memberWingStatsWing.xsl
+END
+report_specs_test.xml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/afids/!svn/ver/668/browse/trunk/web/reports/xsl_templates/report_specs_test.xml
+END
+searchMemberApplications.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/searchMemberApplications.xsl
+END
+cancelledMissions_for_wing_print.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/afids/!svn/ver/788/browse/trunk/web/reports/xsl_templates/cancelledMissions_for_wing_print.xsl
+END
+monthlyMissionsReportSummary_print.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/afids/!svn/ver/1049/browse/trunk/web/reports/xsl_templates/monthlyMissionsReportSummary_print.xsl
+END
+weekendSummary_email.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/weekendSummary_email.xsl
+END
+cancelledMissions_bak.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/cancelledMissions_bak.xsl
+END
+membersNoMissions.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/membersNoMissions.xsl
+END
+outreachReport_email.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/afids/!svn/ver/792/browse/trunk/web/reports/xsl_templates/outreachReport_email.xsl
+END
+memberApplicationReconcile.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/memberApplicationReconcile.xsl
+END
+memberPhotos_print.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/afids/!svn/ver/668/browse/trunk/web/reports/xsl_templates/memberPhotos_print.xsl
+END
+commercialCost_print.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/commercialCost_print.xsl
+END
+missionTypeWingStatsCost.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/missionTypeWingStatsCost.xsl
+END
+newMembers_print.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/newMembers_print.xsl
+END
+memberApplicationReconcile_email.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/memberApplicationReconcile_email.xsl
+END
+defaultReport_table.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/afids/!svn/ver/767/browse/trunk/web/reports/xsl_templates/defaultReport_table.xsl
+END
+missionsByMember.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/missionsByMember.xsl
+END
+childrenPassengersReport_print.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/childrenPassengersReport_print.xsl
+END
+memberApplication.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/memberApplication.xsl
+END
+missionTypeWingStatsLeg_print.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/missionTypeWingStatsLeg_print.xsl
+END
+memberWingStatsMonth_print.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/memberWingStatsMonth_print.xsl
+END
+afwHTMLReport.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/afwHTMLReport.xsl
+END
+cancelledMissions_wing_print.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/afids/!svn/ver/788/browse/trunk/web/reports/xsl_templates/cancelledMissions_wing_print.xsl
+END
+settings.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/settings.xsl
+END
+report_specs.xml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/afids/!svn/ver/1049/browse/trunk/web/reports/xsl_templates/report_specs.xml
+END
+memberDirectory_email.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/memberDirectory_email.xsl
+END
+memberPhotos.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/memberPhotos.xsl
+END
+commercialCost.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/commercialCost.xsl
+END
+newMembers.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/newMembers.xsl
+END
+missionCountsYTD_email.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/missionCountsYTD_email.xsl
+END
+memberMissionDistribution.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/afids/!svn/ver/791/browse/trunk/web/reports/xsl_templates/memberMissionDistribution.xsl
+END
+statisticalSummary_email.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/statisticalSummary_email.xsl
+END
+campPassengers.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/campPassengers.xsl
+END
+monthlyMissionsReport.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/afids/!svn/ver/1049/browse/trunk/web/reports/xsl_templates/monthlyMissionsReport.xsl
+END
+report_menu_bak.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/report_menu_bak.xsl
+END
+weekendSummary_print.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/afids/!svn/ver/775/browse/trunk/web/reports/xsl_templates/weekendSummary_print.xsl
+END
+missionLegsOriginDestinationAFA.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/missionLegsOriginDestinationAFA.xsl
+END
+missionItinerary_email.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/missionItinerary_email.xsl
+END
+missionTypeWingStatsHours_email.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/missionTypeWingStatsHours_email.xsl
+END
+memberMissionDistribution_email.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/afids/!svn/ver/791/browse/trunk/web/reports/xsl_templates/memberMissionDistribution_email.xsl
+END
+missionsPendingAFA.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/missionsPendingAFA.xsl
+END
+campPassengers_email.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/campPassengers_email.xsl
+END
+outreachReport_print.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/afids/!svn/ver/792/browse/trunk/web/reports/xsl_templates/outreachReport_print.xsl
+END
+HSEATSReport.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/HSEATSReport.xsl
+END
+memberApplicationReconcile_print.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/memberApplicationReconcile_print.xsl
+END
+commercialCost.bak
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/commercialCost.bak
+END
+mission_waiver_afw.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/mission_waiver_afw.xsl
+END
+jTableReport.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/jTableReport.xsl
+END
+afaMonthlyReport.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/afaMonthlyReport.xsl
+END
+missionReportReview.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/missionReportReview.xsl
+END
+cancelledMissions.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/afids/!svn/ver/689/browse/trunk/web/reports/xsl_templates/cancelledMissions.xsl
+END
+cancelledMissions_wing_bak.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/cancelledMissions_wing_bak.xsl
+END
+weekendSummary.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/weekendSummary.xsl
+END
+afwDownloadReport.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/afwDownloadReport.xsl
+END
+missionTypeWingStatsComm.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/missionTypeWingStatsComm.xsl
+END
+missionsByMember_print.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/missionsByMember_print.xsl
+END
+missionLegsOriginDestination.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/missionLegsOriginDestination.xsl
+END
+cancelledMissions_email.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/cancelledMissions_email.xsl
+END
+medRelease.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/medRelease.xsl
+END
+outreachReport.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/afids/!svn/ver/792/browse/trunk/web/reports/xsl_templates/outreachReport.xsl
+END
+memberWingStatsWing_email.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/memberWingStatsWing_email.xsl
+END
+memberApplication_print.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/memberApplication_print.xsl
+END
+memberDirectory_print.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/memberDirectory_print.xsl
+END
+missionCountsYTD_print.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/missionCountsYTD_print.xsl
+END
+missionTypeWingStatsComm_email.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/missionTypeWingStatsComm_email.xsl
+END
+searchMemberApplications_email.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/searchMemberApplications_email.xsl
+END
+missionsOriginDestination.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/missionsOriginDestination.xsl
+END
+statisticalSummary_print.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/statisticalSummary_print.xsl
+END
+jquery.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/jquery.xsl
+END
+newMembersNeedingBadge.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/newMembersNeedingBadge.xsl
+END
+membersNoMissions_email.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/membersNoMissions_email.xsl
+END
+missionItinerary_print.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/missionItinerary_print.xsl
+END
+missionTypeWingStatsHours_print.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/missionTypeWingStatsHours_print.xsl
+END
+memberMissionDistribution_print.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/afids/!svn/ver/791/browse/trunk/web/reports/xsl_templates/memberMissionDistribution_print.xsl
+END
+afwPrintReport.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/afwPrintReport.xsl
+END
+campPassengers_print.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/campPassengers_print.xsl
+END
+missionTypeWingStatsCost_email.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/missionTypeWingStatsCost_email.xsl
+END
+newMembersNeedingBadge_email.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/newMembersNeedingBadge_email.xsl
+END
+cancelledMissions_for_wing.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/afids/!svn/ver/788/browse/trunk/web/reports/xsl_templates/cancelledMissions_for_wing.xsl
+END
+monthlyMissionsReportSummary.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/afids/!svn/ver/1049/browse/trunk/web/reports/xsl_templates/monthlyMissionsReportSummary.xsl
+END
+memberDirectory.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/memberDirectory.xsl
+END
+missionLegsOriginDestination.bak
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/missionLegsOriginDestination.bak
+END
+report_specs_bak_20100318.xml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/afids/!svn/ver/668/browse/trunk/web/reports/xsl_templates/report_specs_bak_20100318.xml
+END
+missionCountsYTD.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/missionCountsYTD.xsl
+END
+report_menu.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/afids/!svn/ver/787/browse/trunk/web/reports/xsl_templates/report_menu.xsl
+END
+cancelledMissions_for_wing_email.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/afids/!svn/ver/788/browse/trunk/web/reports/xsl_templates/cancelledMissions_for_wing_email.xsl
+END
+monthlyMissionsReportSummary_email.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/afids/!svn/ver/1050/browse/trunk/web/reports/xsl_templates/monthlyMissionsReportSummary_email.xsl
+END
+statisticalSummary.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/statisticalSummary.xsl
+END
+missionItinerary.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/missionItinerary.xsl
+END
+missionTypeWingStatsHours.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/afids/!svn/ver/655/browse/trunk/web/reports/xsl_templates/missionTypeWingStatsHours.xsl
+END

@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/afids/!svn/ver/2/browse/trunk/lib/symfony/log
+END
+sfNoLogger.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/afids/!svn/ver/2/browse/trunk/lib/symfony/log/sfNoLogger.class.php
+END
+sfFileLogger.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/afids/!svn/ver/2/browse/trunk/lib/symfony/log/sfFileLogger.class.php
+END
+sfLogger.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/afids/!svn/ver/2/browse/trunk/lib/symfony/log/sfLogger.class.php
+END
+sfLoggerInterface.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/afids/!svn/ver/2/browse/trunk/lib/symfony/log/sfLoggerInterface.class.php
+END
+sfLoggerWrapper.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/afids/!svn/ver/2/browse/trunk/lib/symfony/log/sfLoggerWrapper.class.php
+END
+sfConsoleLogger.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/afids/!svn/ver/2/browse/trunk/lib/symfony/log/sfConsoleLogger.class.php
+END
+sfWebDebugLogger.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/afids/!svn/ver/2/browse/trunk/lib/symfony/log/sfWebDebugLogger.class.php
+END
+sfAggregateLogger.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/afids/!svn/ver/2/browse/trunk/lib/symfony/log/sfAggregateLogger.class.php
+END
+sfVarLogger.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/afids/!svn/ver/2/browse/trunk/lib/symfony/log/sfVarLogger.class.php
+END
+sfStreamLogger.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/afids/!svn/ver/2/browse/trunk/lib/symfony/log/sfStreamLogger.class.php
+END

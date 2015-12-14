@@ -1,0 +1,16 @@
+<?php
+
+class afids_custom_propel_pager extends sfPropelPager{
+   
+  public function __construct($class, $maxPerPage = 10) {
+    parent::__construct($class, $maxPerPage);
+  }
+  public function setLastPage($page)
+  {
+      parent::setLastPage($page);
+  }
+  public function setNbResults($nb)
+  {
+    parent::setNbResults($nb);
+  }
+}

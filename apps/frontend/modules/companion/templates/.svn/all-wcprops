@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/afids/!svn/ver/1158/browse/trunk/apps/frontend/modules/companion/templates
+END
+updateSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/afids/!svn/ver/1158/browse/trunk/apps/frontend/modules/companion/templates/updateSuccess.php
+END
+autoCompleteLastSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/afids/!svn/ver/504/browse/trunk/apps/frontend/modules/companion/templates/autoCompleteLastSuccess.php
+END
+indexSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/afids/!svn/ver/1151/browse/trunk/apps/frontend/modules/companion/templates/indexSuccess.php
+END
+autoCompleteFirstSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/afids/!svn/ver/504/browse/trunk/apps/frontend/modules/companion/templates/autoCompleteFirstSuccess.php
+END
+ajaxNewSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/afids/!svn/ver/209/browse/trunk/apps/frontend/modules/companion/templates/ajaxNewSuccess.php
+END
+passengercompanionsSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/afids/!svn/ver/1067/browse/trunk/apps/frontend/modules/companion/templates/passengercompanionsSuccess.php
+END

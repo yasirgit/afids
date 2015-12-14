@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/afids/!svn/ver/2/browse/trunk/lib/symfony/response
+END
+sfWebResponse.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/afids/!svn/ver/2/browse/trunk/lib/symfony/response/sfWebResponse.class.php
+END
+sfResponse.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/afids/!svn/ver/2/browse/trunk/lib/symfony/response/sfResponse.class.php
+END
+sfConsoleResponse.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/afids/!svn/ver/2/browse/trunk/lib/symfony/response/sfConsoleResponse.class.php
+END

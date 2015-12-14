@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/afids/!svn/ver/668/browse/trunk/web/reports/lib/fonts/utils
+END
+freetype6.dll
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/afids/!svn/ver/655/browse/trunk/web/reports/lib/fonts/utils/freetype6.dll
+END
+makeallttffonts.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/afids/!svn/ver/668/browse/trunk/web/reports/lib/fonts/utils/makeallttffonts.php
+END
+ttf2ufm
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/afids/!svn/ver/655/browse/trunk/web/reports/lib/fonts/utils/ttf2ufm
+END
+ttf2ufm.exe
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/afids/!svn/ver/655/browse/trunk/web/reports/lib/fonts/utils/ttf2ufm.exe
+END
+pfm2afm
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/afids/!svn/ver/655/browse/trunk/web/reports/lib/fonts/utils/pfm2afm
+END
+pfm2afm.exe
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/afids/!svn/ver/655/browse/trunk/web/reports/lib/fonts/utils/pfm2afm.exe
+END
+makefont.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/afids/!svn/ver/668/browse/trunk/web/reports/lib/fonts/utils/makefont.php
+END
+README.TXT
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/afids/!svn/ver/668/browse/trunk/web/reports/lib/fonts/utils/README.TXT
+END
+zlib1.dll
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/afids/!svn/ver/655/browse/trunk/web/reports/lib/fonts/utils/zlib1.dll
+END

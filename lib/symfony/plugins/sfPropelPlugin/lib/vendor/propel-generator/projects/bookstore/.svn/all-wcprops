@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/lib/vendor/propel-generator/projects/bookstore
+END
+cms-schema.xml
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/lib/vendor/propel-generator/projects/bookstore/cms-schema.xml
+END
+schema.xml
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/lib/vendor/propel-generator/projects/bookstore/schema.xml
+END
+runtime-conf.xml
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/lib/vendor/propel-generator/projects/bookstore/runtime-conf.xml
+END
+build.properties
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/lib/vendor/propel-generator/projects/bookstore/build.properties
+END

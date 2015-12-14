@@ -1,0 +1,255 @@
+<?php
+
+/**
+ * eventReservation actions.
+ *
+ * @package    angelflight
+ * @subpackage eventReservation
+ * @author     Your name here
+ * @version    SVN: $Id: actions.class.php 12474 2008-10-31 10:41:27Z fabien $
+ */
+class eventReservationActions extends sfActions
+{
+  public function executeIndex(sfWebRequest $request)
+  {
+    $this->event_reservation_list = EventReservationPeer::doSelect(new Criteria());
+  }
+
+  public function executeNew(sfWebRequest $request)
+  {
+    $this->form = new EventReservationForm();
+  }
+
+  public function executeCreate(sfWebRequest $request)
+  {
+    $this->forward404Unless($request->isMethod('post'));
+
+    $this->form = new EventReservationForm();
+
+    $this->processForm($request, $this->form);
+
+    $this->setTemplate('new');
+  }
+
+  public function executeEdit(sfWebRequest $request)
+  {
+    $this->forward404Unless($event_reservation = EventReservationPeer::retrieveByPk($request->getParameter('id')), sprintf('Object event_reservation does not exist (%s).', $request->getParameter('id')));
+    $this->form = new EventReservationForm($event_reservation);
+  }
+
+  public function executeUpdate(sfWebRequest $request)
+  {
+    $this->forward404Unless($request->isMethod('post') || $request->isMethod('put'));
+    $this->forward404Unless($event_reservation = EventReservationPeer::retrieveByPk($request->getParameter('id')), sprintf('Object event_reservation does not exist (%s).', $request->getParameter('id')));
+    $this->form = new EventReservationForm($event_reservation);
+
+    $this->processForm($request, $this->form);
+
+    $this->setTemplate('edit');
+  }
+
+  public function executeDelete(sfWebRequest $request)
+  {
+    $request->checkCSRFProtection();
+
+    $this->forward404Unless($event_reservation = EventReservationPeer::retrieveByPk($request->getParameter('id')), sprintf('Object event_reservation does not exist (%s).', $request->getParameter('id')));
+    $event_reservation->delete();
+
+    $this->redirect('eventReservation/index');
+  }
+
+  protected function processForm(sfWebRequest $request, sfForm $form)
+  {
+    $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
+    if ($form->isValid())
+    {
+      $event_reservation = $form->save();
+
+      $this->redirect('eventReservation/edit?id='.$event_reservation->getId());
+    }
+  }
+
+  public function  executeEventSignup(sfWebRequest $request)
+  {
+    //$this->event = EventPeer::retrieveByPK($request->getParameter('id'));
+    $this->form1 = new EventReservationForm1();
+
+    if($request->isMethod('post'))
+    {
+     
+<<<<<<< .mine
+      $this->form1->bind($request->getParameter('event_reservation1'));      
+=======
+      $this->form1->bind($request->getParameter('event_reservation1'));
+      
+>>>>>>> .r1066
+      if($this->form1->isValid())
+      {         
+<<<<<<< .mine
+//          $eventReservation = $this->getUser()->getAttribute('eventReservation');
+          $eventReservation = array();
+          $eventReservation['first_name'] = $request->getParameter('event_reservation1[first_name]');
+          $eventReservation['last_name'] = $request->getParameter('event_reservation1[last_name]');
+          $eventReservation['address'] = $request->getParameter('event_reservation1[address]');
+          $eventReservation['city'] = $request->getParameter('event_reservation1[city]');
+          $eventReservation['state'] = $request->getParameter('event_reservation1[state]');
+          $eventReservation['zipcode'] = $request->getParameter('event_reservation1[zipcode]');
+          $eventReservation['phone'] = $request->getParameter('event_reservation1[phone]');
+          $eventReservation['email'] = $request->getParameter('event_reservation1[email]');
+          $eventReservation['adult_guests'] = $request->getParameter('event_reservation1[adult_guests]');
+          $eventReservation['child_guests'] = $request->getParameter('event_reservation1[child_guests]');
+           
+          $this->getUser()->setAttribute('eventReservation', $eventReservation);          
+=======
+          $eventReservation = $this->getUser()->getAttribute('eventReservation');
+          //$eventReservation = array();
+          $eventReservation['event_id'] = $request->getParameter('event_id');
+          $eventReservation['first_name'] = $request->getParameter('event_reservation1[first_name]');
+          $eventReservation['last_name'] = $request->getParameter('event_reservation1[last_name]');
+          $eventReservation['address'] = $request->getParameter('event_reservation1[address]');
+          $eventReservation['city'] = $request->getParameter('event_reservation1[city]');
+          $eventReservation['state'] = $request->getParameter('event_reservation1[state]');
+          $eventReservation['zipcode'] = $request->getParameter('event_reservation1[zipcode]');
+          $eventReservation['phone'] = $request->getParameter('event_reservation1[phone]');
+          $eventReservation['email'] = $request->getParameter('event_reservation1[email]');
+          $eventReservation['adult_guests'] = $request->getParameter('event_reservation1[adult_guests]');
+          $eventReservation['child_guests'] = $request->getParameter('event_reservation1[child_guests]');
+         
+                   
+          $this->getUser()->setAttribute('eventReservation', $eventReservation);
+>>>>>>> .r1066
+          $this->redirect('eventReservation/step2');
+          
+     }
+   }
+   $this->date_widget = new widgetFormDate(array('format_date' => array('js' => 'mm/dd/yy', 'php' => 'm/d/Y')), array('class' => 'text'));
+  
+
+  }
+
+  public function  executeStep2(sfWebRequest $request)
+  {   
+    $eventReservation = $this->getUser()->getAttribute('eventReservation');
+    $this->event = EventPeer::retrieveByPK($eventReservation['event_id']);
+    $this->setTemplate('eventSignup');
+
+    $this->yourname = $eventReservation['first_name'];
+    $adult_guests = $eventReservation['adult_guests'];
+    $child_guests = $eventReservation['child_guests'];
+    $this->total_guests = $adult_guests + $child_guests ;    
+    
+     if($request->isMethod('post'))
+    {
+        $all_guest = $request->getParameter('guest');
+        $flag = 0;
+        foreach($all_guest as $guest){
+           if(empty ($guest)){
+                $this->getUser()->setFlash('warning','You have to filled all guests name.' ) ;
+                $flag = 1;
+                break;
+           }
+        }
+        if($flag == 0){
+             $all_guests = serialize($all_guest);             
+             $eventReservation['guest_names'] = $all_guests;
+             $this->getUser()->setAttribute('eventReservation', $eventReservation);
+             $this->redirect('eventReservation/step3');
+        }
+    }   
+    
+    $this->form1 = new EventReservationForm1();
+    $this->date_widget = new widgetFormDate(array('format_date' => array('js' => 'mm/dd/yy', 'php' => 'm/d/Y')), array('class' => 'text'));
+    
+  }
+  
+  public function  executeStep3(sfWebRequest $request)
+  {
+    $eventReservation = $this->getUser()->getAttribute('eventReservation');
+    $this->event = EventPeer::retrieveByPK($eventReservation['event_id']);    
+    $this->setTemplate('eventSignup');
+
+    if($request->isMethod('post'))
+    {
+        $card_number = $request->getParameter('credit_card_no');
+        $expiration_date = $request->getParameter('expiration');
+        $security_code = $request->getParameter('security_code');
+        
+        if(empty ($card_number) || empty ($expiration_date) || empty ($security_code) ){
+            $this->getUser()->setFlash('warning','You have to filled all Card information.' );
+        }
+        else{
+            $eventReservation['credit_card_no'] = $card_number;
+            $eventReservation['expiration'] = $expiration_date;
+            $eventReservation['security_code'] = $security_code;
+            $this->getUser()->setAttribute('eventReservation', $eventReservation);
+            //$this->redirect('eventReservation/check');
+            $this->redirect('/calendar');
+        }
+
+    }
+    
+    $this->form1 = new EventReservationForm1();
+    $this->date_widget = new widgetFormDate(array('format_date' => array('js' => 'mm/dd/yy', 'php' => 'm/d/Y')), array('class' => 'text'));
+    
+  }
+  
+  public function  executeCheck(sfWebRequest $request)
+  {
+    $eventReservation = $this->getUser()->getAttribute('eventReservation');
+    $this->event = EventPeer::retrieveByPK($eventReservation['event_id']);
+    $this->setTemplate('eventSignup');    
+
+
+    $card_number = $eventReservation['credit_card_no'];
+    $expiration_date = $eventReservation['expiration'];
+    $security_code = $eventReservation['security_code'];
+    //transection check
+    list($month,$day,$year) = explode('/', $expiration_date);
+    $cardnumber = str_replace('-', '', $card_number);
+    $ccardcode = $security_code;
+
+    $payment = new afids_paymentGateway;
+
+    $payment->gateway_name = "novapointe";
+    $payment->transaction_type = "sale";
+    $item_data = "total=" . sfConfig::get('app_membership_fee', 25);
+    $item_data.= "&tax=" . sfConfig::get('app_membership_tax', 0);
+    $item_data.= "&bill_first_name=" . $application_temp->getFirstName();
+    $item_data.= "&bill_last_name=" . $application_temp->getLastName();
+    $item_data.= "&bill_address1=" . $application_temp->getAddress1();
+    $item_data.= "&bill_address2=" . $application_temp->getAddress2();
+    $item_data.= "&bill_city=" . $application_temp->getCity();
+    $item_data.= "&bill_state=" . $application_temp->getState();
+    $item_data.= "&bill_zip=" . $application_temp->getZipcode();
+    $item_data.= "&bill_country=" . $application_temp->getCountry();
+    $item_data.= "&bill_phone=" . $application_temp->getDayPhone();
+    $item_data.= "&ccard=" . $cardnumber;
+    $item_data.= "&expmonth=" . $month;
+    $item_data.= "&expyear=" . $year;
+    $item_data.= "&cvv2=" . $ccardcode;
+
+    $payment->item_data = $item_data;
+    $payment->shipping_code = "USPS";
+
+    $data = json_decode($payment->submitPayment());
+
+    if ($data->http_result == 'success' && $data->transaction_result == 'success') {
+        $this->getUser()->setFlash('success', 'Event has successfully reserved.');
+        $this->redirect('/calendar');
+
+    } else {
+        $this->getUser()->setFlash('warning', 'Membership Fee Transaction failed. Please check your credit card information.');
+        $this->getUser()->setFlash('pendingMemberTaintedvalue', $taintedValues);       
+        
+        
+    }
+
+    //transection check end 
+
+    
+
+   
+  }
+
+
+}

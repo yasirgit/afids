@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/lib/vendor/propel/util
+END
+DebugPDO.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/lib/vendor/propel/util/DebugPDO.php
+END
+DebugPDOStatement.php
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/lib/vendor/propel/util/DebugPDOStatement.php
+END
+PropelDateTime.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/lib/vendor/propel/util/PropelDateTime.php
+END
+PropelPager.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/lib/vendor/propel/util/PropelPager.php
+END
+NodePeer.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/lib/vendor/propel/util/NodePeer.php
+END
+Criteria.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/lib/vendor/propel/util/Criteria.php
+END
+PropelColumnTypes.php
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/lib/vendor/propel/util/PropelColumnTypes.php
+END
+PropelPDO.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/lib/vendor/propel/util/PropelPDO.php
+END
+BasePeer.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/lib/vendor/propel/util/BasePeer.php
+END

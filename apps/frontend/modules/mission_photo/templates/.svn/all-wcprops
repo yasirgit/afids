@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/afids/!svn/ver/1151/browse/trunk/apps/frontend/modules/mission_photo/templates
+END
+showSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/afids/!svn/ver/1151/browse/trunk/apps/frontend/modules/mission_photo/templates/showSuccess.php
+END
+upMissionPhotoSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/afids/!svn/ver/1103/browse/trunk/apps/frontend/modules/mission_photo/templates/upMissionPhotoSuccess.php
+END
+uploadMissionPhotoSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/afids/!svn/ver/1103/browse/trunk/apps/frontend/modules/mission_photo/templates/uploadMissionPhotoSuccess.php
+END
+editSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/afids/!svn/ver/835/browse/trunk/apps/frontend/modules/mission_photo/templates/editSuccess.php
+END
+indexSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/afids/!svn/ver/1151/browse/trunk/apps/frontend/modules/mission_photo/templates/indexSuccess.php
+END
+_form.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/afids/!svn/ver/1151/browse/trunk/apps/frontend/modules/mission_photo/templates/_form.php
+END
+newSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/afids/!svn/ver/992/browse/trunk/apps/frontend/modules/mission_photo/templates/newSuccess.php
+END
+showPhotoSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/afids/!svn/ver/702/browse/trunk/apps/frontend/modules/mission_photo/templates/showPhotoSuccess.php
+END
+photoApprovedSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/afids/!svn/ver/1087/browse/trunk/apps/frontend/modules/mission_photo/templates/photoApprovedSuccess.php
+END
+useMissionSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/afids/!svn/ver/1151/browse/trunk/apps/frontend/modules/mission_photo/templates/useMissionSuccess.php
+END
+gallerySuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/afids/!svn/ver/1085/browse/trunk/apps/frontend/modules/mission_photo/templates/gallerySuccess.php
+END

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/afids/!svn/ver/702/browse/trunk/plugins
+END
+.depdblock
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/afids/!svn/ver/2/browse/trunk/plugins/.depdblock
+END
+.lock
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/afids/!svn/ver/2/browse/trunk/plugins/.lock
+END
+.filemap
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/afids/!svn/ver/2/browse/trunk/plugins/.filemap
+END
+.depdb
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/afids/!svn/ver/2/browse/trunk/plugins/.depdb
+END

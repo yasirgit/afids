@@ -1,0 +1,6 @@
+calendar:
+  is_secure: off
+calendarDetails:
+  is_secure: off
+eventSignup:
+  is_secure: off

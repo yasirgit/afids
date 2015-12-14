@@ -1,0 +1,497 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/afids/!svn/ver/1200/browse/trunk/lib/filter
+END
+MissionPhotoFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/afids/!svn/ver/2/browse/trunk/lib/filter/MissionPhotoFormFilter.class.php
+END
+GiftTypeFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/afids/!svn/ver/2/browse/trunk/lib/filter/GiftTypeFormFilter.class.php
+END
+ContactFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/afids/!svn/ver/2/browse/trunk/lib/filter/ContactFormFilter.class.php
+END
+RefSourceFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/afids/!svn/ver/2/browse/trunk/lib/filter/RefSourceFormFilter.class.php
+END
+MemberClassFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/afids/!svn/ver/2/browse/trunk/lib/filter/MemberClassFormFilter.class.php
+END
+RenewalBatchFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/afids/!svn/ver/2/browse/trunk/lib/filter/RenewalBatchFormFilter.class.php
+END
+PolicyFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/afids/!svn/ver/2/browse/trunk/lib/filter/PolicyFormFilter.class.php
+END
+WingJobFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/afids/!svn/ver/2/browse/trunk/lib/filter/WingJobFormFilter.class.php
+END
+RoleFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/afids/!svn/ver/2/browse/trunk/lib/filter/RoleFormFilter.class.php
+END
+RenewalMonthFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/afids/!svn/ver/2/browse/trunk/lib/filter/RenewalMonthFormFilter.class.php
+END
+PilotAircraftFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/afids/!svn/ver/2/browse/trunk/lib/filter/PilotAircraftFormFilter.class.php
+END
+AvailabilityFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/afids/!svn/ver/2/browse/trunk/lib/filter/AvailabilityFormFilter.class.php
+END
+EmailTrackingFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/afids/!svn/ver/2/browse/trunk/lib/filter/EmailTrackingFormFilter.class.php
+END
+RolePermissionFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/afids/!svn/ver/135/browse/trunk/lib/filter/RolePermissionFormFilter.class.php
+END
+WorkflowFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/afids/!svn/ver/2/browse/trunk/lib/filter/WorkflowFormFilter.class.php
+END
+MemberWingStatsFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/afids/!svn/ver/2/browse/trunk/lib/filter/MemberWingStatsFormFilter.class.php
+END
+RightFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/afids/!svn/ver/135/browse/trunk/lib/filter/RightFormFilter.class.php
+END
+VpoRequestFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/afids/!svn/ver/2/browse/trunk/lib/filter/VpoRequestFormFilter.class.php
+END
+CampaignFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/afids/!svn/ver/2/browse/trunk/lib/filter/CampaignFormFilter.class.php
+END
+MissionCompanionFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/afids/!svn/ver/2/browse/trunk/lib/filter/MissionCompanionFormFilter.class.php
+END
+VpoRequestPassengerFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/afids/!svn/ver/2/browse/trunk/lib/filter/VpoRequestPassengerFormFilter.class.php
+END
+PassengerTypeFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/afids/!svn/ver/2/browse/trunk/lib/filter/PassengerTypeFormFilter.class.php
+END
+EmailLogFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/afids/!svn/ver/2/browse/trunk/lib/filter/EmailLogFormFilter.class.php
+END
+WorkflowRoleFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/afids/!svn/ver/2/browse/trunk/lib/filter/WorkflowRoleFormFilter.class.php
+END
+RenewalFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/afids/!svn/ver/2/browse/trunk/lib/filter/RenewalFormFilter.class.php
+END
+AfaOrgFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/afids/!svn/ver/2/browse/trunk/lib/filter/AfaOrgFormFilter.class.php
+END
+WingFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/afids/!svn/ver/2/browse/trunk/lib/filter/WingFormFilter.class.php
+END
+AgencyFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/afids/!svn/ver/2/browse/trunk/lib/filter/AgencyFormFilter.class.php
+END
+EmailLetterFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/afids/!svn/ver/2/browse/trunk/lib/filter/EmailLetterFormFilter.class.php
+END
+VocationClassFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/afids/!svn/ver/2/browse/trunk/lib/filter/VocationClassFormFilter.class.php
+END
+AfstaffFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/afids/!svn/ver/2/browse/trunk/lib/filter/AfstaffFormFilter.class.php
+END
+EmailListPersonFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/afids/!svn/ver/2/browse/trunk/lib/filter/EmailListPersonFormFilter.class.php
+END
+PasswordRequestFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/afids/!svn/ver/2/browse/trunk/lib/filter/PasswordRequestFormFilter.class.php
+END
+MissionReportFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/afids/!svn/ver/2/browse/trunk/lib/filter/MissionReportFormFilter.class.php
+END
+AfaLegFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/afids/!svn/ver/2/browse/trunk/lib/filter/AfaLegFormFilter.class.php
+END
+RequesterFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/afids/!svn/ver/2/browse/trunk/lib/filter/RequesterFormFilter.class.php
+END
+AirportFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/afids/!svn/ver/2/browse/trunk/lib/filter/AirportFormFilter.class.php
+END
+CountyFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/afids/!svn/ver/2/browse/trunk/lib/filter/CountyFormFilter.class.php
+END
+EventFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/afids/!svn/ver/2/browse/trunk/lib/filter/EventFormFilter.class.php
+END
+WingLeaderFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/afids/!svn/ver/746/browse/trunk/lib/filter/WingLeaderFormFilter.class.php
+END
+CoordinatorFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/afids/!svn/ver/2/browse/trunk/lib/filter/CoordinatorFormFilter.class.php
+END
+CommitteeFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/afids/!svn/ver/2/browse/trunk/lib/filter/CommitteeFormFilter.class.php
+END
+PilotFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/afids/!svn/ver/2/browse/trunk/lib/filter/PilotFormFilter.class.php
+END
+PassengerFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/afids/!svn/ver/2/browse/trunk/lib/filter/PassengerFormFilter.class.php
+END
+EventWingsFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/afids/!svn/ver/748/browse/trunk/lib/filter/EventWingsFormFilter.class.php
+END
+MissionRequestFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/afids/!svn/ver/2/browse/trunk/lib/filter/MissionRequestFormFilter.class.php
+END
+AircraftFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/afids/!svn/ver/2/browse/trunk/lib/filter/AircraftFormFilter.class.php
+END
+FundFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/afids/!svn/ver/2/browse/trunk/lib/filter/FundFormFilter.class.php
+END
+ZipcodeFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/afids/!svn/ver/2/browse/trunk/lib/filter/ZipcodeFormFilter.class.php
+END
+BoardCommitteeFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/afids/!svn/ver/2/browse/trunk/lib/filter/BoardCommitteeFormFilter.class.php
+END
+VpoRequestAnimalFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/afids/!svn/ver/2/browse/trunk/lib/filter/VpoRequestAnimalFormFilter.class.php
+END
+PilotRequestFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/afids/!svn/ver/2/browse/trunk/lib/filter/PilotRequestFormFilter.class.php
+END
+PersonFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/afids/!svn/ver/2/browse/trunk/lib/filter/PersonFormFilter.class.php
+END
+FboFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/afids/!svn/ver/2/browse/trunk/lib/filter/FboFormFilter.class.php
+END
+DonationFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/afids/!svn/ver/2/browse/trunk/lib/filter/DonationFormFilter.class.php
+END
+MissionLegChangeFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/afids/!svn/ver/2/browse/trunk/lib/filter/MissionLegChangeFormFilter.class.php
+END
+MissionTypeFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/afids/!svn/ver/2/browse/trunk/lib/filter/MissionTypeFormFilter.class.php
+END
+CompanionFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/afids/!svn/ver/2/browse/trunk/lib/filter/CompanionFormFilter.class.php
+END
+EmailListFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/afids/!svn/ver/2/browse/trunk/lib/filter/EmailListFormFilter.class.php
+END
+PersonRoleFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/afids/!svn/ver/2/browse/trunk/lib/filter/PersonRoleFormFilter.class.php
+END
+ApplicationTempFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/afids/!svn/ver/135/browse/trunk/lib/filter/ApplicationTempFormFilter.class.php
+END
+EmailQueueFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/afids/!svn/ver/2/browse/trunk/lib/filter/EmailQueueFormFilter.class.php
+END
+ContactTypeFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/afids/!svn/ver/2/browse/trunk/lib/filter/ContactTypeFormFilter.class.php
+END
+RoleRightFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/afids/!svn/ver/2/browse/trunk/lib/filter/RoleRightFormFilter.class.php
+END
+WebSiteNewsFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/afids/!svn/ver/2/browse/trunk/lib/filter/WebSiteNewsFormFilter.class.php
+END
+RolePermissionBackupFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/afids/!svn/ver/639/browse/trunk/lib/filter/RolePermissionBackupFormFilter.class.php
+END
+ApplicationFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/afids/!svn/ver/2/browse/trunk/lib/filter/ApplicationFormFilter.class.php
+END
+EventReservationFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/afids/!svn/ver/2/browse/trunk/lib/filter/EventReservationFormFilter.class.php
+END
+ItineraryFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/afids/!svn/ver/135/browse/trunk/lib/filter/ItineraryFormFilter.class.php
+END
+CompanyFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/afids/!svn/ver/2/browse/trunk/lib/filter/CompanyFormFilter.class.php
+END
+MemberFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/afids/!svn/ver/2/browse/trunk/lib/filter/MemberFormFilter.class.php
+END
+MissionLegFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/afids/!svn/ver/2/browse/trunk/lib/filter/MissionLegFormFilter.class.php
+END
+PassengerIllnessCategoryFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/afids/!svn/ver/2/browse/trunk/lib/filter/PassengerIllnessCategoryFormFilter.class.php
+END
+BoardMemberFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/afids/!svn/ver/2/browse/trunk/lib/filter/BoardMemberFormFilter.class.php
+END
+CampFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/afids/!svn/ver/2/browse/trunk/lib/filter/CampFormFilter.class.php
+END
+MissionFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/afids/!svn/ver/2/browse/trunk/lib/filter/MissionFormFilter.class.php
+END
+DonorFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/afids/!svn/ver/2/browse/trunk/lib/filter/DonorFormFilter.class.php
+END
+AffiliationFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/afids/!svn/ver/2/browse/trunk/lib/filter/AffiliationFormFilter.class.php
+END
+MissionTypeWingStatsFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/afids/!svn/ver/2/browse/trunk/lib/filter/MissionTypeWingStatsFormFilter.class.php
+END
+MemberWingJobFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/afids/!svn/ver/2/browse/trunk/lib/filter/MemberWingJobFormFilter.class.php
+END
+PermissionFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/afids/!svn/ver/135/browse/trunk/lib/filter/PermissionFormFilter.class.php
+END
+VpoRequestCargoFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/afids/!svn/ver/2/browse/trunk/lib/filter/VpoRequestCargoFormFilter.class.php
+END

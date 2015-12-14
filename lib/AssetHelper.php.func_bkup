@@ -1,0 +1,30 @@
+<?php
+/**
+ * Adds javascripts from the supplied form to the response object.
+ *
+ * @param sfForm $form
+ */
+function use_javascripts_for_form($form)
+{
+  $response = sfContext::getInstance()->getResponse();
+
+  foreach ($form->getJavascripts() as $file)
+  {
+    $response->addJavascript($file);
+  }
+}
+
+/**
+ * Adds stylesheets from the supplied form to the response object.
+ *
+ * @param sfForm $form
+ */
+function use_stylesheets_for_form($form)
+{
+  $response = sfContext::getInstance()->getResponse();
+
+  foreach ($form->getStylesheets() as $file => $media)
+  {
+    $response->addStylesheet($file, '', array('media' => $media));
+  }
+}

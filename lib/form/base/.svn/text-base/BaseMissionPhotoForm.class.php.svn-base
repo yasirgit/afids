@@ -1,0 +1,84 @@
+<?php
+
+/**
+ * MissionPhoto form base class.
+ *
+ * @package    angelflight
+ * @subpackage form
+ * @author     Your name here
+ * @version    SVN: $Id: sfPropelFormGeneratedTemplate.php 16976 2009-04-04 12:47:44Z fabien $
+ */
+class BaseMissionPhotoForm extends BaseFormPropel
+{
+  public function setup()
+  {
+    $this->setWidgets(array(
+      'id'              => new sfWidgetFormInputHidden(),
+      'first_name'      => new sfWidgetFormInput(),
+      'last_name'       => new sfWidgetFormInput(),
+      'submission_date' => new sfWidgetFormDateTime(),
+      'mission_date'    => new sfWidgetFormDateTime(),
+      'passenger_name'  => new sfWidgetFormInput(),
+      'pilot_name'      => new sfWidgetFormInput(),
+      'origin'          => new sfWidgetFormInput(),
+      'destination'     => new sfWidgetFormInput(),
+      'caption'         => new sfWidgetFormInput(),
+      'comment'         => new sfWidgetFormInput(),
+      'photo_filename'  => new sfWidgetFormInput(),
+      'mission_id'      => new sfWidgetFormPropelChoice(array('model' => 'Mission', 'add_empty' => true)),
+      'review_date'     => new sfWidgetFormDateTime(),
+      'review_by'       => new sfWidgetFormInput(),
+      'approved'        => new sfWidgetFormInput(),
+      'filesize'        => new sfWidgetFormInput(),
+      'height'          => new sfWidgetFormInput(),
+      'width'           => new sfWidgetFormInput(),
+      'file_format'     => new sfWidgetFormInput(),
+      'photo_quality'   => new sfWidgetFormInput(),
+      'event_id'        => new sfWidgetFormInput(),
+      'leg_id'          => new sfWidgetFormPropelChoice(array('model' => 'MissionLeg', 'add_empty' => true)),
+      'category'        => new sfWidgetFormInput(),
+      'photo_use'       => new sfWidgetFormInput(),
+    ));
+
+    $this->setValidators(array(
+      'id'              => new sfValidatorPropelChoice(array('model' => 'MissionPhoto', 'column' => 'id', 'required' => false)),
+      'first_name'      => new sfValidatorString(array('max_length' => 50, 'required' => false)),
+      'last_name'       => new sfValidatorString(array('max_length' => 50, 'required' => false)),
+      'submission_date' => new sfValidatorDateTime(array('required' => false)),
+      'mission_date'    => new sfValidatorDateTime(array('required' => false)),
+      'passenger_name'  => new sfValidatorString(array('max_length' => 50, 'required' => false)),
+      'pilot_name'      => new sfValidatorString(array('max_length' => 50, 'required' => false)),
+      'origin'          => new sfValidatorString(array('max_length' => 25, 'required' => false)),
+      'destination'     => new sfValidatorString(array('max_length' => 25, 'required' => false)),
+      'caption'         => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'comment'         => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'photo_filename'  => new sfValidatorString(array('max_length' => 75, 'required' => false)),
+      'mission_id'      => new sfValidatorPropelChoice(array('model' => 'Mission', 'column' => 'id', 'required' => false)),
+      'review_date'     => new sfValidatorDateTime(array('required' => false)),
+      'review_by'       => new sfValidatorInteger(array('required' => false)),
+      'approved'        => new sfValidatorInteger(array('required' => false)),
+      'filesize'        => new sfValidatorInteger(array('required' => false)),
+      'height'          => new sfValidatorInteger(array('required' => false)),
+      'width'           => new sfValidatorInteger(array('required' => false)),
+      'file_format'     => new sfValidatorInteger(array('required' => false)),
+      'photo_quality'   => new sfValidatorInteger(array('required' => false)),
+      'event_id'        => new sfValidatorInteger(array('required' => false)),
+      'leg_id'          => new sfValidatorPropelChoice(array('model' => 'MissionLeg', 'column' => 'id', 'required' => false)),
+      'category'        => new sfValidatorString(array('max_length' => 25, 'required' => false)),
+      'photo_use'       => new sfValidatorString(array('max_length' => 25, 'required' => false)),
+    ));
+
+    $this->widgetSchema->setNameFormat('mission_photo[%s]');
+
+    $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+
+    parent::setup();
+  }
+
+  public function getModelName()
+  {
+    return 'MissionPhoto';
+  }
+
+
+}

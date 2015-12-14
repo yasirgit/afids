@@ -1,0 +1,27 @@
+## YAML Template.
+default:
+  is_secure: on
+steps:
+  is_secure: off
+stepsComplete:
+  is_secure: off
+step1:
+  is_secure: off
+step1Check:
+  is_secure: off
+step2:
+  is_secure: off
+step2Check:
+  is_secure: off
+step3:
+  is_secure: off
+step3Check:
+  is_secure: off
+step4:
+  is_secure: off
+step4Check:
+  is_secure: off
+step5:
+  is_secure: off
+step5Check:
+  is_secure: off

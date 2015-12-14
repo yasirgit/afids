@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/test/functional/fixtures/lib/form/doctrine/base
+END
+BaseUniqueTestForm.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/test/functional/fixtures/lib/form/doctrine/base/BaseUniqueTestForm.class.php
+END
+BaseUserPermissionForm.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/test/functional/fixtures/lib/form/doctrine/base/BaseUserPermissionForm.class.php
+END
+BasePermissionForm.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/test/functional/fixtures/lib/form/doctrine/base/BasePermissionForm.class.php
+END
+BaseUserGroupForm.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/test/functional/fixtures/lib/form/doctrine/base/BaseUserGroupForm.class.php
+END
+BaseGroupForm.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/test/functional/fixtures/lib/form/doctrine/base/BaseGroupForm.class.php
+END
+BaseCamelCaseForm.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/test/functional/fixtures/lib/form/doctrine/base/BaseCamelCaseForm.class.php
+END
+BaseUserForm.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/test/functional/fixtures/lib/form/doctrine/base/BaseUserForm.class.php
+END
+BaseProfileForm.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/test/functional/fixtures/lib/form/doctrine/base/BaseProfileForm.class.php
+END
+BaseArticleTranslationForm.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/test/functional/fixtures/lib/form/doctrine/base/BaseArticleTranslationForm.class.php
+END
+BaseAuthorForm.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/test/functional/fixtures/lib/form/doctrine/base/BaseAuthorForm.class.php
+END
+BaseArticleForm.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/test/functional/fixtures/lib/form/doctrine/base/BaseArticleForm.class.php
+END
+BaseSubscriptionForm.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/test/functional/fixtures/lib/form/doctrine/base/BaseSubscriptionForm.class.php
+END
+BaseGroupPermissionForm.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/test/functional/fixtures/lib/form/doctrine/base/BaseGroupPermissionForm.class.php
+END

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/lib/vendor/doctrine/Doctrine/Migration
+END
+Exception.php
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/lib/vendor/doctrine/Doctrine/Migration/Exception.php
+END
+Process.php
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/lib/vendor/doctrine/Doctrine/Migration/Process.php
+END
+Builder.php
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/lib/vendor/doctrine/Doctrine/Migration/Builder.php
+END
+IrreversibleMigrationException.php
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/lib/vendor/doctrine/Doctrine/Migration/IrreversibleMigrationException.php
+END

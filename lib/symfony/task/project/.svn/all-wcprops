@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/afids/!svn/ver/2/browse/trunk/lib/symfony/task/project
+END
+sfProjectDisableTask.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/afids/!svn/ver/2/browse/trunk/lib/symfony/task/project/sfProjectDisableTask.class.php
+END
+sfProjectUnfreezeTask.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/afids/!svn/ver/2/browse/trunk/lib/symfony/task/project/sfProjectUnfreezeTask.class.php
+END
+sfUpgradeTo11Task.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/afids/!svn/ver/2/browse/trunk/lib/symfony/task/project/sfUpgradeTo11Task.class.php
+END
+sfProjectEnableTask.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/afids/!svn/ver/2/browse/trunk/lib/symfony/task/project/sfProjectEnableTask.class.php
+END
+sfUpgradeTo12Task.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/afids/!svn/ver/2/browse/trunk/lib/symfony/task/project/sfUpgradeTo12Task.class.php
+END
+sfProjectPermissionsTask.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/afids/!svn/ver/2/browse/trunk/lib/symfony/task/project/sfProjectPermissionsTask.class.php
+END
+sfProjectDeployTask.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/afids/!svn/ver/2/browse/trunk/lib/symfony/task/project/sfProjectDeployTask.class.php
+END
+sfProjectClearControllersTask.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/afids/!svn/ver/2/browse/trunk/lib/symfony/task/project/sfProjectClearControllersTask.class.php
+END
+sfProjectFreezeTask.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/afids/!svn/ver/2/browse/trunk/lib/symfony/task/project/sfProjectFreezeTask.class.php
+END

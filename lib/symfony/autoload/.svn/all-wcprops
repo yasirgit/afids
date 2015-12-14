@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/afids/!svn/ver/2/browse/trunk/lib/symfony/autoload
+END
+sfCoreAutoload.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/afids/!svn/ver/2/browse/trunk/lib/symfony/autoload/sfCoreAutoload.class.php
+END
+sfSimpleAutoload.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/afids/!svn/ver/2/browse/trunk/lib/symfony/autoload/sfSimpleAutoload.class.php
+END
+sfAutoload.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/afids/!svn/ver/2/browse/trunk/lib/symfony/autoload/sfAutoload.class.php
+END

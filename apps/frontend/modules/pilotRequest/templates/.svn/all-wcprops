@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/afids/!svn/ver/1221/browse/trunk/apps/frontend/modules/pilotRequest/templates
+END
+pilotThanksSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/afids/!svn/ver/698/browse/trunk/apps/frontend/modules/pilotRequest/templates/pilotThanksSuccess.php
+END
+updateSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/afids/!svn/ver/1218/browse/trunk/apps/frontend/modules/pilotRequest/templates/updateSuccess.php
+END
+formSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/afids/!svn/ver/1131/browse/trunk/apps/frontend/modules/pilotRequest/templates/formSuccess.php
+END
+requestLegsSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/afids/!svn/ver/1075/browse/trunk/apps/frontend/modules/pilotRequest/templates/requestLegsSuccess.php
+END
+filterSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/afids/!svn/ver/403/browse/trunk/apps/frontend/modules/pilotRequest/templates/filterSuccess.php
+END
+__interested_legs.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/afids/!svn/ver/1075/browse/trunk/apps/frontend/modules/pilotRequest/templates/__interested_legs.php
+END
+_interested_legs.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/afids/!svn/ver/1221/browse/trunk/apps/frontend/modules/pilotRequest/templates/_interested_legs.php
+END
+indexSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/afids/!svn/ver/1170/browse/trunk/apps/frontend/modules/pilotRequest/templates/indexSuccess.php
+END
+ajaxGetPilotRequestsSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/afids/!svn/ver/936/browse/trunk/apps/frontend/modules/pilotRequest/templates/ajaxGetPilotRequestsSuccess.php
+END
+_matching_legs.php
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/afids/!svn/ver/1223/browse/trunk/apps/frontend/modules/pilotRequest/templates/_matching_legs.php
+END
+_filter.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/afids/!svn/ver/1151/browse/trunk/apps/frontend/modules/pilotRequest/templates/_filter.php
+END
+pilotRequestListSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/afids/!svn/ver/403/browse/trunk/apps/frontend/modules/pilotRequest/templates/pilotRequestListSuccess.php
+END
+requestCreateSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/afids/!svn/ver/455/browse/trunk/apps/frontend/modules/pilotRequest/templates/requestCreateSuccess.php
+END
+autoGetIdentsSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/afids/!svn/ver/874/browse/trunk/apps/frontend/modules/pilotRequest/templates/autoGetIdentsSuccess.php
+END

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/afids/!svn/ver/505/browse/trunk/lib/widget
+END
+widgetFormDate.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/afids/!svn/ver/505/browse/trunk/lib/widget/widgetFormDate.class.php
+END
+widgetFormInputZipcode.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/afids/!svn/ver/97/browse/trunk/lib/widget/widgetFormInputZipcode.class.php
+END
+widgetFormTime.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/afids/!svn/ver/187/browse/trunk/lib/widget/widgetFormTime.class.php
+END
+widgetFormDateTimeCustom.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/afids/!svn/ver/2/browse/trunk/lib/widget/widgetFormDateTimeCustom.class.php
+END
+widgetFormInputPhone.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/afids/!svn/ver/179/browse/trunk/lib/widget/widgetFormInputPhone.class.php
+END

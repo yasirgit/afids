@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/afids/!svn/ver/656/browse/trunk/web/batch_processes
+END
+missionsAvailableMailer_templates.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/afids/!svn/ver/656/browse/trunk/web/batch_processes/missionsAvailableMailer_templates.xsl
+END
+process_definition.xml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/afids/!svn/ver/656/browse/trunk/web/batch_processes/process_definition.xml
+END
+gateway_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/afids/!svn/ver/656/browse/trunk/web/batch_processes/gateway_test.php
+END
+calendarEmail.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/afids/!svn/ver/656/browse/trunk/web/batch_processes/calendarEmail.xsl
+END
+common-1.0.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/afids/!svn/ver/656/browse/trunk/web/batch_processes/common-1.0.xsl
+END
+report_functions.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/afids/!svn/ver/656/browse/trunk/web/batch_processes/report_functions.php
+END
+config.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/afids/!svn/ver/656/browse/trunk/web/batch_processes/config.php
+END
+memberDeactivationNotify.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/afids/!svn/ver/656/browse/trunk/web/batch_processes/memberDeactivationNotify.xsl
+END
+renewalReminderEmail.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/afids/!svn/ver/656/browse/trunk/web/batch_processes/renewalReminderEmail.xsl
+END
+renewalNotifyEmail.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/afids/!svn/ver/656/browse/trunk/web/batch_processes/renewalNotifyEmail.xsl
+END
+org_common.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/afids/!svn/ver/656/browse/trunk/web/batch_processes/org_common.xsl
+END
+batch_process.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/afids/!svn/ver/656/browse/trunk/web/batch_processes/batch_process.php
+END
+AFIDSmath.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/afids/!svn/ver/656/browse/trunk/web/batch_processes/AFIDSmath.xsl
+END
+missionReportReminder.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/afids/!svn/ver/656/browse/trunk/web/batch_processes/missionReportReminder.xsl
+END
+missionsAvailable.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/afids/!svn/ver/656/browse/trunk/web/batch_processes/missionsAvailable.xsl
+END
+memberRenewalEmail_firstNotice.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/afids/!svn/ver/656/browse/trunk/web/batch_processes/memberRenewalEmail_firstNotice.xsl
+END
+calendar.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/afids/!svn/ver/656/browse/trunk/web/batch_processes/calendar.xsl
+END

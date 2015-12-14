@@ -1,0 +1,4 @@
+eventSignupSuccess:
+  is_secure: off
+thankyouSuccess:
+  is_secure: off

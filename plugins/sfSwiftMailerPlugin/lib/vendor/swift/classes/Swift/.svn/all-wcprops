@@ -1,0 +1,191 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/afids/!svn/ver/2/browse/trunk/plugins/sfSwiftMailerPlugin/lib/vendor/swift/classes/Swift
+END
+EmbeddedFile.php
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/afids/!svn/ver/2/browse/trunk/plugins/sfSwiftMailerPlugin/lib/vendor/swift/classes/Swift/EmbeddedFile.php
+END
+Transport.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/afids/!svn/ver/2/browse/trunk/plugins/sfSwiftMailerPlugin/lib/vendor/swift/classes/Swift/Transport.php
+END
+DependencyException.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/afids/!svn/ver/2/browse/trunk/plugins/sfSwiftMailerPlugin/lib/vendor/swift/classes/Swift/DependencyException.php
+END
+ReplacementFilterFactory.php
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/afids/!svn/ver/2/browse/trunk/plugins/sfSwiftMailerPlugin/lib/vendor/swift/classes/Swift/ReplacementFilterFactory.php
+END
+OutputByteStream.php
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/afids/!svn/ver/2/browse/trunk/plugins/sfSwiftMailerPlugin/lib/vendor/swift/classes/Swift/OutputByteStream.php
+END
+SmtpTransport.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/afids/!svn/ver/2/browse/trunk/plugins/sfSwiftMailerPlugin/lib/vendor/swift/classes/Swift/SmtpTransport.php
+END
+Preferences.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/afids/!svn/ver/2/browse/trunk/plugins/sfSwiftMailerPlugin/lib/vendor/swift/classes/Swift/Preferences.php
+END
+LoadBalancedTransport.php
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/afids/!svn/ver/2/browse/trunk/plugins/sfSwiftMailerPlugin/lib/vendor/swift/classes/Swift/LoadBalancedTransport.php
+END
+CharacterReaderFactory.php
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/afids/!svn/ver/2/browse/trunk/plugins/sfSwiftMailerPlugin/lib/vendor/swift/classes/Swift/CharacterReaderFactory.php
+END
+TransportException.php
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/afids/!svn/ver/2/browse/trunk/plugins/sfSwiftMailerPlugin/lib/vendor/swift/classes/Swift/TransportException.php
+END
+KeyCache.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/afids/!svn/ver/2/browse/trunk/plugins/sfSwiftMailerPlugin/lib/vendor/swift/classes/Swift/KeyCache.php
+END
+MimePart.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/afids/!svn/ver/2/browse/trunk/plugins/sfSwiftMailerPlugin/lib/vendor/swift/classes/Swift/MimePart.php
+END
+CharacterReader.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/afids/!svn/ver/2/browse/trunk/plugins/sfSwiftMailerPlugin/lib/vendor/swift/classes/Swift/CharacterReader.php
+END
+DependencyContainer.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/afids/!svn/ver/2/browse/trunk/plugins/sfSwiftMailerPlugin/lib/vendor/swift/classes/Swift/DependencyContainer.php
+END
+Image.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/afids/!svn/ver/2/browse/trunk/plugins/sfSwiftMailerPlugin/lib/vendor/swift/classes/Swift/Image.php
+END
+Message.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/afids/!svn/ver/2/browse/trunk/plugins/sfSwiftMailerPlugin/lib/vendor/swift/classes/Swift/Message.php
+END
+FailoverTransport.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/afids/!svn/ver/2/browse/trunk/plugins/sfSwiftMailerPlugin/lib/vendor/swift/classes/Swift/FailoverTransport.php
+END
+Encoding.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/afids/!svn/ver/2/browse/trunk/plugins/sfSwiftMailerPlugin/lib/vendor/swift/classes/Swift/Encoding.php
+END
+Attachment.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/afids/!svn/ver/2/browse/trunk/plugins/sfSwiftMailerPlugin/lib/vendor/swift/classes/Swift/Attachment.php
+END
+FileStream.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/afids/!svn/ver/2/browse/trunk/plugins/sfSwiftMailerPlugin/lib/vendor/swift/classes/Swift/FileStream.php
+END
+MailTransport.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/afids/!svn/ver/2/browse/trunk/plugins/sfSwiftMailerPlugin/lib/vendor/swift/classes/Swift/MailTransport.php
+END
+InputByteStream.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/afids/!svn/ver/2/browse/trunk/plugins/sfSwiftMailerPlugin/lib/vendor/swift/classes/Swift/InputByteStream.php
+END
+StreamFilter.php
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/afids/!svn/ver/2/browse/trunk/plugins/sfSwiftMailerPlugin/lib/vendor/swift/classes/Swift/StreamFilter.php
+END
+CharacterStream.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/afids/!svn/ver/2/browse/trunk/plugins/sfSwiftMailerPlugin/lib/vendor/swift/classes/Swift/CharacterStream.php
+END
+SendmailTransport.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/afids/!svn/ver/2/browse/trunk/plugins/sfSwiftMailerPlugin/lib/vendor/swift/classes/Swift/SendmailTransport.php
+END
+Filterable.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/afids/!svn/ver/2/browse/trunk/plugins/sfSwiftMailerPlugin/lib/vendor/swift/classes/Swift/Filterable.php
+END
+Mailer.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/afids/!svn/ver/2/browse/trunk/plugins/sfSwiftMailerPlugin/lib/vendor/swift/classes/Swift/Mailer.php
+END
+SwiftException.php
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/afids/!svn/ver/2/browse/trunk/plugins/sfSwiftMailerPlugin/lib/vendor/swift/classes/Swift/SwiftException.php
+END
+Encoder.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/afids/!svn/ver/2/browse/trunk/plugins/sfSwiftMailerPlugin/lib/vendor/swift/classes/Swift/Encoder.php
+END
+RfcComplianceException.php
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/afids/!svn/ver/2/browse/trunk/plugins/sfSwiftMailerPlugin/lib/vendor/swift/classes/Swift/RfcComplianceException.php
+END
+IoException.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/afids/!svn/ver/2/browse/trunk/plugins/sfSwiftMailerPlugin/lib/vendor/swift/classes/Swift/IoException.php
+END

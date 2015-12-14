@@ -1,0 +1,40 @@
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:output method="html" />
+<xsl:strip-space elements="*"/>
+
+<xsl:template match="/">
+	<p><table border="1" cellpadding="2" width="620">
+	<tr>
+		<td width="80" bgcolor="#1848B0" align="left"><font face="Verdana" color="#FFFFFF" size="1"><b>Mission</b></font></td>
+		<td width="80" bgcolor="#1848B0" align="left"><font face="Verdana" color="#FFFFFF" size="1"><b>Date</b></font></td>
+		<td width="170" bgcolor="#1848B0" align="left"><font face="Verdana" color="#FFFFFF" size="1"><b>Origin</b></font></td>
+		<td width="180" bgcolor="#1848B0" align="left"><font face="Verdana" color="#FFFFFF" size="1"><b>Destination</b></font></td>
+		<td width="120" bgcolor="#1848B0" align="left"><font face="Verdana" color="#FFFFFF" size="1"><b>Wing</b></font></td>
+	</tr>
+	<xsl:for-each select=".//record">
+            <tr style='page-break-inside:avoid'>
+		<td width="80" align="left" valign="top"><font face="Verdana" size="1">
+			<xsl:value-of select="external_id"/>-<xsl:value-of select="leg_number"/>
+			<xsl:text disable-output-escaping="yes">&amp;nbsp;</xsl:text>
+		</font></td>
+		<td width="80" align="left" valign="top"><font face="Verdana" size="1">
+			<xsl:value-of select="missionDateDisplay"/>
+			<xsl:text disable-output-escaping="yes">&amp;nbsp;</xsl:text>
+		</font></td>
+		<td width="170" align="left" valign="top"><font face="Verdana" size="1">
+			<xsl:value-of select="originID"/> (<xsl:value-of select="originCity"/>, <xsl:value-of select="originState"/>)
+			<br/><xsl:value-of select="originCounty"/>
+		</font></td>
+		<td width="180" align="left" valign="top"><font face="Verdana" size="1">
+			<xsl:value-of select="destID"/> (<xsl:value-of select="destCity"/>, <xsl:value-of select="destState"/>)
+			<br/><xsl:value-of select="destCounty"/>
+		</font></td>
+		<td width="120" align="left" valign="top"><font face="Verdana" size="1">
+			<xsl:value-of select="wingName"/>
+			<xsl:text disable-output-escaping="yes">&amp;nbsp;</xsl:text>
+		</font></td>
+            </tr>
+	</xsl:for-each>
+	</table></p>
+</xsl:template>
+</xsl:stylesheet>

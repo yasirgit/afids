@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/afids/!svn/ver/1151/browse/trunk/apps/frontend/modules/agency/templates
+END
+autoCompleteSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/afids/!svn/ver/342/browse/trunk/apps/frontend/modules/agency/templates/autoCompleteSuccess.php
+END
+updateSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/afids/!svn/ver/1151/browse/trunk/apps/frontend/modules/agency/templates/updateSuccess.php
+END
+refreshAgencySuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/afids/!svn/ver/39/browse/trunk/apps/frontend/modules/agency/templates/refreshAgencySuccess.php
+END
+updateAjaxSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/afids/!svn/ver/665/browse/trunk/apps/frontend/modules/agency/templates/updateAjaxSuccess.php
+END
+indexSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/afids/!svn/ver/1151/browse/trunk/apps/frontend/modules/agency/templates/indexSuccess.php
+END

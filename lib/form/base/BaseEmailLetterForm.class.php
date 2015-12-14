@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * EmailLetter form base class.
+ *
+ * @package    angelflight
+ * @subpackage form
+ * @author     Your name here
+ * @version    SVN: $Id: sfPropelFormGeneratedTemplate.php 16976 2009-04-04 12:47:44Z fabien $
+ */
+class BaseEmailLetterForm extends BaseFormPropel
+{
+  public function setup()
+  {
+    $this->setWidgets(array(
+      'id'               => new sfWidgetFormInputHidden(),
+      'subject'          => new sfWidgetFormInput(),
+      'sender_name'      => new sfWidgetFormInput(),
+      'sender_email'     => new sfWidgetFormInput(),
+      'body'             => new sfWidgetFormTextarea(),
+      'attach_file_path' => new sfWidgetFormInput(),
+      'recipients'       => new sfWidgetFormTextarea(),
+    ));
+
+    $this->setValidators(array(
+      'id'               => new sfValidatorPropelChoice(array('model' => 'EmailLetter', 'column' => 'id', 'required' => false)),
+      'subject'          => new sfValidatorString(array('max_length' => 50, 'required' => false)),
+      'sender_name'      => new sfValidatorString(array('max_length' => 30, 'required' => false)),
+      'sender_email'     => new sfValidatorString(array('max_length' => 50, 'required' => false)),
+      'body'             => new sfValidatorString(array('required' => false)),
+      'attach_file_path' => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'recipients'       => new sfValidatorString(array('required' => false)),
+    ));
+
+    $this->widgetSchema->setNameFormat('email_letter[%s]');
+
+    $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+
+    parent::setup();
+  }
+
+  public function getModelName()
+  {
+    return 'EmailLetter';
+  }
+
+
+}

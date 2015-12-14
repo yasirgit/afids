@@ -1,0 +1,352 @@
+<?php
+
+/**
+ * dashboard components.
+ *
+ * @package    angelflight
+ * @subpackage dashboard
+ * @author     Ariunbayar
+ * @version    SVN: $Id: actions.class.php 12479 2008-10-31 10:54:40Z fabien $
+ */
+class dashboardComponents extends sfComponents
+{
+  public function executeCurrentMissions(sfWebRequest $request)
+  {
+    $this->airport_list = AirportPeer::getMappable();
+    $this->legs = MissionLegPeer::getMappable();
+  }
+
+  public function executeTeamNotepad(sfWebRequest $request)
+  {
+    $this->person_role = PersonRolePeer::getByPersonIdOne($this->getUser()->getId());
+    $s_role = RolePeer::getByTitle('Staff');
+    $a_role = RolePeer::getByTitle('Administrator');
+    $role_ids = array();
+//    foreach ($person_roles as $person_role){
+//      $roleId = $person_role->getRoleId();
+//      $s_role_id = $s_role->getId();
+//      if($roleId==$s_role_id){
+//        $role_ids[] = $a_role->getId();
+//      }else{
+//        $role_ids[] = $roleId;
+//      }
+//    }
+    $team_notes = "";
+    if($this->person_role){
+      $team_notes = TeamNotePeer::getTeamNote();
+    }
+
+    $this->team_notes = $team_notes;
+    $this->allowed_tags = $this->getAllowedTags();
+  }
+
+  public function executePersonalNotepad(sfWebRequest $request)
+  {
+    $note = PersonalNotePeer::retrieveByPK($this->getUser()->getId());
+    if (!($note instanceof PersonalNote)) {
+      $note = new PersonalNote();
+      $note->setPersonId($this->getUser()->getId());
+      $note->save();
+    }
+
+    $this->note = $note;
+    $this->allowed_tags = $this->getAllowedTags();
+  }
+
+  protected function getAllowedTags()
+  {
+    return sfConfig::get('app_allowed_note_tags', '');
+  }
+
+  public function executeRequests(sfWebRequest $request)
+  {
+    # arrived requests
+    $this->mission_requests = MissionRequestPeer::getRsNonProcessed($count);
+    $this->mission_requests_count = $count;
+
+    # available missions
+    $this->available_mission_legs = MissionLegPeer::getRsAvailable($count);
+    $this->available_mission_legs_count = $count;
+    
+    # coordinated missions
+    $this->coordinated_mission_legs = MissionLegPeer::getRsCoordinated($count);
+    $this->coordinated_mission_legs_count = $count;
+
+    # pilot requests
+    
+    # filter
+    $this->processFilter($request);
+    $this->pager = PilotRequestPeer::getPager(
+    $this->max,
+    $this->page,
+    $this->req_date1,
+    $this->req_date2,
+    $this->miss_date1,
+    $this->miss_date2,
+    $this->not_process,
+    $this->hold,
+    $this->process
+    );
+    $this->pilot_reqs = $this->pager->getResults();
+    $this->date_widget = new widgetFormDate(array('format_date' => array('js' => 'mm/dd/yy', 'php' => 'm/d/Y')), array('class' => 'text'));
+    
+    
+    # member requests
+    $c = new Criteria();
+    $c->add(ApplicationTempPeer::RENEWAL, null, Criteria::ISNULL);
+    $c->add(ApplicationTempPeer::MEMBER_ID, null, Criteria::ISNULL);
+    $c->add(ApplicationTempPeer::PROCESSED_DATE, null, Criteria::ISNULL);
+    $c->setLimit(50);
+    $this->member_requests = ApplicationTempPeer::doSelect($c);
+
+    $this->transportations = array(
+      'air_mission' => 'Air Mission',
+      'ground_mission' => 'Ground Mission',
+      'commercial_mission' => 'Commercial Mission',
+    );
+    if($request->hasParameter('return')){
+      $this->pilot_request_one = true;
+    }
+
+  }
+  private function processFilter(sfWebRequest $request) {
+		$params = $this->getUser()->getAttribute('pilotRequest', array(), 'person');
+		if (!isset($params['req_date1'])) $params['req_date1'] = null;
+		if (!isset($params['req_date2'])) $params['req_date2'] = null;
+		if (!isset($params['miss_date1'])) $params['miss_date1'] = null;
+		if (!isset($params['miss_date2'])) $params['miss_date2'] = null;
+		if (!isset($params['not_process'])) $params['not_process'] = null;
+		if (!isset($params['hold'])) $params['hold'] = null;
+		if (!isset($params['process'])) $params['process'] = null;
+
+		$this->max_array = array(5, 10, 20, 30);
+
+		if (in_array($request->getParameter('max'), $this->max_array)) {
+			$params['max'] = $request->getParameter('max');
+		}else {
+			if (!isset($params['max'])) $params['max'] = sfConfig::get('app_max_person_per_page', 10);
+		}
+
+		if ($request->hasParameter('filter')) {
+			$params['req_date1']      = $request->getParameter('req_date1');
+			$params['req_date2']       = $request->getParameter('req_date2');
+			$params['miss_date1']       = $request->getParameter('miss_date1');
+			$params['miss_date2']       = $request->getParameter('miss_date2');
+			$params['not_process']       = $request->getParameter('not_process');
+			$params['hold']       = $request->getParameter('hold');
+			$params['process']       = $request->getParameter('process');
+		}
+        if($request->hasParameter('reset') && $request->getParameter('reset') == '1'){
+            $params['req_date1']      = NULL;
+			$params['req_date2']       = NULL;
+			$params['miss_date1']       = NULL;
+			$params['miss_date2']       = NULL;
+			$params['not_process']       = NULL;
+			$params['hold']       = NULL;
+			$params['process']       = NULL;
+        }
+		$this->page       = $page = $request->getParameter('page', 1);
+		$this->max        = $params['max'];
+		$this->req_date1    = $params['req_date1'];
+		$this->req_date2  = $params['req_date2'];
+		$this->miss_date1 = $params['miss_date1'];
+		$this->miss_date2 = $params['miss_date2'];
+		$this->not_process = $params['not_process'];
+		$this->hold = $params['hold'];
+		$this->process = $params['process'];
+
+		$this->getUser()->setAttribute('pilotRequest', $params, 'person');
+    }
+
+  public function executePriorityList()
+  {
+    $this->pilot_request_count = PilotRequestPeer::countIn2Days();
+    $this->no_pilot_count = MissionPeer::countNoPilotIn2Days();
+    $this->cancelled_legs = MissionLegPeer::countCancelled();
+
+
+    $pilot = PilotPeer::retrieveByPK($this->getUser()->getPilotId());
+    if (!($pilot instanceof Pilot)) return sfView::NONE;
+    
+    if ($pilot->getPrimaryAirportId()) {
+      $this->near_mission = MissionLegPeer::getPilotNear($pilot->getPrimaryAirportId());
+    }else{
+      $this->near_mission = array();
+    }
+    
+    $pilot_id = $this->getUser()->getPilotId();
+    $this->p_id = $pilot_id;
+    if($pilot_id){
+    $pilot = PilotPeer::retrieveByPK($pilot_id);
+    $p_firstname = $pilot->getMember()->getPerson()->getFirstName();
+    $p_lastname = $pilot->getMember()->getPerson()->getLastName();
+    $c = new Criteria();
+    $c->add(MissionLegPeer::TRANSPORTATION, 'air_mission');
+    $c->add(MissionLegPeer::PILOT_ID, $pilot_id);
+    $c->addJoin(MissionLegPeer::MISSION_ID, MissionPeer::ID, Criteria::RIGHT_JOIN);
+    $c->add(MissionPeer::MISSION_DATE, date('Y-m-d H:i:s'), Criteria::LESS_THAN);
+    $c->addJoin(MissionLegPeer::MISSION_REPORT_ID, MissionReportPeer::ID, Criteria::LEFT_JOIN);
+    $c->add(MissionReportPeer::APPROVED, null, Criteria::ISNULL);
+    $mission_legs = MissionLegPeer::doSelectJoinMission($c, null, Criteria::RIGHT_JOIN);
+    $this->miss = count($mission_legs);
+
+    $pind = MissionLegPeer::getPendingMissions($pilot_id);
+    $this->pinding = $pind;
+    //Update Farazi
+    $member_id = $this->getUser()->getMemberId();
+    $member = MemberPeer::retrieveByPK($member_id);
+    $date_now = strtotime("NOW");
+    $date_ren = strtotime($member->getRenewalDate());
+    $sub = ($date_ren - $date_now);
+    $preday = 0;
+    if($sub >=86400){
+       $pday = $sub / 86400;
+       $preday = explode('.',$pday);
+    }else {
+       $pday = $sub / 86400;
+       $preday = explode('.',$pday);
+    }
+        $this->due_day = $preday[0];
+    }
+    // Show mission request list for adin user
+    if($this->getUser()->hasCredential(array('Administrator'), false)){
+
+        // Get number of un processed mission requests
+        $this->un_proc_miss_req = MissionRequestPeer::getNumberOfNonProcessedMissionRequest();
+
+        // Get number of un processed member applications
+        $this->un_proc_mem_apps = ApplicationTempPeer::getNonProcessedMemberApplications();
+
+        // Get number of un processed pilot requests
+        $this->un_proc_pilot_reqs = PilotRequestPeer::getPager()->getNbResults ();
+
+        // Get uncoordinate mission legs
+        $this->un_coor_mission_legs = MissionLegPeer::getNotCoordinatedMissionLegs();
+    }
+  }
+  
+  public function executeRecentItems()
+  {
+    $this->recent_items = $this->getUser()->getRecentItems();
+  }
+
+  public function executeAvailableMissions()
+  {
+    $pilot = PilotPeer::retrieveByPK($this->getUser()->getPilotId());
+    if (!($pilot instanceof Pilot)) return sfView::NONE;
+
+    if ($pilot->getPrimaryAirportId()) {
+      $this->mission_legs = MissionLegPeer::getPilotNear($pilot->getPrimaryAirportId());
+    }else{
+      $this->mission_legs = array();
+    }
+    $this->home_airport = $pilot->getAirport();
+
+    $ids = array();
+    foreach ($this->mission_legs as $leg) $ids[] = $leg->getId();
+    $c = new Criteria();
+    $c->add(MissionLegPeer::TRANSPORTATION, 'air_mission');
+    $c->add(MissionLegPeer::ID, $ids, Criteria::NOT_IN);
+    $c->add(MissionLegPeer::CANCELLED, null, Criteria::ISNULL);
+    $c1 = $c->getNewCriterion(MissionLegPeer::PILOT_ID, null, Criteria::ISNULL);
+    $c2 = $c->getNewCriterion(MissionLegPeer::COPILOT_ID, null, Criteria::ISNULL);
+    $c->add($c1->addOr($c2));
+    $c->setLimit(50);
+    $this->interest_legs = MissionLegPeer::doSelectJoinMission($c);
+
+    $c->clear();
+    $c->addJoin(MissionLegPeer::ID, PilotRequestPeer::LEG_ID, Criteria::LEFT_JOIN);
+    $c->add(PilotRequestPeer::ACCEPTED, 1, Criteria::NOT_EQUAL);
+    $c->add(MissionLegPeer::TRANSPORTATION, 'air_mission');
+    //$c->addAscendingOrderByColumn();
+    $c->setLimit(50);
+    $this->pending_legs = MissionLegPeer::doSelectJoinMission($c);
+  }
+  #bGlobal omar
+  public function executeInstrumentNotication(sfWebRequest $request)
+  {    
+	$c = new Criteria();
+	$c->add(PersonRolePeer::PERSON_ID,$this->getUser()->getId());		
+	$c->addJoin(PersonRolePeer::ROLE_ID,RoleNotificationPeer::ROLE_ID);				
+	$personNotification = RoleNotificationPeer::doSelect($c);
+	$this->mid = 0;
+	foreach($personNotification as $key=>$value)
+	{
+		$this->mid=$value->getMid();
+        
+		$this->notification = $value->getNotification();
+		//5. person add
+		if($this->mid == 5 && ($this->notification == 2 || $this->notification == 3))
+		{
+			$c = new Criteria();
+			$c->addDescendingOrderByColumn(PersonPeer::ID);
+			$c->setLimit(5);
+			$this->newperson = PersonPeer::doSelect($c);
+		}
+	}
+	 $this->host = $request->getHost();
+
+     $this->memberId = $this->getUser()->getMemberId();
+     //$query = "SELECT COUNT(pilot_request.accepted) FROM pilot_request ";
+     //$query .="WHERE pilot_request.accepted = 1 AND pilot_request.processed = 1 AND pilot_request.member_id = ".$this->memberId;
+
+     //$con = Propel::getConnection();
+     //$stmt = $con->prepare($query);
+     //$stmt->execute();
+
+     /*if($rs = $stmt->fetch(PDO::FETCH_NUM)) {
+       $count = (int)$rs[0];
+     }else{
+       $count = 0;
+     }*/
+     
+     $c = new Criteria();
+     $c->add(PilotRequestPeer::ACCEPTED, 1);
+     $c->add(PilotRequestPeer::PROCESSED, 1);
+     $c->add(PilotRequestPeer::MEMBER_ID, $this->memberId);     
+     $this->totalAccepted = PilotRequestPeer::doCount($c);
+
+
+    /* $this->memberId = $this->getUser()->getMemberId();
+     $query = "SELECT COUNT(pilot_request.accepted) FROM pilot_request ";
+     $query .="WHERE pilot_request.accepted = 0 AND pilot_request.member_id = $this->memberId";
+     $con = Propel::getConnection();
+     $stmt = $con->prepare($query);
+     $stmt->execute();
+
+     if($rs = $stmt->fetch(PDO::FETCH_NUM)) {
+       $count = (int)$rs[0];
+     }else{
+       $count = 0;
+     }*/
+     $c = new Criteria();
+     $c->add(PilotRequestPeer::ACCEPTED, 0);
+     $c->add(PilotRequestPeer::MEMBER_ID, $this->memberId);
+     $this->totaldeclined = PilotRequestPeer::doCount($c);
+     
+     
+
+     
+     $c = new Criteria();
+     $c->add(MissionLegPeer::PILOT_ID, $this->getUser()->getPilotId());
+     $c->add(MissionLegPeer::CANCEL_MISSION_LEG, 0);
+     $this->totalMissionCancellation = MissionLegPeer::doCount($c);
+
+
+     //total signup events count
+     $pilot_id = $this->getUser()->getPilotId();
+     if($pilot_id){
+        $pilot = PilotPeer::retrieveByPK($pilot_id);
+        $member_id = $pilot->getMemberId();
+
+        $date = date('Y-m-d');
+        $c = new Criteria();
+        $c->add(EventReservationPeer::MEMBER_ID,$member_id,  Criteria::EQUAL);
+        $c->addJoin(EventPeer::ID, EventReservationPeer::EVENT_ID);
+        $c->add(EventPeer::EVENT_DATE, $date , Criteria::GREATER_EQUAL);
+        $this->totalSignupEvents  = EventReservationPeer::doCount($c);
+     }
+     
+     //
+  }
+}

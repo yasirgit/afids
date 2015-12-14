@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/test/functional/fixtures/lib/filter/doctrine
+END
+UserGroupFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/test/functional/fixtures/lib/filter/doctrine/UserGroupFormFilter.class.php
+END
+GroupFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/test/functional/fixtures/lib/filter/doctrine/GroupFormFilter.class.php
+END
+ProfileFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/test/functional/fixtures/lib/filter/doctrine/ProfileFormFilter.class.php
+END
+BaseFormFilterDoctrine.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/test/functional/fixtures/lib/filter/doctrine/BaseFormFilterDoctrine.class.php
+END
+AuthorFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/test/functional/fixtures/lib/filter/doctrine/AuthorFormFilter.class.php
+END
+ArticleTranslationFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/test/functional/fixtures/lib/filter/doctrine/ArticleTranslationFormFilter.class.php
+END
+GroupPermissionFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/test/functional/fixtures/lib/filter/doctrine/GroupPermissionFormFilter.class.php
+END
+UniqueTestFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/test/functional/fixtures/lib/filter/doctrine/UniqueTestFormFilter.class.php
+END
+myDoctrineRecordFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/test/functional/fixtures/lib/filter/doctrine/myDoctrineRecordFormFilter.class.php
+END
+CamelCaseFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/test/functional/fixtures/lib/filter/doctrine/CamelCaseFormFilter.class.php
+END
+UserFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/test/functional/fixtures/lib/filter/doctrine/UserFormFilter.class.php
+END
+ArticleFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/test/functional/fixtures/lib/filter/doctrine/ArticleFormFilter.class.php
+END
+SubscriptionFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/test/functional/fixtures/lib/filter/doctrine/SubscriptionFormFilter.class.php
+END
+UserPermissionFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/test/functional/fixtures/lib/filter/doctrine/UserPermissionFormFilter.class.php
+END
+PermissionFormFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/test/functional/fixtures/lib/filter/doctrine/PermissionFormFilter.class.php
+END

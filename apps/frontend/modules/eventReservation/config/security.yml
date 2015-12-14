@@ -1,0 +1,10 @@
+eventSignup:
+  is_secure: off
+Step2:
+  is_secure: off
+Step3:
+  is_secure: off  
+check:
+  is_secure: off
+thankyou:
+  is_secure: off

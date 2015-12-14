@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/lib/vendor/doctrine/Doctrine/Adapter
+END
+Mock.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/lib/vendor/doctrine/Doctrine/Adapter/Mock.php
+END
+Exception.php
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/lib/vendor/doctrine/Doctrine/Adapter/Exception.php
+END
+Mysqli.php
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/lib/vendor/doctrine/Doctrine/Adapter/Mysqli.php
+END
+Interface.php
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/lib/vendor/doctrine/Doctrine/Adapter/Interface.php
+END
+Statement.php
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/lib/vendor/doctrine/Doctrine/Adapter/Statement.php
+END
+Oracle.php
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/lib/vendor/doctrine/Doctrine/Adapter/Oracle.php
+END
+Db2.php
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/lib/vendor/doctrine/Doctrine/Adapter/Db2.php
+END

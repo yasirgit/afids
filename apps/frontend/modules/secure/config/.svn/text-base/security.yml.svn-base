@@ -1,0 +1,23 @@
+login:
+  is_secure: off
+signIn:
+  is_secure: off
+forgotPassword:
+  is_secure: off
+sendPassword:
+  is_secure: off
+retrievePassword:
+  is_secure: off
+checkIdentity:
+  is_secure: off
+createPassword:
+  is_secure: off
+newPassword:
+  is_secure: off
+error404:
+  is_secure: off
+resetPassword: # user clicks on a link in email box and it will reset user's password
+  is_secure: off
+  
+default:
+  is_secure: on

@@ -1,0 +1,185 @@
+<?php
+
+require_once(sfConfig::get('sf_lib_dir').'/filter/base/BaseFormFilterPropel.class.php');
+
+/**
+ * Member filter form base class.
+ *
+ * @package    angelflight
+ * @subpackage filter
+ * @author     Your name here
+ * @version    SVN: $Id: sfPropelFormFilterGeneratedTemplate.php 16976 2009-04-04 12:47:44Z fabien $
+ */
+class BaseMemberFormFilter extends BaseFormFilterPropel
+{
+  public function setup()
+  {
+    $this->setWidgets(array(
+      'person_id'                   => new sfWidgetFormPropelChoice(array('model' => 'Person', 'add_empty' => true)),
+      'external_id'                 => new sfWidgetFormFilterInput(),
+      'wing_id'                     => new sfWidgetFormPropelChoice(array('model' => 'Wing', 'add_empty' => true)),
+      'member_class_id'             => new sfWidgetFormPropelChoice(array('model' => 'MemberClass', 'add_empty' => true)),
+      'master_member_id'            => new sfWidgetFormPropelChoice(array('model' => 'Member', 'add_empty' => true)),
+      'join_date'                   => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
+      'active'                      => new sfWidgetFormFilterInput(),
+      'inactive_reason'             => new sfWidgetFormFilterInput(),
+      'inactive_comment'            => new sfWidgetFormFilterInput(),
+      'flight_status'               => new sfWidgetFormFilterInput(),
+      'co_pilot'                    => new sfWidgetFormFilterInput(),
+      'contact'                     => new sfWidgetFormFilterInput(),
+      'date_of_birth'               => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => true)),
+      'weight'                      => new sfWidgetFormFilterInput(),
+      'spouse_name'                 => new sfWidgetFormFilterInput(),
+      'languages'                   => new sfWidgetFormFilterInput(),
+      'coordinator_notes'           => new sfWidgetFormFilterInput(),
+      'renewed_date'                => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => true)),
+      'renewal_date'                => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => true)),
+      'renewal_notice1'             => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => true)),
+      'renewal_notice2'             => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => true)),
+      'renewal_notice3'             => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => true)),
+      'renewal_notice4'             => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => true)),
+      'review_done'                 => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => true)),
+      'ed_new_member_notify'        => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => true)),
+      'wn_new_memberN_ntify'        => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => true)),
+      'no_wing_contact_ack'         => new sfWidgetFormFilterInput(),
+      'hold_harmless_received'      => new sfWidgetFormFilterInput(),
+      'member_welcomed'             => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => true)),
+      'badge_made'                  => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => true)),
+      'notebook_sent'               => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => true)),
+      'clothing_sent'               => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => true)),
+      's_mod_member_notify'         => new sfWidgetFormFilterInput(),
+      'w_mod_member_notify'         => new sfWidgetFormFilterInput(),
+      'renew_mark'                  => new sfWidgetFormFilterInput(),
+      'renewal_sent_date'           => new sfWidgetFormFilterInput(),
+      's_late_renewal_notify'       => new sfWidgetFormFilterInput(),
+      'w_late_renewal_notify'       => new sfWidgetFormFilterInput(),
+      's_inactive_notify'           => new sfWidgetFormFilterInput(),
+      'w_inactive_notify'           => new sfWidgetFormFilterInput(),
+      'w_not_oriented_notify_date1' => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => true)),
+      'w_not_oriented_notify_date2' => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => true)),
+      'emergency_contact_name'      => new sfWidgetFormFilterInput(),
+      'emergency_contact_phone'     => new sfWidgetFormFilterInput(),
+      'drivers_license_state'       => new sfWidgetFormFilterInput(),
+      'drivers_license_number'      => new sfWidgetFormFilterInput(),
+      'height'                      => new sfWidgetFormFilterInput(),
+      'secondary_wing_id'           => new sfWidgetFormFilterInput(),
+    ));
+
+    $this->setValidators(array(
+      'person_id'                   => new sfValidatorPropelChoice(array('required' => false, 'model' => 'Person', 'column' => 'id')),
+      'external_id'                 => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'wing_id'                     => new sfValidatorPropelChoice(array('required' => false, 'model' => 'Wing', 'column' => 'id')),
+      'member_class_id'             => new sfValidatorPropelChoice(array('required' => false, 'model' => 'MemberClass', 'column' => 'id')),
+      'master_member_id'            => new sfValidatorPropelChoice(array('required' => false, 'model' => 'Member', 'column' => 'id')),
+      'join_date'                   => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'active'                      => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'inactive_reason'             => new sfValidatorPass(array('required' => false)),
+      'inactive_comment'            => new sfValidatorPass(array('required' => false)),
+      'flight_status'               => new sfValidatorPass(array('required' => false)),
+      'co_pilot'                    => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'contact'                     => new sfValidatorPass(array('required' => false)),
+      'date_of_birth'               => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'weight'                      => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'spouse_name'                 => new sfValidatorPass(array('required' => false)),
+      'languages'                   => new sfValidatorPass(array('required' => false)),
+      'coordinator_notes'           => new sfValidatorPass(array('required' => false)),
+      'renewed_date'                => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'renewal_date'                => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'renewal_notice1'             => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'renewal_notice2'             => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'renewal_notice3'             => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'renewal_notice4'             => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'review_done'                 => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'ed_new_member_notify'        => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'wn_new_memberN_ntify'        => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'no_wing_contact_ack'         => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'hold_harmless_received'      => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'member_welcomed'             => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'badge_made'                  => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'notebook_sent'               => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'clothing_sent'               => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      's_mod_member_notify'         => new sfValidatorPass(array('required' => false)),
+      'w_mod_member_notify'         => new sfValidatorPass(array('required' => false)),
+      'renew_mark'                  => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'renewal_sent_date'           => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      's_late_renewal_notify'       => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'w_late_renewal_notify'       => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      's_inactive_notify'           => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'w_inactive_notify'           => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'w_not_oriented_notify_date1' => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'w_not_oriented_notify_date2' => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'emergency_contact_name'      => new sfValidatorPass(array('required' => false)),
+      'emergency_contact_phone'     => new sfValidatorPass(array('required' => false)),
+      'drivers_license_state'       => new sfValidatorPass(array('required' => false)),
+      'drivers_license_number'      => new sfValidatorPass(array('required' => false)),
+      'height'                      => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'secondary_wing_id'           => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+    ));
+
+    $this->widgetSchema->setNameFormat('member_filters[%s]');
+
+    $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+
+    parent::setup();
+  }
+
+  public function getModelName()
+  {
+    return 'Member';
+  }
+
+  public function getFields()
+  {
+    return array(
+      'id'                          => 'Number',
+      'person_id'                   => 'ForeignKey',
+      'external_id'                 => 'Number',
+      'wing_id'                     => 'ForeignKey',
+      'member_class_id'             => 'ForeignKey',
+      'master_member_id'            => 'ForeignKey',
+      'join_date'                   => 'Date',
+      'active'                      => 'Number',
+      'inactive_reason'             => 'Text',
+      'inactive_comment'            => 'Text',
+      'flight_status'               => 'Text',
+      'co_pilot'                    => 'Number',
+      'contact'                     => 'Text',
+      'date_of_birth'               => 'Date',
+      'weight'                      => 'Number',
+      'spouse_name'                 => 'Text',
+      'languages'                   => 'Text',
+      'coordinator_notes'           => 'Text',
+      'renewed_date'                => 'Date',
+      'renewal_date'                => 'Date',
+      'renewal_notice1'             => 'Date',
+      'renewal_notice2'             => 'Date',
+      'renewal_notice3'             => 'Date',
+      'renewal_notice4'             => 'Date',
+      'review_done'                 => 'Date',
+      'ed_new_member_notify'        => 'Date',
+      'wn_new_memberN_ntify'        => 'Date',
+      'no_wing_contact_ack'         => 'Number',
+      'hold_harmless_received'      => 'Number',
+      'member_welcomed'             => 'Date',
+      'badge_made'                  => 'Date',
+      'notebook_sent'               => 'Date',
+      'clothing_sent'               => 'Date',
+      's_mod_member_notify'         => 'Text',
+      'w_mod_member_notify'         => 'Text',
+      'renew_mark'                  => 'Number',
+      'renewal_sent_date'           => 'Number',
+      's_late_renewal_notify'       => 'Number',
+      'w_late_renewal_notify'       => 'Number',
+      's_inactive_notify'           => 'Number',
+      'w_inactive_notify'           => 'Number',
+      'w_not_oriented_notify_date1' => 'Date',
+      'w_not_oriented_notify_date2' => 'Date',
+      'emergency_contact_name'      => 'Text',
+      'emergency_contact_phone'     => 'Text',
+      'drivers_license_state'       => 'Text',
+      'drivers_license_number'      => 'Text',
+      'height'                      => 'Number',
+      'secondary_wing_id'           => 'Number',
+    );
+  }
+}

@@ -1,0 +1,80 @@
+10
+
+dir
+1221
+https://afids.svn.beanstalkapp.com/afids/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/test/functional/fixtures
+https://afids.svn.beanstalkapp.com/afids
+
+
+
+2009-11-25T11:20:57.700874Z
+2
+singleton
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6660cd72-4705-4052-9c71-8d9f8014bd27
+
+test
+dir
+
+apps
+dir
+
+symfony
+file
+
+
+
+
+2011-04-21T06:37:55.838000Z
+36073c1914105fb3bbb4f1ce4965b4d2
+2009-11-25T11:20:57.700874Z
+2
+singleton
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+482
+
+config
+dir
+
+lib
+dir
+
+data
+dir
+
+web
+dir
+

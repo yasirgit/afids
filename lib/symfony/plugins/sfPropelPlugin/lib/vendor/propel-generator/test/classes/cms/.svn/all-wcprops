@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/lib/vendor/propel-generator/test/classes/cms
+END
+CmsTestBase.php
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/lib/vendor/propel-generator/test/classes/cms/CmsTestBase.php
+END
+CmsDataPopulator.php
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/lib/vendor/propel-generator/test/classes/cms/CmsDataPopulator.php
+END

@@ -1,0 +1,242 @@
+<afids_batch_processes>
+	<test>1</test>
+	
+	<globals>
+		<help>The "Globals" category contains golbal variables that can be referenced in the config with {VARIABLE} or used in the absence of a program specific variable.</help>
+
+		<coordination>Coordination Staff</coordination>
+		<mailCoord>coordination@angelflightwest.org</mailCoord>
+		<mailOps>postmaster@angelflightwest.org</mailOps>
+		<mailInfo>info@angelflightwest.org</mailInfo>
+		<memberInfo>Member Services</memberInfo>
+		<mailMemberInfo>memberInfo@angelflightwest.org</mailMemberInfo>
+		<mailPostmaster>postmaster@angelflightwest.org</mailPostmaster>
+		<mailWebmaster>webmaster@angelflightwest.org</mailWebmaster>
+		<organizationName>Angel Flight West</organizationName>
+		<orgAB>AFW</orgAB>
+	</globals>
+
+	<defaults>
+		<xslroot>xslroot</xslroot>		
+		<save_to_directory>D:\AFIDS Apps\AFW\emailapps\data</save_to_directory>
+		<notify_to_name>AFW Coordination Team</notify_to_name>
+		<notify_to_email>webmaster@angelflightwest.org</notify_to_email>
+		<notify_from_name>AFIDS Postmaster</notify_from_name>
+		<notify_from_email>stephan@meliorist.com</notify_from_email>
+		<notify_admin_email>stephan@meliorist.com</notify_admin_email>
+	</defaults>
+ 
+	<process>
+		<processName>calendar_email</processName>
+		<description>Monthly email of upcoming events sent to subscribers of the events calender list.</description>
+		<notes>Done and tested.</notes>
+		<description/>
+		<personalized>no</personalized>
+		<recipient_list source="sql_text">
+			<command>SELECT p.email, p.first_name as firstName, p.last_name as lastName FROM email_list_person el JOIN person p ON (el.person_id = p.id) WHERE p.email IS NOT NULL AND el.list_id = 4 AND p.id = 17</command>	
+		</recipient_list>
+		<email_contents source="sql_text">
+			<command>SELECT * FROM event WHERE event_date >= '{getdate()}'</command>
+			<xsl_file root_directory="default">calendar.xsl</xsl_file>
+		</email_contents>
+		<notify_to_name useDefault="yes"/>
+		<notify_to_email useDefault="yes"/>
+		<notify_admin_name useDefault="yes"/>
+		<notify_admin_email useDefault="yes"/>
+		<subject>{organizationName} Calendar of Events {getdate()}</subject>
+	</process>
+
+	<process>
+		<processName>mission_report_reminder</processName>
+		<description></description>
+		<notes>Done. Need to replace common variables once they are defined in xsl.</notes>
+		<personalized>yes</personalized>
+		<email_contents source="none">
+			<xsl_file root_directory="default">missionReportReminder.xsl</xsl_file>
+		</email_contents>
+		<recipient_list source="sql_procedure">
+			<command>bp_mission_report_reminder</command>	
+		</recipient_list>
+		<subject>{organizationName} Mission Report Reminder</subject>
+		<notify_to_name useDefault="yes"/>
+		<notify_to_email useDefault="yes"/>
+		<notify_admin_name useDefault="yes"/>
+		<notify_admin_email useDefault="yes"/>
+	</process>
+
+	<process>
+		<processName>member_renewal_notice</processName>
+		<description>Send an email to members who are scheduled to renew next month letting them know that their renewal will be coming up.</description>		
+		<notes>Done. The template needs updating.</notes>
+		<personalized>yes</personalized>
+		<email_contents source="none">
+			<xsl_file root_directory="default">renewalNotifyEmail.xsl</xsl_file>
+		</email_contents>	
+		<recipient_list source="sql_procedure">
+			<command>bp_member_renewal_notice_list</command>	
+		</recipient_list>
+		<subject>{organizationName} Membership Renewal Notice</subject>
+		<notify_to_name useDefault="no">{memberInfo}</notify_to_name>
+		<notify_to_email useDefault="no">{mailMemberInfo}</notify_to_email>
+		<notify_admin_name useDefault="yes"/>
+		<notify_admin_email useDefault="yes"/>
+	</process>
+
+	<process>
+		<processName>report_landings_smo</processName>
+		<notes>Done and tested</notes>
+		<personalized>no</personalized>
+		<email_contents source="sql_procedure">
+			<command>bp_monthly_landings_report</command>
+			<parameters>
+				<parameter>SMO</parameter>
+			</parameters>
+			<attach_data>yes</attach_data>
+			<attach_format>csv</attach_format>	
+			<attach_zipped>0</attach_zipped>
+			<attach_filename useDefaultDirectory="yes">AFW_Landings_Report_{year()}-{month()}-{day()}.csv</attach_filename>
+		</email_contents>
+		<subject>Airport Landings Report</subject>
+		<notify_email_body>The monthly report of mission landings at SMO for {organizationName}</notify_email_body>
+		<notify_to_name useDefault="no">Coordination</notify_to_name>
+		<notify_to_email useDefault="yes">coordination@angelflightwest.org</notify_to_email>
+		<notify_admin_email useDefault="yes"></notify_admin_email>
+		<notify_admin_name useDefault="yes"></notify_admin_name>
+	</process>
+
+	<process>
+		<processName>missions_available</processName>
+		<notes>Working... Need to figure out how to incorporate efficiency calculation</notes>
+		<personalized>merge</personalized>
+		<recipient_list source="sql_text">
+			<command>SELECT p.email, p.first_name as firstName, p.last_name as lastName, m.wing_id as wingID, a.ident, a.latitude, a.longitude FROM email_list_person JOIN person p ON (email_list_person.person_id = p.id) JOIN member m ON (m.person_id = p.id) LEFT JOIN pilot pi ON (pi.member_id = m.id) LEFT JOIN airport a ON (pi.primary_airport_id = a.id) WHERE list_id = 1 AND p.email IS NOT NULL AND m.active = 1 ORDER BY p.last_name, p.first_name</command>
+		</recipient_list>
+		<email_contents source="sql_procedure">
+			<command>bp_missions_available</command>
+			<xsl_file root_directory="default">missionsAvailable.xsl</xsl_file>
+		</email_contents>
+		<subject>{organizationName} Missions Available</subject>
+		<notify_to_name useDefault="no">{coordination}</notify_to_name>
+		<notify_to_email useDefault="no">{mailCoordination}</notify_to_email>
+		<notify_admin_name useDefault="yes"/>
+		<notify_admin_email useDefault="yes"/>
+	</process>
+
+	<process>
+		<processName>donor_perfect_insert</processName>
+		<description>Creates an import file for inserting new members into Donor Perfect</description>
+		<notes>done and tested</notes>
+		<personalized>no</personalized>
+		<email_contents source="sql_procedure">
+			<command>bp_donor_perfect_insert_export</command>
+			<attach_data>yes</attach_data>
+			<attach_format>csv</attach_format>
+			<attach_zipped>0</attach_zipped>
+			<attach_filename useDefaultDirectory="yes">{orgAB}_DonorPerfectInsertExport_{year()}-{month()}-{day()}.csv</attach_filename>
+		</email_contents>
+		<subject>AFIDS Records to Insert into Donor Perfect</subject>
+		<notify_email_body>This file should be imported into Donor Perfect as an Insert for {organizationName}</notify_email_body>
+		<notify_to_name useDefault="no">Donor Perfect Admin</notify_to_name>
+		<notify_to_email useDefault="no">stephan@meliorist.com</notify_to_email>
+		<notify_admin_name useDefault="yes"/>
+		<notify_admin_email useDefault="yes"/>
+	</process>
+
+	<process>
+		<processName>member_renewal_reminder</processName>
+		<description>Sends an email to the members whose renewal is overdue by the number of months specified in the parameter below.</description>
+		<notes>Done. Should cleanup the template to add some variables.</notes>
+		<personalized>yes</personalized>
+		<recipient_list source="sql_procedure">
+			<command>bp_member_renewal_reminder_list</command>
+			<parameters>
+				<parameter help="The parameter defines the number of months the renewal is delinquent. For example, 2 means the member's renewal date is two months prior to the current month">2</parameter>
+			</parameters>
+		</recipient_list>
+		<email_contents source="none">
+			<xsl_file root_directory="default">renewalReminderEmail.xsl</xsl_file>
+		</email_contents>
+		<subject>{organizationName} Membership Renewal Reminder</subject>
+		<notify_to_name useDefault="no">{memberInfo}</notify_to_name>
+		<notify_to_email useDefault="no">{mailMemberInfo}</notify_to_email>
+		<notify_admin_name useDefault="yes"/>
+		<notify_admin_email useDefault="yes"/>
+	</process>
+
+	<process>
+		<processName>member_deactivation_notify</processName>
+		<description></description>
+		<notes>done and tested. Need to replace the link to the person record to the new link. Should replace some of the values in the template with variables</notes>
+		<personalized>no</personalized>
+		<email_contents source="sql_procedure">
+			<command>bp_members_being_inactivated</command>
+			<xsl_file root_directory="default">memberDeactivationNotify.xsl</xsl_file>
+		</email_contents>
+		<subject>{organizationName} Membership Deactivation Notification</subject>
+		<notify_to_name useDefault="no">{memberInfo}</notify_to_name>
+		<notify_to_email useDefault="no">{mailMemberInfo}</notify_to_email>
+		<notify_admin_name useDefault="yes"/>
+		<notify_admin_email useDefault="yes"/>
+	</process>
+
+	<process>
+		<processName>member_renewal_postcard_first</processName>
+		<description>Sends a mail merge file for printing and mailing renewal reminders in case the member does not receive emails</description>
+		<notes>done and tested</notes>
+		<personalized>no</personalized>
+		<email_contents source="sql_procedure">
+			<command>bp_monthly_printed_renewal_notice</command>
+			<parameters>
+				<parameter help="this is the offset from this month">1</parameter>
+			</parameters>
+			<attach_data>yes</attach_data>
+			<attach_format>csv</attach_format>
+			<attach_zipped>0</attach_zipped>
+			<attach_filename useDefaultDirectory="yes">{orgAB}_RenewalFirstNotice_{year()}-{month()}-{day()}.csv</attach_filename>
+		</email_contents>
+		<subject>Monthly First Renewal PostCard</subject>
+		<notify_email_body>The attached file is the mailing list for this month's first renewal notices for ${organizationName}</notify_email_body>
+		<notify_to_name useDefault="no">{memberInfo}</notify_to_name>
+		<notify_to_email useDefault="no">{mailMemberInfo}</notify_to_email>
+		<notify_admin_name useDefault="yes"/>
+		<notify_admin_email useDefault="yes"/>
+	</process>
+
+	<process>
+		<processName>monthly_member_stats</processName>
+		<description>Saves the permanent statistics for the members and notifies the admins by email.</description>
+		<notes>done and tested</notes>
+		<personalized>no</personalized>
+		<email_contents source="sql_procedure">
+			<command>bp_insert_member_wing_stats</command>
+			<parameters>
+				<parameter help="the month for which to process the stats, should be the current month">{month()}</parameter>
+				<parameter help="the year">{year()}</parameter>
+			</parameters>
+		</email_contents>
+		<subject>Monthly Member Statistics Saved</subject>
+		<notify_email_body>The monthly member statistics were saved to the permanent statistics table.</notify_email_body>
+		<notify_to_name useDefault="no">Webmaster</notify_to_name>
+		<notify_to_email useDefault="no">{mailWebmaster}</notify_to_email>
+		<notify_admin_name useDefault="yes"/>
+		<notify_admin_email useDefault="yes"/>
+	</process>
+
+	<process>
+		<processName>member_renewal_email_first</processName>
+		<description>Renewal notice email to members, first notice, which is for people whose renewal is up the next month</description>
+		<notes>NOT TESTED</notes>
+		<personalized>yes</personalized>
+		<email_contents source="none">
+			<xsl_file root_directory="default">memberRenewalEmail_firstNotice.xsl</xsl_file>
+		</email_contents>
+		<recipient_list source="sql_procedure">
+			<command>bp_member_renewal_notice_first</command>	
+		</recipient_list>
+		<subject>{organizationName} Membership Renewal Email</subject>
+		<notify_to_name useDefault="no">{memberInfo}</notify_to_name>
+		<notify_to_email useDefault="no">{mailMemberInfo}</notify_to_email>
+		<notify_admin_name useDefault="yes"/>
+		<notify_admin_email useDefault="yes"/>
+	</process>
+</afids_batch_processes>

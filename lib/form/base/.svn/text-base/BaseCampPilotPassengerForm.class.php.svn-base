@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * CampPilotPassenger form base class.
+ *
+ * @package    angelflight
+ * @subpackage form
+ * @author     Your name here
+ * @version    SVN: $Id: sfPropelFormGeneratedTemplate.php 16976 2009-04-04 12:47:44Z fabien $
+ */
+class BaseCampPilotPassengerForm extends BaseFormPropel
+{
+  public function setup()
+  {
+    $this->setWidgets(array(
+      'camp_id'      => new sfWidgetFormInputHidden(),
+      'member_id'    => new sfWidgetFormInputHidden(),
+      'passenger_id' => new sfWidgetFormInputHidden(),
+      'flight_date'  => new sfWidgetFormDate(),
+    ));
+
+    $this->setValidators(array(
+      'camp_id'      => new sfValidatorPropelChoice(array('model' => 'Camp', 'column' => 'id', 'required' => false)),
+      'member_id'    => new sfValidatorPropelChoice(array('model' => 'Member', 'column' => 'id', 'required' => false)),
+      'passenger_id' => new sfValidatorPropelChoice(array('model' => 'Passenger', 'column' => 'id', 'required' => false)),
+      'flight_date'  => new sfValidatorDate(array('required' => false)),
+    ));
+
+    $this->widgetSchema->setNameFormat('camp_pilot_passenger[%s]');
+
+    $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+
+    parent::setup();
+  }
+
+  public function getModelName()
+  {
+    return 'CampPilotPassenger';
+  }
+
+
+}

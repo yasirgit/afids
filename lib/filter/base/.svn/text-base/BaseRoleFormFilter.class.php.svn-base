@@ -1,0 +1,103 @@
+<?php
+
+require_once(sfConfig::get('sf_lib_dir').'/filter/base/BaseFormFilterPropel.class.php');
+
+/**
+ * Role filter form base class.
+ *
+ * @package    angelflight
+ * @subpackage filter
+ * @author     Your name here
+ * @version    SVN: $Id: sfPropelFormFilterGeneratedTemplate.php 16976 2009-04-04 12:47:44Z fabien $
+ */
+class BaseRoleFormFilter extends BaseFormFilterPropel
+{
+  public function setup()
+  {
+    $this->setWidgets(array(
+      'title'                => new sfWidgetFormFilterInput(),
+      'description'          => new sfWidgetFormFilterInput(),
+      'person_role_list'     => new sfWidgetFormPropelChoice(array('model' => 'Person', 'add_empty' => true)),
+      'role_permission_list' => new sfWidgetFormPropelChoice(array('model' => 'Permission', 'add_empty' => true)),
+    ));
+
+    $this->setValidators(array(
+      'title'                => new sfValidatorPass(array('required' => false)),
+      'description'          => new sfValidatorPass(array('required' => false)),
+      'person_role_list'     => new sfValidatorPropelChoice(array('model' => 'Person', 'required' => false)),
+      'role_permission_list' => new sfValidatorPropelChoice(array('model' => 'Permission', 'required' => false)),
+    ));
+
+    $this->widgetSchema->setNameFormat('role_filters[%s]');
+
+    $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+
+    parent::setup();
+  }
+
+  public function addPersonRoleListColumnCriteria(Criteria $criteria, $field, $values)
+  {
+    if (!is_array($values))
+    {
+      $values = array($values);
+    }
+
+    if (!count($values))
+    {
+      return;
+    }
+
+    $criteria->addJoin(PersonRolePeer::ROLE_ID, RolePeer::ID);
+
+    $value = array_pop($values);
+    $criterion = $criteria->getNewCriterion(PersonRolePeer::PERSON_ID, $value);
+
+    foreach ($values as $value)
+    {
+      $criterion->addOr($criteria->getNewCriterion(PersonRolePeer::PERSON_ID, $value));
+    }
+
+    $criteria->add($criterion);
+  }
+
+  public function addRolePermissionListColumnCriteria(Criteria $criteria, $field, $values)
+  {
+    if (!is_array($values))
+    {
+      $values = array($values);
+    }
+
+    if (!count($values))
+    {
+      return;
+    }
+
+    $criteria->addJoin(RolePermissionPeer::ROLE_ID, RolePeer::ID);
+
+    $value = array_pop($values);
+    $criterion = $criteria->getNewCriterion(RolePermissionPeer::PERMISSION_ID, $value);
+
+    foreach ($values as $value)
+    {
+      $criterion->addOr($criteria->getNewCriterion(RolePermissionPeer::PERMISSION_ID, $value));
+    }
+
+    $criteria->add($criterion);
+  }
+
+  public function getModelName()
+  {
+    return 'Role';
+  }
+
+  public function getFields()
+  {
+    return array(
+      'id'                   => 'Number',
+      'title'                => 'Text',
+      'description'          => 'Text',
+      'person_role_list'     => 'ManyKey',
+      'role_permission_list' => 'ManyKey',
+    );
+  }
+}

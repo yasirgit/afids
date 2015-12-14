@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/lib/record
+END
+sfDoctrineRecordI18nFilter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/lib/record/sfDoctrineRecordI18nFilter.class.php
+END
+sfDoctrineRecordListener.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/lib/record/sfDoctrineRecordListener.class.php
+END
+sfDoctrineRecord.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfDoctrinePlugin/lib/record/sfDoctrineRecord.class.php
+END

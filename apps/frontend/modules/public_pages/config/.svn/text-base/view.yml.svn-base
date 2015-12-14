@@ -1,0 +1,16 @@
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    title:        Angel Flight West
+    #description:  symfony project
+    #keywords:     symfony, project
+    #language:     en
+    #robots:       index, follow
+
+  stylesheets:    [style.css]
+
+  javascripts:    [jquery-1.4.4.min.js, addthis_widget.js, db_png.js, tabbing.js]
+
+  has_layout:     off

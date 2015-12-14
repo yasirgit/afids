@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/afids/!svn/ver/702/browse/trunk/plugins/sfThumbnailPlugin/lib
+END
+sfImageMagickAdapter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/afids/!svn/ver/702/browse/trunk/plugins/sfThumbnailPlugin/lib/sfImageMagickAdapter.class.php
+END
+sfThumbnail.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/afids/!svn/ver/702/browse/trunk/plugins/sfThumbnailPlugin/lib/sfThumbnail.class.php
+END
+sfGDAdapter.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/afids/!svn/ver/702/browse/trunk/plugins/sfThumbnailPlugin/lib/sfGDAdapter.class.php
+END

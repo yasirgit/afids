@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/afids/!svn/ver/1151/browse/trunk/apps/frontend/modules/contact/templates
+END
+_process_step1.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/afids/!svn/ver/382/browse/trunk/apps/frontend/modules/contact/templates/_process_step1.php
+END
+_process_step2.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/afids/!svn/ver/378/browse/trunk/apps/frontend/modules/contact/templates/_process_step2.php
+END
+processCompleteSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/afids/!svn/ver/1151/browse/trunk/apps/frontend/modules/contact/templates/processCompleteSuccess.php
+END
+indexSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/afids/!svn/ver/1151/browse/trunk/apps/frontend/modules/contact/templates/indexSuccess.php
+END
+indexTypeSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/afids/!svn/ver/1151/browse/trunk/apps/frontend/modules/contact/templates/indexTypeSuccess.php
+END
+autoCompleteFirstSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/afids/!svn/ver/513/browse/trunk/apps/frontend/modules/contact/templates/autoCompleteFirstSuccess.php
+END
+viewSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/afids/!svn/ver/1151/browse/trunk/apps/frontend/modules/contact/templates/viewSuccess.php
+END
+_process_steps_header.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/afids/!svn/ver/378/browse/trunk/apps/frontend/modules/contact/templates/_process_steps_header.php
+END
+updateSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/afids/!svn/ver/1151/browse/trunk/apps/frontend/modules/contact/templates/updateSuccess.php
+END
+viewRequestSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/afids/!svn/ver/378/browse/trunk/apps/frontend/modules/contact/templates/viewRequestSuccess.php
+END
+updateTypeSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/afids/!svn/ver/79/browse/trunk/apps/frontend/modules/contact/templates/updateTypeSuccess.php
+END
+listRequestSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/afids/!svn/ver/1151/browse/trunk/apps/frontend/modules/contact/templates/listRequestSuccess.php
+END
+autoCompleteLastSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/afids/!svn/ver/513/browse/trunk/apps/frontend/modules/contact/templates/autoCompleteLastSuccess.php
+END
+processRequestSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/afids/!svn/ver/502/browse/trunk/apps/frontend/modules/contact/templates/processRequestSuccess.php
+END
+processStepsSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/afids/!svn/ver/382/browse/trunk/apps/frontend/modules/contact/templates/processStepsSuccess.php
+END

@@ -1,0 +1,1 @@
+ALTER TABLE `pilot` ADD `mop_served_by` VARCHAR( 500 ) NOT NULL ;

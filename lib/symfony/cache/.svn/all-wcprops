@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/afids/!svn/ver/2/browse/trunk/lib/symfony/cache
+END
+sfEAcceleratorCache.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/afids/!svn/ver/2/browse/trunk/lib/symfony/cache/sfEAcceleratorCache.class.php
+END
+sfXCacheCache.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/afids/!svn/ver/2/browse/trunk/lib/symfony/cache/sfXCacheCache.class.php
+END
+sfNoCache.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/afids/!svn/ver/2/browse/trunk/lib/symfony/cache/sfNoCache.class.php
+END
+sfCache.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/afids/!svn/ver/2/browse/trunk/lib/symfony/cache/sfCache.class.php
+END
+sfFileCache.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/afids/!svn/ver/2/browse/trunk/lib/symfony/cache/sfFileCache.class.php
+END
+sfSQLiteCache.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/afids/!svn/ver/2/browse/trunk/lib/symfony/cache/sfSQLiteCache.class.php
+END
+sfMemcacheCache.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/afids/!svn/ver/2/browse/trunk/lib/symfony/cache/sfMemcacheCache.class.php
+END
+sfAPCCache.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/afids/!svn/ver/2/browse/trunk/lib/symfony/cache/sfAPCCache.class.php
+END
+sfFunctionCache.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/afids/!svn/ver/2/browse/trunk/lib/symfony/cache/sfFunctionCache.class.php
+END

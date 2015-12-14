@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/afids/!svn/ver/1046/browse/trunk/data/sql
+END
+sqldb.map
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/afids/!svn/ver/107/browse/trunk/data/sql/sqldb.map
+END
+lib.model.schema.sql
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/afids/!svn/ver/1046/browse/trunk/data/sql/lib.model.schema.sql
+END
+pilot_alter_mop_served_by_04-april_2011.sql
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/afids/!svn/ver/959/browse/trunk/data/sql/pilot_alter_mop_served_by_04-april_2011.sql
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/test/unit/fixtures
+END
+schema.xml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/test/unit/fixtures/schema.xml
+END
+schema.yml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/test/unit/fixtures/schema.yml
+END
+new_schema.yml
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/test/unit/fixtures/new_schema.yml
+END

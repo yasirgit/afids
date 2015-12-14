@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/afids/!svn/ver/1059/browse/trunk/apps/frontend/modules/contact_request/templates
+END
+thankyouSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/afids/!svn/ver/1056/browse/trunk/apps/frontend/modules/contact_request/templates/thankyouSuccess.php
+END
+editSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/afids/!svn/ver/1056/browse/trunk/apps/frontend/modules/contact_request/templates/editSuccess.php
+END
+indexSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/afids/!svn/ver/1056/browse/trunk/apps/frontend/modules/contact_request/templates/indexSuccess.php
+END
+pilotSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/afids/!svn/ver/1056/browse/trunk/apps/frontend/modules/contact_request/templates/pilotSuccess.php
+END
+_form.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/afids/!svn/ver/1059/browse/trunk/apps/frontend/modules/contact_request/templates/_form.php
+END
+newSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/afids/!svn/ver/1056/browse/trunk/apps/frontend/modules/contact_request/templates/newSuccess.php
+END

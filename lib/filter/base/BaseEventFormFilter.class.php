@@ -1,0 +1,126 @@
+<?php
+
+require_once(sfConfig::get('sf_lib_dir').'/filter/base/BaseFormFilterPropel.class.php');
+
+/**
+ * Event filter form base class.
+ *
+ * @package    angelflight
+ * @subpackage filter
+ * @author     Your name here
+ * @version    SVN: $Id: sfPropelFormFilterGeneratedTemplate.php 16976 2009-04-04 12:47:44Z fabien $
+ */
+class BaseEventFormFilter extends BaseFormFilterPropel
+{
+  public function setup()
+  {
+    $this->setWidgets(array(
+      'event_name'            => new sfWidgetFormFilterInput(),
+      'event_date'            => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => true)),
+      'event_time'            => new sfWidgetFormFilterInput(),
+      'location'              => new sfWidgetFormFilterInput(),
+      'short_desc'            => new sfWidgetFormFilterInput(),
+      'long_desc'             => new sfWidgetFormFilterInput(),
+      'contact_info'          => new sfWidgetFormFilterInput(),
+      'email_sent_date'       => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => true)),
+      'online_reservation'    => new sfWidgetFormFilterInput(),
+      'adult_cost'            => new sfWidgetFormFilterInput(),
+      'child_cost'            => new sfWidgetFormFilterInput(),
+      'adult_door_cost'       => new sfWidgetFormFilterInput(),
+      'child_door_cost'       => new sfWidgetFormFilterInput(),
+      'signup_deadline'       => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => true)),
+      'onsite_signup_ok'      => new sfWidgetFormFilterInput(),
+      'max_persons'           => new sfWidgetFormFilterInput(),
+      'collect_secure_info'   => new sfWidgetFormFilterInput(),
+      'addl_info_fields'      => new sfWidgetFormFilterInput(),
+      'addl_info_fields_help' => new sfWidgetFormFilterInput(),
+      'event_wings_list'      => new sfWidgetFormPropelChoice(array('model' => 'Wing', 'add_empty' => true)),
+    ));
+
+    $this->setValidators(array(
+      'event_name'            => new sfValidatorPass(array('required' => false)),
+      'event_date'            => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'event_time'            => new sfValidatorPass(array('required' => false)),
+      'location'              => new sfValidatorPass(array('required' => false)),
+      'short_desc'            => new sfValidatorPass(array('required' => false)),
+      'long_desc'             => new sfValidatorPass(array('required' => false)),
+      'contact_info'          => new sfValidatorPass(array('required' => false)),
+      'email_sent_date'       => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'online_reservation'    => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'adult_cost'            => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'child_cost'            => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'adult_door_cost'       => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'child_door_cost'       => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'signup_deadline'       => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'onsite_signup_ok'      => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'max_persons'           => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'collect_secure_info'   => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'addl_info_fields'      => new sfValidatorPass(array('required' => false)),
+      'addl_info_fields_help' => new sfValidatorPass(array('required' => false)),
+      'event_wings_list'      => new sfValidatorPropelChoice(array('model' => 'Wing', 'required' => false)),
+    ));
+
+    $this->widgetSchema->setNameFormat('event_filters[%s]');
+
+    $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+
+    parent::setup();
+  }
+
+  public function addEventWingsListColumnCriteria(Criteria $criteria, $field, $values)
+  {
+    if (!is_array($values))
+    {
+      $values = array($values);
+    }
+
+    if (!count($values))
+    {
+      return;
+    }
+
+    $criteria->addJoin(EventWingsPeer::EVENT_ID, EventPeer::ID);
+
+    $value = array_pop($values);
+    $criterion = $criteria->getNewCriterion(EventWingsPeer::WING_ID, $value);
+
+    foreach ($values as $value)
+    {
+      $criterion->addOr($criteria->getNewCriterion(EventWingsPeer::WING_ID, $value));
+    }
+
+    $criteria->add($criterion);
+  }
+
+  public function getModelName()
+  {
+    return 'Event';
+  }
+
+  public function getFields()
+  {
+    return array(
+      'id'                    => 'Number',
+      'event_name'            => 'Text',
+      'event_date'            => 'Date',
+      'event_time'            => 'Text',
+      'location'              => 'Text',
+      'short_desc'            => 'Text',
+      'long_desc'             => 'Text',
+      'contact_info'          => 'Text',
+      'email_sent_date'       => 'Date',
+      'online_reservation'    => 'Number',
+      'adult_cost'            => 'Number',
+      'child_cost'            => 'Number',
+      'adult_door_cost'       => 'Number',
+      'child_door_cost'       => 'Number',
+      'signup_deadline'       => 'Date',
+      'onsite_signup_ok'      => 'Number',
+      'max_persons'           => 'Number',
+      'collect_secure_info'   => 'Number',
+      'addl_info_fields'      => 'Text',
+      'addl_info_fields_help' => 'Text',
+      'event_wings_list'      => 'ManyKey',
+    );
+  }
+}

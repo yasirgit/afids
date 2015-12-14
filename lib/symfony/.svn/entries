@@ -1,0 +1,124 @@
+10
+
+dir
+1221
+https://afids.svn.beanstalkapp.com/afids/browse/trunk/lib/symfony
+https://afids.svn.beanstalkapp.com/afids
+
+
+
+2010-10-15T10:39:50.222539Z
+573
+sislam
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6660cd72-4705-4052-9c71-8d9f8014bd27
+
+widget
+dir
+
+controller
+dir
+
+validator
+dir
+
+debug
+dir
+
+generator
+dir
+
+response
+dir
+
+plugin
+dir
+
+exception
+dir
+
+task
+dir
+
+cache
+dir
+
+storage
+dir
+
+database
+dir
+
+autoload
+dir
+
+view
+dir
+
+command
+dir
+
+test
+dir
+
+helper
+dir
+
+i18n
+dir
+
+plugins
+dir
+
+log
+dir
+
+event
+dir
+
+addon
+dir
+
+filter
+dir
+
+routing
+dir
+
+request
+dir
+
+vendor
+dir
+
+yaml
+dir
+
+form
+dir
+
+config
+dir
+
+util
+dir
+
+action
+dir
+
+user
+dir
+

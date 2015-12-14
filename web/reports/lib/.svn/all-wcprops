@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/afids/!svn/ver/774/browse/trunk/web/reports/lib
+END
+rwOutput.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/afids/!svn/ver/668/browse/trunk/web/reports/lib/rwOutput.php
+END
+rwDatabase.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/afids/!svn/ver/668/browse/trunk/web/reports/lib/rwDatabase.php
+END
+unicode_data.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/afids/!svn/ver/774/browse/trunk/web/reports/lib/unicode_data.php
+END
+tcpdf.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/afids/!svn/ver/774/browse/trunk/web/reports/lib/tcpdf.php
+END
+pdf_functions.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/afids/!svn/ver/668/browse/trunk/web/reports/lib/pdf_functions.php
+END
+rwData.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/afids/!svn/ver/668/browse/trunk/web/reports/lib/rwData.php
+END
+rwUI_Elements.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/afids/!svn/ver/668/browse/trunk/web/reports/lib/rwUI_Elements.php
+END
+report_functions.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/afids/!svn/ver/668/browse/trunk/web/reports/lib/report_functions.php
+END
+printTemplates.xml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/afids/!svn/ver/668/browse/trunk/web/reports/lib/printTemplates.xml
+END
+rwEditorDatabase.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/afids/!svn/ver/668/browse/trunk/web/reports/lib/rwEditorDatabase.php
+END
+google_data.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/afids/!svn/ver/668/browse/trunk/web/reports/lib/google_data.php
+END
+htmlcolors.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/afids/!svn/ver/668/browse/trunk/web/reports/lib/htmlcolors.php
+END
+variables.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/afids/!svn/ver/668/browse/trunk/web/reports/lib/variables.php
+END

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/afids/!svn/ver/1151/browse/trunk/apps/frontend/modules/availability/templates
+END
+editSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/afids/!svn/ver/47/browse/trunk/apps/frontend/modules/availability/templates/editSuccess.php
+END
+_form.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/afids/!svn/ver/1151/browse/trunk/apps/frontend/modules/availability/templates/_form.php
+END
+editOwnSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/afids/!svn/ver/307/browse/trunk/apps/frontend/modules/availability/templates/editOwnSuccess.php
+END
+newSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/afids/!svn/ver/47/browse/trunk/apps/frontend/modules/availability/templates/newSuccess.php
+END
+viewSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/afids/!svn/ver/1151/browse/trunk/apps/frontend/modules/availability/templates/viewSuccess.php
+END
+_own_form.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/afids/!svn/ver/307/browse/trunk/apps/frontend/modules/availability/templates/_own_form.php
+END

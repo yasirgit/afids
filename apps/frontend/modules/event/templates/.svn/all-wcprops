@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/afids/!svn/ver/1151/browse/trunk/apps/frontend/modules/event/templates
+END
+editSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/afids/!svn/ver/722/browse/trunk/apps/frontend/modules/event/templates/editSuccess.php
+END
+indexSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/afids/!svn/ver/1151/browse/trunk/apps/frontend/modules/event/templates/indexSuccess.php
+END
+eventSignupSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/afids/!svn/ver/1036/browse/trunk/apps/frontend/modules/event/templates/eventSignupSuccess.php
+END
+_form.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/afids/!svn/ver/772/browse/trunk/apps/frontend/modules/event/templates/_form.php
+END
+newSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/afids/!svn/ver/1027/browse/trunk/apps/frontend/modules/event/templates/newSuccess.php
+END
+calendarSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/afids/!svn/ver/1109/browse/trunk/apps/frontend/modules/event/templates/calendarSuccess.php
+END
+calendarDetailsSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/afids/!svn/ver/1109/browse/trunk/apps/frontend/modules/event/templates/calendarDetailsSuccess.php
+END

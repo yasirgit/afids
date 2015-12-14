@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/test/functional/fixtures/config
+END
+propel.ini
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/test/functional/fixtures/config/propel.ini
+END
+schema.xml
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/test/functional/fixtures/config/schema.xml
+END
+schema-transformed.xml
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/test/functional/fixtures/config/schema-transformed.xml
+END
+rsync_exclude.txt
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/test/functional/fixtures/config/rsync_exclude.txt
+END
+databases.yml
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/test/functional/fixtures/config/databases.yml
+END
+ProjectConfiguration.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/test/functional/fixtures/config/ProjectConfiguration.class.php
+END
+properties.ini
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/afids/!svn/ver/2/browse/trunk/lib/symfony/plugins/sfPropelPlugin/test/functional/fixtures/config/properties.ini
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/afids/!svn/ver/2/browse/trunk/plugins/sfSwiftMailerPlugin/lib/vendor/swift/classes/Swift/CharacterReader
+END
+Utf8Reader.php
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/afids/!svn/ver/2/browse/trunk/plugins/sfSwiftMailerPlugin/lib/vendor/swift/classes/Swift/CharacterReader/Utf8Reader.php
+END
+GenericFixedWidthReader.php
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/afids/!svn/ver/2/browse/trunk/plugins/sfSwiftMailerPlugin/lib/vendor/swift/classes/Swift/CharacterReader/GenericFixedWidthReader.php
+END
+UsAsciiReader.php
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/afids/!svn/ver/2/browse/trunk/plugins/sfSwiftMailerPlugin/lib/vendor/swift/classes/Swift/CharacterReader/UsAsciiReader.php
+END

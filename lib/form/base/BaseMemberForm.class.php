@@ -1,0 +1,136 @@
+<?php
+
+/**
+ * Member form base class.
+ *
+ * @package    angelflight
+ * @subpackage form
+ * @author     Your name here
+ * @version    SVN: $Id: sfPropelFormGeneratedTemplate.php 16976 2009-04-04 12:47:44Z fabien $
+ */
+class BaseMemberForm extends BaseFormPropel
+{
+  public function setup()
+  {
+    $this->setWidgets(array(
+      'id'                          => new sfWidgetFormInputHidden(),
+      'person_id'                   => new sfWidgetFormPropelChoice(array('model' => 'Person', 'add_empty' => false)),
+      'external_id'                 => new sfWidgetFormInput(),
+      'wing_id'                     => new sfWidgetFormPropelChoice(array('model' => 'Wing', 'add_empty' => true)),
+      'member_class_id'             => new sfWidgetFormPropelChoice(array('model' => 'MemberClass', 'add_empty' => false)),
+      'master_member_id'            => new sfWidgetFormPropelChoice(array('model' => 'Member', 'add_empty' => true)),
+      'join_date'                   => new sfWidgetFormDate(),
+      'active'                      => new sfWidgetFormInput(),
+      'inactive_reason'             => new sfWidgetFormInput(),
+      'inactive_comment'            => new sfWidgetFormInput(),
+      'flight_status'               => new sfWidgetFormInput(),
+      'co_pilot'                    => new sfWidgetFormInput(),
+      'contact'                     => new sfWidgetFormInput(),
+      'date_of_birth'               => new sfWidgetFormDate(),
+      'weight'                      => new sfWidgetFormInput(),
+      'spouse_name'                 => new sfWidgetFormInput(),
+      'languages'                   => new sfWidgetFormInput(),
+      'coordinator_notes'           => new sfWidgetFormInput(),
+      'renewed_date'                => new sfWidgetFormDate(),
+      'renewal_date'                => new sfWidgetFormDate(),
+      'renewal_notice1'             => new sfWidgetFormDate(),
+      'renewal_notice2'             => new sfWidgetFormDate(),
+      'renewal_notice3'             => new sfWidgetFormDate(),
+      'renewal_notice4'             => new sfWidgetFormDate(),
+      'review_done'                 => new sfWidgetFormDate(),
+      'ed_new_member_notify'        => new sfWidgetFormDate(),
+      'wn_new_memberN_ntify'        => new sfWidgetFormDate(),
+      'no_wing_contact_ack'         => new sfWidgetFormInput(),
+      'hold_harmless_received'      => new sfWidgetFormInput(),
+      'member_welcomed'             => new sfWidgetFormDate(),
+      'badge_made'                  => new sfWidgetFormDate(),
+      'notebook_sent'               => new sfWidgetFormDate(),
+      'clothing_sent'               => new sfWidgetFormDate(),
+      's_mod_member_notify'         => new sfWidgetFormInput(),
+      'w_mod_member_notify'         => new sfWidgetFormInput(),
+      'renew_mark'                  => new sfWidgetFormInput(),
+      'renewal_sent_date'           => new sfWidgetFormInput(),
+      's_late_renewal_notify'       => new sfWidgetFormInput(),
+      'w_late_renewal_notify'       => new sfWidgetFormInput(),
+      's_inactive_notify'           => new sfWidgetFormInput(),
+      'w_inactive_notify'           => new sfWidgetFormInput(),
+      'w_not_oriented_notify_date1' => new sfWidgetFormDate(),
+      'w_not_oriented_notify_date2' => new sfWidgetFormDate(),
+      'emergency_contact_name'      => new sfWidgetFormInput(),
+      'emergency_contact_phone'     => new sfWidgetFormInput(),
+      'drivers_license_state'       => new sfWidgetFormInput(),
+      'drivers_license_number'      => new sfWidgetFormInput(),
+      'height'                      => new sfWidgetFormInput(),
+      'secondary_wing_id'           => new sfWidgetFormInput(),
+    ));
+
+    $this->setValidators(array(
+      'id'                          => new sfValidatorPropelChoice(array('model' => 'Member', 'column' => 'id', 'required' => false)),
+      'person_id'                   => new sfValidatorPropelChoice(array('model' => 'Person', 'column' => 'id')),
+      'external_id'                 => new sfValidatorInteger(array('required' => false)),
+      'wing_id'                     => new sfValidatorPropelChoice(array('model' => 'Wing', 'column' => 'id', 'required' => false)),
+      'member_class_id'             => new sfValidatorPropelChoice(array('model' => 'MemberClass', 'column' => 'id')),
+      'master_member_id'            => new sfValidatorPropelChoice(array('model' => 'Member', 'column' => 'id', 'required' => false)),
+      'join_date'                   => new sfValidatorDate(),
+      'active'                      => new sfValidatorInteger(),
+      'inactive_reason'             => new sfValidatorString(array('max_length' => 15, 'required' => false)),
+      'inactive_comment'            => new sfValidatorString(array('max_length' => 40, 'required' => false)),
+      'flight_status'               => new sfValidatorString(array('max_length' => 20)),
+      'co_pilot'                    => new sfValidatorInteger(),
+      'contact'                     => new sfValidatorString(array('max_length' => 10, 'required' => false)),
+      'date_of_birth'               => new sfValidatorDate(array('required' => false)),
+      'weight'                      => new sfValidatorInteger(array('required' => false)),
+      'spouse_name'                 => new sfValidatorString(array('max_length' => 50, 'required' => false)),
+      'languages'                   => new sfValidatorString(array('max_length' => 50, 'required' => false)),
+      'coordinator_notes'           => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'renewed_date'                => new sfValidatorDate(array('required' => false)),
+      'renewal_date'                => new sfValidatorDate(array('required' => false)),
+      'renewal_notice1'             => new sfValidatorDate(array('required' => false)),
+      'renewal_notice2'             => new sfValidatorDate(array('required' => false)),
+      'renewal_notice3'             => new sfValidatorDate(array('required' => false)),
+      'renewal_notice4'             => new sfValidatorDate(array('required' => false)),
+      'review_done'                 => new sfValidatorDate(array('required' => false)),
+      'ed_new_member_notify'        => new sfValidatorDate(array('required' => false)),
+      'wn_new_memberN_ntify'        => new sfValidatorDate(array('required' => false)),
+      'no_wing_contact_ack'         => new sfValidatorInteger(),
+      'hold_harmless_received'      => new sfValidatorInteger(),
+      'member_welcomed'             => new sfValidatorDate(array('required' => false)),
+      'badge_made'                  => new sfValidatorDate(array('required' => false)),
+      'notebook_sent'               => new sfValidatorDate(array('required' => false)),
+      'clothing_sent'               => new sfValidatorDate(array('required' => false)),
+      's_mod_member_notify'         => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'w_mod_member_notify'         => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'renew_mark'                  => new sfValidatorInteger(),
+      'renewal_sent_date'           => new sfValidatorInteger(array('required' => false)),
+      's_late_renewal_notify'       => new sfValidatorInteger(),
+      'w_late_renewal_notify'       => new sfValidatorInteger(),
+      's_inactive_notify'           => new sfValidatorInteger(),
+      'w_inactive_notify'           => new sfValidatorInteger(),
+      'w_not_oriented_notify_date1' => new sfValidatorDate(array('required' => false)),
+      'w_not_oriented_notify_date2' => new sfValidatorDate(array('required' => false)),
+      'emergency_contact_name'      => new sfValidatorString(array('max_length' => 40, 'required' => false)),
+      'emergency_contact_phone'     => new sfValidatorString(array('max_length' => 40, 'required' => false)),
+      'drivers_license_state'       => new sfValidatorString(array('max_length' => 2, 'required' => false)),
+      'drivers_license_number'      => new sfValidatorString(array('max_length' => 25, 'required' => false)),
+      'height'                      => new sfValidatorInteger(array('required' => false)),
+      'secondary_wing_id'           => new sfValidatorInteger(array('required' => false)),
+    ));
+
+    $this->validatorSchema->setPostValidator(
+      new sfValidatorPropelUnique(array('model' => 'Member', 'column' => array('person_id')))
+    );
+
+    $this->widgetSchema->setNameFormat('member[%s]');
+
+    $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+
+    parent::setup();
+  }
+
+  public function getModelName()
+  {
+    return 'Member';
+  }
+
+
+}

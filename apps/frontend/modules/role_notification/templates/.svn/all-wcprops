@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/afids/!svn/ver/574/browse/trunk/apps/frontend/modules/role_notification/templates
+END
+delroleSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/afids/!svn/ver/574/browse/trunk/apps/frontend/modules/role_notification/templates/delroleSuccess.php
+END
+indexSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/afids/!svn/ver/574/browse/trunk/apps/frontend/modules/role_notification/templates/indexSuccess.php
+END
+addroleSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/afids/!svn/ver/574/browse/trunk/apps/frontend/modules/role_notification/templates/addroleSuccess.php
+END

@@ -1,0 +1,4 @@
+ajaxIndexSuccess:
+  has_layout: off
+default:
+  has_layout: on

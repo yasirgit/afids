@@ -1,0 +1,173 @@
+<?php
+
+require_once(sfConfig::get('sf_lib_dir').'/filter/base/BaseFormFilterPropel.class.php');
+
+/**
+ * MissionLeg filter form base class.
+ *
+ * @package    angelflight
+ * @subpackage filter
+ * @author     Your name here
+ * @version    SVN: $Id: sfPropelFormFilterGeneratedTemplate.php 16976 2009-04-04 12:47:44Z fabien $
+ */
+class BaseMissionLegFormFilter extends BaseFormFilterPropel
+{
+  public function setup()
+  {
+    $this->setWidgets(array(
+      'mission_id'           => new sfWidgetFormPropelChoice(array('model' => 'Mission', 'add_empty' => true)),
+      'leg_number'           => new sfWidgetFormFilterInput(),
+      'from_airport_id'      => new sfWidgetFormPropelChoice(array('model' => 'Airport', 'add_empty' => true)),
+      'to_airport_id'        => new sfWidgetFormPropelChoice(array('model' => 'Airport', 'add_empty' => true)),
+      'reverse_from'         => new sfWidgetFormFilterInput(),
+      'pass_on_board'        => new sfWidgetFormFilterInput(),
+      'baggage_weight'       => new sfWidgetFormFilterInput(),
+      'baggage_desc'         => new sfWidgetFormFilterInput(),
+      'coordinator_id'       => new sfWidgetFormPropelChoice(array('model' => 'Coordinator', 'add_empty' => true)),
+      'public_c_note'        => new sfWidgetFormFilterInput(),
+      'private_c_note'       => new sfWidgetFormFilterInput(),
+      'copilot_wanted'       => new sfWidgetFormFilterInput(),
+      'pilot_id'             => new sfWidgetFormPropelChoice(array('model' => 'Pilot', 'add_empty' => true)),
+      'copilot_id'           => new sfWidgetFormPropelChoice(array('model' => 'Member', 'add_empty' => true)),
+      'miss_assis_id'        => new sfWidgetFormFilterInput(),
+      'backup_pilot_id'      => new sfWidgetFormPropelChoice(array('model' => 'Pilot', 'add_empty' => true)),
+      'backup_copilot_id'    => new sfWidgetFormPropelChoice(array('model' => 'Member', 'add_empty' => true)),
+      'backup_miss_assis_id' => new sfWidgetFormFilterInput(),
+      'cancelled'            => new sfWidgetFormFilterInput(),
+      'cancel_comment'       => new sfWidgetFormFilterInput(),
+      'waiver_received'      => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => true)),
+      'web_coordinated'      => new sfWidgetFormFilterInput(),
+      'mission_report_id'    => new sfWidgetFormPropelChoice(array('model' => 'MissionReport', 'add_empty' => true)),
+      'pilot_aircraft_id'    => new sfWidgetFormPropelChoice(array('model' => 'PilotAircraft', 'add_empty' => true)),
+      'fbo_id'               => new sfWidgetFormPropelChoice(array('model' => 'Fbo', 'add_empty' => true)),
+      'fbo_address_new'      => new sfWidgetFormFilterInput(),
+      'fbo_dest_id'          => new sfWidgetFormFilterInput(),
+      'share_afa_org_id'     => new sfWidgetFormFilterInput(),
+      'transportation'       => new sfWidgetFormFilterInput(),
+      'ground_origin'        => new sfWidgetFormFilterInput(),
+      'ground_destination'   => new sfWidgetFormFilterInput(),
+      'flight_time'          => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => true)),
+      'airline_id'           => new sfWidgetFormFilterInput(),
+      'fund_id'              => new sfWidgetFormFilterInput(),
+      'confirm_code'         => new sfWidgetFormFilterInput(),
+      'flight_cost'          => new sfWidgetFormFilterInput(),
+      'comm_origin'          => new sfWidgetFormFilterInput(),
+      'comm_dest'            => new sfWidgetFormFilterInput(),
+      'flight_number'        => new sfWidgetFormFilterInput(),
+      'departure'            => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => true)),
+      'arrival'              => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => true)),
+      'prefix'               => new sfWidgetFormFilterInput(),
+      'cancel_mission_leg'   => new sfWidgetFormFilterInput(),
+      'copied_mission_leg'   => new sfWidgetFormFilterInput(),
+    ));
+
+    $this->setValidators(array(
+      'mission_id'           => new sfValidatorPropelChoice(array('required' => false, 'model' => 'Mission', 'column' => 'id')),
+      'leg_number'           => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'from_airport_id'      => new sfValidatorPropelChoice(array('required' => false, 'model' => 'Airport', 'column' => 'id')),
+      'to_airport_id'        => new sfValidatorPropelChoice(array('required' => false, 'model' => 'Airport', 'column' => 'id')),
+      'reverse_from'         => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'pass_on_board'        => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'baggage_weight'       => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'baggage_desc'         => new sfValidatorPass(array('required' => false)),
+      'coordinator_id'       => new sfValidatorPropelChoice(array('required' => false, 'model' => 'Coordinator', 'column' => 'id')),
+      'public_c_note'        => new sfValidatorPass(array('required' => false)),
+      'private_c_note'       => new sfValidatorPass(array('required' => false)),
+      'copilot_wanted'       => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'pilot_id'             => new sfValidatorPropelChoice(array('required' => false, 'model' => 'Pilot', 'column' => 'id')),
+      'copilot_id'           => new sfValidatorPropelChoice(array('required' => false, 'model' => 'Member', 'column' => 'id')),
+      'miss_assis_id'        => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'backup_pilot_id'      => new sfValidatorPropelChoice(array('required' => false, 'model' => 'Pilot', 'column' => 'id')),
+      'backup_copilot_id'    => new sfValidatorPropelChoice(array('required' => false, 'model' => 'Member', 'column' => 'id')),
+      'backup_miss_assis_id' => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'cancelled'            => new sfValidatorPass(array('required' => false)),
+      'cancel_comment'       => new sfValidatorPass(array('required' => false)),
+      'waiver_received'      => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'web_coordinated'      => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'mission_report_id'    => new sfValidatorPropelChoice(array('required' => false, 'model' => 'MissionReport', 'column' => 'id')),
+      'pilot_aircraft_id'    => new sfValidatorPropelChoice(array('required' => false, 'model' => 'PilotAircraft', 'column' => 'id')),
+      'fbo_id'               => new sfValidatorPropelChoice(array('required' => false, 'model' => 'Fbo', 'column' => 'id')),
+      'fbo_address_new'      => new sfValidatorPass(array('required' => false)),
+      'fbo_dest_id'          => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'share_afa_org_id'     => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'transportation'       => new sfValidatorPass(array('required' => false)),
+      'ground_origin'        => new sfValidatorPass(array('required' => false)),
+      'ground_destination'   => new sfValidatorPass(array('required' => false)),
+      'flight_time'          => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'airline_id'           => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'fund_id'              => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'confirm_code'         => new sfValidatorPass(array('required' => false)),
+      'flight_cost'          => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'comm_origin'          => new sfValidatorPass(array('required' => false)),
+      'comm_dest'            => new sfValidatorPass(array('required' => false)),
+      'flight_number'        => new sfValidatorPass(array('required' => false)),
+      'departure'            => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'arrival'              => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'prefix'               => new sfValidatorPass(array('required' => false)),
+      'cancel_mission_leg'   => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'copied_mission_leg'   => new sfValidatorPass(array('required' => false)),
+    ));
+
+    $this->widgetSchema->setNameFormat('mission_leg_filters[%s]');
+
+    $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+
+    parent::setup();
+  }
+
+  public function getModelName()
+  {
+    return 'MissionLeg';
+  }
+
+  public function getFields()
+  {
+    return array(
+      'id'                   => 'Number',
+      'mission_id'           => 'ForeignKey',
+      'leg_number'           => 'Number',
+      'from_airport_id'      => 'ForeignKey',
+      'to_airport_id'        => 'ForeignKey',
+      'reverse_from'         => 'Number',
+      'pass_on_board'        => 'Number',
+      'baggage_weight'       => 'Number',
+      'baggage_desc'         => 'Text',
+      'coordinator_id'       => 'ForeignKey',
+      'public_c_note'        => 'Text',
+      'private_c_note'       => 'Text',
+      'copilot_wanted'       => 'Number',
+      'pilot_id'             => 'ForeignKey',
+      'copilot_id'           => 'ForeignKey',
+      'miss_assis_id'        => 'Number',
+      'backup_pilot_id'      => 'ForeignKey',
+      'backup_copilot_id'    => 'ForeignKey',
+      'backup_miss_assis_id' => 'Number',
+      'cancelled'            => 'Text',
+      'cancel_comment'       => 'Text',
+      'waiver_received'      => 'Date',
+      'web_coordinated'      => 'Number',
+      'mission_report_id'    => 'ForeignKey',
+      'pilot_aircraft_id'    => 'ForeignKey',
+      'fbo_id'               => 'ForeignKey',
+      'fbo_address_new'      => 'Text',
+      'fbo_dest_id'          => 'Number',
+      'share_afa_org_id'     => 'Number',
+      'transportation'       => 'Text',
+      'ground_origin'        => 'Text',
+      'ground_destination'   => 'Text',
+      'flight_time'          => 'Date',
+      'airline_id'           => 'Number',
+      'fund_id'              => 'Number',
+      'confirm_code'         => 'Text',
+      'flight_cost'          => 'Number',
+      'comm_origin'          => 'Text',
+      'comm_dest'            => 'Text',
+      'flight_number'        => 'Text',
+      'departure'            => 'Date',
+      'arrival'              => 'Date',
+      'prefix'               => 'Text',
+      'cancel_mission_leg'   => 'Number',
+      'copied_mission_leg'   => 'Text',
+    );
+  }
+}

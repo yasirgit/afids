@@ -1,0 +1,25 @@
+default:
+  is_secure: off
+ajax:
+  is_secure: off
+index:
+step1:
+  is_secure: off
+step2:
+  is_secure: off
+step3:
+  is_secure: off
+UserStep:
+  is_secure: off
+UserStep1:
+  is_secure: off
+UserStep2:
+  is_secure: off
+userstep3:
+  is_secure: off
+userstep4:
+  is_secure: off
+userstep5:
+  is_secure: off
+userview:
+  is_secure: off

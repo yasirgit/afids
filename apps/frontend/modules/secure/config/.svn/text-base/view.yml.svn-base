@@ -1,0 +1,4 @@
+secureSuccess:
+  layout: layout
+default:
+  layout: insecureLayout

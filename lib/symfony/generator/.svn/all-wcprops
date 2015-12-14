@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/afids/!svn/ver/2/browse/trunk/lib/symfony/generator
+END
+sfAdminGenerator.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/afids/!svn/ver/2/browse/trunk/lib/symfony/generator/sfAdminGenerator.class.php
+END
+sfModelGeneratorConfiguration.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/afids/!svn/ver/2/browse/trunk/lib/symfony/generator/sfModelGeneratorConfiguration.class.php
+END
+sfGeneratorManager.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/afids/!svn/ver/2/browse/trunk/lib/symfony/generator/sfGeneratorManager.class.php
+END
+sfModelGeneratorConfigurationField.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/afids/!svn/ver/2/browse/trunk/lib/symfony/generator/sfModelGeneratorConfigurationField.class.php
+END
+sfCrudGenerator.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/afids/!svn/ver/2/browse/trunk/lib/symfony/generator/sfCrudGenerator.class.php
+END
+sfGenerator.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/afids/!svn/ver/2/browse/trunk/lib/symfony/generator/sfGenerator.class.php
+END
+sfModelGenerator.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/afids/!svn/ver/2/browse/trunk/lib/symfony/generator/sfModelGenerator.class.php
+END
+sfModelGeneratorHelper.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/afids/!svn/ver/2/browse/trunk/lib/symfony/generator/sfModelGeneratorHelper.class.php
+END

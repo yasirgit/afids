@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/afids/!svn/ver/2/browse/trunk/lib/symfony/task/generator/skeleton/project/config
+END
+propel.ini
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/afids/!svn/ver/2/browse/trunk/lib/symfony/task/generator/skeleton/project/config/propel.ini
+END
+schema.yml
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/afids/!svn/ver/2/browse/trunk/lib/symfony/task/generator/skeleton/project/config/schema.yml
+END
+vhost.sample
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/afids/!svn/ver/2/browse/trunk/lib/symfony/task/generator/skeleton/project/config/vhost.sample
+END
+rsync_exclude.txt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/afids/!svn/ver/2/browse/trunk/lib/symfony/task/generator/skeleton/project/config/rsync_exclude.txt
+END
+databases.yml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/afids/!svn/ver/2/browse/trunk/lib/symfony/task/generator/skeleton/project/config/databases.yml
+END
+ProjectConfiguration.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/afids/!svn/ver/2/browse/trunk/lib/symfony/task/generator/skeleton/project/config/ProjectConfiguration.class.php
+END
+properties.ini
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/afids/!svn/ver/2/browse/trunk/lib/symfony/task/generator/skeleton/project/config/properties.ini
+END
